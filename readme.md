@@ -1,4 +1,4 @@
-<!-- to convert file from html to php run this command -->
+to convert file from html to php run this command 
 
 Get-ChildItem -Filter *.html | ForEach-Object {
     $newName = $_.Name -replace '\.html$', '.php'
