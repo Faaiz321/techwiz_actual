@@ -3,7 +3,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$database = "";
+$database = "techwiz";
 
 $conn = mysqli_connect($server , $username , $password , $database );
 

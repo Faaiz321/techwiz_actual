@@ -132,7 +132,7 @@
                             </div>
                             <div class="col-12"></div>
                               <div class="d-grid">
-                                <button type="submit" class="btn btn-grd-primary">Register</button>
+                                <button type="submit" class="btn btn-grd-primary"><a href="auth-basic-register.php"></a>Register</button>
                               </div>
                             </div>
                            

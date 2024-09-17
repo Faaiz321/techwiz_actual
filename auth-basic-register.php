@@ -47,28 +47,20 @@
 										<form class="row g-3">
 											<div class="col-12">
 												<label for="inputUsername" class="form-label">Username</label>
-												<input type="email" class="form-control" id="inputUsername" placeholder="Jhon">
+												<input type="email" class="form-control" id="inputUsername" name="useername" placeholder="Jhon">
 											</div>
 											<div class="col-12">
 												<label for="inputEmailAddress" class="form-label">Email Address</label>
-												<input type="email" class="form-control" id="inputEmailAddress" placeholder="example@user.com">
+												<input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="example@user.com">
 											</div>
 											<div class="col-12">
 												<label for="inputChoosePassword" class="form-label">Password</label>
 												<div class="input-group" id="show_hide_password">
-													<input type="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password">
+													<input type="password" class="form-control border-end-0" id="inputChoosePassword" name="password" value="12345678" placeholder="Enter Password">
                            <a href="javascript:;" class="input-group-text bg-transparent"><i class="bi bi-eye-slash-fill"></i></a>
 												</div>
 											</div>
-											<div class="col-12">
-												<label for="inputSelectCountry" class="form-label">Country</label>
-												<select class="form-select" id="inputSelectCountry" aria-label="Default select example">
-													<option selected="">India</option>
-													<option value="1">United Kingdom</option>
-													<option value="2">America</option>
-													<option value="3">Dubai</option>
-												</select>
-											</div>
+									
 											<div class="col-12">
 												<div class="form-check form-switch">
 													<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
@@ -82,7 +74,7 @@
 											</div>
 											<div class="col-12">
 												<div class="text-start">
-													<p class="mb-0">Already have an account? <a href="auth-basic-login.html">Sign in here</a></p>
+													<p class="mb-0">Already have an account? <a href="auth-basic-login.php">Sign in here</a></p>
 												</div>
 											</div>
 										</form>
