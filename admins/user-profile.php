@@ -51,7 +51,7 @@
                   <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Search">
                   <span class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
                   <span class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
-                 </div>
+                </div>
               </div>
               <div class="card-body search-content">
                 <p class="search-title">Recent Searches</p>
@@ -90,7 +90,7 @@
                       <h5 class="mb-0 search-list-title">eCommerce Website Tutorials</h5>
                     </div>
                   </div>
-  
+
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="list-icon">
                       <i class="material-icons-outlined fs-5">laptop</i>
@@ -100,10 +100,10 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <hr>
                 <p class="search-title">Members</p>
-  
+
                 <div class="search-list d-flex flex-column gap-2">
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="memmber-img">
@@ -113,7 +113,7 @@
                       <h5 class="mb-0 search-list-title ">Andrew Stark</h5>
                     </div>
                   </div>
-  
+
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="memmber-img">
                       <img src="assets/images/avatars/02.png" width="32" height="32" class="rounded-circle" alt="">
@@ -122,7 +122,7 @@
                       <h5 class="mb-0 search-list-title ">Snetro Jhonia</h5>
                     </div>
                   </div>
-  
+
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="memmber-img">
                       <img src="assets/images/avatars/03.png" width="32" height="32" class="rounded-circle" alt="">
@@ -131,7 +131,7 @@
                       <h5 class="mb-0 search-list-title">Michle Clark</h5>
                     </div>
                   </div>
-  
+
                 </div>
               </div>
               <div class="card-footer text-center bg-transparent">
@@ -170,10 +170,10 @@
 
         <li class="nav-item dropdown position-static  d-md-flex d-none">
           <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-auto-close="outside"
-          data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">done_all</i></a>
+            data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">done_all</i></a>
           <div class="dropdown-menu dropdown-menu-end mega-menu shadow-lg p-4 p-lg-5">
             <div class="mega-menu-widgets">
-             <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 g-lg-5">
+              <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 g-lg-5">
                 <div class="col">
                   <div class="card rounded-4 shadow-none border mb-0">
                     <div class="card-body">
@@ -182,11 +182,11 @@
                           <i class="material-icons-outlined">question_answer</i>
                         </div>
                         <div class="mega-menu-content">
-                           <h5>Marketing</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Marketing</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -196,11 +196,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/02.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Website</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Website</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -210,11 +210,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/03.png" width="40" alt="">
                         <div class="mega-menu-content">
-                            <h5>Subscribers</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Subscribers</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -224,11 +224,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/01.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Hubspot</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Hubspot</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -238,11 +238,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/11.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Templates</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Templates</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -252,11 +252,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/13.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Ebooks</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Ebooks</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -266,11 +266,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/12.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Sales</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Sales</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -280,11 +280,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/08.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Tools</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Tools</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -294,15 +294,15 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/09.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Academy</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Academy</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-             </div><!--end row-->
+              </div><!--end row-->
             </div>
           </div>
         </li>
@@ -591,7 +591,7 @@
         </li>
         <li class="nav-item dropdown">
           <a href="javascrpt:;" class="dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
-             <img src="assets/images/avatars/01.png" class="rounded-circle p-1 border" width="45" height="45" alt="">
+            <img src="assets/images/avatars/01.png" class="rounded-circle p-1 border" width="45" height="45" alt="">
           </a>
           <div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
             <a class="dropdown-item  gap-2 py-2" href="javascript:;">
@@ -603,18 +603,18 @@
             </a>
             <hr class="dropdown-divider">
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-              class="material-icons-outlined">person_outline</i>Profile</a>
+                class="material-icons-outlined">person_outline</i>Profile</a>
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-              class="material-icons-outlined">local_bar</i>Setting</a>
+                class="material-icons-outlined">local_bar</i>Setting</a>
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-              class="material-icons-outlined">dashboard</i>Dashboard</a>
+                class="material-icons-outlined">dashboard</i>Dashboard</a>
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-              class="material-icons-outlined">account_balance</i>Earning</a>
-              <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                class="material-icons-outlined">account_balance</i>Earning</a>
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
                 class="material-icons-outlined">cloud_download</i>Downloads</a>
             <hr class="dropdown-divider">
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-            class="material-icons-outlined">power_settings_new</i>Logout</a>
+                class="material-icons-outlined">power_settings_new</i>Logout</a>
           </div>
         </li>
       </ul>
@@ -625,624 +625,294 @@
 
 
   <!--start sidebar-->
-  <aside class="sidebar-wrapper" data-simplebar="true">
-    <div class="sidebar-header">
-      <div class="logo-icon">
-        <img src="assets/images/logo-icon.png" class="logo-img" alt="">
-      </div>
-      <div class="logo-name flex-grow-1">
-        <h5 class="mb-0">Maxton</h5>
-      </div>
-      <div class="sidebar-close">
-        <span class="material-icons-outlined">close</span>
-      </div>
-    </div>
-    <div class="sidebar-nav">
-        <!--navigation-->
-        <ul class="metismenu" id="sidenav">
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">home</i>
-              </div>
-              <div class="menu-title">Dashboard</div>
-            </a>
-            <ul>
-              <li><a href="index.html"><i class="material-icons-outlined">arrow_right</i>Analysis</a>
-              </li>
-              <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>eCommerce</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">widgets</i>
-              </div>
-              <div class="menu-title">Widgets</div>
-            </a>
-            <ul>
-              <li><a href="widgets-data.html"><i class="material-icons-outlined">arrow_right</i>Data</a>
-              </li>
-              <li><a href="widgets-static.html"><i class="material-icons-outlined">arrow_right</i>Static</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">apps</i>
-              </div>
-              <div class="menu-title">Apps</div>
-            </a>
-            <ul>
-              <li><a href="app-emailbox.html"><i class="material-icons-outlined">arrow_right</i>Email Box</a>
-              </li>
-              <li><a href="app-emailread.html"><i class="material-icons-outlined">arrow_right</i>Email Read</a>
-              </li>
-              <li><a href="app-chat-box.html"><i class="material-icons-outlined">arrow_right</i>Chat</a>
-              </li>
-              <li><a href="app-fullcalender.html"><i class="material-icons-outlined">arrow_right</i>Calendar</a>
-              </li>
-              <li><a href="app-to-do.html"><i class="material-icons-outlined">arrow_right</i>To do</a>
-              </li>
-              <li><a href="app-invoice.html"><i class="material-icons-outlined">arrow_right</i>Invoice</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">UI Elements</li>
-          <li>
-            <a href="cards.html">
-              <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i>
-              </div>
-              <div class="menu-title">Cards</div>
-            </a>
-          </li>
-          
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">shopping_bag</i>
-              </div>
-              <div class="menu-title">eCommerce</div>
-            </a>
-            <ul>
-              <li><a href="ecommerce-add-product.html"><i class="material-icons-outlined">arrow_right</i>Add Product</a>
-              </li>
-              <li><a href="ecommerce-products.html"><i class="material-icons-outlined">arrow_right</i>Products</a>
-              </li>
-              <li><a href="ecommerce-customers.html"><i class="material-icons-outlined">arrow_right</i>Customers</a>
-              </li>
-              <li><a href="ecommerce-customer-details.html"><i class="material-icons-outlined">arrow_right</i>Customer Details</a>
-              </li>
-              <li><a href="ecommerce-orders.html"><i class="material-icons-outlined">arrow_right</i>Orders</a>
-              </li>
-              <li><a href="ecommerce-order-details.html"><i class="material-icons-outlined">arrow_right</i>Order Details</a>
-              </li>
-            </ul>     
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">card_giftcard</i>
-              </div>
-              <div class="menu-title">Components</div>
-            </a>
-            <ul>
-              <li><a href="component-alerts.html"><i class="material-icons-outlined">arrow_right</i>Alerts</a>
-              </li>
-              <li><a href="component-accordions.html"><i class="material-icons-outlined">arrow_right</i>Accordions</a>
-              </li>
-              <li><a href="component-badges.html"><i class="material-icons-outlined">arrow_right</i>Badges</a>
-              </li>
-              <li><a href="component-buttons.html"><i class="material-icons-outlined">arrow_right</i>Buttons</a>
-              </li>
-              <li><a href="component-carousels.html"><i class="material-icons-outlined">arrow_right</i>Carousels</a>
-              </li>
-              <li><a href="component-media-object.html"><i class="material-icons-outlined">arrow_right</i>Media
-                  Objects</a>
-              </li>
-              <li><a href="component-modals.html"><i class="material-icons-outlined">arrow_right</i>Modals</a>
-              </li>
-              <li><a href="component-navs-tabs.html"><i class="material-icons-outlined">arrow_right</i>Navs & Tabs</a>
-              </li>
-              <li><a href="component-navbar.html"><i class="material-icons-outlined">arrow_right</i>Navbar</a>
-              </li>
-              <li><a href="component-paginations.html"><i class="material-icons-outlined">arrow_right</i>Pagination</a>
-              </li>
-              <li><a href="component-popovers-tooltips.html"><i class="material-icons-outlined">arrow_right</i>Popovers
-                  & Tooltips</a>    
-              </li>
-              <li><a href="component-progress-bars.html"><i class="material-icons-outlined">arrow_right</i>Progress</a>
-              </li>
-              <li><a href="component-spinners.html"><i class="material-icons-outlined">arrow_right</i>Spinners</a>
-              </li>
-              <li><a href="component-notifications.html"><i
-                    class="material-icons-outlined">arrow_right</i>Notifications</a>
-              </li>
-              <li><a href="component-avtars-chips.html"><i class="material-icons-outlined">arrow_right</i>Avatrs &
-                  Chips</a>
-              </li>
-              <li><a href="component-typography.html"><i class="material-icons-outlined">arrow_right</i>Typography</a>
-               </li>
-               <li><a href="component-text-utilities.html"><i class="material-icons-outlined">arrow_right</i>Utilities</a>
-               </li>
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">view_agenda</i>
-              </div>
-              <div class="menu-title">Icons</div>
-            </a>
-            <ul>
-              <li><a href="icons-line-icons.html"><i class="material-icons-outlined">arrow_right</i>Line Icons</a>
-              </li>
-              <li><a href="icons-boxicons.html"><i class="material-icons-outlined">arrow_right</i>Boxicons</a>
-              </li>
-              <li><a href="icons-feather-icons.html"><i class="material-icons-outlined">arrow_right</i>Feather
-                  Icons</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">Forms & Tables</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">toc</i>
-              </div>
-              <div class="menu-title">Forms</div>
-            </a>
-            <ul>
-              <li><a href="form-elements.html"><i class="material-icons-outlined">arrow_right</i>Form Elements</a>
-              </li>
-              <li><a href="form-input-group.html"><i class="material-icons-outlined">arrow_right</i>Input Groups</a>
-              </li>
-              <li><a href="form-radios-and-checkboxes.html"><i class="material-icons-outlined">arrow_right</i>Radios &
-                  Checkboxes</a>
-              </li>
-              <li><a href="form-layouts.html"><i class="material-icons-outlined">arrow_right</i>Forms Layouts</a>
-              </li>
-              <li><a href="form-validations.html"><i class="material-icons-outlined">arrow_right</i>Form Validation</a>
-              </li>
-              <li><a href="form-wizard.html"><i class="material-icons-outlined">arrow_right</i>Form Wizard</a>
-              </li>
-              <li><a href="form-file-upload.html"><i class="material-icons-outlined">arrow_right</i>File Upload</a>
-              </li>
-              <li><a href="form-date-time-pickes.html"><i class="material-icons-outlined">arrow_right</i>Date
-                  Pickers</a>
-              </li>
-              <li><a href="form-select2.html"><i class="material-icons-outlined">arrow_right</i>Select2</a>
-              </li>
-              <li><a href="form-repeater.html"><i class="material-icons-outlined">arrow_right</i>Form Repeater</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">api</i>
-              </div>
-              <div class="menu-title">Tables</div>
-            </a>
-            <ul>
-              <li><a href="table-basic-table.html"><i class="material-icons-outlined">arrow_right</i>Basic Table</a>
-              </li>
-              <li><a href="table-datatable.html"><i class="material-icons-outlined">arrow_right</i>Data Table</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">Pages</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">lock</i>
-              </div>
-              <div class="menu-title">Authentication</div>
-            </a>
-            <ul>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Basic</a>
-                <ul>
-                  <li><a href="auth-basic-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                  <li><a href="auth-basic-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                  <li><a href="auth-basic-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                  <li><a href="auth-basic-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                </ul>
-              </li>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Cover</a>
-                <ul>
-                  <li><a href="auth-cover-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                  <li><a href="auth-cover-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                  <li><a href="auth-cover-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                  <li><a href="auth-cover-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                </ul>
-              </li>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Boxed</a>
-                  <ul>
-                    <li><a href="auth-boxed-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                    <li><a href="auth-boxed-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                    <li><a href="auth-boxed-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                    <li><a href="auth-boxed-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                  </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="user-profile.html">
-              <div class="parent-icon"><i class="material-icons-outlined">person</i>
-              </div>
-              <div class="menu-title">User Profile</div>
-            </a>
-          </li>
-          <li>
-            <a href="timeline.html">
-              <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
-              </div>
-              <div class="menu-title">Timeline</div>
-            </a>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">report_problem</i>
-              </div>
-              <div class="menu-title">Pages</div>
-            </a>
-            <ul>
-              <li><a href="pages-error-404.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>404
-                  Error</a>
-              </li>
-              <li><a href="pages-error-505.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>505
-                  Error</a>
-              </li>
-              <li><a href="pages-coming-soon.html" target="_blank"><i
-                    class="material-icons-outlined">arrow_right</i>Coming Soon</a>
-              </li>
-              <li><a href="pages-starter-page.html" target="_blank"><i
-                    class="material-icons-outlined">arrow_right</i>Blank Page</a> 
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="faq.html">
-              <div class="parent-icon"><i class="material-icons-outlined">help_outline</i>
-              </div>
-              <div class="menu-title">FAQ</div>
-            </a>
-          </li>
-          <li>
-            <a href="pricing-table.html">
-              <div class="parent-icon"><i class="material-icons-outlined">sports_football</i>
-              </div>
-              <div class="menu-title">Pricing</div>
-            </a>
-          </li>
-          <li class="menu-label">Charts & Maps</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">fitbit</i>
-              </div>
-              <div class="menu-title">Charts</div>
-            </a>
-            <ul>
-              <li><a href="charts-apex-chart.html"><i class="material-icons-outlined">arrow_right</i>Apex</a>
-              </li>
-              <li><a href="charts-chartjs.html"><i class="material-icons-outlined">arrow_right</i>Chartjs</a>
-              </li>   
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">sports_football</i>
-              </div>
-              <div class="menu-title">Maps</div>
-            </a>
-            <ul>
-              <li><a href="map-google-maps.html"><i class="material-icons-outlined">arrow_right</i>Google Maps</a>
-              </li>
-              <li><a href="map-vector-maps.html"><i class="material-icons-outlined">arrow_right</i>Vector Maps</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">Others</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">face_5</i>
-              </div>
-              <div class="menu-title">Menu Levels</div>
-            </a>
-            <ul>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level
-                  One</a>
-                <ul>
-                  <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level
-                      Two</a>
-                    <ul>
-                      <li><a href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level Three</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascrpt:;">
-              <div class="parent-icon"><i class="material-icons-outlined">description</i>
-              </div>
-              <div class="menu-title">Documentation</div>
-            </a>
-          </li>
-          <li>
-            <a href="javascrpt:;">
-              <div class="parent-icon"><i class="material-icons-outlined">support</i>
-              </div>
-              <div class="menu-title">Support</div>
-            </a>
-          </li>
-         </ul>
-        <!--end navigation-->
-    </div>
-  </aside>
-<!--end sidebar-->
+
+  <?php
+  require('assets/partials/_navbar.php');
+
+  ?>
+
+  <!--end sidebar-->
 
 
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
       <!--breadcrumb-->
-				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Components</div>
-					<div class="ps-3">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb mb-0 p-0">
-								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-								</li>
-								<li class="breadcrumb-item active" aria-current="page">User Profile</li>
-							</ol>
-						</nav>
-					</div>
-					<div class="ms-auto">
-						<div class="btn-group">
-							<button type="button" class="btn btn-primary">Settings</button>
-							<button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-							</button>
-							<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-								<a class="dropdown-item" href="javascript:;">Another action</a>
-								<a class="dropdown-item" href="javascript:;">Something else here</a>
-								<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--end breadcrumb-->
-      
-
-        <div class="card rounded-4">
-          <div class="card-body p-4">
-             <div class="position-relative mb-5">
-              <img src="assets/images/gallery/profile-cover.png" class="img-fluid rounded-4 shadow" alt="">
-              <div class="profile-avatar position-absolute top-100 start-50 translate-middle">
-                <img src="assets/images/avatars/01.png" class="img-fluid rounded-circle p-1 bg-grd-danger shadow" width="170" height="170" alt="">
-              </div>
-             </div>
-              <div class="profile-info pt-5 d-flex align-items-center justify-content-between">
-                <div class="">
-                  <h3>Jhon Deo</h3>
-                  <p class="mb-0">Engineer at BB Agency Industry<br>
-                   New York, United States</p>
-                </div>
-                <div class="">
-                  <a href="javascript:;" class="btn btn-grd-primary rounded-5 px-4"><i class="bi bi-chat me-2"></i>Send Message</a>
-                </div>
-              </div>
-              <div class="kewords d-flex align-items-center gap-3 mt-4 overflow-x-auto">
-                 <button type="button" class="btn btn-sm btn-light rounded-5 px-4">UX Research</button>
-                 <button type="button" class="btn btn-sm btn-light rounded-5 px-4">CX Strategy</button>
-                 <button type="button" class="btn btn-sm btn-light rounded-5 px-4">Management</button>
-              </div>
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+        <div class="breadcrumb-title pe-3">Components</div>
+        <div class="ps-3">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+              <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="ms-auto">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary">Settings</button>
+            <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"> <a class="dropdown-item" href="javascript:;">Action</a>
+              <a class="dropdown-item" href="javascript:;">Another action</a>
+              <a class="dropdown-item" href="javascript:;">Something else here</a>
+              <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Separated link</a>
+            </div>
           </div>
         </div>
+      </div>
+      <!--end breadcrumb-->
 
-        <div class="row">
-           <div class="col-12 col-xl-8">
-            <div class="card rounded-4 border-top border-4 border-primary border-gradient-1">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-start justify-content-between mb-3">
-                  <div class="">
-                    <h5 class="mb-0 fw-bold">Edit Profile</h5>
-                  </div>
-                  <div class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
-                      data-bs-toggle="dropdown">
-                      <span class="material-icons-outlined fs-5">more_vert</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                    </ul>
-                  </div>
-                 </div>
-								<form class="row g-4">
-									<div class="col-md-6">
-										<label for="input1" class="form-label">First Name</label>
-										<input type="text" class="form-control" id="input1" placeholder="First Name">
-									</div>
-									<div class="col-md-6">
-										<label for="input2" class="form-label">Last Name</label>
-										<input type="text" class="form-control" id="input2" placeholder="Last Name">
-									</div>
-									<div class="col-md-12">
-										<label for="input3" class="form-label">Phone</label>
-										<input type="text" class="form-control" id="input3" placeholder="Phone">
-									</div>
-									<div class="col-md-12">
-										<label for="input4" class="form-label">Email</label>
-										<input type="email" class="form-control" id="input4">
-									</div>
-									<div class="col-md-12">
-										<label for="input5" class="form-label">Password</label>
-										<input type="password" class="form-control" id="input5">
-									</div>
-									<div class="col-md-12">
-										<label for="input6" class="form-label">DOB</label>
-										<input type="date" class="form-control" id="input6">
-									</div>
-									<div class="col-md-12">
-										<label for="input7" class="form-label">Country</label>
-										<select id="input7" class="form-select">
-											<option selected="">Choose...</option>
-											<option>One</option>
-											<option>Two</option>
-											<option>Three</option>
-										</select>
-									</div>
-									
-									<div class="col-md-6">
-										<label for="input8" class="form-label">City</label>
-										<input type="text" class="form-control" id="input8" placeholder="City">
-									</div>
-									<div class="col-md-4">
-										<label for="input9" class="form-label">State</label>
-										<select id="input9" class="form-select">
-											<option selected="">Choose...</option>
-											<option>One</option>
-											<option>Two</option>
-											<option>Three</option>
-										</select>
-									</div>
-									<div class="col-md-2">
-										<label for="input10" class="form-label">Zip</label>
-										<input type="text" class="form-control" id="input10" placeholder="Zip">
-									</div>
-									<div class="col-md-12">
-										<label for="input11" class="form-label">Address</label>
-										<textarea class="form-control" id="input11" placeholder="Address ..." rows="4" cols="4"></textarea>
-									</div>
-									<div class="col-md-12">
-										<div class="d-md-flex d-grid align-items-center gap-3">
-											<button type="button" class="btn btn-grd-primary px-4">Update Profile</button>
-											<button type="button" class="btn btn-light px-4">Reset</button>
-										</div>
-									</div>
-								</form>
-							</div>
+
+      <div class="card rounded-4">
+        <div class="card-body p-4">
+          <div class="position-relative mb-5">
+            <img src="assets/images/gallery/profile-cover.png" class="img-fluid rounded-4 shadow" alt="">
+            <div class="profile-avatar position-absolute top-100 start-50 translate-middle">
+              <img src="assets/images/avatars/01.png" class="img-fluid rounded-circle p-1 bg-grd-danger shadow" width="170" height="170" alt="">
             </div>
-           </div>  
-           <div class="col-12 col-xl-4">
-            <div class="card rounded-4">
-              <div class="card-body">
-                <div class="d-flex align-items-start justify-content-between mb-3">
-                  <div class="">
-                    <h5 class="mb-0 fw-bold">About</h5>
+          </div>
+          <div class="profile-info pt-5 d-flex align-items-center justify-content-between">
+            <div class="">
+              <h3>Jhon Deo</h3>
+              <p class="mb-0">Engineer at BB Agency Industry<br>
+                New York, United States</p>
+            </div>
+            <div class="">
+              <a href="javascript:;" class="btn btn-grd-primary rounded-5 px-4"><i class="bi bi-chat me-2"></i>Send Message</a>
+            </div>
+          </div>
+          <div class="kewords d-flex align-items-center gap-3 mt-4 overflow-x-auto">
+            <button type="button" class="btn btn-sm btn-light rounded-5 px-4">UX Research</button>
+            <button type="button" class="btn btn-sm btn-light rounded-5 px-4">CX Strategy</button>
+            <button type="button" class="btn btn-sm btn-light rounded-5 px-4">Management</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-xl-8">
+          <div class="card rounded-4 border-top border-4 border-primary border-gradient-1">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <div class="">
+                  <h5 class="mb-0 fw-bold">Edit Profile</h5>
+                </div>
+                <div class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
+                    data-bs-toggle="dropdown">
+                    <span class="material-icons-outlined fs-5">more_vert</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="javascript:;">Action</a></li>
+                    <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+                    <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+                  </ul>
+                </div>
+              </div>
+              <form class="row g-4">
+                <div class="col-md-6">
+                  <label for="input1" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="input1" placeholder="First Name">
+                </div>
+                <div class="col-md-6">
+                  <label for="input2" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="input2" placeholder="Last Name">
+                </div>
+                <div class="col-md-12">
+                  <label for="input3" class="form-label">Phone</label>
+                  <input type="text" class="form-control" id="input3" placeholder="Phone">
+                </div>
+                <div class="col-md-12">
+                  <label for="input4" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="input4">
+                </div>
+                <div class="col-md-12">
+                  <label for="input5" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="input5">
+                </div>
+                <div class="col-md-12">
+                  <label for="input6" class="form-label">DOB</label>
+                  <input type="date" class="form-control" id="input6">
+                </div>
+                <div class="col-md-12">
+                  <label for="input7" class="form-label">Country</label>
+                  <select id="input7" class="form-select">
+                    <option selected="">Choose...</option>
+                    <option>One</option>
+                    <option>Two</option>
+                    <option>Three</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="input8" class="form-label">City</label>
+                  <input type="text" class="form-control" id="input8" placeholder="City">
+                </div>
+                <div class="col-md-4">
+                  <label for="input9" class="form-label">State</label>
+                  <select id="input9" class="form-select">
+                    <option selected="">Choose...</option>
+                    <option>One</option>
+                    <option>Two</option>
+                    <option>Three</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label for="input10" class="form-label">Zip</label>
+                  <input type="text" class="form-control" id="input10" placeholder="Zip">
+                </div>
+                <div class="col-md-12">
+                  <label for="input11" class="form-label">Address</label>
+                  <textarea class="form-control" id="input11" placeholder="Address ..." rows="4" cols="4"></textarea>
+                </div>
+                <div class="col-md-12">
+                  <div class="d-md-flex d-grid align-items-center gap-3">
+                    <button type="button" class="btn btn-grd-primary px-4">Update Profile</button>
+                    <button type="button" class="btn btn-light px-4">Reset</button>
                   </div>
-                  <div class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
-                      data-bs-toggle="dropdown">
-                      <span class="material-icons-outlined fs-5">more_vert</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                    </ul>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-xl-4">
+          <div class="card rounded-4">
+            <div class="card-body">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <div class="">
+                  <h5 class="mb-0 fw-bold">About</h5>
+                </div>
+                <div class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
+                    data-bs-toggle="dropdown">
+                    <span class="material-icons-outlined fs-5">more_vert</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="javascript:;">Action</a></li>
+                    <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+                    <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="full-info">
+                <div class="info-list d-flex flex-column gap-3">
+                  <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">account_circle</span>
+                    <p class="mb-0">Full Name: Jhon Deo</p>
                   </div>
-                 </div>
-                 <div class="full-info">
-                  <div class="info-list d-flex flex-column gap-3">
-                    <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">account_circle</span><p class="mb-0">Full Name: Jhon Deo</p></div>
-                    <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">done</span><p class="mb-0">Status: active</p></div>
-                    <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">code</span><p class="mb-0">Role: Developer</p></div>
-                    <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">flag</span><p class="mb-0">Country: USA</p></div>
-                    <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">language</span><p class="mb-0">Language: English</p></div>
-                    <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">send</span><p class="mb-0">Email: jhon.xyz</p></div>
-                    <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">call</span><p class="mb-0">Phone: (124) 895-6724</p></div>
+                  <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">done</span>
+                    <p class="mb-0">Status: active</p>
+                  </div>
+                  <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">code</span>
+                    <p class="mb-0">Role: Developer</p>
+                  </div>
+                  <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">flag</span>
+                    <p class="mb-0">Country: USA</p>
+                  </div>
+                  <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">language</span>
+                    <p class="mb-0">Language: English</p>
+                  </div>
+                  <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">send</span>
+                    <p class="mb-0">Email: jhon.xyz</p>
+                  </div>
+                  <div class="info-list-item d-flex align-items-center gap-3"><span class="material-icons-outlined">call</span>
+                    <p class="mb-0">Phone: (124) 895-6724</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="card rounded-4">
-              <div class="card-body">
-                <div class="d-flex align-items-start justify-content-between mb-3">
-                  <div class="">
-                    <h5 class="mb-0 fw-bold">Accounts</h5>
-                  </div>
-                  <div class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
-                      data-bs-toggle="dropdown">
-                      <span class="material-icons-outlined fs-5">more_vert</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                    </ul>
-                  </div>
-                 </div>
+          </div>
+          <div class="card rounded-4">
+            <div class="card-body">
+              <div class="d-flex align-items-start justify-content-between mb-3">
+                <div class="">
+                  <h5 class="mb-0 fw-bold">Accounts</h5>
+                </div>
+                <div class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
+                    data-bs-toggle="dropdown">
+                    <span class="material-icons-outlined fs-5">more_vert</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="javascript:;">Action</a></li>
+                    <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+                    <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+                  </ul>
+                </div>
+              </div>
 
-                <div class="account-list d-flex flex-column gap-4">
-                  <div class="account-list-item d-flex align-items-center gap-3">
-                    <img src="assets/images/apps/05.png" width="35" alt="">
-                    <div class="flex-grow-1">
-                      <h6 class="mb-0">Google</h6>
-                      <p class="mb-0">Events and Reserch</p>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" checked>
-                    </div>
+              <div class="account-list d-flex flex-column gap-4">
+                <div class="account-list-item d-flex align-items-center gap-3">
+                  <img src="assets/images/apps/05.png" width="35" alt="">
+                  <div class="flex-grow-1">
+                    <h6 class="mb-0">Google</h6>
+                    <p class="mb-0">Events and Reserch</p>
                   </div>
-                  <div class="account-list-item d-flex align-items-center gap-3">
-                    <img src="assets/images/apps/02.png" width="35" alt="">
-                    <div class="flex-grow-1">
-                      <h6 class="mb-0">Skype</h6>
-                      <p class="mb-0">Events and Reserch</p>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" checked>
-                    </div>
-                  </div>
-                  <div class="account-list-item d-flex align-items-center gap-3">
-                    <img src="assets/images/apps/03.png" width="35" alt="">
-                    <div class="flex-grow-1">
-                      <h6 class="mb-0">Slack</h6>
-                      <p class="mb-0">Communication</p>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" checked>
-                    </div>
-                  </div>
-                  <div class="account-list-item d-flex align-items-center gap-3">
-                    <img src="assets/images/apps/06.png" width="35" alt="">
-                    <div class="flex-grow-1">
-                      <h6 class="mb-0">Instagram</h6>
-                      <p class="mb-0">Social Network</p>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" checked>
-                    </div>
-                  </div>
-                  <div class="account-list-item d-flex align-items-center gap-3">
-                    <img src="assets/images/apps/17.png" width="35" alt="">
-                    <div class="flex-grow-1">
-                      <h6 class="mb-0">Facebook</h6>
-                      <p class="mb-0">Social Network</p>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" checked>
-                    </div>
-                  </div>
-                  <div class="account-list-item d-flex align-items-center gap-3">
-                    <img src="assets/images/apps/11.png" width="35" alt="">
-                    <div class="flex-grow-1">
-                      <h6 class="mb-0">Paypal</h6>
-                      <p class="mb-0">Social Network</p>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" checked>
-                    </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked>
                   </div>
                 </div>
-
-
-
+                <div class="account-list-item d-flex align-items-center gap-3">
+                  <img src="assets/images/apps/02.png" width="35" alt="">
+                  <div class="flex-grow-1">
+                    <h6 class="mb-0">Skype</h6>
+                    <p class="mb-0">Events and Reserch</p>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked>
+                  </div>
+                </div>
+                <div class="account-list-item d-flex align-items-center gap-3">
+                  <img src="assets/images/apps/03.png" width="35" alt="">
+                  <div class="flex-grow-1">
+                    <h6 class="mb-0">Slack</h6>
+                    <p class="mb-0">Communication</p>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked>
+                  </div>
+                </div>
+                <div class="account-list-item d-flex align-items-center gap-3">
+                  <img src="assets/images/apps/06.png" width="35" alt="">
+                  <div class="flex-grow-1">
+                    <h6 class="mb-0">Instagram</h6>
+                    <p class="mb-0">Social Network</p>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked>
+                  </div>
+                </div>
+                <div class="account-list-item d-flex align-items-center gap-3">
+                  <img src="assets/images/apps/17.png" width="35" alt="">
+                  <div class="flex-grow-1">
+                    <h6 class="mb-0">Facebook</h6>
+                    <p class="mb-0">Social Network</p>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked>
+                  </div>
+                </div>
+                <div class="account-list-item d-flex align-items-center gap-3">
+                  <img src="assets/images/apps/11.png" width="35" alt="">
+                  <div class="flex-grow-1">
+                    <h6 class="mb-0">Paypal</h6>
+                    <p class="mb-0">Social Network</p>
+                  </div>
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" checked>
+                  </div>
+                </div>
               </div>
-            </div>
 
-           </div>
-        </div><!--end row-->
-       
+
+
+            </div>
+          </div>
+
+        </div>
+      </div><!--end row-->
+
 
 
     </div>
@@ -1250,16 +920,16 @@
   <!--end main wrapper-->
 
 
-    <!--start overlay-->
-    <div class="overlay btn-toggle"></div>
-    <!--end overlay-->
+  <!--start overlay-->
+  <div class="overlay btn-toggle"></div>
+  <!--end overlay-->
 
 
-     <!--start footer-->
-     <footer class="page-footer">
-      <p class="mb-0">Copyright © 2024. All right reserved.</p>
-    </footer>
-    <!--top footer-->
+  <!--start footer-->
+  <footer class="page-footer">
+    <p class="mb-0">Copyright © 2024. All right reserved.</p>
+  </footer>
+  <!--top footer-->
   <!--start cart-->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
     <div class="offcanvas-header border-bottom h-70">
@@ -1396,7 +1066,7 @@
   <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>Customize
   </button>
-  
+
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
     <div class="offcanvas-header border-bottom h-70">
       <div class="">

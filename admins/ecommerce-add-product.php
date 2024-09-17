@@ -1,3 +1,62 @@
+
+<?php
+// Process form data and save to a file or a database
+if(isset($_POST["submit"])){
+  $description = $_POST["description"];
+  $category = $_POST["category"];
+  $brand = $_POST["brand"];
+  $color= $_POST["color"];
+  $size = $_POST["size"];
+
+  //For uploads photos
+  $upload_dir = "uploads/"; //this is where the uploaded photo stored
+  $product_image = $upload_dir.$_FILES["imageUpload"]["name"];
+  $upload_dir.$_FILES["imageUpload"]["name"];
+  $upload_file = $upload_dir.basename($_FILES["imageUpload"]["name"]);
+  $imageType = strtolower(pathinfo($upload_file,PATHINFO_EXTENSION)); //used to detected the image format
+  $check = $_FILES["imageUpload"]["size"]; // to detect the size of the image
+  $upload_ok = 0;
+
+  if(file_exists($upload_file)){
+      echo "<script>alert('The file already exist')</script>";
+      $upload_ok = 0;
+  }else{
+      $upload_ok = 1;
+      if($check !== false){
+        $upload_ok = 1;
+        if($imageType == 'jpg' || $imageType == 'png' || $imageType == 'jpeg' || $imageType == 'gif'){
+            $upload_ok = 1;
+        }else{
+            echo '<script>alert("please change the image format")</script>';
+        }
+      }else{
+          echo '<script>alert("The photo size is 0 please change the photo ")</script>';
+          $upload_ok = 0;
+      }
+  }
+
+  if($upload_ok == 0){
+     echo '<script>alert("sorry your file is doesn\'t uploaded. Please try again")</script>';
+  }else{
+      if($productname != "" && $price !=""){
+          move_uploaded_file($_FILES["imageUpload"]["tmp_name"],$upload_file);
+
+          $sql = "INSERT INTO product(product_name,price,discount,product_image)
+          VALUES('$productname',$price,$discount,'$product_image')";
+
+          if($conn->query($sql) === TRUE){
+              echo "<script>alert('your product uploaded successfully')</script>";
+          }
+      }
+  }
+
+
+  
+}
+?>
+
+
+
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
@@ -14,8 +73,8 @@
   <!--plugins-->
   <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
+  <link href="assets/plugins/fancy-file-uploader/fancy_fileupload.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
-  <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
   <!--bootstrap css-->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -24,6 +83,7 @@
   <!--main css-->
   <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
   <link href="sass/main.css" rel="stylesheet">
+  <link href="assets/css/horizontal-menu.css" rel="stylesheet">
   <link href="sass/dark-theme.css" rel="stylesheet">
   <link href="sass/blue-theme.css" rel="stylesheet">
   <link href="sass/semi-dark.css" rel="stylesheet">
@@ -34,13 +94,21 @@
 
 <body>
 
-<!--start header-->
-<header class="top-header">
-  <nav class="navbar navbar-expand align-items-center gap-4">
-    <div class="btn-toggle">
+  <!--start header-->
+ <header class="top-header">
+  <nav class="navbar navbar-expand align-items-center justify-content-between gap-4 border-bottom">
+    <div class="logo-header d-none d-xl-flex align-items-center gap-2">
+      <div class="logo-icon">
+        <img src="assets/images/logo-icon.png" class="logo-img" width="45" alt="">
+      </div>
+      <div class="logo-name">
+        <h5 class="mb-0">Maxton</h5>
+      </div>
+    </div>
+    <div class="btn-toggle d-xl-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
       <a href="javascript:;"><i class="material-icons-outlined">menu</i></a>
     </div>
-    <div class="search-bar flex-grow-1">
+    <div class="search-bar">
       <div class="position-relative">
         <input class="form-control rounded-5 px-5 search-control d-lg-block d-none" type="text" placeholder="Search">
         <span class="material-icons-outlined position-absolute d-lg-block d-none ms-3 translate-middle-y start-0 top-50">search</span>
@@ -623,359 +691,238 @@
   </nav>
 </header>
 <!--end top header-->
+<!-- sidebar -->
+ <?php
+ 
+ require 'assets/partials/_navbar.php'
+ ?>
+<!-- sidebar -->
 
-<!--start sidebar-->
-<aside class="sidebar-wrapper" data-simplebar="true">
-  <div class="sidebar-header">
-    <div class="logo-icon">
-      <img src="assets/images/logo-icon.png" class="logo-img" alt="">
-    </div>
-    <div class="logo-name flex-grow-1">
-      <h5 class="mb-0">Maxton</h5>
-    </div>
-    <div class="sidebar-close">
-      <span class="material-icons-outlined">close</span>
-    </div>
-  </div>
-  <div class="sidebar-nav">
-      <!--navigation-->
-      <ul class="metismenu" id="sidenav">
-        <li>
-          <a href="javascript:;" class="has-arrow">
-            <div class="parent-icon"><i class="material-icons-outlined">home</i>
-            </div>
-            <div class="menu-title">Dashboard</div>
-          </a>
-          <ul>
-            <li><a href="index.html"><i class="material-icons-outlined">arrow_right</i>Analysis</a>
-            </li>
-            <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>eCommerce</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="javascript:;" class="has-arrow">
-            <div class="parent-icon"><i class="material-icons-outlined">widgets</i>
-            </div>
-            <div class="menu-title">Widgets</div>
-          </a>
-          <ul>
-            <li><a href="widgets-data.html"><i class="material-icons-outlined">arrow_right</i>Data</a>
-            </li>
-            <li><a href="widgets-static.html"><i class="material-icons-outlined">arrow_right</i>Static</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">apps</i>
-            </div>
-            <div class="menu-title">Apps</div>
-          </a>
-          <ul>
-            <li><a href="app-emailbox.html"><i class="material-icons-outlined">arrow_right</i>Email Box</a>
-            </li>
-            <li><a href="app-emailread.html"><i class="material-icons-outlined">arrow_right</i>Email Read</a>
-            </li>
-            <li><a href="app-chat-box.html"><i class="material-icons-outlined">arrow_right</i>Chat</a>
-            </li>
-            <li><a href="app-fullcalender.html"><i class="material-icons-outlined">arrow_right</i>Calendar</a>
-            </li>
-            <li><a href="app-to-do.html"><i class="material-icons-outlined">arrow_right</i>To do</a>
-            </li>
-            <li><a href="app-invoice.html"><i class="material-icons-outlined">arrow_right</i>Invoice</a>
-            </li>
-          </ul>
-        </li>
-        <li class="menu-label">UI Elements</li>
-        <li>
-          <a href="cards.html">
-            <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i>
-            </div>
-            <div class="menu-title">Cards</div>
-          </a>
-        </li>
-        
-        <li>
-          <a href="javascript:;" class="has-arrow">
-            <div class="parent-icon"><i class="material-icons-outlined">shopping_bag</i>
-            </div>
-            <div class="menu-title">eCommerce</div>
-          </a>
-          <ul>
-            <li><a href="ecommerce-add-product.html"><i class="material-icons-outlined">arrow_right</i>Add Product</a>
-            </li>
-            <li><a href="ecommerce-products.html"><i class="material-icons-outlined">arrow_right</i>Products</a>
-            </li>
-            <li><a href="ecommerce-customers.html"><i class="material-icons-outlined">arrow_right</i>Customers</a>
-            </li>
-            <li><a href="ecommerce-customer-details.html"><i class="material-icons-outlined">arrow_right</i>Customer Details</a>
-            </li>
-            <li><a href="ecommerce-orders.html"><i class="material-icons-outlined">arrow_right</i>Orders</a>
-            </li>
-            <li><a href="ecommerce-order-details.html"><i class="material-icons-outlined">arrow_right</i>Order Details</a>
-            </li>
-          </ul>     
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">card_giftcard</i>
-            </div>
-            <div class="menu-title">Components</div>
-          </a>
-          <ul>
-            <li><a href="component-alerts.html"><i class="material-icons-outlined">arrow_right</i>Alerts</a>
-            </li>
-            <li><a href="component-accordions.html"><i class="material-icons-outlined">arrow_right</i>Accordions</a>
-            </li>
-            <li><a href="component-badges.html"><i class="material-icons-outlined">arrow_right</i>Badges</a>
-            </li>
-            <li><a href="component-buttons.html"><i class="material-icons-outlined">arrow_right</i>Buttons</a>
-            </li>
-            <li><a href="component-carousels.html"><i class="material-icons-outlined">arrow_right</i>Carousels</a>
-            </li>
-            <li><a href="component-media-object.html"><i class="material-icons-outlined">arrow_right</i>Media
-                Objects</a>
-            </li>
-            <li><a href="component-modals.html"><i class="material-icons-outlined">arrow_right</i>Modals</a>
-            </li>
-            <li><a href="component-navs-tabs.html"><i class="material-icons-outlined">arrow_right</i>Navs & Tabs</a>
-            </li>
-            <li><a href="component-navbar.html"><i class="material-icons-outlined">arrow_right</i>Navbar</a>
-            </li>
-            <li><a href="component-paginations.html"><i class="material-icons-outlined">arrow_right</i>Pagination</a>
-            </li>
-            <li><a href="component-popovers-tooltips.html"><i class="material-icons-outlined">arrow_right</i>Popovers
-                & Tooltips</a>    
-            </li>
-            <li><a href="component-progress-bars.html"><i class="material-icons-outlined">arrow_right</i>Progress</a>
-            </li>
-            <li><a href="component-spinners.html"><i class="material-icons-outlined">arrow_right</i>Spinners</a>
-            </li>
-            <li><a href="component-notifications.html"><i
-                  class="material-icons-outlined">arrow_right</i>Notifications</a>
-            </li>
-            <li><a href="component-avtars-chips.html"><i class="material-icons-outlined">arrow_right</i>Avatrs &
-                Chips</a>
-            </li>
-            <li><a href="component-typography.html"><i class="material-icons-outlined">arrow_right</i>Typography</a>
-             </li>
-             <li><a href="component-text-utilities.html"><i class="material-icons-outlined">arrow_right</i>Utilities</a>
-             </li>
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">view_agenda</i>
-            </div>
-            <div class="menu-title">Icons</div>
-          </a>
-          <ul>
-            <li><a href="icons-line-icons.html"><i class="material-icons-outlined">arrow_right</i>Line Icons</a>
-            </li>
-            <li><a href="icons-boxicons.html"><i class="material-icons-outlined">arrow_right</i>Boxicons</a>
-            </li>
-            <li><a href="icons-feather-icons.html"><i class="material-icons-outlined">arrow_right</i>Feather
-                Icons</a>
-            </li>
-          </ul>
-        </li>
-        <li class="menu-label">Forms & Tables</li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">toc</i>
-            </div>
-            <div class="menu-title">Forms</div>
-          </a>
-          <ul>
-            <li><a href="form-elements.html"><i class="material-icons-outlined">arrow_right</i>Form Elements</a>
-            </li>
-            <li><a href="form-input-group.html"><i class="material-icons-outlined">arrow_right</i>Input Groups</a>
-            </li>
-            <li><a href="form-radios-and-checkboxes.html"><i class="material-icons-outlined">arrow_right</i>Radios &
-                Checkboxes</a>
-            </li>
-            <li><a href="form-layouts.html"><i class="material-icons-outlined">arrow_right</i>Forms Layouts</a>
-            </li>
-            <li><a href="form-validations.html"><i class="material-icons-outlined">arrow_right</i>Form Validation</a>
-            </li>
-            <li><a href="form-wizard.html"><i class="material-icons-outlined">arrow_right</i>Form Wizard</a>
-            </li>
-            <li><a href="form-file-upload.html"><i class="material-icons-outlined">arrow_right</i>File Upload</a>
-            </li>
-            <li><a href="form-date-time-pickes.html"><i class="material-icons-outlined">arrow_right</i>Date
-                Pickers</a>
-            </li>
-            <li><a href="form-select2.html"><i class="material-icons-outlined">arrow_right</i>Select2</a>
-            </li>
-            <li><a href="form-repeater.html"><i class="material-icons-outlined">arrow_right</i>Form Repeater</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">api</i>
-            </div>
-            <div class="menu-title">Tables</div>
-          </a>
-          <ul>
-            <li><a href="table-basic-table.html"><i class="material-icons-outlined">arrow_right</i>Basic Table</a>
-            </li>
-            <li><a href="table-datatable.html"><i class="material-icons-outlined">arrow_right</i>Data Table</a>
-            </li>
-          </ul>
-        </li>
-        <li class="menu-label">Pages</li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">lock</i>
-            </div>
-            <div class="menu-title">Authentication</div>
-          </a>
-          <ul>
-            <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Basic</a>
-              <ul>
-                <li><a href="auth-basic-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                <li><a href="auth-basic-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                <li><a href="auth-basic-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                <li><a href="auth-basic-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-              </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Cover</a>
-              <ul>
-                <li><a href="auth-cover-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                <li><a href="auth-cover-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                <li><a href="auth-cover-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                <li><a href="auth-cover-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-              </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Boxed</a>
-                <ul>
-                  <li><a href="auth-boxed-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                  <li><a href="auth-boxed-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                  <li><a href="auth-boxed-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                  <li><a href="auth-boxed-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="user-profile.html">
-            <div class="parent-icon"><i class="material-icons-outlined">person</i>
-            </div>
-            <div class="menu-title">User Profile</div>
-          </a>
-        </li>
-        <li>
-          <a href="timeline.html">
-            <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
-            </div>
-            <div class="menu-title">Timeline</div>
-          </a>
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">report_problem</i>
-            </div>
-            <div class="menu-title">Pages</div>
-          </a>
-          <ul>
-            <li><a href="pages-error-404.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>404
-                Error</a>
-            </li>
-            <li><a href="pages-error-505.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>505
-                Error</a>
-            </li>
-            <li><a href="pages-coming-soon.html" target="_blank"><i
-                  class="material-icons-outlined">arrow_right</i>Coming Soon</a>
-            </li>
-            <li><a href="pages-starter-page.html" target="_blank"><i
-                  class="material-icons-outlined">arrow_right</i>Blank Page</a> 
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="faq.html">
-            <div class="parent-icon"><i class="material-icons-outlined">help_outline</i>
-            </div>
-            <div class="menu-title">FAQ</div>
-          </a>
-        </li>
-        <li>
-          <a href="pricing-table.html">
-            <div class="parent-icon"><i class="material-icons-outlined">sports_football</i>
-            </div>
-            <div class="menu-title">Pricing</div>
-          </a>
-        </li>
-        <li class="menu-label">Charts & Maps</li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">fitbit</i>
-            </div>
-            <div class="menu-title">Charts</div>
-          </a>
-          <ul>
-            <li><a href="charts-apex-chart.html"><i class="material-icons-outlined">arrow_right</i>Apex</a>
-            </li>
-            <li><a href="charts-chartjs.html"><i class="material-icons-outlined">arrow_right</i>Chartjs</a>
-            </li>   
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">sports_football</i>
-            </div>
-            <div class="menu-title">Maps</div>
-          </a>
-          <ul>
-            <li><a href="map-google-maps.html"><i class="material-icons-outlined">arrow_right</i>Google Maps</a>
-            </li>
-            <li><a href="map-vector-maps.html"><i class="material-icons-outlined">arrow_right</i>Vector Maps</a>
-            </li>
-          </ul>
-        </li>
-        <li class="menu-label">Others</li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">face_5</i>
-            </div>
-            <div class="menu-title">Menu Levels</div>
-          </a>
-          <ul>
-            <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level
-                One</a>
-              <ul>
-                <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level
-                    Two</a>
-                  <ul>
-                    <li><a href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level Three</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="javascrpt:;">
-            <div class="parent-icon"><i class="material-icons-outlined">description</i>
-            </div>
-            <div class="menu-title">Documentation</div>
-          </a>
-        </li>
-        <li>
-          <a href="javascrpt:;">
-            <div class="parent-icon"><i class="material-icons-outlined">support</i>
-            </div>
-            <div class="menu-title">Support</div>
-          </a>
-        </li>
+<!--navigation-->
+<div class="primary-menu">
+  <nav class="navbar navbar-expand-xl align-items-center">
+   <div class="offcanvas offcanvas-start w-260" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+   <div class="offcanvas-header border-bottom h-70">
+     <div class="d-flex align-items-center gap-2">
+       <div class="">
+         <img src="assets/images/logo-icon.png" class="logo-icon" width="45" alt="logo icon">
+       </div>
+       <div class="">
+         <h4 class="logo-text">Maxton</h4>
+       </div>
+     </div>
+     <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
+      <i class="material-icons-outlined">close</i>
+     </a>
+   </div>
+   <div class="offcanvas-body p-0">
+     <ul class="navbar-nav align-items-center flex-grow-1">
+     <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
+         <div class="parent-icon"><i class="material-icons-outlined">home</i>
+         </div>
+         <div class="menu-title d-flex align-items-center">Dashboard</div>
+         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
+       </a>
+       <ul class="dropdown-menu">
+         <li><a class="dropdown-item" href="index.html"><i class='material-icons-outlined'>insights</i>Analysis</a></li>
+         <li><a class="dropdown-item" href="index2.html"><i class='material-icons-outlined'>shopping_cart</i>eCommerce</a></li>
        </ul>
-      <!--end navigation-->
-  </div>
-</aside>
-<!--end sidebar-->
+       </li>
+       <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
+         <div class="parent-icon"><i class='material-icons-outlined'>apps</i>
+         </div>
+         <div class="menu-title d-flex align-items-center">Apps & Pages</div>
+         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
+       </a>
+       <ul class="dropdown-menu">
+         <li><a class="dropdown-item" href="app-emailbox.html"><i class='material-icons-outlined'>email</i>Email</a></li>
+         <li><a class="dropdown-item" href="app-chat-box.html"><i class='material-icons-outlined'>chat</i>Chat Box</a></li>
+         <li><a class="dropdown-item" href="app-file-manager.html"><i class='material-icons-outlined'>folder</i>File Manager</a></li>
+         <li><a class="dropdown-item" href="app-to-do.html"><i class='material-icons-outlined'>task</i>Todo</a></li>
+         <li><a class="dropdown-item" href="app-invoice.html"><i class='material-icons-outlined'>description</i>Invoice</a></li>
+         <li class="nav-item dropend">
+         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>layers</i>Pages</a>
+         <ul class="dropdown-menu submenu">
+           <li class="nav-item dropend"><a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>navigate_next</i>Error</a>
+             <ul class="dropdown-menu">
+               <li><a class="dropdown-item" href="pages-error-403.html"><i class='material-icons-outlined'>navigate_next</i>403 Error</a></li>
+               <li><a class="dropdown-item" href="pages-error-404.html"><i class='material-icons-outlined'>navigate_next</i>404 rror</a></li>
+               <li><a class="dropdown-item" href="pages-error-505.html"><i class='material-icons-outlined'>navigate_next</i>505 rror</a></li>
+               <li><a class="dropdown-item" href="pages-coming-soon.html"><i class='material-icons-outlined'>navigate_next</i>Coming Soon</a></li>
+               <li><a class="dropdown-item" href="pages-starter-page.html"><i class='material-icons-outlined'>navigate_next</i>Blank Page</a></li>
+               </ul>
+           </li>
+           <li><a class="dropdown-item" href="user-profile.html"><i class='material-icons-outlined'>navigate_next</i>User Profile</a></li>
+           <li><a class="dropdown-item" href="timeline.html"><i class='material-icons-outlined'>navigate_next</i>Timeline</a></li>
+           <li><a class="dropdown-item" href="faq.html"><i class='material-icons-outlined'>navigate_next</i>FAQ</a></li>
+           <li><a class="dropdown-item" href="pricing-table.html"><i class='material-icons-outlined'>navigate_next</i>Pricing</a></li>
+           </ul>
+         </li>
+       </ul>
+       </li>
+       <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
+         <div class="parent-icon"><i class='material-icons-outlined'>note_alt</i>
+         </div>
+         <div class="menu-title d-flex align-items-center">Forms</div>
+         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
+       </a>
+       <ul class="dropdown-menu">
+         <li> <a class="dropdown-item" href="form-elements.html"><i class='material-icons-outlined'>source</i>Form Elements</a>
+         </li>
+         <li> <a class="dropdown-item" href="form-input-group.html"><i class='material-icons-outlined'>work_outline</i>Input Groups</a>
+         </li>
+         <li> <a class="dropdown-item" href="form-radios-and-checkboxes.html"><i class='material-icons-outlined'>timeline</i>Radios & Checkboxes</a>
+         </li>
+         <li> <a class="dropdown-item" href="form-layouts.html"><i class='material-icons-outlined'>label</i>Forms Layouts</a>
+         </li>
+         <li> <a class="dropdown-item" href="form-validations.html"><i class='material-icons-outlined'>tips_and_updates</i>Form Validation</a>
+         </li>
+         <li> <a class="dropdown-item" href="form-wizard.html"><i class='material-icons-outlined'>dns</i>Form Wizard</a>
+         </li>
+         <li> <a class="dropdown-item" href="form-file-upload.html"><i class='material-icons-outlined'>hourglass_empty</i>File Upload</a>
+         </li>
+         <li> <a class="dropdown-item" href="form-date-time-pickes.html"><i class='material-icons-outlined'>backup</i>Date Pickers</a>
+         </li>
+         <li> <a class="dropdown-item" href="form-select2.html"><i class='material-icons-outlined'>integration_instructions</i>Select2</a>
+         </li>
+         <li> <a class="dropdown-item" href="form-repeater.html"><i class='material-icons-outlined'>mark_as_unread</i>Form Repeater</a>
+         </li>
+       </ul>
+       </li>
+       <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
+         <div class="parent-icon"><i class='material-icons-outlined'>account_circle</i>
+         </div>
+         <div class="menu-title d-flex align-items-center">Authentication</div>
+         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
+       </a>
+       <ul class="dropdown-menu">
+         <li class="nav-item dropend">
+         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>event</i>Basic</a>
+         <ul class="dropdown-menu submenu">
+           <li><a class="dropdown-item" href="auth-basic-login.html"><i class='material-icons-outlined'>navigate_next</i>Sign In</a></li>
+           <li><a class="dropdown-item" href="auth-basic-register.html"><i class='material-icons-outlined'>navigate_next</i>Sign Up</a></li>
+           <li><a class="dropdown-item" href="auth-basic-forgot-password.html"><i class='material-icons-outlined'>navigate_next</i>Forgot Password</a></li>
+           <li><a class="dropdown-item" href="auth-basic-reset-password.html"><i class='material-icons-outlined'>navigate_next</i>Reset Password</a></li>
+           </ul>
+         </li>
+         <li class="nav-item dropend">
+         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>perm_identity</i>Cover</a>
+         <ul class="dropdown-menu submenu">
+           <li><a class="dropdown-item" href="auth-cover-login.html"><i class='material-icons-outlined'>navigate_next</i>Sign In</a></li>
+           <li><a class="dropdown-item" href="auth-cover-register.html"><i class='material-icons-outlined'>navigate_next</i>Sign Up</a></li>
+           <li><a class="dropdown-item" href="auth-cover-forgot-password.html"><i class='material-icons-outlined'>navigate_next</i>Forgot Password</a></li>
+           <li><a class="dropdown-item" href="auth-cover-reset-password.html"><i class='material-icons-outlined'>navigate_next</i>Reset Password</a></li>
+           </ul>
+         </li>
+         <li class="nav-item dropend">
+         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>assignment</i>Boxed</a>
+         <ul class="dropdown-menu submenu">
+           <li><a class="dropdown-item" href="auth-boxed-login.html"><i class='material-icons-outlined'>navigate_next</i>Sign In</a></li>
+           <li><a class="dropdown-item" href="auth-boxed-register.html"><i class='material-icons-outlined'>navigate_next</i>Sign Up</a></li>
+           <li><a class="dropdown-item" href="auth-boxed-forgot-password.html"><i class='material-icons-outlined'>navigate_next</i>Forgot Password</a></li>
+           <li><a class="dropdown-item" href="auth-boxed-reset-password.html"><i class='material-icons-outlined'>navigate_next</i>Reset Password</a></li>
+           </ul>
+         </li>
+       </ul>
+       </li>
+       <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
+         <div class="parent-icon"><i class='material-icons-outlined'>medical_services</i>
+         </div>
+         <div class="menu-title d-flex align-items-center">UI Elements</div>
+         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
+       </a>
+       <ul class="dropdown-menu">
+         <li class="nav-item dropend">
+          <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>widgets</i>Widgets</a>
+          <ul class="dropdown-menu submenu">
+            <li><a class="dropdown-item" href="widgets-data.html"><i class='material-icons-outlined'>navigate_next</i>Data</a></li>
+            <li><a class="dropdown-item" href="widgets-static.html"><i class='material-icons-outlined'>navigate_next</i>Static</a></li>
+            </ul>
+          </li>
+         <li class="nav-item dropend">
+         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>shopping_bag</i>eCommerce</a>
+         <ul class="dropdown-menu submenu">
+           <li><a class="dropdown-item" href="ecommerce-products.html"><i class='material-icons-outlined'>navigate_next</i>Products</a></li>
+           <li><a class="dropdown-item" href="ecommerce-add-product.html"><i class='material-icons-outlined'>navigate_next</i>Add Product</a></li>
+           <li><a class="dropdown-item" href="ecommerce-customers.html"><i class='material-icons-outlined'>navigate_next</i>Customer</a></li>
+           <li><a class="dropdown-item" href="ecommerce-customer-details.html"><i class='material-icons-outlined'>navigate_next</i>Customer Details</a></li>
+           <li><a class="dropdown-item" href="ecommerce-orders.html"><i class='material-icons-outlined'>navigate_next</i>Orders</a></li>
+           <li><a class="dropdown-item" href="ecommerce-order-details.html"><i class='material-icons-outlined'>navigate_next</i>Order Details</a></li>
+           </ul>
+         </li>
+         <li class="nav-item dropend">
+         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>free_breakfast</i>Components</a>
+         <ul class="dropdown-menu scroll-menu">
+           <li><a class="dropdown-item" href="component-alerts.html"><i class='material-icons-outlined'>navigate_next</i>Alerts</a></li>
+           <li><a class="dropdown-item" href="component-accordions.html"><i class='material-icons-outlined'>navigate_next</i>Accordions</a></li>
+           <li><a class="dropdown-item" href="component-badges.html"><i class='material-icons-outlined'>navigate_next</i>Badges</a></li>
+           <li><a class="dropdown-item" href="component-buttons.html"><i class='material-icons-outlined'>navigate_next</i>Buttons</a></li>
+           <li><a class="dropdown-item" href="cards.html"><i class='material-icons-outlined'>navigate_next</i>Cards</a></li>
+           <li><a class="dropdown-item" href="component-carousels.html"><i class='material-icons-outlined'>navigate_next</i>Carousels</a></li>
+           <li><a class="dropdown-item" href="component-media-object.html"><i class='material-icons-outlined'>navigate_next</i>Media Objects</a></li>
+           <li><a class="dropdown-item" href="component-modals.html"><i class='material-icons-outlined'>navigate_next</i>Modals</a></li>
+           <li><a class="dropdown-item" href="component-navs-tabs.html"><i class='material-icons-outlined'>navigate_next</i>Navs & Tabs</a></li>
+           <li><a class="dropdown-item" href="component-navbar.html"><i class='material-icons-outlined'>navigate_next</i>Navbar</a></li>
+           <li><a class="dropdown-item" href="component-paginations.html"><i class='material-icons-outlined'>navigate_next</i>Pagination</a></li>
+           <li><a class="dropdown-item" href="component-popovers-tooltips.html"><i class='material-icons-outlined'>navigate_next</i>Popovers & Tooltips</a></li>
+           <li><a class="dropdown-item" href="component-progress-bars.html"><i class='material-icons-outlined'>navigate_next</i>Progress</a></li>
+           <li><a class="dropdown-item" href="component-spinners.html"><i class='material-icons-outlined'>navigate_next</i>Spinners</a></li>
+           <li><a class="dropdown-item" href="component-notifications.html"><i class='material-icons-outlined'>navigate_next</i>Notifications</a></li>
+           <li><a class="dropdown-item" href="component-avtars-chips.html"><i class='material-icons-outlined'>navigate_next</i>Avatrs & Chips</a></li>
+           </ul>
+         </li>
+         <li class="nav-item dropend">
+         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>cases</i>Icons</a>
+         <ul class="dropdown-menu submenu">
+           <li><a class="dropdown-item" href="icons-line-icons.html"><i class='material-icons-outlined'>navigate_next</i>Line Icons</a></li>
+           <li><a class="dropdown-item" href="icons-boxicons.html"><i class='material-icons-outlined'>navigate_next</i>Boxicons</a></li>
+           <li><a class="dropdown-item" href="icons-feather-icons.html"><i class='material-icons-outlined'>navigate_next</i>Feather Icons</a></li>
+           </ul>
+         </li>
+       </ul>
+       </li>
+       <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
+         <div class="parent-icon"><i class='material-icons-outlined'>pie_chart</i>
+         </div>
+         <div class="menu-title d-flex align-items-center">Charts</div>
+         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
+       </a>
+       <ul class="dropdown-menu">
+         <li><a class="dropdown-item" href="charts-apex-chart.html"><i class='material-icons-outlined'>leaderboard</i></i>Apex</a></li>
+         <li><a class="dropdown-item" href="charts-chartjs.html"><i class='material-icons-outlined'>analytics</i>Chartjs</a></li>
+         <li class="nav-item dropend">
+         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>pie_chart</i>Maps</a>
+         <ul class="dropdown-menu submenu">
+           <li><a class="dropdown-item" href="map-google-maps.html"><i class='material-icons-outlined'>navigate_next</i>Google Maps</a></li>
+           <li><a class="dropdown-item" href="map-vector-maps.html"><i class='material-icons-outlined'>navigate_next</i>Vector Maps</a></li>
+          </ul>
+         </li>
+       </ul>
+       </li>
+       <li class="nav-item dropdown">
+       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
+         <div class="parent-icon"><i class='material-icons-outlined'>table_chart</i>
+         </div>
+         <div class="menu-title d-flex align-items-center">Tables</div>
+         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
+       </a>
+       <ul class="dropdown-menu">
+         <li><a class="dropdown-item" href="table-basic-table.html"><i class='material-icons-outlined'>navigate_next</i>Basic Table</a></li>
+         <li><a class="dropdown-item" href="table-datatable.html"><i class='material-icons-outlined'>navigate_next</i>Data Table</a></li>
+       </ul>
+       </li>
+     </ul>
+   </div>
+   </div>
+ </nav>
+</div>
+<!--end navigation-->
 
 
   <!--start main wrapper-->
@@ -989,7 +936,7 @@
 							<ol class="breadcrumb mb-0 p-0">
 								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Date Time Pickers</li>
+								<li class="breadcrumb-item active" aria-current="page">Starter Page</li>
 							</ol>
 						</nav>
 					</div>
@@ -1007,44 +954,87 @@
 					</div>
 				</div>
 				<!--end breadcrumb-->
-      
+
+        <!-- form start -->
+        <form action= "processdata.php" method="post" enctype="multipart/form-data">  
 
         <div class="row">
-					<div class="col-xl-9 mx-auto">
-						<h6 class="mb-0 text-uppercase">Date Time Pickers</h6>
-						<hr>
-						<div class="card">
-							<div class="card-body">
-								<div class="mb-3">
-									<label class="form-label">Pick a Date</label>
-									<input type="text" class="form-control datepicker">
-								</div>
-								<div class="mb-3">
-									<label class="form-label">Time Picker</label>
-									<input type="text" class="form-control time-picker">
-								</div>
-								<div class="mb-3">
-									<label class="form-label">Date & Time Picker</label>
-									<input type="text" class="form-control date-time">
-								</div>
-								<div class="mb-3">
-									<label class="form-label">Date Format</label>
-									<input type="text" class="form-control date-format">
-								</div>
-								<div class="mb-3">
-									<label class="form-label">Date Range</label>
-									<input type="text" class="form-control date-range">
-								</div>
-								<div class="mb-3">
-									<label class="form-label">Inline Calendar</label>
-									<input type="text" class="form-control date-inline">
-								</div>
-							</div>
-						</div>
-					
-					</div>
-				</div>
-				<!--end row-->
+          <div class="col-12 col-lg-8">
+
+              <div class="card">
+                 <div class="card-body">
+                   <div class="mb-4">
+                      <h5 class="mb-3">Product Title</h5>
+                      <input type="text" name="title" class="form-control" placeholder="write title here....">
+                   </div>
+                   <div class="mb-4">
+                     <h5 class="mb-3">Product Description</h5>
+                     <textarea class="form-control" name="description" cols="4" rows="6" placeholder="write a description here.."></textarea>
+                   </div>
+                   <div class="mb-4">
+                    <h5 class="mb-3">Display images</h5>
+                    <input id="fancy-file-upload" type="file" name="images" accept=".jpg, .png, image/jpeg, image/png" multiple>
+                  </div>
+                 </div>
+              </div>
+          </div> 
+          <div class="col-12 col-lg-4">
+             <div class="card">
+                <div class="card-body">
+                   <div class="d-flex align-items-center gap-3">
+                    <button type="button" class="btn btn-outline-danger flex-fill"><i class="bi bi-x-circle me-2"></i>Discard</button>
+                    <button type="button" class="btn btn-outline-success flex-fill"><i class="bi bi-cloud-download me-2"></i>Save Draft</button>
+                    <button type="button" class="btn btn-outline-primary flex-fill"><i class="bi bi-send me-2"></i>Publish</button>
+                   </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                   <h5 class="mb-3">Organize</h5>
+                      <div class="row g-3">
+                          <div class="col-12">
+                           
+                            <select name="category" class="form-select" id="AddCategory">
+                              <option value="0">Topwear</option>
+                              <option value="1">Bottomwear</option>
+                              <option value="2">Casual Tshirt</option>
+                              <option value="3">Electronic</option>
+                            </select>
+                          </div>
+                         
+                          
+                        
+                         
+                          <div class="col-12">
+                        <label for="Brand" class="form-label">Brand</label>
+                        <input type="text" name="brand" class="form-control" id="Brand" placeholder="Brand">
+                       </div>
+                     
+                       <div class="col-12">
+                        <label for="Color" class="form-label">Color</label>
+                        <input type="text" name="color" class="form-control" id="Color" placeholder="Color">
+                       </div>
+                       <div class="col-12">
+                        <label for="Size" class="form-label">Size</label>
+                        <input type="text" name="size" class="form-control" id="Size" placeholder="Size">
+                       </div>
+                        <div class="col-12">
+                          <div class="d-grid">
+                            <button type="button" class="btn btn-primary">Add Variants</button>
+                          </div>
+                        </div>
+                        </div><!--end row-->
+                     </div>
+                </div>
+
+                
+
+              </div>                
+          
+         </div><!--end row-->
+         </form>
+         <!-- Form end -->
+
 
     </div>
   </main>
@@ -1192,7 +1182,7 @@
   </div>
   <!--end cart-->
 
- 
+
   <!--start switcher-->
   <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>Customize
@@ -1263,42 +1253,17 @@
   <!--plugins-->
   <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
   <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-	<script>
-		
-		$(".datepicker").flatpickr();
-
-		$(".time-picker").flatpickr({
-				enableTime: true,
-				noCalendar: true,
-				dateFormat: "Y-m-d H:i",
-			});
-
-		$(".date-time").flatpickr({
-				enableTime: true,
-				dateFormat: "Y-m-d H:i",
+  <script src="assets/plugins/fancy-file-uploader/jquery.ui.widget.js"></script>
+	<script src="assets/plugins/fancy-file-uploader/jquery.fileupload.js"></script>
+	<script src="assets/plugins/fancy-file-uploader/jquery.iframe-transport.js"></script>
+	<script src="assets/plugins/fancy-file-uploader/jquery.fancy-fileupload.js"></script>
+  <script>
+		$('#fancy-file-upload').FancyFileUpload({
+			params: {
+				action: 'fileuploader'
+			},
+			maxfilesize: 1000000
 		});
-
-		$(".date-format").flatpickr({
-			altInput: true,
-			altFormat: "F j, Y",
-			dateFormat: "Y-m-d",
-		});
-
-		$(".date-range").flatpickr({
-			mode: "range",
-			altInput: true,
-			altFormat: "F j, Y",
-			dateFormat: "Y-m-d",
-		});
-
-		$(".date-inline").flatpickr({
-			inline: true,
-			altInput: true,
-			altFormat: "F j, Y",
-			dateFormat: "Y-m-d",
-		});
-
 	</script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
   <script src="assets/js/main.js"></script>

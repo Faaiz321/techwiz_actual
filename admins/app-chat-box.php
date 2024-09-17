@@ -626,487 +626,32 @@
 
 
   <!--start sidebar-->
-  <aside class="sidebar-wrapper" data-simplebar="true">
-    <div class="sidebar-header">
-      <div class="logo-icon">
-        <img src="assets/images/logo-icon.png" class="logo-img" alt="">
-      </div>
-      <div class="logo-name flex-grow-1">
-        <h5 class="mb-0">Maxton</h5>
-      </div>
-      <div class="sidebar-close">
-        <span class="material-icons-outlined">close</span>
-      </div>
-    </div>
-    <div class="sidebar-nav">
-        <!--navigation-->
-        <ul class="metismenu" id="sidenav">
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">home</i>
-              </div>
-              <div class="menu-title">Dashboard</div>
-            </a>
-            <ul>
-              <li><a href="index.html"><i class="material-icons-outlined">arrow_right</i>Analysis</a>
-              </li>
-              <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>eCommerce</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">widgets</i>
-              </div>
-              <div class="menu-title">Widgets</div>
-            </a>
-            <ul>
-              <li><a href="widgets-data.html"><i class="material-icons-outlined">arrow_right</i>Data</a>
-              </li>
-              <li><a href="widgets-static.html"><i class="material-icons-outlined">arrow_right</i>Static</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">apps</i>
-              </div>
-              <div class="menu-title">Apps</div>
-            </a>
-            <ul>
-              <li><a href="app-emailbox.html"><i class="material-icons-outlined">arrow_right</i>Email Box</a>
-              </li>
-              <li><a href="app-emailread.html"><i class="material-icons-outlined">arrow_right</i>Email Read</a>
-              </li>
-              <li><a href="app-chat-box.html"><i class="material-icons-outlined">arrow_right</i>Chat</a>
-              </li>
-              <li><a href="app-fullcalender.html"><i class="material-icons-outlined">arrow_right</i>Calendar</a>
-              </li>
-              <li><a href="app-to-do.html"><i class="material-icons-outlined">arrow_right</i>To do</a>
-              </li>
-              <li><a href="app-invoice.html"><i class="material-icons-outlined">arrow_right</i>Invoice</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">UI Elements</li>
-          <li>
-            <a href="cards.html">
-              <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i>
-              </div>
-              <div class="menu-title">Cards</div>
-            </a>
-          </li>
-          
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">shopping_bag</i>
-              </div>
-              <div class="menu-title">eCommerce</div>
-            </a>
-            <ul>
-              <li><a href="ecommerce-add-product.html"><i class="material-icons-outlined">arrow_right</i>Add Product</a>
-              </li>
-              <li><a href="ecommerce-products.html"><i class="material-icons-outlined">arrow_right</i>Products</a>
-              </li>
-              <li><a href="ecommerce-customers.html"><i class="material-icons-outlined">arrow_right</i>Customers</a>
-              </li>
-              <li><a href="ecommerce-customer-details.html"><i class="material-icons-outlined">arrow_right</i>Customer Details</a>
-              </li>
-              <li><a href="ecommerce-orders.html"><i class="material-icons-outlined">arrow_right</i>Orders</a>
-              </li>
-              <li><a href="ecommerce-order-details.html"><i class="material-icons-outlined">arrow_right</i>Order Details</a>
-              </li>
-            </ul>     
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">card_giftcard</i>
-              </div>
-              <div class="menu-title">Components</div>
-            </a>
-            <ul>
-              <li><a href="component-alerts.html"><i class="material-icons-outlined">arrow_right</i>Alerts</a>
-              </li>
-              <li><a href="component-accordions.html"><i class="material-icons-outlined">arrow_right</i>Accordions</a>
-              </li>
-              <li><a href="component-badges.html"><i class="material-icons-outlined">arrow_right</i>Badges</a>
-              </li>
-              <li><a href="component-buttons.html"><i class="material-icons-outlined">arrow_right</i>Buttons</a>
-              </li>
-              <li><a href="component-carousels.html"><i class="material-icons-outlined">arrow_right</i>Carousels</a>
-              </li>
-              <li><a href="component-media-object.html"><i class="material-icons-outlined">arrow_right</i>Media
-                  Objects</a>
-              </li>
-              <li><a href="component-modals.html"><i class="material-icons-outlined">arrow_right</i>Modals</a>
-              </li>
-              <li><a href="component-navs-tabs.html"><i class="material-icons-outlined">arrow_right</i>Navs & Tabs</a>
-              </li>
-              <li><a href="component-navbar.html"><i class="material-icons-outlined">arrow_right</i>Navbar</a>
-              </li>
-              <li><a href="component-paginations.html"><i class="material-icons-outlined">arrow_right</i>Pagination</a>
-              </li>
-              <li><a href="component-popovers-tooltips.html"><i class="material-icons-outlined">arrow_right</i>Popovers
-                  & Tooltips</a>    
-              </li>
-              <li><a href="component-progress-bars.html"><i class="material-icons-outlined">arrow_right</i>Progress</a>
-              </li>
-              <li><a href="component-spinners.html"><i class="material-icons-outlined">arrow_right</i>Spinners</a>
-              </li>
-              <li><a href="component-notifications.html"><i
-                    class="material-icons-outlined">arrow_right</i>Notifications</a>
-              </li>
-              <li><a href="component-avtars-chips.html"><i class="material-icons-outlined">arrow_right</i>Avatrs &
-                  Chips</a>
-              </li>
-              <li><a href="component-typography.html"><i class="material-icons-outlined">arrow_right</i>Typography</a>
-               </li>
-               <li><a href="component-text-utilities.html"><i class="material-icons-outlined">arrow_right</i>Utilities</a>
-               </li>
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">view_agenda</i>
-              </div>
-              <div class="menu-title">Icons</div>
-            </a>
-            <ul>
-              <li><a href="icons-line-icons.html"><i class="material-icons-outlined">arrow_right</i>Line Icons</a>
-              </li>
-              <li><a href="icons-boxicons.html"><i class="material-icons-outlined">arrow_right</i>Boxicons</a>
-              </li>
-              <li><a href="icons-feather-icons.html"><i class="material-icons-outlined">arrow_right</i>Feather
-                  Icons</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">Forms & Tables</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">toc</i>
-              </div>
-              <div class="menu-title">Forms</div>
-            </a>
-            <ul>
-              <li><a href="form-elements.html"><i class="material-icons-outlined">arrow_right</i>Form Elements</a>
-              </li>
-              <li><a href="form-input-group.html"><i class="material-icons-outlined">arrow_right</i>Input Groups</a>
-              </li>
-              <li><a href="form-radios-and-checkboxes.html"><i class="material-icons-outlined">arrow_right</i>Radios &
-                  Checkboxes</a>
-              </li>
-              <li><a href="form-layouts.html"><i class="material-icons-outlined">arrow_right</i>Forms Layouts</a>
-              </li>
-              <li><a href="form-validations.html"><i class="material-icons-outlined">arrow_right</i>Form Validation</a>
-              </li>
-              <li><a href="form-wizard.html"><i class="material-icons-outlined">arrow_right</i>Form Wizard</a>
-              </li>
-              <li><a href="form-file-upload.html"><i class="material-icons-outlined">arrow_right</i>File Upload</a>
-              </li>
-              <li><a href="form-date-time-pickes.html"><i class="material-icons-outlined">arrow_right</i>Date
-                  Pickers</a>
-              </li>
-              <li><a href="form-select2.html"><i class="material-icons-outlined">arrow_right</i>Select2</a>
-              </li>
-              <li><a href="form-repeater.html"><i class="material-icons-outlined">arrow_right</i>Form Repeater</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">api</i>
-              </div>
-              <div class="menu-title">Tables</div>
-            </a>
-            <ul>
-              <li><a href="table-basic-table.html"><i class="material-icons-outlined">arrow_right</i>Basic Table</a>
-              </li>
-              <li><a href="table-datatable.html"><i class="material-icons-outlined">arrow_right</i>Data Table</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">Pages</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">lock</i>
-              </div>
-              <div class="menu-title">Authentication</div>
-            </a>
-            <ul>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Basic</a>
-                <ul>
-                  <li><a href="auth-basic-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                  <li><a href="auth-basic-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                  <li><a href="auth-basic-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                  <li><a href="auth-basic-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                </ul>
-              </li>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Cover</a>
-                <ul>
-                  <li><a href="auth-cover-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                  <li><a href="auth-cover-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                  <li><a href="auth-cover-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                  <li><a href="auth-cover-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                </ul>
-              </li>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Boxed</a>
-                  <ul>
-                    <li><a href="auth-boxed-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                    <li><a href="auth-boxed-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                    <li><a href="auth-boxed-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                    <li><a href="auth-boxed-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                  </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="user-profile.html">
-              <div class="parent-icon"><i class="material-icons-outlined">person</i>
-              </div>
-              <div class="menu-title">User Profile</div>
-            </a>
-          </li>
-          <li>
-            <a href="timeline.html">
-              <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
-              </div>
-              <div class="menu-title">Timeline</div>
-            </a>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">report_problem</i>
-              </div>
-              <div class="menu-title">Pages</div>
-            </a>
-            <ul>
-              <li><a href="pages-error-404.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>404
-                  Error</a>
-              </li>
-              <li><a href="pages-error-505.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>505
-                  Error</a>
-              </li>
-              <li><a href="pages-coming-soon.html" target="_blank"><i
-                    class="material-icons-outlined">arrow_right</i>Coming Soon</a>
-              </li>
-              <li><a href="pages-starter-page.html" target="_blank"><i
-                    class="material-icons-outlined">arrow_right</i>Blank Page</a> 
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="faq.html">
-              <div class="parent-icon"><i class="material-icons-outlined">help_outline</i>
-              </div>
-              <div class="menu-title">FAQ</div>
-            </a>
-          </li>
-          <li>
-            <a href="pricing-table.html">
-              <div class="parent-icon"><i class="material-icons-outlined">sports_football</i>
-              </div>
-              <div class="menu-title">Pricing</div>
-            </a>
-          </li>
-          <li class="menu-label">Charts & Maps</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">fitbit</i>
-              </div>
-              <div class="menu-title">Charts</div>
-            </a>
-            <ul>
-              <li><a href="charts-apex-chart.html"><i class="material-icons-outlined">arrow_right</i>Apex</a>
-              </li>
-              <li><a href="charts-chartjs.html"><i class="material-icons-outlined">arrow_right</i>Chartjs</a>
-              </li>   
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">sports_football</i>
-              </div>
-              <div class="menu-title">Maps</div>
-            </a>
-            <ul>
-              <li><a href="map-google-maps.html"><i class="material-icons-outlined">arrow_right</i>Google Maps</a>
-              </li>
-              <li><a href="map-vector-maps.html"><i class="material-icons-outlined">arrow_right</i>Vector Maps</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">Others</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">face_5</i>
-              </div>
-              <div class="menu-title">Menu Levels</div>
-            </a>
-            <ul>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level
-                  One</a>
-                <ul>
-                  <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level
-                      Two</a>
-                    <ul>
-                      <li><a href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level Three</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascrpt:;">
-              <div class="parent-icon"><i class="material-icons-outlined">description</i>
-              </div>
-              <div class="menu-title">Documentation</div>
-            </a>
-          </li>
-          <li>
-            <a href="javascrpt:;">
-              <div class="parent-icon"><i class="material-icons-outlined">support</i>
-              </div>
-              <div class="menu-title">Support</div>
-            </a>
-          </li>
-         </ul>
-        <!--end navigation-->
-    </div>
-  </aside>
+  
+<?php
+require('assets/partials/_navbar.php');
+
+?>
+
 <!--end sidebar-->
 
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
-      <!--breadcrumb-->
-		<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-			<div class="breadcrumb-title pe-3">Application</div>
-			<div class="ps-3">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb mb-0 p-0">
-						<li class="breadcrumb-item"><a href="javascript:;"></a>
-						</li>
-						<li class="breadcrumb-item active" aria-current="page">Email Box</li>
-					</ol>
-				</nav>
-			</div>
-			<div class="ms-auto">
-				<div class="btn-group">
-					<button type="button" class="btn btn-primary">Settings</button>
-					<button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-					</button>
-					<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-						<a class="dropdown-item" href="javascript:;">Another action</a>
-						<a class="dropdown-item" href="javascript:;">Something else here</a>
-						<div class="dropdown-divider"></div><a class="dropdown-item" href="javascript:;">Separated link</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--end breadcrumb-->
-
       
-	  <!--start email wrapper-->
-    <div class="email-wrapper">
-      <div class="email-sidebar">
-        <div class="email-sidebar-header d-grid"><a href="javascript:;" class="btn btn-grd btn-grd-primary compose-mail-btn"><i class='bx bx-plus me-2'></i> Compose</a>
-        </div>
-        <div class="email-sidebar-content">
-          <div class="email-navigation">
-            <div class="list-group list-group-flush"> 
-              <a href="app-emailbox.html" class="list-group-item active d-flex align-items-center"><i class='bx bxs-inbox me-3 font-20'></i><span>Inbox</span><span class="badge bg-primary rounded-pill ms-auto">7,513</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-star me-3 font-20'></i><span>Starred</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-alarm-snooze me-3 font-20'></i><span>Snoozed</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-send me-3 font-20'></i><span>Sent</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-file-blank me-3 font-20'></i><span>Drafts</span><span class="badge bg-primary rounded-pill ms-auto">4</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-bookmark me-3 font-20'></i><span>Important</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-message-rounded-error me-3 font-20'></i><span>Chats</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bx-mail-send me-3 font-20'></i><span>Scheduled</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-envelope-open me-3 font-20'></i><span>All Mail</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-info-circle me-3 font-20'></i><span>Spam</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-trash-alt me-3 font-20'></i><span>Trash</span></a>
-            </div>
-          </div>
-          <div class="email-meeting">
-            <div class="list-group list-group-flush">
-              <div class="list-group-item"><span>Meet</span>
-              </div> <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-video me-3 font-20'></i><span>Start a meeting</span></a>
-              <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-group me-3 font-20'></i><span>Join a meeting</span></a>
-              <div class="list-group-item email-hangout cursor-pointer border-top">
-                <div class="d-flex align-items-center gap-3">
-                  <div class="chat-user-online">
-                    <img src="assets/images/avatars/01.png" width="42" height="42" class="rounded-circle" alt="" />
-                  </div>
-                  <div class="flex-grow-1">
-                    <p class="mb-0">Jessica Doe</p>
-                  </div>
-                  <div class="dropdown">
-                    <div class="font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class='bx bx-plus'></i>
-                    </div>
-                    <div class="dropdown-menu dropdown-menu-end">	<a class="dropdown-item" href="javascript:;">Settings</a>
-                      <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Help & Feedback</a>
-                      <a class="dropdown-item" href="javascript:;">Enable Split View Mode</a>
-                      <a class="dropdown-item" href="javascript:;">Keyboard Shortcuts</a>
-                      <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Sign Out</a>
-                    </div>
-                  </div>
-                </div>
+      <div class="chat-wrapper">
+        <div class="chat-sidebar">
+          <div class="chat-sidebar-header">
+            <div class="d-flex align-items-center">
+              <div class="chat-user-online">
+                <img src="assets/images/avatars/01.png" width="45" height="45" class="rounded-circle" alt="" />
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="email-header d-xl-flex align-items-center">
-        <div class="d-flex align-items-center">
-          <div class="email-toggle-btn"><i class='bx bx-menu'></i>
-          </div>
-          <div class="btn btn-light">
-            <input class="form-check-input" type="checkbox">
-          </div>
-          <div class="">
-            <button type="button" class="btn btn-light ms-2"><i class='bx bx-refresh me-0'></i>
-            </button>
-          </div>
-          <div class="">
-            <button type="button" class="btn btn-light ms-2"><i class='bx bx-downvote me-0'></i>
-            </button>
-          </div>
-          <div class="d-none d-md-flex">
-            <button type="button" class="btn btn-light ms-2"><i class='bx bx-file me-0'></i>
-            </button>
-          </div>
-          <div class="">
-            <button type="button" class="btn btn-light ms-2"><i class='bx bx-trash me-0'></i>
-            </button>
-          </div>
-        </div>
-        <div class="flex-grow-1 mx-xl-2 my-2 my-xl-0">
-          <div class="input-group">	<span class="input-group-text bg-transparent"><i class="bx bx-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search mail">
-          </div>
-        </div>
-        <div class="ms-auto d-flex align-items-center">
-          <button class="btn btn-sm btn-light">1-50 of 8,740</button>
-          <button class="btn btn-light ms-2"><i class='bx bx-chevron-left me-0'></i>
-          </button>
-          <button class="btn btn-light ms-2"><i class='bx bx-chevron-right me-0'></i>
-          </button>
-        </div>
-      </div>
-      <div class="email-content">
-        <div class="email-read-box p-3">
-          <h4>It is a long established fact that a reader will be distracted.</h4>
-          <hr>
-          <div class="d-flex align-items-center">
-            <img src="assets/images/avatars/01.png" width="42" height="42" class="rounded-circle" alt="" />
-            <div class="flex-grow-1 ms-2">
-              <p class="mb-0 font-weight-bold">Himalaya India</p>
+              <div class="flex-grow-1 ms-2">
+                <p class="mb-0">Rachel Zane</p>
+              </div>
               <div class="dropdown">
-                <div class="dropdown-toggle" data-bs-toggle="dropdown">to me</div>
-                <div class="dropdown-menu">	<a class="dropdown-item" href="javascript:;">Settings</a>
+                <div class="cursor-pointer font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class='bx bx-dots-horizontal-rounded'></i>
+                </div>
+                <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="javascript:;">Settings</a>
                   <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Help & Feedback</a>
                   <a class="dropdown-item" href="javascript:;">Enable Split View Mode</a>
                   <a class="dropdown-item" href="javascript:;">Keyboard Shortcuts</a>
@@ -1114,88 +659,336 @@
                 </div>
               </div>
             </div>
-            <p class="mb-0 chat-time ps-5 ms-auto">Sep 15, 2020, 11:04 PM (19 hours ago)</p>
-          </div>
-          <div class="email-read-content px-md-5 py-5">
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-            <h5>Where can I get some?</h5>
-            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-            <hr>
-            <h5>Where does it come from?</h5>
-            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.</p>
-            <p>consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-            <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-          </div>
-        </div>
-      </div>
-      <!--start compose mail-->
-      <div class="compose-mail-popup">
-        <div class="card">
-          <div class="card-header bg-dark text-white py-2 cursor-pointer">
-            <div class="d-flex align-items-center">
-              <div class="compose-mail-title">New Message</div>
-              <div class="compose-mail-close ms-auto">x</div>
+            <div class="mb-3"></div>
+            <div class="input-group input-group-sm"> <span class="input-group-text bg-transparent"><i class='bx bx-search'></i></span>
+              <input type="text" class="form-control" placeholder="People, groups, & messages"> <span class="input-group-text bg-transparent"><i class='bx bx-dialpad'></i></span>
+            </div>
+            <div class="chat-tab-menu mt-3">
+              <ul class="nav nav-pills nav-justified">
+                <li class="nav-item">
+                  <a class="nav-link active" data-bs-toggle="pill" href="javascript:;">
+                    <div class="font-24"><i class='bx bx-conversation'></i>
+                    </div>
+                    <div><small>Chats</small>
+                    </div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="pill" href="javascript:;">
+                    <div class="font-24"><i class='bx bx-phone'></i>
+                    </div>
+                    <div><small>Calls</small>
+                    </div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="pill" href="javascript:;">
+                    <div class="font-24"><i class='bx bxs-contact'></i>
+                    </div>
+                    <div><small>Contacts</small>
+                    </div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="pill" href="javascript:;">
+                    <div class="font-24"><i class='bx bx-bell'></i>
+                    </div>
+                    <div><small>Notifications</small>
+                    </div>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="card-body">
-            <div class="email-form">
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="To" />
-              </div>
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Subject" />
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control" placeholder="Message" rows="10" cols="10"></textarea>
-              </div>
-              <div class="mb-0">
-                <div class="d-flex align-items-center">
-                  <div class="">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-primary">Action</button>
-                      <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-                      </button>
-                      <div class="dropdown-menu">	<a class="dropdown-item" href="javascript:;">Action</a>
-                        <a class="dropdown-item" href="javascript:;">Another action</a>
-                        <a class="dropdown-item" href="javascript:;">Something else here</a>
-                        <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
+          <div class="chat-sidebar-content">
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-Chats">
+                <div class="p-3">
+                  <div class="meeting-button d-flex justify-content-between">
+                    <div class="dropdown"> <a href="#" class="btn btn-white btn-sm radius-30 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class='bx bx-video me-2'></i>Meet Now<i class='bx bxs-chevron-down ms-2'></i></a>
+                      <div class="dropdown-menu"> <a class="dropdown-item" href="#">Host a meeting</a>
+                        <a class="dropdown-item" href="#">Join a meeting</a>
+                      </div>
+                    </div>
+                    <div class="dropdown"> <a href="#" class="btn btn-white btn-sm radius-30 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown" data-display="static"><i class='bx bxs-edit me-2'></i>New Chat<i class='bx bxs-chevron-down ms-2'></i></a>
+                      <div class="dropdown-menu dropdown-menu-right">	<a class="dropdown-item" href="#">New Group Chat</a>
+                        <a class="dropdown-item" href="#">New Moderated Group</a>
+                        <a class="dropdown-item" href="#">New Chat</a>
+                        <a class="dropdown-item" href="#">New Private Conversation</a>
                       </div>
                     </div>
                   </div>
-                  <div class="ms-2">
-                    <button type="button" class="btn border-0 btn-sm btn-white"><i class="lni lni-text-format"></i>
-                    </button>
-                    <button type="button" class="btn border-0 btn-sm btn-white"><i class='bx bx-link-alt'></i>
-                    </button>
-                    <button type="button" class="btn border-0 btn-sm btn-white"><i class="lni lni-emoji-tounge"></i>
-                    </button>
-                    <button type="button" class="btn border-0 btn-sm btn-white"><i class="lni lni-google-drive"></i>
-                    </button>
+                  <div class="dropdown mt-3"> <a href="#" class="text-uppercase text-secondary dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">Recent Chats <i class='bx bxs-chevron-down'></i></a>
+                    <div class="dropdown-menu">	<a class="dropdown-item" href="#">Recent Chats</a>
+                      <a class="dropdown-item" href="#">Hidden Chats</a>
+                      <div class="dropdown-divider"></div>	<a class="dropdown-item" href="#">Sort by Time</a>
+                      <a class="dropdown-item" href="#">Sort by Unread</a>
+                      <div class="dropdown-divider"></div>	<a class="dropdown-item" href="#">Show Favorites</a>
+                    </div>
                   </div>
-                  <div class="ms-auto">
-                    <button type="button" class="btn border-0 btn-sm btn-white"><i class="lni lni-trash"></i>
-                    </button>
+                </div>
+                <div class="chat-list">
+                  <div class="list-group list-group-flush">
+                    <a href="javascript:;" class="list-group-item">
+                      <div class="d-flex">
+                        <div class="chat-user-online">
+                          <img src="assets/images/avatars/02.png" width="42" height="42" class="rounded-circle" alt="" />
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <h6 class="mb-0 chat-title">Louis Litt</h6>
+                          <p class="mb-0 chat-msg">You just got LITT up, Mike.</p>
+                        </div>
+                        <div class="chat-time">9:51 AM</div>
+                      </div>
+                    </a>
+                    <a href="javascript:;" class="list-group-item active">
+                      <div class="d-flex">
+                        <div class="chat-user-online">
+                          <img src="assets/images/avatars/03.png" width="42" height="42" class="rounded-circle" alt="" />
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <h6 class="mb-0 chat-title">Harvey Specter</h6>
+                          <p class="mb-0 chat-msg">Wrong. You take the gun....</p>
+                        </div>
+                        <div class="chat-time">4:32 PM</div>
+                      </div>
+                    </a>
+                    <a href="javascript:;" class="list-group-item">
+                      <div class="d-flex">
+                        <div class="chat-user-online">
+                          <img src="assets/images/avatars/04.png" width="42" height="42" class="rounded-circle" alt="" />
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <h6 class="mb-0 chat-title">Rachel Zane</h6>
+                          <p class="mb-0 chat-msg">I was thinking that we could...</p>
+                        </div>
+                        <div class="chat-time">Wed</div>
+                      </div>
+                    </a>
+                    <a href="javascript:;" class="list-group-item">
+                      <div class="d-flex">
+                        <div class="chat-user-online">
+                          <img src="assets/images/avatars/05.png" width="42" height="42" class="rounded-circle" alt="" />
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <h6 class="mb-0 chat-title">Donna Paulsen</h6>
+                          <p class="mb-0 chat-msg">Mike, I know everything!</p>
+                        </div>
+                        <div class="chat-time">Tue</div>
+                      </div>
+                    </a>
+                    <a href="javascript:;" class="list-group-item">
+                      <div class="d-flex">
+                        <div class="chat-user-online">
+                          <img src="assets/images/avatars/06.png" width="42" height="42" class="rounded-circle" alt="" />
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <h6 class="mb-0 chat-title">Jessica Pearson</h6>
+                          <p class="mb-0 chat-msg">Have you finished the draft...</p>
+                        </div>
+                        <div class="chat-time">9/3/2020</div>
+                      </div>
+                    </a>
+                    <a href="javascript:;" class="list-group-item">
+                      <div class="d-flex">
+                        <div class="chat-user-online">
+                          <img src="assets/images/avatars/07.png" width="42" height="42" class="rounded-circle" alt="" />
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <h6 class="mb-0 chat-title">Harold Gunderson</h6>
+                          <p class="mb-0 chat-msg">Thanks Mike! :)</p>
+                        </div>
+                        <div class="chat-time">12/3/2020</div>
+                      </div>
+                    </a>
+                    <a href="javascript:;" class="list-group-item">
+                      <div class="d-flex">
+                        <div class="chat-user-online">
+                          <img src="assets/images/avatars/09.png" width="42" height="42" class="rounded-circle" alt="" />
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <h6 class="mb-0 chat-title">Katrina Bennett</h6>
+                          <p class="mb-0 chat-msg">I've sent you the files for...</p>
+                        </div>
+                        <div class="chat-time">16/3/2020</div>
+                      </div>
+                    </a>
+                    <a href="javascript:;" class="list-group-item">
+                      <div class="d-flex">
+                        <div class="chat-user-online">
+                          <img src="assets/images/avatars/10.png" width="42" height="42" class="rounded-circle" alt="" />
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <h6 class="mb-0 chat-title">Charles Forstman</h6>
+                          <p class="mb-0 chat-msg">Mike, this isn't over.</p>
+                        </div>
+                        <div class="chat-time">18/3/2020</div>
+                      </div>
+                    </a>
+                    <a href="javascript:;" class="list-group-item">
+                      <div class="d-flex">
+                        <div class="chat-user-online">
+                          <img src="assets/images/avatars/11.png" width="42" height="42" class="rounded-circle" alt="" />
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                          <h6 class="mb-0 chat-title">Jonathan Sidwell</h6>
+                          <p class="mb-0 chat-msg">That's bullshit. This deal..</p>
+                        </div>
+                        <div class="chat-time">24/3/2020</div>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="chat-header d-flex align-items-center">
+          <div class="chat-toggle-btn"><i class='bx bx-menu-alt-left'></i>
+          </div>
+          <div>
+            <h4 class="mb-1 font-weight-bold">Harvey Inspector</h4>
+            <div class="list-inline d-sm-flex mb-0 d-none"> <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary"><small class='bx bxs-circle me-1 chart-online'></small>Active Now</a>
+              <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary">|</a>
+              <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary"><i class='bx bx-images me-1'></i>Gallery</a>
+              <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary">|</a>
+              <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary"><i class='bx bx-search me-1'></i>Find</a>
+            </div>
+          </div>
+          <div class="chat-top-header-menu ms-auto"> <a href="javascript:;"><i class='bx bx-video'></i></a>
+            <a href="javascript:;"><i class='bx bx-phone'></i></a>
+            <a href="javascript:;"><i class='bx bx-user-plus'></i></a>
+          </div>
+        </div>
+        <div class="chat-content">
+          <div class="chat-content-leftside">
+            <div class="d-flex">
+              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
+              <div class="flex-grow-1 ms-2">
+                <p class="mb-0 chat-time">Harvey, 2:35 PM</p>
+                <p class="chat-left-msg">Hi, harvey where are you now a days?</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-rightside">
+            <div class="d-flex ms-auto">
+              <div class="flex-grow-1 me-2">
+                <p class="mb-0 chat-time text-end">you, 2:37 PM</p>
+                <p class="chat-right-msg">I am in USA</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-leftside">
+            <div class="d-flex">
+              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
+              <div class="flex-grow-1 ms-2">
+                <p class="mb-0 chat-time">Harvey, 2:48 PM</p>
+                <p class="chat-left-msg">okk, what about admin template?</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-rightside">
+            <div class="d-flex">
+              <div class="flex-grow-1 me-2">
+                <p class="mb-0 chat-time text-end">you, 2:49 PM</p>
+                <p class="chat-right-msg">i have already purchased the admin template</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-leftside">
+            <div class="d-flex">
+              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
+              <div class="flex-grow-1 ms-2">
+                <p class="mb-0 chat-time">Harvey, 3:12 PM</p>
+                <p class="chat-left-msg">ohhk, great, which admin template you have purchased?</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-rightside">
+            <div class="d-flex">
+              <div class="flex-grow-1 me-2">
+                <p class="mb-0 chat-time text-end">you, 3:14 PM</p>
+                <p class="chat-right-msg">i purchased dashtreme admin template from themeforest. it is very good product for web application</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-leftside">
+            <div class="d-flex">
+              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
+              <div class="flex-grow-1 ms-2">
+                <p class="mb-0 chat-time">Harvey, 3:16 PM</p>
+                <p class="chat-left-msg">who is the author of this template?</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-rightside">
+            <div class="d-flex">
+              <div class="flex-grow-1 me-2">
+                <p class="mb-0 chat-time text-end">you, 3:22 PM</p>
+                <p class="chat-right-msg">codervent is the author of this admin template</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-leftside">
+            <div class="d-flex">
+              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
+              <div class="flex-grow-1 ms-2">
+                <p class="mb-0 chat-time">Harvey, 3:16 PM</p>
+                <p class="chat-left-msg">ohh i know about this author. he has good admin products in his portfolio.</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-rightside">
+            <div class="d-flex">
+              <div class="flex-grow-1 me-2">
+                <p class="mb-0 chat-time text-end">you, 3:30 PM</p>
+                <p class="chat-right-msg">yes, codervent has multiple admin templates. also he is very supportive.</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-leftside">
+            <div class="d-flex">
+              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
+              <div class="flex-grow-1 ms-2">
+                <p class="mb-0 chat-time">Harvey, 3:33 PM</p>
+                <p class="chat-left-msg">All the best for your target. thanks for giving your time.</p>
+              </div>
+            </div>
+          </div>
+          <div class="chat-content-rightside">
+            <div class="d-flex">
+              <div class="flex-grow-1 me-2">
+                <p class="mb-0 chat-time text-end">you, 3:35 PM</p>
+                <p class="chat-right-msg">thanks Harvey</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-footer d-flex align-items-center">
+          <div class="flex-grow-1 pe-2">
+            <div class="input-group"><span class="input-group-text"><i class='bx bx-smile'></i></span>
+              <input type="text" class="form-control" placeholder="Type a message">
+            </div>
+          </div>
+          <div class="chat-footer-menu"> 
+            <a href="javascript:;"><i class='bx bx-file'></i></a>
+            <a href="javascript:;"><i class='bx bxs-contact'></i></a>
+            <a href="javascript:;"><i class='bx bx-microphone'></i></a>
+            <a href="javascript:;"><i class='bx bx-dots-horizontal-rounded'></i></a>
+          </div>
+        </div>
+        <!--start chat overlay-->
+        <div class="overlay chat-toggle-btn-mobile"></div>
+        <!--end chat overlay-->
       </div>
-      <!--end compose mail-->
-      <!--start email overlay-->
-      <div class="overlay email-toggle-btn-mobile"></div>
-      <!--end email overlay-->
-    </div>
-    <!--end email wrapper-->
-        
+
     </div>
   </main>
   <!--end main wrapper-->
 
-    <!--start overlay-->
-    <div class="overlay btn-toggle"></div>
-    <!--end overlay-->
+  <!--start overlay-->
+  <div class="overlay btn-toggle"></div>
+  <!--end overlay-->
 
   <!--start cart-->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
@@ -1402,9 +1195,9 @@
   <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
   <script src="assets/js/main.js"></script>
-	<script>
-		new PerfectScrollbar('.email-navigation');
-		new PerfectScrollbar('.email-read-box');
+  <script>
+		new PerfectScrollbar('.chat-list');
+		new PerfectScrollbar('.chat-content');
 	</script>
 
 </body>

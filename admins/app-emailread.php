@@ -8,8 +8,8 @@
   <!--favicon-->
   <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
-	<link href="assets/css/pace.min.css" rel="stylesheet">
-	<script src="assets/js/pace.min.js"></script>
+  <link href="assets/css/pace.min.css" rel="stylesheet">
+  <script src="assets/js/pace.min.js"></script>
 
   <!--plugins-->
   <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
@@ -20,6 +20,7 @@
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!--main css-->
   <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
   <link href="sass/main.css" rel="stylesheet">
@@ -51,7 +52,7 @@
                   <input class="form-control rounded-5 px-5 mobile-search-control" type="text" placeholder="Search">
                   <span class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
                   <span class="material-icons-outlined position-absolute me-3 translate-middle-y end-0 top-50 mobile-search-close">close</span>
-                 </div>
+                </div>
               </div>
               <div class="card-body search-content">
                 <p class="search-title">Recent Searches</p>
@@ -90,7 +91,7 @@
                       <h5 class="mb-0 search-list-title">eCommerce Website Tutorials</h5>
                     </div>
                   </div>
-  
+
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="list-icon">
                       <i class="material-icons-outlined fs-5">laptop</i>
@@ -100,10 +101,10 @@
                     </div>
                   </div>
                 </div>
-  
+
                 <hr>
                 <p class="search-title">Members</p>
-  
+
                 <div class="search-list d-flex flex-column gap-2">
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="memmber-img">
@@ -113,7 +114,7 @@
                       <h5 class="mb-0 search-list-title ">Andrew Stark</h5>
                     </div>
                   </div>
-  
+
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="memmber-img">
                       <img src="assets/images/avatars/02.png" width="32" height="32" class="rounded-circle" alt="">
@@ -122,7 +123,7 @@
                       <h5 class="mb-0 search-list-title ">Snetro Jhonia</h5>
                     </div>
                   </div>
-  
+
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="memmber-img">
                       <img src="assets/images/avatars/03.png" width="32" height="32" class="rounded-circle" alt="">
@@ -131,7 +132,7 @@
                       <h5 class="mb-0 search-list-title">Michle Clark</h5>
                     </div>
                   </div>
-  
+
                 </div>
               </div>
               <div class="card-footer text-center bg-transparent">
@@ -168,12 +169,12 @@
           </ul>
         </li>
 
-        <li class="nav-item dropdown position-static d-md-flex d-none">
+        <li class="nav-item dropdown position-static  d-md-flex d-none">
           <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-auto-close="outside"
-          data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">done_all</i></a>
+            data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">done_all</i></a>
           <div class="dropdown-menu dropdown-menu-end mega-menu shadow-lg p-4 p-lg-5">
             <div class="mega-menu-widgets">
-             <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 g-lg-5">
+              <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-4 g-lg-5">
                 <div class="col">
                   <div class="card rounded-4 shadow-none border mb-0">
                     <div class="card-body">
@@ -182,11 +183,11 @@
                           <i class="material-icons-outlined">question_answer</i>
                         </div>
                         <div class="mega-menu-content">
-                           <h5>Marketing</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Marketing</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -196,11 +197,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/02.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Website</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Website</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -210,11 +211,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/03.png" width="40" alt="">
                         <div class="mega-menu-content">
-                            <h5>Subscribers</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Subscribers</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -224,11 +225,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/01.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Hubspot</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Hubspot</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -238,11 +239,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/11.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Templates</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Templates</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -252,11 +253,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/13.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Ebooks</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Ebooks</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -266,11 +267,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/12.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Sales</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Sales</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -280,11 +281,11 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/08.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Tools</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Tools</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -294,15 +295,15 @@
                       <div class="d-flex align-items-start gap-3">
                         <img src="assets/images/megaIcons/09.png" width="40" alt="">
                         <div class="mega-menu-content">
-                           <h5>Academy</h5>
-                           <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
-                             the visual form of a document.</p>
+                          <h5>Academy</h5>
+                          <p class="mb-0 f-14">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate
+                            the visual form of a document.</p>
                         </div>
-                     </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-             </div><!--end row-->
+              </div><!--end row-->
             </div>
           </div>
         </li>
@@ -591,7 +592,7 @@
         </li>
         <li class="nav-item dropdown">
           <a href="javascrpt:;" class="dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">
-             <img src="assets/images/avatars/01.png" class="rounded-circle p-1 border" width="45" height="45" alt="">
+            <img src="assets/images/avatars/01.png" class="rounded-circle p-1 border" width="45" height="45" alt="">
           </a>
           <div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
             <a class="dropdown-item  gap-2 py-2" href="javascript:;">
@@ -603,18 +604,18 @@
             </a>
             <hr class="dropdown-divider">
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-              class="material-icons-outlined">person_outline</i>Profile</a>
+                class="material-icons-outlined">person_outline</i>Profile</a>
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-              class="material-icons-outlined">local_bar</i>Setting</a>
+                class="material-icons-outlined">local_bar</i>Setting</a>
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-              class="material-icons-outlined">dashboard</i>Dashboard</a>
+                class="material-icons-outlined">dashboard</i>Dashboard</a>
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-              class="material-icons-outlined">account_balance</i>Earning</a>
-              <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+                class="material-icons-outlined">account_balance</i>Earning</a>
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
                 class="material-icons-outlined">cloud_download</i>Downloads</a>
             <hr class="dropdown-divider">
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-            class="material-icons-outlined">power_settings_new</i>Logout</a>
+                class="material-icons-outlined">power_settings_new</i>Logout</a>
           </div>
         </li>
       </ul>
@@ -624,671 +625,233 @@
   <!--end top header-->
 
 
-   <!--start sidebar-->
-   <aside class="sidebar-wrapper" data-simplebar="true">
-    <div class="sidebar-header">
-      <div class="logo-icon">
-        <img src="assets/images/logo-icon.png" class="logo-img" alt="">
-      </div>
-      <div class="logo-name flex-grow-1">
-        <h5 class="mb-0">Maxton</h5>
-      </div>
-      <div class="sidebar-close">
-        <span class="material-icons-outlined">close</span>
-      </div>
-    </div>
-    <div class="sidebar-nav">
-        <!--navigation-->
-        <ul class="metismenu" id="sidenav">
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">home</i>
-              </div>
-              <div class="menu-title">Dashboard</div>
-            </a>
-            <ul>
-              <li><a href="index.html"><i class="material-icons-outlined">arrow_right</i>Analysis</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">widgets</i>
-              </div>
-              <div class="menu-title">Widgets</div>
-            </a>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">apps</i>
-              </div>
-              <div class="menu-title">Apps</div>
-            </a>
-            <ul>
-              <li><a href="app-emailbox.html"><i class="material-icons-outlined">arrow_right</i>Email Box</a>
-              </li>
-              <li><a href="app-emailread.html"><i class="material-icons-outlined">arrow_right</i>Email Read</a>
-              </li>
-              <li><a href="app-chat-box.html"><i class="material-icons-outlined">arrow_right</i>Chat</a>
-              </li>
-              <li><a href="app-fullcalender.html"><i class="material-icons-outlined">arrow_right</i>Calendar</a>
-              </li>
-              <li><a href="app-to-do.html"><i class="material-icons-outlined">arrow_right</i>To do</a>
-              </li>
-              <li><a href="app-invoice.html"><i class="material-icons-outlined">arrow_right</i>Invoice</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">UI Elements</li>
-          <li>
-            <a href="cards.html">
-              <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i>
-              </div>
-              <div class="menu-title">Cards</div>
-            </a>
-          </li>
-          
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">shopping_bag</i>
-              </div>
-              <div class="menu-title">eCommerce</div>
-            </a>
-            <ul>
-              <li><a href="ecommerce-add-product.html"><i class="material-icons-outlined">arrow_right</i>Add Product</a>
-              </li>
-              <li><a href="ecommerce-products.html"><i class="material-icons-outlined">arrow_right</i>Products</a>
-              </li>
-              <li><a href="ecommerce-customers.html"><i class="material-icons-outlined">arrow_right</i>Customers</a>
-              </li>
-              <li><a href="ecommerce-customer-details.html"><i class="material-icons-outlined">arrow_right</i>Customer Details</a>
-              </li>
-              <li><a href="ecommerce-orders.html"><i class="material-icons-outlined">arrow_right</i>Orders</a>
-              </li>
-              <li><a href="ecommerce-order-details.html"><i class="material-icons-outlined">arrow_right</i>Order Details</a>
-              </li>
-            </ul>     
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">card_giftcard</i>
-              </div>
-              <div class="menu-title">Components</div>
-            </a>
-            <ul>
-              <li><a href="component-alerts.html"><i class="material-icons-outlined">arrow_right</i>Alerts</a>
-              </li>
-              <li><a href="component-accordions.html"><i class="material-icons-outlined">arrow_right</i>Accordions</a>
-              </li>
-              <li><a href="component-badges.html"><i class="material-icons-outlined">arrow_right</i>Badges</a>
-              </li>
-              <li><a href="component-buttons.html"><i class="material-icons-outlined">arrow_right</i>Buttons</a>
-              </li>
-              <li><a href="component-carousels.html"><i class="material-icons-outlined">arrow_right</i>Carousels</a>
-              </li>
-              <li><a href="component-media-object.html"><i class="material-icons-outlined">arrow_right</i>Media
-                  Objects</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">Pages</li>
-          <li>
-            <a href="user-profile.html">
-              <div class="parent-icon"><i class="material-icons-outlined">person</i>
-              </div>
-              <div class="menu-title">User Profile</div>
-            </a>
-          </li>
-          <li>
-            <a href="timeline.html">
-              <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
-              </div>
-              <div class="menu-title">Timeline</div>
-            </a>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">report_problem</i>
-              </div>
-              <div class="menu-title">Pages</div>
-            </a>
-            <ul>
-              <li><a href="pages-error-404.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>404
-                  Error</a>
-              </li>
-              <li><a href="pages-error-505.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>505
-                  Error</a>
-              </li>
-              <li><a href="pages-coming-soon.html" target="_blank"><i
-                    class="material-icons-outlined">arrow_right</i>Coming Soon</a>
-              </li>
-              <li><a href="pages-starter-page.html" target="_blank"><i
-                    class="material-icons-outlined">arrow_right</i>Blank Page</a> 
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="faq.html">
-              <div class="parent-icon"><i class="material-icons-outlined">help_outline</i>
-              </div>
-              <div class="menu-title">FAQ</div>
-            </a>
-          </li>
-          <li class="menu-label">Others</li>
-          <li>
-            <a href="javascrpt:;">
-              <div class="parent-icon"><i class="material-icons-outlined">description</i>
-              </div>
-              <div class="menu-title">Documentation</div>
-            </a>
-          </li>
-    
-         </ul>
-        <!--end navigation-->
-    </div>
-  </aside>
-<!--end sidebar-->
+  <!--start sidebar-->
+
+  <?php
+  require('assets/partials/_navbar.php');
+
+  ?>
+
+  <!--end sidebar-->
 
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
       <!--breadcrumb-->
-				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Dashboard</div>
-					<div class="ps-3">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb mb-0 p-0">
-								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-								</li>
-								<li class="breadcrumb-item active" aria-current="page">Analysis</li>
-							</ol>
-						</nav>
-					</div>
-					<div class="ms-auto">
-						<div class="btn-group">
-							<button type="button" class="btn btn-outline-primary">Settings</button>
-							<button type="button" class="btn btn-outline-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-							</button>
-							<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-								<a class="dropdown-item" href="javascript:;">Another action</a>
-								<a class="dropdown-item" href="javascript:;">Something else here</a>
-								<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--end breadcrumb-->
-     
-        <div class="row">
-          <div class="col-xxl-8 d-flex align-items-stretch">
-            <div class="card w-100 overflow-hidden rounded-4">
-              <div class="card-body position-relative p-4">
-                <div class="row">
-                  <div class="col-12 col-sm-7">
-                    <div class="d-flex align-items-center gap-3 mb-5">
-                      <img src="assets/images/avatars/01.png" class="rounded-circle bg-grd-info p-1"  width="60" height="60" alt="user">
-                      <div class="">
-                        <p class="mb-0 fw-semibold">Welcome back</p>
-                        <h4 class="fw-semibold mb-0 fs-4 mb-0">Jhon Anderson!</h4>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-sm-5">
-                    <div class="welcome-back-img pt-4">
-                       <img src="assets/images/gallery/welcome-back-3.png" height="180" alt="">
-                    </div>
-                  </div>
-                </div><!--end row-->
-              </div>
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+        <div class="breadcrumb-title pe-3">Application</div>
+        <div class="ps-3">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+              <li class="breadcrumb-item"><a href="javascript:;"></a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Email Box</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="ms-auto">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary">Settings</button>
+            <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"> <a class="dropdown-item" href="javascript:;">Action</a>
+              <a class="dropdown-item" href="javascript:;">Another action</a>
+              <a class="dropdown-item" href="javascript:;">Something else here</a>
+              <div class="dropdown-divider"></div><a class="dropdown-item" href="javascript:;">Separated link</a>
             </div>
           </div>
-          <div class="col-xl-6 col-xxl-4 d-flex align-items-stretch">
-            <div class="card w-100 rounded-4">
-              <div class="card-body">
-                <div class="text-center">
-                  <h6 class="mb-0">Monthly Revenue</h6>
-                </div>
-                <div class="mt-4" id="chart5"></div>
-                <p>Avrage monthly sale for every author</p>
-                <div class="d-flex align-items-center gap-3 mt-4">
-                  <div class="">
-                    <h1 class="mb-0 text-primary">68.9%</h1>
-                  </div>
-                  <div class="d-flex align-items-center align-self-end">
-                    <p class="mb-0 text-success">34.5%</p>
-                    <span class="material-icons-outlined text-success">expand_less</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>    
-         
-          <div class="col-xl-6 col-xxl-4 d-flex align-items-stretch">
-            <div class="card w-100 rounded-4">
-              <div class="card-body">
-                <div id="chart8"></div>
-                <div class="d-flex align-items-center gap-3 mt-4">
-                  <div class="">
-                    <h1 class="mb-0">36.7%</h1>
-                  </div>
-                  <div class="d-flex align-items-center align-self-end gap-2">
-                    <span class="material-icons-outlined text-success">trending_up</span>
-                    <p class="mb-0 text-success">34.5%</p>
-                  </div>
-                </div>
-                <p class="mb-4">Visitors Growth</p>
-                <div class="d-flex flex-column gap-3">
-                  <div class="">
-                    <p class="mb-1">Cliks <span class="float-end">2589</span></p>
-                    <div class="progress" style="height: 5px;">
-                      <div class="progress-bar bg-grd-primary" style="width: 65%"></div>
-                    </div>
-                  </div>
-                  <div class="">
-                    <p class="mb-1">Likes <span class="float-end">6748</span></p>
-                    <div class="progress" style="height: 5px;">
-                      <div class="progress-bar bg-grd-warning" style="width: 55%"></div>
-                    </div>
-                  </div>
-                  <div class="">
-                    <p class="mb-1">Upvotes <span class="float-end">9842</span></p>
-                    <div class="progress" style="height: 5px;">
-                      <div class="progress-bar bg-grd-info" style="width: 45%"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6 col-xxl-4 d-flex align-items-stretch">
-            <div class="card w-100 rounded-4">
-              <div class="card-body">
-                <div class="d-flex align-items-start justify-content-between mb-3">
-                  <div class="">
-                    <h5 class="mb-0 fw-bold">Social Leads</h5>
-                  </div>
-                  <div class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
-                      data-bs-toggle="dropdown">
-                      <span class="material-icons-outlined fs-5">more_vert</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                    </ul>
-                  </div>
-                 </div>
-                <div class="d-flex flex-column justify-content-between gap-4">
-                  <div class="d-flex align-items-center gap-4">
-                    <div class="d-flex align-items-center gap-3 flex-grow-1">
-                      <img src="assets/images/apps/17.png" width="32" alt="">
-                      <p class="mb-0">Facebook</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 fs-6">55%</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 data-attributes">
-                        <span
-                          data-peity='{ "fill": ["#0d6efd", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center gap-4">
-                    <div class="d-flex align-items-center gap-3 flex-grow-1">
-                      <img src="assets/images/apps/18.png" width="32" alt="">
-                      <p class="mb-0">LinkedIn</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 fs-6">67%</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 data-attributes">
-                        <span
-                          data-peity='{ "fill": ["#fc185a", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center gap-4">
-                    <div class="d-flex align-items-center gap-3 flex-grow-1">
-                      <img src="assets/images/apps/19.png" width="32" alt="">
-                      <p class="mb-0">Instagram</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 fs-6">78%</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 data-attributes">
-                        <span
-                          data-peity='{ "fill": ["#02c27a", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center gap-4">
-                    <div class="d-flex align-items-center gap-3 flex-grow-1">
-                      <img src="assets/images/apps/20.png" width="32" alt="">
-                      <p class="mb-0">Snapchat</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 fs-6">46%</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 data-attributes">
-                        <span
-                          data-peity='{ "fill": ["#fd7e14", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center gap-4">
-                    <div class="d-flex align-items-center gap-3 flex-grow-1">
-                      <img src="assets/images/apps/05.png" width="32" alt="">
-                      <p class="mb-0">Google</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 fs-6">38%</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 data-attributes">
-                        <span
-                          data-peity='{ "fill": ["#0dcaf0", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center gap-4">
-                    <div class="d-flex align-items-center gap-3 flex-grow-1">
-                      <img src="assets/images/apps/08.png" width="32" alt="">
-                      <p class="mb-0">Altaba</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 fs-6">15%</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 data-attributes">
-                        <span
-                          data-peity='{ "fill": ["#6f42c1", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center gap-4">
-                    <div class="d-flex align-items-center gap-3 flex-grow-1">
-                      <img src="assets/images/apps/07.png" width="32" alt="">
-                      <p class="mb-0">Spotify</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 fs-6">12%</p>
-                    </div>
-                    <div class="">
-                      <p class="mb-0 data-attributes">
-                        <span
-                          data-peity='{ "fill": ["#ff00b3", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>  
-          </div>
-          <div class="col-xl-6 col-xxl-4 d-flex align-items-stretch">
-            <div class="card w-100 rounded-4">
-              <div class="card-header border-0 p-3 border-bottom">
-                <div class="d-flex align-items-start justify-content-between">
-                  <div class="">
-                    <h5 class="mb-0">New Users</h5>
-                  </div>
-                  <div class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle" data-bs-toggle="dropdown">
-                      <span class="material-icons-outlined fs-5">more_vert</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="card-body p-0">
-                <div class="user-list p-3">
-                  <div class="d-flex flex-column gap-3">
-                    <div class="d-flex align-items-center gap-3">
-                      <img src="assets/images/avatars/01.png" width="45" height="45" class="rounded-circle" alt="">
-                      <div class="flex-grow-1">
-                        <h6 class="mb-0">Elon Jonado</h6>
-                        <p class="mb-0">elon_deo</p>
-                      </div>
-                      <div class="form-check form-check-inline me-0">
-                        <input class="form-check-input ms-0" type="checkbox">
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                      <img src="assets/images/avatars/02.png" width="45" height="45" class="rounded-circle" alt="">
-                      <div class="flex-grow-1">
-                        <h6 class="mb-0">Alexzender Clito</h6>
-                        <p class="mb-0">zli_alexzender</p>
-                      </div>
-                      <div class="form-check form-check-inline me-0">
-                        <input class="form-check-input ms-0" type="checkbox">
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                      <img src="assets/images/avatars/03.png" width="45" height="45" class="rounded-circle" alt="">
-                      <div class="flex-grow-1">
-                        <h6 class="mb-0">Michle Tinko</h6>
-                        <p class="mb-0">tinko_michle</p>
-                      </div>
-                      <div class="form-check form-check-inline me-0">
-                        <input class="form-check-input ms-0" type="checkbox">
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                      <img src="assets/images/avatars/04.png" width="45" height="45" class="rounded-circle" alt="">
-                      <div class="flex-grow-1">
-                        <h6 class="mb-0">KailWemba</h6>
-                        <p class="mb-0">wemba_kl</p>
-                      </div>
-                      <div class="form-check form-check-inline me-0">
-                        <input class="form-check-input ms-0" type="checkbox">
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                      <img src="assets/images/avatars/05.png" width="45" height="45" class="rounded-circle" alt="">
-                      <div class="flex-grow-1">
-                        <h6 class="mb-0">Henhco Tino</h6>
-                        <p class="mb-0">Henhco_tino</p>
-                      </div>
-                      <div class="form-check form-check-inline me-0">
-                        <input class="form-check-input ms-0" type="checkbox">
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                      <img src="assets/images/avatars/06.png" width="45" height="45" class="rounded-circle" alt="">
-                      <div class="flex-grow-1">
-                        <h6 class="mb-0">Gonjiko Fernando</h6>
-                        <p class="mb-0">gonjiko_fernando</p>
-                      </div>
-                      <div class="form-check form-check-inline me-0">
-                        <input class="form-check-input ms-0" type="checkbox">
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3">
-                      <img src="assets/images/avatars/08.png" width="45" height="45" class="rounded-circle" alt="">
-                      <div class="flex-grow-1">
-                        <h6 class="mb-0">Specer Kilo</h6>
-                        <p class="mb-0">specer_kilo</p>
-                      </div>
-                      <div class="form-check form-check-inline me-0">
-                        <input class="form-check-input ms-0" type="checkbox">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer bg-transparent p-3">
-                <div class="d-flex align-items-center justify-content-between gap-3">
-                  <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">share</i></a>
-                  <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">textsms</i></a>
-                  <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">email</i></a>
-                  <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">attach_file</i></a>
-                  <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">event</i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-12 col-xxl-12 d-flex align-items-stretch">
-            <div class="card w-100 rounded-4">
-              <div class="card-body">
-               <div class="d-flex align-items-start justify-content-between mb-3">
-                  <div class="">
-                    <h5 class="mb-0">Recent Orders</h5>
-                  </div>
-                  <div class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
-                      data-bs-toggle="dropdown">
-                      <span class="material-icons-outlined fs-5">more_vert</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                      <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="order-search position-relative my-3">
-                  <input class="form-control rounded-5 px-5" type="text" placeholder="Search">
-                  <span class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
-                </div>
-                 <div class="table-responsive">
-                     <table class="table align-middle">
-                       <thead>
-                        <tr>
-                          <th>Item Name</th>
-                          <th>Amount</th>
-                          <th>Vendor</th>
-                          <th>Status</th>
-                          <th>Rating</th>
-                        </tr>
-                       </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="d-flex align-items-center gap-3">
-                                 <div class="">
-                                    <img src="assets/images/top-products/01.png" class="rounded-circle" width="50" height="50" alt="">
-                                 </div>
-                                 <p class="mb-0">Sports Shoes</p>
-                              </div>
-                            </td>
-                            <td>$149</td>
-                            <td>Julia Sunota</td>
-                            <td><p class="dash-lable mb-0 bg-success bg-opacity-10 text-success rounded-2">Completed</p></td>
-                            <td>
-                              <div class="d-flex align-items-center gap-1">
-                                <p class="mb-0">5.0</p>
-                                <i class="material-icons-outlined text-warning fs-6">star</i>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex align-items-center gap-3">
-                                 <div class="">
-                                    <img src="assets/images/top-products/02.png" class="rounded-circle" width="50" height="50" alt="">
-                                 </div>
-                                 <p class="mb-0">Goldan Watch</p>
-                              </div>
-                            </td>
-                            <td>$168</td>
-                            <td>Julia Sunota</td>
-                            <td><p class="dash-lable mb-0 bg-success bg-opacity-10 text-success rounded-2">Completed</p></td>
-                            <td>
-                              <div class="d-flex align-items-center gap-1">
-                                <p class="mb-0">5.0</p>
-                                <i class="material-icons-outlined text-warning fs-6">star</i>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex align-items-center gap-3">
-                                 <div class="">
-                                    <img src="assets/images/top-products/03.png" class="rounded-circle" width="50" height="50" alt="">
-                                 </div>
-                                 <p class="mb-0">Men Polo Tshirt</p>
-                              </div>
-                            </td>
-                            <td>$124</td>
-                            <td>Julia Sunota</td>
-                            <td><p class="dash-lable mb-0 bg-warning bg-opacity-10 text-warning rounded-2">Pending</p></td>
-                            <td>
-                              <div class="d-flex align-items-center gap-1">
-                                <p class="mb-0">4.0</p>
-                                <i class="material-icons-outlined text-warning fs-6">star</i>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex align-items-center gap-3">
-                                 <div class="">
-                                    <img src="assets/images/top-products/04.png" class="rounded-circle" width="50" height="50" alt="">
-                                 </div>
-                                 <p class="mb-0">Blue Jeans Casual</p>
-                              </div>
-                            </td>
-                            <td>$289</td>
-                            <td>Julia Sunota</td>
-                            <td><p class="dash-lable mb-0 bg-success bg-opacity-10 text-success rounded-2">Completed</p></td>
-                            <td>
-                              <div class="d-flex align-items-center gap-1">
-                                <p class="mb-0">3.0</p>
-                                <i class="material-icons-outlined text-warning fs-6">star</i>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex align-items-center gap-3">
-                                 <div class="">
-                                    <img src="assets/images/top-products/06.png" class="rounded-circle" width="50" height="50" alt="">
-                                 </div>
-                                 <p class="mb-0">Fancy Shirts</p>
-                              </div>
-                            </td>
-                            <td>$389</td>
-                            <td>Julia Sunota</td>
-                            <td><p class="dash-lable mb-0 bg-danger bg-opacity-10 text-danger rounded-2">Canceled</p></td>
-                            <td>
-                              <div class="d-flex align-items-center gap-1">
-                                <p class="mb-0">2.0</p>
-                                <i class="material-icons-outlined text-warning fs-6">star</i>
-                              </div>
-                            </td>
-                          </tr>
+        </div>
+      </div>
+      <!--end breadcrumb-->
 
-                        </tbody>
-                     </table>
-                 </div>
+
+      <!--start email wrapper-->
+      <div class="email-wrapper">
+        <div class="email-sidebar">
+          <div class="email-sidebar-header d-grid"><a href="javascript:;" class="btn btn-grd btn-grd-primary compose-mail-btn"><i class='bx bx-plus me-2'></i> Compose</a>
+          </div>
+          <div class="email-sidebar-content">
+            <div class="email-navigation">
+              <div class="list-group list-group-flush">
+                <a href="app-emailbox.html" class="list-group-item active d-flex align-items-center"><i class='bx bxs-inbox me-3 font-20'></i><span>Inbox</span><span class="badge bg-primary rounded-pill ms-auto">7,513</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-star me-3 font-20'></i><span>Starred</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-alarm-snooze me-3 font-20'></i><span>Snoozed</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-send me-3 font-20'></i><span>Sent</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-file-blank me-3 font-20'></i><span>Drafts</span><span class="badge bg-primary rounded-pill ms-auto">4</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-bookmark me-3 font-20'></i><span>Important</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-message-rounded-error me-3 font-20'></i><span>Chats</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bx-mail-send me-3 font-20'></i><span>Scheduled</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-envelope-open me-3 font-20'></i><span>All Mail</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-info-circle me-3 font-20'></i><span>Spam</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-trash-alt me-3 font-20'></i><span>Trash</span></a>
+              </div>
+            </div>
+            <div class="email-meeting">
+              <div class="list-group list-group-flush">
+                <div class="list-group-item"><span>Meet</span>
+                </div> <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-video me-3 font-20'></i><span>Start a meeting</span></a>
+                <a href="javascript:;" class="list-group-item d-flex align-items-center"><i class='bx bxs-group me-3 font-20'></i><span>Join a meeting</span></a>
+                <div class="list-group-item email-hangout cursor-pointer border-top">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="chat-user-online">
+                      <img src="assets/images/avatars/01.png" width="42" height="42" class="rounded-circle" alt="" />
+                    </div>
+                    <div class="flex-grow-1">
+                      <p class="mb-0">Jessica Doe</p>
+                    </div>
+                    <div class="dropdown">
+                      <div class="font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class='bx bx-plus'></i>
+                      </div>
+                      <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="javascript:;">Settings</a>
+                        <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Help & Feedback</a>
+                        <a class="dropdown-item" href="javascript:;">Enable Split View Mode</a>
+                        <a class="dropdown-item" href="javascript:;">Keyboard Shortcuts</a>
+                        <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Sign Out</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-
+        <div class="email-header d-xl-flex align-items-center">
+          <div class="d-flex align-items-center">
+            <div class="email-toggle-btn"><i class='bx bx-menu'></i>
+            </div>
+            <div class="btn btn-light">
+              <input class="form-check-input" type="checkbox">
+            </div>
+            <div class="">
+              <button type="button" class="btn btn-light ms-2"><i class='bx bx-refresh me-0'></i>
+              </button>
+            </div>
+            <div class="">
+              <button type="button" class="btn btn-light ms-2"><i class='bx bx-downvote me-0'></i>
+              </button>
+            </div>
+            <div class="d-none d-md-flex">
+              <button type="button" class="btn btn-light ms-2"><i class='bx bx-file me-0'></i>
+              </button>
+            </div>
+            <div class="">
+              <button type="button" class="btn btn-light ms-2"><i class='bx bx-trash me-0'></i>
+              </button>
+            </div>
+          </div>
+          <div class="flex-grow-1 mx-xl-2 my-2 my-xl-0">
+            <div class="input-group"> <span class="input-group-text bg-transparent"><i class="bx bx-search"></i></span>
+              <input type="text" class="form-control" placeholder="Search mail">
+            </div>
+          </div>
+          <div class="ms-auto d-flex align-items-center">
+            <button class="btn btn-sm btn-light">1-50 of 8,740</button>
+            <button class="btn btn-light ms-2"><i class='bx bx-chevron-left me-0'></i>
+            </button>
+            <button class="btn btn-light ms-2"><i class='bx bx-chevron-right me-0'></i>
+            </button>
+          </div>
+        </div>
+        <div class="email-content">
+          <div class="email-read-box p-3">
+            <h4>It is a long established fact that a reader will be distracted.</h4>
+            <hr>
+            <div class="d-flex align-items-center">
+              <img src="assets/images/avatars/01.png" width="42" height="42" class="rounded-circle" alt="" />
+              <div class="flex-grow-1 ms-2">
+                <p class="mb-0 font-weight-bold">Himalaya India</p>
+                <div class="dropdown">
+                  <div class="dropdown-toggle" data-bs-toggle="dropdown">to me</div>
+                  <div class="dropdown-menu"> <a class="dropdown-item" href="javascript:;">Settings</a>
+                    <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Help & Feedback</a>
+                    <a class="dropdown-item" href="javascript:;">Enable Split View Mode</a>
+                    <a class="dropdown-item" href="javascript:;">Keyboard Shortcuts</a>
+                    <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Sign Out</a>
+                  </div>
+                </div>
+              </div>
+              <p class="mb-0 chat-time ps-5 ms-auto">Sep 15, 2020, 11:04 PM (19 hours ago)</p>
+            </div>
+            <div class="email-read-content px-md-5 py-5">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+              <h5>Where can I get some?</h5>
+              <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+              <hr>
+              <h5>Where does it come from?</h5>
+              <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.</p>
+              <p>consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+              <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+            </div>
+          </div>
+        </div>
+        <!--start compose mail-->
+        <div class="compose-mail-popup">
+          <div class="card">
+            <div class="card-header bg-dark text-white py-2 cursor-pointer">
+              <div class="d-flex align-items-center">
+                <div class="compose-mail-title">New Message</div>
+                <div class="compose-mail-close ms-auto">x</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="email-form">
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="To" />
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Subject" />
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" placeholder="Message" rows="10" cols="10"></textarea>
+                </div>
+                <div class="mb-0">
+                  <div class="d-flex align-items-center">
+                    <div class="">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary">Action</button>
+                        <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu"> <a class="dropdown-item" href="javascript:;">Action</a>
+                          <a class="dropdown-item" href="javascript:;">Another action</a>
+                          <a class="dropdown-item" href="javascript:;">Something else here</a>
+                          <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Separated link</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-2">
+                      <button type="button" class="btn border-0 btn-sm btn-white"><i class="lni lni-text-format"></i>
+                      </button>
+                      <button type="button" class="btn border-0 btn-sm btn-white"><i class='bx bx-link-alt'></i>
+                      </button>
+                      <button type="button" class="btn border-0 btn-sm btn-white"><i class="lni lni-emoji-tounge"></i>
+                      </button>
+                      <button type="button" class="btn border-0 btn-sm btn-white"><i class="lni lni-google-drive"></i>
+                      </button>
+                    </div>
+                    <div class="ms-auto">
+                      <button type="button" class="btn border-0 btn-sm btn-white"><i class="lni lni-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end compose mail-->
+        <!--start email overlay-->
+        <div class="overlay email-toggle-btn-mobile"></div>
+        <!--end email overlay-->
+      </div>
+      <!--end email wrapper-->
 
     </div>
   </main>
   <!--end main wrapper-->
 
   <!--start overlay-->
-     <div class="overlay btn-toggle"></div>
+  <div class="overlay btn-toggle"></div>
   <!--end overlay-->
-
-   <!--start footer-->
-   <footer class="page-footer">
-    <p class="mb-0">Copyright © 2024. All right reserved.</p>
-  </footer>
-  <!--end footer-->
 
   <!--start cart-->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
@@ -1427,7 +990,7 @@
   <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>Customize
   </button>
-  
+
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
     <div class="offcanvas-header border-bottom h-70">
       <div class="">
@@ -1493,16 +1056,11 @@
   <!--plugins-->
   <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
   <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
-  <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
-  <script src="assets/plugins/peity/jquery.peity.min.js"></script>
-  <script>
-    $(".data-attributes span").peity("donut")
-  </script>
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/dashboard1.js"></script>
   <script>
-	   new PerfectScrollbar(".user-list")
+    new PerfectScrollbar('.email-navigation');
+    new PerfectScrollbar('.email-read-box');
   </script>
 
 </body>

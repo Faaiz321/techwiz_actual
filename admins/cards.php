@@ -20,7 +20,6 @@
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!--main css-->
   <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
   <link href="sass/main.css" rel="stylesheet">
@@ -34,8 +33,8 @@
 
 <body>
 
- <!--start header-->
- <header class="top-header">
+<!--start header-->
+<header class="top-header">
   <nav class="navbar navbar-expand align-items-center gap-4">
     <div class="btn-toggle">
       <a href="javascript:;"><i class="material-icons-outlined">menu</i></a>
@@ -624,715 +623,829 @@
 </header>
 <!--end top header-->
 
+<!--start sidebar-->
+<
+<?php
+require('assets/partials/_navbar.php');
 
-  <!--start sidebar-->
-  <aside class="sidebar-wrapper" data-simplebar="true">
-    <div class="sidebar-header">
-      <div class="logo-icon">
-        <img src="assets/images/logo-icon.png" class="logo-img" alt="">
-      </div>
-      <div class="logo-name flex-grow-1">
-        <h5 class="mb-0">Maxton</h5>
-      </div>
-      <div class="sidebar-close">
-        <span class="material-icons-outlined">close</span>
-      </div>
-    </div>
-    <div class="sidebar-nav">
-        <!--navigation-->
-        <ul class="metismenu" id="sidenav">
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">home</i>
-              </div>
-              <div class="menu-title">Dashboard</div>
-            </a>
-            <ul>
-              <li><a href="index.html"><i class="material-icons-outlined">arrow_right</i>Analysis</a>
-              </li>
-              <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>eCommerce</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">widgets</i>
-              </div>
-              <div class="menu-title">Widgets</div>
-            </a>
-            <ul>
-              <li><a href="widgets-data.html"><i class="material-icons-outlined">arrow_right</i>Data</a>
-              </li>
-              <li><a href="widgets-static.html"><i class="material-icons-outlined">arrow_right</i>Static</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">apps</i>
-              </div>
-              <div class="menu-title">Apps</div>
-            </a>
-            <ul>
-              <li><a href="app-emailbox.html"><i class="material-icons-outlined">arrow_right</i>Email Box</a>
-              </li>
-              <li><a href="app-emailread.html"><i class="material-icons-outlined">arrow_right</i>Email Read</a>
-              </li>
-              <li><a href="app-chat-box.html"><i class="material-icons-outlined">arrow_right</i>Chat</a>
-              </li>
-              <li><a href="app-fullcalender.html"><i class="material-icons-outlined">arrow_right</i>Calendar</a>
-              </li>
-              <li><a href="app-to-do.html"><i class="material-icons-outlined">arrow_right</i>To do</a>
-              </li>
-              <li><a href="app-invoice.html"><i class="material-icons-outlined">arrow_right</i>Invoice</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">UI Elements</li>
-          <li>
-            <a href="cards.html">
-              <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i>
-              </div>
-              <div class="menu-title">Cards</div>
-            </a>
-          </li>
-          
-          <li>
-            <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">shopping_bag</i>
-              </div>
-              <div class="menu-title">eCommerce</div>
-            </a>
-            <ul>
-              <li><a href="ecommerce-add-product.html"><i class="material-icons-outlined">arrow_right</i>Add Product</a>
-              </li>
-              <li><a href="ecommerce-products.html"><i class="material-icons-outlined">arrow_right</i>Products</a>
-              </li>
-              <li><a href="ecommerce-customers.html"><i class="material-icons-outlined">arrow_right</i>Customers</a>
-              </li>
-              <li><a href="ecommerce-customer-details.html"><i class="material-icons-outlined">arrow_right</i>Customer Details</a>
-              </li>
-              <li><a href="ecommerce-orders.html"><i class="material-icons-outlined">arrow_right</i>Orders</a>
-              </li>
-              <li><a href="ecommerce-order-details.html"><i class="material-icons-outlined">arrow_right</i>Order Details</a>
-              </li>
-            </ul>     
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">card_giftcard</i>
-              </div>
-              <div class="menu-title">Components</div>
-            </a>
-            <ul>
-              <li><a href="component-alerts.html"><i class="material-icons-outlined">arrow_right</i>Alerts</a>
-              </li>
-              <li><a href="component-accordions.html"><i class="material-icons-outlined">arrow_right</i>Accordions</a>
-              </li>
-              <li><a href="component-badges.html"><i class="material-icons-outlined">arrow_right</i>Badges</a>
-              </li>
-              <li><a href="component-buttons.html"><i class="material-icons-outlined">arrow_right</i>Buttons</a>
-              </li>
-              <li><a href="component-carousels.html"><i class="material-icons-outlined">arrow_right</i>Carousels</a>
-              </li>
-              <li><a href="component-media-object.html"><i class="material-icons-outlined">arrow_right</i>Media
-                  Objects</a>
-              </li>
-              <li><a href="component-modals.html"><i class="material-icons-outlined">arrow_right</i>Modals</a>
-              </li>
-              <li><a href="component-navs-tabs.html"><i class="material-icons-outlined">arrow_right</i>Navs & Tabs</a>
-              </li>
-              <li><a href="component-navbar.html"><i class="material-icons-outlined">arrow_right</i>Navbar</a>
-              </li>
-              <li><a href="component-paginations.html"><i class="material-icons-outlined">arrow_right</i>Pagination</a>
-              </li>
-              <li><a href="component-popovers-tooltips.html"><i class="material-icons-outlined">arrow_right</i>Popovers
-                  & Tooltips</a>    
-              </li>
-              <li><a href="component-progress-bars.html"><i class="material-icons-outlined">arrow_right</i>Progress</a>
-              </li>
-              <li><a href="component-spinners.html"><i class="material-icons-outlined">arrow_right</i>Spinners</a>
-              </li>
-              <li><a href="component-notifications.html"><i
-                    class="material-icons-outlined">arrow_right</i>Notifications</a>
-              </li>
-              <li><a href="component-avtars-chips.html"><i class="material-icons-outlined">arrow_right</i>Avatrs &
-                  Chips</a>
-              </li>
-              <li><a href="component-typography.html"><i class="material-icons-outlined">arrow_right</i>Typography</a>
-               </li>
-               <li><a href="component-text-utilities.html"><i class="material-icons-outlined">arrow_right</i>Utilities</a>
-               </li>
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">view_agenda</i>
-              </div>
-              <div class="menu-title">Icons</div>
-            </a>
-            <ul>
-              <li><a href="icons-line-icons.html"><i class="material-icons-outlined">arrow_right</i>Line Icons</a>
-              </li>
-              <li><a href="icons-boxicons.html"><i class="material-icons-outlined">arrow_right</i>Boxicons</a>
-              </li>
-              <li><a href="icons-feather-icons.html"><i class="material-icons-outlined">arrow_right</i>Feather
-                  Icons</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">Forms & Tables</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">toc</i>
-              </div>
-              <div class="menu-title">Forms</div>
-            </a>
-            <ul>
-              <li><a href="form-elements.html"><i class="material-icons-outlined">arrow_right</i>Form Elements</a>
-              </li>
-              <li><a href="form-input-group.html"><i class="material-icons-outlined">arrow_right</i>Input Groups</a>
-              </li>
-              <li><a href="form-radios-and-checkboxes.html"><i class="material-icons-outlined">arrow_right</i>Radios &
-                  Checkboxes</a>
-              </li>
-              <li><a href="form-layouts.html"><i class="material-icons-outlined">arrow_right</i>Forms Layouts</a>
-              </li>
-              <li><a href="form-validations.html"><i class="material-icons-outlined">arrow_right</i>Form Validation</a>
-              </li>
-              <li><a href="form-wizard.html"><i class="material-icons-outlined">arrow_right</i>Form Wizard</a>
-              </li>
-              <li><a href="form-file-upload.html"><i class="material-icons-outlined">arrow_right</i>File Upload</a>
-              </li>
-              <li><a href="form-date-time-pickes.html"><i class="material-icons-outlined">arrow_right</i>Date
-                  Pickers</a>
-              </li>
-              <li><a href="form-select2.html"><i class="material-icons-outlined">arrow_right</i>Select2</a>
-              </li>
-              <li><a href="form-repeater.html"><i class="material-icons-outlined">arrow_right</i>Form Repeater</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">api</i>
-              </div>
-              <div class="menu-title">Tables</div>
-            </a>
-            <ul>
-              <li><a href="table-basic-table.html"><i class="material-icons-outlined">arrow_right</i>Basic Table</a>
-              </li>
-              <li><a href="table-datatable.html"><i class="material-icons-outlined">arrow_right</i>Data Table</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">Pages</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">lock</i>
-              </div>
-              <div class="menu-title">Authentication</div>
-            </a>
-            <ul>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Basic</a>
-                <ul>
-                  <li><a href="auth-basic-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                  <li><a href="auth-basic-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                  <li><a href="auth-basic-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                  <li><a href="auth-basic-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                </ul>
-              </li>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Cover</a>
-                <ul>
-                  <li><a href="auth-cover-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                  <li><a href="auth-cover-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                  <li><a href="auth-cover-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                  <li><a href="auth-cover-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                </ul>
-              </li>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Boxed</a>
-                  <ul>
-                    <li><a href="auth-boxed-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                    <li><a href="auth-boxed-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                    <li><a href="auth-boxed-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                    <li><a href="auth-boxed-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                  </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="user-profile.html">
-              <div class="parent-icon"><i class="material-icons-outlined">person</i>
-              </div>
-              <div class="menu-title">User Profile</div>
-            </a>
-          </li>
-          <li>
-            <a href="timeline.html">
-              <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
-              </div>
-              <div class="menu-title">Timeline</div>
-            </a>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">report_problem</i>
-              </div>
-              <div class="menu-title">Pages</div>
-            </a>
-            <ul>
-              <li><a href="pages-error-404.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>404
-                  Error</a>
-              </li>
-              <li><a href="pages-error-505.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>505
-                  Error</a>
-              </li>
-              <li><a href="pages-coming-soon.html" target="_blank"><i
-                    class="material-icons-outlined">arrow_right</i>Coming Soon</a>
-              </li>
-              <li><a href="pages-starter-page.html" target="_blank"><i
-                    class="material-icons-outlined">arrow_right</i>Blank Page</a> 
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="faq.html">
-              <div class="parent-icon"><i class="material-icons-outlined">help_outline</i>
-              </div>
-              <div class="menu-title">FAQ</div>
-            </a>
-          </li>
-          <li>
-            <a href="pricing-table.html">
-              <div class="parent-icon"><i class="material-icons-outlined">sports_football</i>
-              </div>
-              <div class="menu-title">Pricing</div>
-            </a>
-          </li>
-          <li class="menu-label">Charts & Maps</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">fitbit</i>
-              </div>
-              <div class="menu-title">Charts</div>
-            </a>
-            <ul>
-              <li><a href="charts-apex-chart.html"><i class="material-icons-outlined">arrow_right</i>Apex</a>
-              </li>
-              <li><a href="charts-chartjs.html"><i class="material-icons-outlined">arrow_right</i>Chartjs</a>
-              </li>   
-            </ul>
-          </li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">sports_football</i>
-              </div>
-              <div class="menu-title">Maps</div>
-            </a>
-            <ul>
-              <li><a href="map-google-maps.html"><i class="material-icons-outlined">arrow_right</i>Google Maps</a>
-              </li>
-              <li><a href="map-vector-maps.html"><i class="material-icons-outlined">arrow_right</i>Vector Maps</a>
-              </li>
-            </ul>
-          </li>
-          <li class="menu-label">Others</li>
-          <li>
-            <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">face_5</i>
-              </div>
-              <div class="menu-title">Menu Levels</div>
-            </a>
-            <ul>
-              <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level
-                  One</a>
-                <ul>
-                  <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level
-                      Two</a>
-                    <ul>
-                      <li><a href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level Three</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="javascrpt:;">
-              <div class="parent-icon"><i class="material-icons-outlined">description</i>
-              </div>
-              <div class="menu-title">Documentation</div>
-            </a>
-          </li>
-          <li>
-            <a href="javascrpt:;">
-              <div class="parent-icon"><i class="material-icons-outlined">support</i>
-              </div>
-              <div class="menu-title">Support</div>
-            </a>
-          </li>
-         </ul>
-        <!--end navigation-->
-    </div>
-  </aside>
+?>
+
 <!--end sidebar-->
+
 
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
-      
-      <div class="chat-wrapper">
-        <div class="chat-sidebar">
-          <div class="chat-sidebar-header">
-            <div class="d-flex align-items-center">
-              <div class="chat-user-online">
-                <img src="assets/images/avatars/01.png" width="45" height="45" class="rounded-circle" alt="" />
-              </div>
-              <div class="flex-grow-1 ms-2">
-                <p class="mb-0">Rachel Zane</p>
-              </div>
-              <div class="dropdown">
-                <div class="cursor-pointer font-24 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class='bx bx-dots-horizontal-rounded'></i>
-                </div>
-                <div class="dropdown-menu dropdown-menu-end"> <a class="dropdown-item" href="javascript:;">Settings</a>
-                  <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Help & Feedback</a>
-                  <a class="dropdown-item" href="javascript:;">Enable Split View Mode</a>
-                  <a class="dropdown-item" href="javascript:;">Keyboard Shortcuts</a>
-                  <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Sign Out</a>
-                </div>
-              </div>
-            </div>
-            <div class="mb-3"></div>
-            <div class="input-group input-group-sm"> <span class="input-group-text bg-transparent"><i class='bx bx-search'></i></span>
-              <input type="text" class="form-control" placeholder="People, groups, & messages"> <span class="input-group-text bg-transparent"><i class='bx bx-dialpad'></i></span>
-            </div>
-            <div class="chat-tab-menu mt-3">
-              <ul class="nav nav-pills nav-justified">
-                <li class="nav-item">
-                  <a class="nav-link active" data-bs-toggle="pill" href="javascript:;">
-                    <div class="font-24"><i class='bx bx-conversation'></i>
-                    </div>
-                    <div><small>Chats</small>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="pill" href="javascript:;">
-                    <div class="font-24"><i class='bx bx-phone'></i>
-                    </div>
-                    <div><small>Calls</small>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="pill" href="javascript:;">
-                    <div class="font-24"><i class='bx bxs-contact'></i>
-                    </div>
-                    <div><small>Contacts</small>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="pill" href="javascript:;">
-                    <div class="font-24"><i class='bx bx-bell'></i>
-                    </div>
-                    <div><small>Notifications</small>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="chat-sidebar-content">
-            <div class="tab-content" id="pills-tabContent">
-              <div class="tab-pane fade show active" id="pills-Chats">
-                <div class="p-3">
-                  <div class="meeting-button d-flex justify-content-between">
-                    <div class="dropdown"> <a href="#" class="btn btn-white btn-sm radius-30 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"><i class='bx bx-video me-2'></i>Meet Now<i class='bx bxs-chevron-down ms-2'></i></a>
-                      <div class="dropdown-menu"> <a class="dropdown-item" href="#">Host a meeting</a>
-                        <a class="dropdown-item" href="#">Join a meeting</a>
-                      </div>
-                    </div>
-                    <div class="dropdown"> <a href="#" class="btn btn-white btn-sm radius-30 dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown" data-display="static"><i class='bx bxs-edit me-2'></i>New Chat<i class='bx bxs-chevron-down ms-2'></i></a>
-                      <div class="dropdown-menu dropdown-menu-right">	<a class="dropdown-item" href="#">New Group Chat</a>
-                        <a class="dropdown-item" href="#">New Moderated Group</a>
-                        <a class="dropdown-item" href="#">New Chat</a>
-                        <a class="dropdown-item" href="#">New Private Conversation</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="dropdown mt-3"> <a href="#" class="text-uppercase text-secondary dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown">Recent Chats <i class='bx bxs-chevron-down'></i></a>
-                    <div class="dropdown-menu">	<a class="dropdown-item" href="#">Recent Chats</a>
-                      <a class="dropdown-item" href="#">Hidden Chats</a>
-                      <div class="dropdown-divider"></div>	<a class="dropdown-item" href="#">Sort by Time</a>
-                      <a class="dropdown-item" href="#">Sort by Unread</a>
-                      <div class="dropdown-divider"></div>	<a class="dropdown-item" href="#">Show Favorites</a>
-                    </div>
+      <!--breadcrumb-->
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+					<div class="breadcrumb-title pe-3">Components</div>
+					<div class="ps-3">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0">
+								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Cards</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="ms-auto">
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary">Settings</button>
+							<button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
+								<a class="dropdown-item" href="javascript:;">Another action</a>
+								<a class="dropdown-item" href="javascript:;">Something else here</a>
+								<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end breadcrumb-->
+
+        <div class="row row-cols-1 row-cols-xl-2">
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-4 border-end">
+                  <div class="p-3 align-self-center">
+                    <img src="assets/images/gallery/09.png" class="w-100 rounded-start" alt="...">
                   </div>
                 </div>
-                <div class="chat-list">
-                  <div class="list-group list-group-flush">
-                    <a href="javascript:;" class="list-group-item">
-                      <div class="d-flex">
-                        <div class="chat-user-online">
-                          <img src="assets/images/avatars/02.png" width="42" height="42" class="rounded-circle" alt="" />
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">New iPhone Pro Max</h5>
+                    <p class="card-text">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia All
+                      the Lorem Ipsum generators.</p>
+                    <h5>Price : $599</h5>
+                    <div class="mt-4 d-flex align-items-center justify-content-between">
+                      <button class="btn btn-grd btn-grd-primary d-flex gap-2 px-3 border-0"><i
+                          class="material-icons-outlined">shopping_basket</i>Add to Cart</button>
+                      <div class="d-flex gap-1">
+                        <a href="javascript:;" class="sharelink"><i
+                            class="material-icons-outlined">favorite_border</i></a>
+                        <div class="dropdown position-relative">
+                          <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
+                            data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
+                              class="material-icons-outlined">share</i></a>
+                          <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
+                            <div class="input-group">
+                              <input type="text" class="form-control ps-5" value="https://www.codervent.com"
+                                placeholder="Enter Url">
+                              <span
+                                class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
+                              <span class="input-group-text gap-1"><i
+                                  class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 mt-3">
+                              <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1"><i
+                                  class="bi bi-pinterest"></i>Pinterest</button>
+                              <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1"><i
+                                  class="bi bi-facebook"></i>Facebook</button>
+                              <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1"><i
+                                  class="bi bi-linkedin"></i>Linkedin</button>
+                            </div>
+                          </div>
                         </div>
-                        <div class="flex-grow-1 ms-2">
-                          <h6 class="mb-0 chat-title">Louis Litt</h6>
-                          <p class="mb-0 chat-msg">You just got LITT up, Mike.</p>
-                        </div>
-                        <div class="chat-time">9:51 AM</div>
                       </div>
-                    </a>
-                    <a href="javascript:;" class="list-group-item active">
-                      <div class="d-flex">
-                        <div class="chat-user-online">
-                          <img src="assets/images/avatars/03.png" width="42" height="42" class="rounded-circle" alt="" />
-                        </div>
-                        <div class="flex-grow-1 ms-2">
-                          <h6 class="mb-0 chat-title">Harvey Specter</h6>
-                          <p class="mb-0 chat-msg">Wrong. You take the gun....</p>
-                        </div>
-                        <div class="chat-time">4:32 PM</div>
-                      </div>
-                    </a>
-                    <a href="javascript:;" class="list-group-item">
-                      <div class="d-flex">
-                        <div class="chat-user-online">
-                          <img src="assets/images/avatars/04.png" width="42" height="42" class="rounded-circle" alt="" />
-                        </div>
-                        <div class="flex-grow-1 ms-2">
-                          <h6 class="mb-0 chat-title">Rachel Zane</h6>
-                          <p class="mb-0 chat-msg">I was thinking that we could...</p>
-                        </div>
-                        <div class="chat-time">Wed</div>
-                      </div>
-                    </a>
-                    <a href="javascript:;" class="list-group-item">
-                      <div class="d-flex">
-                        <div class="chat-user-online">
-                          <img src="assets/images/avatars/05.png" width="42" height="42" class="rounded-circle" alt="" />
-                        </div>
-                        <div class="flex-grow-1 ms-2">
-                          <h6 class="mb-0 chat-title">Donna Paulsen</h6>
-                          <p class="mb-0 chat-msg">Mike, I know everything!</p>
-                        </div>
-                        <div class="chat-time">Tue</div>
-                      </div>
-                    </a>
-                    <a href="javascript:;" class="list-group-item">
-                      <div class="d-flex">
-                        <div class="chat-user-online">
-                          <img src="assets/images/avatars/06.png" width="42" height="42" class="rounded-circle" alt="" />
-                        </div>
-                        <div class="flex-grow-1 ms-2">
-                          <h6 class="mb-0 chat-title">Jessica Pearson</h6>
-                          <p class="mb-0 chat-msg">Have you finished the draft...</p>
-                        </div>
-                        <div class="chat-time">9/3/2020</div>
-                      </div>
-                    </a>
-                    <a href="javascript:;" class="list-group-item">
-                      <div class="d-flex">
-                        <div class="chat-user-online">
-                          <img src="assets/images/avatars/07.png" width="42" height="42" class="rounded-circle" alt="" />
-                        </div>
-                        <div class="flex-grow-1 ms-2">
-                          <h6 class="mb-0 chat-title">Harold Gunderson</h6>
-                          <p class="mb-0 chat-msg">Thanks Mike! :)</p>
-                        </div>
-                        <div class="chat-time">12/3/2020</div>
-                      </div>
-                    </a>
-                    <a href="javascript:;" class="list-group-item">
-                      <div class="d-flex">
-                        <div class="chat-user-online">
-                          <img src="assets/images/avatars/09.png" width="42" height="42" class="rounded-circle" alt="" />
-                        </div>
-                        <div class="flex-grow-1 ms-2">
-                          <h6 class="mb-0 chat-title">Katrina Bennett</h6>
-                          <p class="mb-0 chat-msg">I've sent you the files for...</p>
-                        </div>
-                        <div class="chat-time">16/3/2020</div>
-                      </div>
-                    </a>
-                    <a href="javascript:;" class="list-group-item">
-                      <div class="d-flex">
-                        <div class="chat-user-online">
-                          <img src="assets/images/avatars/10.png" width="42" height="42" class="rounded-circle" alt="" />
-                        </div>
-                        <div class="flex-grow-1 ms-2">
-                          <h6 class="mb-0 chat-title">Charles Forstman</h6>
-                          <p class="mb-0 chat-msg">Mike, this isn't over.</p>
-                        </div>
-                        <div class="chat-time">18/3/2020</div>
-                      </div>
-                    </a>
-                    <a href="javascript:;" class="list-group-item">
-                      <div class="d-flex">
-                        <div class="chat-user-online">
-                          <img src="assets/images/avatars/11.png" width="42" height="42" class="rounded-circle" alt="" />
-                        </div>
-                        <div class="flex-grow-1 ms-2">
-                          <h6 class="mb-0 chat-title">Jonathan Sidwell</h6>
-                          <p class="mb-0 chat-msg">That's bullshit. This deal..</p>
-                        </div>
-                        <div class="chat-time">24/3/2020</div>
-                      </div>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="chat-header d-flex align-items-center">
-          <div class="chat-toggle-btn"><i class='bx bx-menu-alt-left'></i>
-          </div>
-          <div>
-            <h4 class="mb-1 font-weight-bold">Harvey Inspector</h4>
-            <div class="list-inline d-sm-flex mb-0 d-none"> <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary"><small class='bx bxs-circle me-1 chart-online'></small>Active Now</a>
-              <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary">|</a>
-              <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary"><i class='bx bx-images me-1'></i>Gallery</a>
-              <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary">|</a>
-              <a href="javascript:;" class="list-inline-item d-flex align-items-center text-secondary"><i class='bx bx-search me-1'></i>Find</a>
-            </div>
-          </div>
-          <div class="chat-top-header-menu ms-auto"> <a href="javascript:;"><i class='bx bx-video'></i></a>
-            <a href="javascript:;"><i class='bx bx-phone'></i></a>
-            <a href="javascript:;"><i class='bx bx-user-plus'></i></a>
-          </div>
-        </div>
-        <div class="chat-content">
-          <div class="chat-content-leftside">
-            <div class="d-flex">
-              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
-              <div class="flex-grow-1 ms-2">
-                <p class="mb-0 chat-time">Harvey, 2:35 PM</p>
-                <p class="chat-left-msg">Hi, harvey where are you now a days?</p>
+          <div class="col">
+            <div class="card rounded-4">
+              <div class="row g-0 align-items-center">
+                <div class="col-md-4 border-end">
+                  <div class="p-3">
+                    <img src="assets/images/gallery/11.png" class="w-100 rounded-start" alt="...">
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Apple Watch Gray</h5>
+                    <p class="card-text">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia All
+                      the Lorem Ipsum generators.</p>
+                    <h5>Price : $1025</h5>
+                    <div class="mt-4 d-flex align-items-center justify-content-between">
+                      <button class="btn btn-grd btn-grd-info border-0 d-flex gap-2 px-3"><i
+                          class="material-icons-outlined">shopping_basket</i>Add to Cart</button>
+                      <div class="d-flex gap-1">
+                        <a href="javascript:;" class="sharelink"><i
+                            class="material-icons-outlined">favorite_border</i></a>
+                        <div class="dropdown position-relative">
+                          <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
+                            data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
+                              class="material-icons-outlined">share</i></a>
+                          <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
+                            <div class="input-group">
+                              <input type="text" class="form-control ps-5" value="https://www.codervent.com"
+                                placeholder="Enter Url">
+                              <span
+                                class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
+                              <span class="input-group-text gap-1"><i
+                                  class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 mt-3">
+                              <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1"><i
+                                  class="bi bi-pinterest"></i>Pinterest</button>
+                              <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1"><i
+                                  class="bi bi-facebook"></i>Facebook</button>
+                              <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1"><i
+                                  class="bi bi-linkedin"></i>Linkedin</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="chat-content-rightside">
-            <div class="d-flex ms-auto">
-              <div class="flex-grow-1 me-2">
-                <p class="mb-0 chat-time text-end">you, 2:37 PM</p>
-                <p class="chat-right-msg">I am in USA</p>
+          <div class="col">
+            <div class="card">
+              <div class="row g-0">
+                <div class="col-md-4 border-end">
+                  <div class="p-3">
+                    <img src="assets/images/gallery/12.png" class="w-100 rounded h-100" alt="...">
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Lunch Box Prime</h5>
+                    <p class="card-text">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks
+                      as necessary model.</p>
+                    <h5>Price : $149</h5>
+                    <div class="ratings text-warning mt-3">
+                      <i class="material-icons-outlined">star</i>
+                      <i class="material-icons-outlined">star</i>
+                      <i class="material-icons-outlined">star</i>
+                      <i class="material-icons-outlined">star</i>
+                      <i class="material-icons-outlined">star</i>
+                    </div>
+                    <div class="mt-3 d-flex align-items-center justify-content-between">
+                      <button class="btn btn-grd bg-grd-success border-0 d-flex gap-2 px-3"><i
+                          class="material-icons-outlined">shopping_cart</i>Add to Cart</button>
+                      <div class="d-flex gap-1">
+                        <a href="javascript:;" class="sharelink border"><i
+                            class="material-icons-outlined">favorite_border</i></a>
+                        <a href="javascript:;" class="sharelink border" data-bs-toggle="modal"
+                          data-bs-target="#linkShareModal"><i class="material-icons-outlined">share</i></a>
+                      </div>
+  
+                      <!--start share modal-->
+                      <div class="modal" id="linkShareModal">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <div class="position-relative">
+                                <a href="javascript:;" class="sharelink ms-auto" data-bs-dismiss="modal">
+                                  <span class="material-icons-outlined">close</span>
+                                </a>
+                              </div>
+                              <div class="text-center">
+                                <h4>Share This Product</h4>
+                                <p>Bootstrap only supports one modal window at a time.</p>
+                                <div class="d-flex align-items-center justify-content-center flex-wrap gap-4 py-5">
+                                  <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                                    <a href="javascript:;"
+                                      class="wh-64 bg-facebook text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                                        class="bi bi-facebook fs-3"></i></a>
+                                    <p class="mb-0">Facebook</p>
+                                  </div>
+                                  <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                                    <a href="javascript:;"
+                                      class="wh-64 bg-linkedin text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                                        class="bi bi-linkedin fs-3"></i></a>
+                                    <p class="mb-0">Linkedin</p>
+                                  </div>
+                                  <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                                    <a href="javascript:;"
+                                      class="wh-64 bg-dark text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                                        class="bi bi-twitter-x fs-3"></i></a>
+                                    <p class="mb-0">Twitter</p>
+                                  </div>
+                                  <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                                    <a href="javascript:;"
+                                      class="wh-64 bg-pinterest text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                                        class="bi bi-pinterest fs-3"></i></a>
+                                    <p class="mb-0">Pinterest</p>
+                                  </div>
+                                  <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                                    <a href="javascript:;"
+                                      class="wh-64 bg-whatsapp text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                                        class="bi bi-whatsapp fs-3"></i></a>
+                                    <p class="mb-0">WhatsApp</p>
+                                  </div>
+                                  <div class="d-flex flex-column align-items-center justify-content-center gap-2">
+                                    <a href="javascript:;"
+                                      class="wh-64 border text-dark rounded-circle d-flex align-items-center justify-content-center"><i
+                                        class="bi bi-link fs-3"></i></a>
+                                    <p class="mb-0">Copy Link</p>
+                                  </div>
+  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--end share modal-->
+  
+  
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="chat-content-leftside">
-            <div class="d-flex">
-              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
-              <div class="flex-grow-1 ms-2">
-                <p class="mb-0 chat-time">Harvey, 2:48 PM</p>
-                <p class="chat-left-msg">okk, what about admin template?</p>
+          <div class="col">
+            <div class="card">
+              <div class="row g-0">
+                <div class="col-md-4 border-end align-items-stretch">
+                  <div class="p-3">
+                    <img src="assets/images/gallery/10.png" class="w-100 rounded h-100" alt="...">
+                  </div>
+                </div>
+                <div class="col-md-8 align-items-stretch">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">Water Bottle Brown</h5>
+                    <p class="card-text">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks
+                      as necessary Internet.</p>
+                    <h5>Price : $258</h5>
+                    <div class="ratings text-warning mt-3">
+                      <i class="material-icons-outlined">star</i>
+                      <i class="material-icons-outlined">star</i>
+                      <i class="material-icons-outlined">star</i>
+                      <i class="material-icons-outlined">star</i>
+                      <i class="material-icons-outlined">star</i>
+                    </div>
+                    <div class="mt-3 d-flex align-items-center justify-content-between">
+                      <button class="btn btn-grd bg-grd-warning border-0 raised d-flex gap-2 px-3"><i
+                          class="material-icons-outlined">shopping_cart</i>Add to Cart</button>
+                      <div class="d-flex gap-1">
+                        <a href="javascript:;" class="sharelink border"><i
+                            class="material-icons-outlined">favorite_border</i></a>
+                        <a href="javascript:;" class="sharelink border" data-bs-toggle="modal"
+                          data-bs-target="#linkShareModal"><i class="material-icons-outlined">share</i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="chat-content-rightside">
-            <div class="d-flex">
-              <div class="flex-grow-1 me-2">
-                <p class="mb-0 chat-time text-end">you, 2:49 PM</p>
-                <p class="chat-right-msg">i have already purchased the admin template</p>
+  
+          <div class="col">
+            <div class="card">
+              <img src="assets/images/gallery/20.png" class="img-fluid card-img-top" alt="">
+              <div class="card-body p-4">
+                <h3 class="">Welcome to Company</h3>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                  It has roots in a piece of classical Latin literature from 45 BC,
+                  making it over 2000 years old.</p>
+                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
+                  for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by
+                  Cicero are also reproduced in their exact original form, accompanied
+                  by English versions from the 1914 translation by H. Rackham.</p>
+  
+                <div class="my-4 text-center">
+                  <p class="fs-5">Welcome to the future of work.</p>
+                  <a href="javascript:;" class="btn btn-grd btn-grd-danger border-0 btn-lg px-5">Start Exploring</a>
+                </div>
+  
+                <div class="mt-5">
+                  <div class="text-center">
+                    <h5 class="mb-3">Explore top services</h5>
+                  </div>
+                  <div class="row row-cols-1 row-cols-lg-2 g-4">
+                    <div class="col">
+                      <div class="text-center">
+                        <img src="assets/images/gallery/21.png" class="img-fluid rounded" alt="">
+                        <h5 class="mb-0 mt-3">Logo Design</h5>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center">
+                        <img src="assets/images/gallery/22.png" class="img-fluid rounded" alt="">
+                        <h5 class="mb-0 mt-3">Whiteboard & Animated</h5>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center">
+                        <img src="assets/images/gallery/23.png" class="img-fluid rounded" alt="">
+                        <h5 class="mb-0 mt-3">Voice Over</h5>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center">
+                        <img src="assets/images/gallery/24.png" class="img-fluid rounded" alt="">
+                        <h5 class="mb-0 mt-3">Wordpress</h5>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center">
+                        <img src="assets/images/gallery/25.png" class="img-fluid rounded" alt="">
+                        <h5 class="mb-0 mt-3">Articles & Blog Posts</h5>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="text-center">
+                        <img src="assets/images/gallery/26.png" class="img-fluid rounded" alt="">
+                        <h5 class="mb-0 mt-3">Website Design</h5>
+                      </div>
+                    </div>
+                  </div><!--end row-->
+                </div>
               </div>
             </div>
           </div>
-          <div class="chat-content-leftside">
-            <div class="d-flex">
-              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
-              <div class="flex-grow-1 ms-2">
-                <p class="mb-0 chat-time">Harvey, 3:12 PM</p>
-                <p class="chat-left-msg">ohhk, great, which admin template you have purchased?</p>
+  
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <div class="row row-cols-1 row-cols-lg-2 g-3">
+                  <div class="col">
+                    <div class="card shadow-none bg-grd-voilet mb-0" style="height: 160px;">
+                      <div class="card-body">
+                        <h5 class="mb-0 text-white">Women Clothes</h5>
+                        <img src="assets/images/cat/01.png" class="position-absolute end-0 bottom-0" width="140" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-none bg-grd-primary mb-0" style="height: 160px;">
+                      <div class="card-body">
+                        <h5 class="mb-0 text-white">Men Clothes</h5>
+                        <img src="assets/images/cat/02.png" class="position-absolute end-0 bottom-0" width="90" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-none bg-grd-success mb-0" style="height: 160px;">
+                      <div class="card-body">
+                        <h5 class="mb-0 text-white">Airpods</h5>
+                        <img src="assets/images/cat/03.png" class="position-absolute end-0 bottom-0" width="120" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-none bg-grd-danger mb-0" style="height: 160px;">
+                      <div class="card-body">
+                        <h5 class="mb-0 text-white">Furniture</h5>
+                        <img src="assets/images/cat/04.png" class="position-absolute end-0 bottom-0 m-2" width="160"
+                          alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-none bg-grd-deep-blue mb-0" style="height: 160px;">
+                      <div class="card-body">
+                        <h5 class="mb-0 text-white">Hand Watch</h5>
+                        <img src="assets/images/cat/05.png" class="position-absolute end-0 bottom-0" width="130" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-none bg-grd-warning mb-0" style="height: 160px;">
+                      <div class="card-body">
+                        <h5 class="mb-0 text-white">Shoes  Pair</h5>
+                        <img src="assets/images/cat/06.png" class="position-absolute end-0 bottom-0 m-2" width="200"
+                          alt="">
+                      </div>
+                    </div>
+                  </div>
+  
+                </div><!--end row-->
+              </div>
+            </div>
+  
+            <div class="card">
+              <img src="assets/images/gallery/15.png" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <p class="mb-4 text-white text-uppercase">Travel</p>
+                <h3 class="card-title text-white">Various versions evolved</h3>
+                <p class="mb-0 text-white">It was popularised in the 1960s with the release of Letraset sheets containing. <br>
+                  Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
+                </p>
+              </div>
+              <div class="bottom-0 position-absolute m-3">
+                <a href="javascript:;" class="btn text-dark px-3 bg-white d-flex gap-2">Read More<span class="material-icons-outlined">east</span></a>
+              </div>
+            </div>
+  
+            <div class="d-flex align-items-center gap-3">
+              <div class="card rounded-4">
+                <img src="assets/images/gallery/16.png" class="card-img rounded-4" alt="...">
+                <div class="card-img-overlay">
+                  <p class="mb-4 text-white text-uppercase">Corporate</p>
+                  <h3 class="card-title text-white">Various versions evolved</h3>
+                  <p class="mb-0 text-white">It was popularised in the 1960s with the release of Letraset sheets containing.
+                  </p>
+                </div>
+                <div class="bottom-0 position-absolute m-3">
+                  <a href="javascript:;" class="btn text-dark px-3 bg-white d-flex gap-2">Read More<span class="material-icons-outlined">east</span></a>
+                </div>
+              </div>
+              <div class="card rounded-4">
+                <img src="assets/images/gallery/17.png" class="card-img rounded-4" alt="...">
+                <div class="card-img-overlay">
+                  <p class="mb-4 text-white text-uppercase">Fitness</p>
+                  <h3 class="card-title text-white">Various versions evolved</h3>
+                </div>
+                <div class="bottom-0 position-absolute m-3">
+                  <a href="javascript:;" class="btn text-dark px-3 bg-white d-flex gap-2">Read More<span class="material-icons-outlined">east</span></a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="chat-content-rightside">
-            <div class="d-flex">
-              <div class="flex-grow-1 me-2">
-                <p class="mb-0 chat-time text-end">you, 3:14 PM</p>
-                <p class="chat-right-msg">i purchased dashtreme admin template from themeforest. it is very good product for web application</p>
+        </div><!--end row-->
+
+        <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+          <div class="col">
+            <div class="card">
+              <img src="assets/images/gallery/01.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Stay at home</h5>
+                <p class="card-text">Nam libero tempore, cum soluta nobis est
+                  eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
+                  assumenda est, omnis dolor repellendus Temporibus autem
+                  quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
+  
               </div>
             </div>
           </div>
-          <div class="chat-content-leftside">
-            <div class="d-flex">
-              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
-              <div class="flex-grow-1 ms-2">
-                <p class="mb-0 chat-time">Harvey, 3:16 PM</p>
-                <p class="chat-left-msg">who is the author of this template?</p>
+          <div class="col">
+            <div class="card">
+              <img src="assets/images/gallery/02.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Stay at home</h5>
+                <p class="card-text">Nam libero tempore, cum soluta nobis est
+                  eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
+                  assumenda est, omnis dolor repellendus Temporibus autem
+                  quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
+  
               </div>
             </div>
           </div>
-          <div class="chat-content-rightside">
-            <div class="d-flex">
-              <div class="flex-grow-1 me-2">
-                <p class="mb-0 chat-time text-end">you, 3:22 PM</p>
-                <p class="chat-right-msg">codervent is the author of this admin template</p>
+          <div class="col">
+            <div class="card">
+              <img src="assets/images/gallery/03.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Stay at home</h5>
+                <p class="card-text">Nam libero tempore, cum soluta nobis est
+                  eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
+                  assumenda est, omnis dolor repellendus Temporibus autem
+                  quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
+  
               </div>
             </div>
           </div>
-          <div class="chat-content-leftside">
-            <div class="d-flex">
-              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
-              <div class="flex-grow-1 ms-2">
-                <p class="mb-0 chat-time">Harvey, 3:16 PM</p>
-                <p class="chat-left-msg">ohh i know about this author. he has good admin products in his portfolio.</p>
+  
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <img src="assets/images/gallery/05.png" class="w-100 mb-4 rounded" alt="...">
+                <h5 class="card-title mb-4">Why do we use it?</h5>
+                <p class="card-text mb-4">Many desktop publishing packages and web page editors now use Lorem Ipsum.</p>
+                <button class="btn btn-grd btn-grd-primary w-100 raised">Add Payment</button>
               </div>
             </div>
           </div>
-          <div class="chat-content-rightside">
-            <div class="d-flex">
-              <div class="flex-grow-1 me-2">
-                <p class="mb-0 chat-time text-end">you, 3:30 PM</p>
-                <p class="chat-right-msg">yes, codervent has multiple admin templates. also he is very supportive.</p>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <img src="assets/images/gallery/06.png" class="w-100 mb-4 rounded" alt="...">
+                <h5 class="card-title mb-4">Why do we use it?</h5>
+                <p class="card-text mb-4">Many desktop publishing packages and web page editors now use Lorem Ipsum.</p>
+                <button class="btn btn-grd btn-grd-danger w-100 raised">Add Payment</button>
               </div>
             </div>
           </div>
-          <div class="chat-content-leftside">
-            <div class="d-flex">
-              <img src="assets/images/avatars/03.png" width="48" height="48" class="rounded-circle" alt="" />
-              <div class="flex-grow-1 ms-2">
-                <p class="mb-0 chat-time">Harvey, 3:33 PM</p>
-                <p class="chat-left-msg">All the best for your target. thanks for giving your time.</p>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <img src="assets/images/gallery/08.png" class="w-100 mb-4 rounded" alt="...">
+                <h5 class="card-title mb-4">Why do we use it?</h5>
+                <p class="card-text mb-4">Many desktop publishing packages and web page editors now use Lorem Ipsum.</p>
+                <button class="btn btn-grd btn-grd-warning w-100 raised">Add Payment</button>
               </div>
             </div>
           </div>
-          <div class="chat-content-rightside">
-            <div class="d-flex">
-              <div class="flex-grow-1 me-2">
-                <p class="mb-0 chat-time text-end">you, 3:35 PM</p>
-                <p class="chat-right-msg">thanks Harvey</p>
+        </div><!--end row-->
+
+
+        <div class="row g-4">
+          <div class="col-12 col-xl-4">
+            <div class="card mb-0">
+              <div class="card-body">
+                <div class="position-relative">
+                  <img src="assets/images/gallery/14.png" class="img-fluid rounded" alt="">
+                  <div class="position-absolute top-100 start-50 translate-middle">
+                    <img src="assets/images/avatars/05.png" width="100" height="100"
+                      class="rounded-circle raised p-1 bg-primary" alt="">
+                  </div>
+                </div>
+                <div class="text-center mt-5 pt-4">
+                  <h5 class="mb-2">Julinee Moree</h5>
+                  <p class="mb-0">Marketing Excutive</p>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-5">
+                  <div class="d-flex flex-column gap-2">
+                    <h4 class="mb-0">798</h4>
+                    <p class="mb-0">Posts</p>
+                  </div>
+                  <div class="d-flex flex-column gap-2">
+                    <h4 class="mb-0">48K</h4>
+                    <p class="mb-0">Following</p>
+                  </div>
+                  <div class="d-flex flex-column gap-2">
+                    <h4 class="mb-0">24.3M</h4>
+                    <p class="mb-0">Followers</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="d-flex align-items-center justify-content-between">
+                  <button class="btn btn-light">Message</button>
+                  <button class="btn btn-primary">Follow</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="chat-footer d-flex align-items-center">
-          <div class="flex-grow-1 pe-2">
-            <div class="input-group"><span class="input-group-text"><i class='bx bx-smile'></i></span>
-              <input type="text" class="form-control" placeholder="Type a message">
+  
+          <div class="col-12 col-xl-4">
+            <div class="card mb-0">
+              <div class="card-body">
+                <div class="position-relative">
+                  <img src="assets/images/gallery/18.png" class="img-fluid rounded" alt="">
+                  <div class="position-absolute top-100 start-50 translate-middle">
+                    <img src="assets/images/avatars/02.png" width="100" height="100"
+                      class="rounded-circle raised p-1 bg-white" alt="">
+                  </div>
+                </div>
+                <div class="text-center mt-5 pt-4">
+                  <h5 class="mb-2">Julinee Moree</h5>
+                  <p class="mb-0">Marketing Excutive</p>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-5">
+                  <div class="d-flex flex-column gap-2">
+                    <h4 class="mb-0">798</h4>
+                    <p class="mb-0">Posts</p>
+                  </div>
+                  <div class="d-flex flex-column gap-2">
+                    <h4 class="mb-0">48K</h4>
+                    <p class="mb-0">Following</p>
+                  </div>
+                  <div class="d-flex flex-column gap-2">
+                    <h4 class="mb-0">24.3M</h4>
+                    <p class="mb-0">Followers</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="d-flex align-items-center justify-content-between">
+                  <button class="btn btn-light">Message</button>
+                  <button class="btn btn-primary">Follow</button>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="chat-footer-menu"> 
-            <a href="javascript:;"><i class='bx bx-file'></i></a>
-            <a href="javascript:;"><i class='bx bxs-contact'></i></a>
-            <a href="javascript:;"><i class='bx bx-microphone'></i></a>
-            <a href="javascript:;"><i class='bx bx-dots-horizontal-rounded'></i></a>
+          <div class="col-12 col-xl-4">
+            <div class="card mb-0">
+              <div class="card-body">
+                <div class="position-relative">
+                  <img src="assets/images/gallery/19.png" class="img-fluid rounded" alt="">
+                  <div class="position-absolute top-100 start-50 translate-middle">
+                    <img src="assets/images/avatars/04.png" width="100" height="100"
+                      class="rounded-circle raised p-1 bg-danger" alt="">
+                  </div>
+                </div>
+                <div class="text-center mt-5 pt-4">
+                  <h5 class="mb-2">Julinee Moree</h5>
+                  <p class="mb-0">Marketing Excutive</p>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-5">
+                  <div class="d-flex flex-column gap-2">
+                    <h4 class="mb-0">798</h4>
+                    <p class="mb-0">Posts</p>
+                  </div>
+                  <div class="d-flex flex-column gap-2">
+                    <h4 class="mb-0">48K</h4>
+                    <p class="mb-0">Following</p>
+                  </div>
+                  <div class="d-flex flex-column gap-2">
+                    <h4 class="mb-0">24.3M</h4>
+                    <p class="mb-0">Followers</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="d-flex align-items-center justify-content-between">
+                  <button class="btn btn-light">Message</button>
+                  <button class="btn btn-primary">Follow</button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <!--start chat overlay-->
-        <div class="overlay chat-toggle-btn-mobile"></div>
-        <!--end chat overlay-->
-      </div>
+          <div class="col-12 col-xl-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="row row-cols-1 row-cols-lg-2 g-3">
+                  <div class="col">
+                    <div class="card shadow-none border mb-0">
+                      <div class="card-body">
+                        <div class="text-center">
+                          <img src="assets/images/avatars/07.png" width="100" height="100"
+                            class="rounded-circle raised bg-white" alt="">
+                        </div>
+                        <div class="text-center mt-4">
+                          <h5 class="mb-2">Michle Web</h5>
+                          <p class="mb-0">UI Developer</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-around mt-5">
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0">798</h5>
+                            <p class="mb-0">Posts</p>
+                          </div>
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0">48K</h5>
+                            <p class="mb-0">Following</p>
+                          </div>
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0">24.3M</h5>
+                            <p class="mb-0">Followers</p>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex align-items-center justify-content-center gap-3">
+                          <a href="javascript:;"
+                            class="wh-48 bg-linkedin text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                              class="bi bi-linkedin fs-5"></i></a>
+                          <a href="javascript:;"
+                            class="wh-48 bg-dark text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                              class="bi bi-twitter-x fs-5"></i></a>
+                          <a href="javascript:;"
+                            class="wh-48 bg-facebook text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                              class="bi bi-facebook fs-5"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-none border mb-0">
+                      <div class="card-body">
+                        <div class="text-center">
+                          <img src="assets/images/avatars/08.png" width="100" height="100"
+                            class="rounded-circle raised bg-white" alt="">
+                        </div>
+                        <div class="text-center mt-4">
+                          <h5 class="mb-2">Andreo Simonds</h5>
+                          <p class="mb-0">HR Manager</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-around mt-5">
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0">798</h5>
+                            <p class="mb-0">Posts</p>
+                          </div>
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0">48K</h5>
+                            <p class="mb-0">Following</p>
+                          </div>
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0">24.3M</h5>
+                            <p class="mb-0">Followers</p>
+                          </div>
+                        </div>
+                        <hr>
+                        <div class="d-flex align-items-center justify-content-center gap-3">
+                          <a href="javascript:;"
+                            class="wh-48 bg-linkedin text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                              class="bi bi-google fs-5"></i></a>
+                          <a href="javascript:;"
+                            class="wh-48 bg-pinterest text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                              class="bi bi-youtube fs-5"></i></a>
+                          <a href="javascript:;"
+                            class="wh-48 bg-whatsapp text-white rounded-circle d-flex align-items-center justify-content-center"><i
+                              class="bi bi-whatsapp fs-5"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div><!--end row-->
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 col-xl-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="row row-cols-1 row-cols-lg-2 g-3">
+                  <div class="col">
+                    <div class="card shadow-none border mb-0 bg-grd-primary">
+                      <div class="card-body">
+                        <div class="text-center">
+                          <img src="assets/images/avatars/11.png" width="100" height="100"
+                            class="rounded-circle raised bg-white p-1" alt="">
+                        </div>
+                        <div class="text-center mt-4">
+                          <h5 class="mb-2 text-white">Andreo Simonds</h5>
+                          <p class="mb-0 text-white">HR Manager</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-around mt-5">
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0 text-white">798</h5>
+                            <p class="mb-0 text-white">Posts</p>
+                          </div>
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0 text-white">48K</h5>
+                            <p class="mb-0 text-white">Following</p>
+                          </div>
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0 text-white">24.3M</h5>
+                            <p class="mb-0 text-white">Followers</p>
+                          </div>
+                        </div>
+                        <hr class="border-light">
+                        <div class="d-flex align-items-center justify-content-center gap-3">
+                          <a href="javascript:;"
+                            class="wh-48 d-flex align-items-center justify-content-center text-white rounded-circle"><i
+                              class="bi bi-linkedin fs-5"></i></a>
+                          <a href="javascript:;"
+                            class="wh-48 d-flex align-items-center justify-content-center text-white rounded-circle"><i
+                              class="bi bi-facebook fs-5"></i></a>
+                          <a href="javascript:;"
+                            class="wh-48 d-flex align-items-center justify-content-center text-white rounded-circle"><i
+                              class="bi bi-instagram fs-5"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="card shadow-none border mb-0 bg-grd-info">
+                      <div class="card-body">
+                        <div class="text-center">
+                          <img src="assets/images/avatars/12.png" width="100" height="100"
+                            class="rounded-circle raised bg-white p-1" alt="">
+                        </div>
+                        <div class="text-center mt-4">
+                          <h5 class="mb-2 text-white">Andreo Simonds</h5>
+                          <p class="mb-0 text-white">HR Manager</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-around mt-5">
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0 text-white">798</h5>
+                            <p class="mb-0 text-white">Posts</p>
+                          </div>
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0 text-white">48K</h5>
+                            <p class="mb-0 text-white">Following</p>
+                          </div>
+                          <div class="d-flex flex-column gap-2">
+                            <h5 class="mb-0 text-white">24.3M</h5>
+                            <p class="mb-0 text-white">Followers</p>
+                          </div>
+                        </div>
+                        <hr class="border-light">
+                        <div class="d-flex align-items-center justify-content-center gap-3">
+                          <a href="javascript:;"
+                            class="wh-48 d-flex align-items-center justify-content-center text-white rounded-circle"><i
+                              class="bi bi-google fs-5"></i></a>
+                          <a href="javascript:;"
+                            class="wh-48 d-flex align-items-center justify-content-center text-white rounded-circle"><i
+                              class="bi bi-pinterest fs-5"></i></a>
+                          <a href="javascript:;"
+                            class="wh-48 d-flex align-items-center justify-content-center text-white rounded-circle"><i
+                              class="bi bi-whatsapp fs-5"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                </div><!--end row-->
+              </div>
+            </div>
+          </div>
+        </div><!--end row-->
+
+     
 
     </div>
   </main>
   <!--end main wrapper-->
 
-  <!--start overlay-->
-  <div class="overlay btn-toggle"></div>
-  <!--end overlay-->
+
+    <!--start overlay-->
+    <div class="overlay btn-toggle"></div>
+    <!--end overlay-->
+
+   
+
+     <!--start footer-->
+     <footer class="page-footer">
+      <p class="mb-0">Copyright © 2024. All right reserved.</p>
+    </footer>
+    <!--top footer-->
 
   <!--start cart-->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
@@ -1539,10 +1652,7 @@
   <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-		new PerfectScrollbar('.chat-list');
-		new PerfectScrollbar('.chat-content');
-	</script>
+
 
 </body>
 

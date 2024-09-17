@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
   <!--favicon-->
-	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
 	<link href="assets/css/pace.min.css" rel="stylesheet">
 	<script src="assets/js/pace.min.js"></script>
@@ -168,7 +168,7 @@
           </ul>
         </li>
 
-        <li class="nav-item dropdown position-static  d-md-flex d-none">
+        <li class="nav-item dropdown position-static d-md-flex d-none">
           <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-auto-close="outside"
           data-bs-toggle="dropdown" href="javascript:;"><i class="material-icons-outlined">done_all</i></a>
           <div class="dropdown-menu dropdown-menu-end mega-menu shadow-lg p-4 p-lg-5">
@@ -622,380 +622,32 @@
     </nav>
   </header>
   <!--end top header-->
+<?php
 
-<!--start sidebar-->
-<aside class="sidebar-wrapper" data-simplebar="true">
-  <div class="sidebar-header">
-    <div class="logo-icon">
-      <img src="assets/images/logo-icon.png" class="logo-img" alt="">
-    </div>
-    <div class="logo-name flex-grow-1">
-      <h5 class="mb-0">Maxton</h5>
-    </div>
-    <div class="sidebar-close">
-      <span class="material-icons-outlined">close</span>
-    </div>
-  </div>
-  <div class="sidebar-nav">
-      <!--navigation-->
-      <ul class="metismenu" id="sidenav">
-        <li>
-          <a href="javascript:;" class="has-arrow">
-            <div class="parent-icon"><i class="material-icons-outlined">home</i>
-            </div>
-            <div class="menu-title">Dashboard</div>
-          </a>
-          <ul>
-            <li><a href="index.html"><i class="material-icons-outlined">arrow_right</i>Analysis</a>
-            </li>
-            <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>eCommerce</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="javascript:;" class="has-arrow">
-            <div class="parent-icon"><i class="material-icons-outlined">widgets</i>
-            </div>
-            <div class="menu-title">Widgets</div>
-          </a>
-          <ul>
-            <li><a href="widgets-data.html"><i class="material-icons-outlined">arrow_right</i>Data</a>
-            </li>
-            <li><a href="widgets-static.html"><i class="material-icons-outlined">arrow_right</i>Static</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">apps</i>
-            </div>
-            <div class="menu-title">Apps</div>
-          </a>
-          <ul>
-            <li><a href="app-emailbox.html"><i class="material-icons-outlined">arrow_right</i>Email Box</a>
-            </li>
-            <li><a href="app-emailread.html"><i class="material-icons-outlined">arrow_right</i>Email Read</a>
-            </li>
-            <li><a href="app-chat-box.html"><i class="material-icons-outlined">arrow_right</i>Chat</a>
-            </li>
-            <li><a href="app-fullcalender.html"><i class="material-icons-outlined">arrow_right</i>Calendar</a>
-            </li>
-            <li><a href="app-to-do.html"><i class="material-icons-outlined">arrow_right</i>To do</a>
-            </li>
-            <li><a href="app-invoice.html"><i class="material-icons-outlined">arrow_right</i>Invoice</a>
-            </li>
-          </ul>
-        </li>
-        <li class="menu-label">UI Elements</li>
-        <li>
-          <a href="cards.html">
-            <div class="parent-icon"><i class="material-icons-outlined">inventory_2</i>
-            </div>
-            <div class="menu-title">Cards</div>
-          </a>
-        </li>
-        
-        <li>
-          <a href="javascript:;" class="has-arrow">
-            <div class="parent-icon"><i class="material-icons-outlined">shopping_bag</i>
-            </div>
-            <div class="menu-title">eCommerce</div>
-          </a>
-          <ul>
-            <li><a href="ecommerce-add-product.html"><i class="material-icons-outlined">arrow_right</i>Add Product</a>
-            </li>
-            <li><a href="ecommerce-products.html"><i class="material-icons-outlined">arrow_right</i>Products</a>
-            </li>
-            <li><a href="ecommerce-customers.html"><i class="material-icons-outlined">arrow_right</i>Customers</a>
-            </li>
-            <li><a href="ecommerce-customer-details.html"><i class="material-icons-outlined">arrow_right</i>Customer Details</a>
-            </li>
-            <li><a href="ecommerce-orders.html"><i class="material-icons-outlined">arrow_right</i>Orders</a>
-            </li>
-            <li><a href="ecommerce-order-details.html"><i class="material-icons-outlined">arrow_right</i>Order Details</a>
-            </li>
-          </ul>     
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">card_giftcard</i>
-            </div>
-            <div class="menu-title">Components</div>
-          </a>
-          <ul>
-            <li><a href="component-alerts.html"><i class="material-icons-outlined">arrow_right</i>Alerts</a>
-            </li>
-            <li><a href="component-accordions.html"><i class="material-icons-outlined">arrow_right</i>Accordions</a>
-            </li>
-            <li><a href="component-badges.html"><i class="material-icons-outlined">arrow_right</i>Badges</a>
-            </li>
-            <li><a href="component-buttons.html"><i class="material-icons-outlined">arrow_right</i>Buttons</a>
-            </li>
-            <li><a href="component-carousels.html"><i class="material-icons-outlined">arrow_right</i>Carousels</a>
-            </li>
-            <li><a href="component-media-object.html"><i class="material-icons-outlined">arrow_right</i>Media
-                Objects</a>
-            </li>
-            <li><a href="component-modals.html"><i class="material-icons-outlined">arrow_right</i>Modals</a>
-            </li>
-            <li><a href="component-navs-tabs.html"><i class="material-icons-outlined">arrow_right</i>Navs & Tabs</a>
-            </li>
-            <li><a href="component-navbar.html"><i class="material-icons-outlined">arrow_right</i>Navbar</a>
-            </li>
-            <li><a href="component-paginations.html"><i class="material-icons-outlined">arrow_right</i>Pagination</a>
-            </li>
-            <li><a href="component-popovers-tooltips.html"><i class="material-icons-outlined">arrow_right</i>Popovers
-                & Tooltips</a>    
-            </li>
-            <li><a href="component-progress-bars.html"><i class="material-icons-outlined">arrow_right</i>Progress</a>
-            </li>
-            <li><a href="component-spinners.html"><i class="material-icons-outlined">arrow_right</i>Spinners</a>
-            </li>
-            <li><a href="component-notifications.html"><i
-                  class="material-icons-outlined">arrow_right</i>Notifications</a>
-            </li>
-            <li><a href="component-avtars-chips.html"><i class="material-icons-outlined">arrow_right</i>Avatrs &
-                Chips</a>
-            </li>
-            <li><a href="component-typography.html"><i class="material-icons-outlined">arrow_right</i>Typography</a>
-             </li>
-             <li><a href="component-text-utilities.html"><i class="material-icons-outlined">arrow_right</i>Utilities</a>
-             </li>
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">view_agenda</i>
-            </div>
-            <div class="menu-title">Icons</div>
-          </a>
-          <ul>
-            <li><a href="icons-line-icons.html"><i class="material-icons-outlined">arrow_right</i>Line Icons</a>
-            </li>
-            <li><a href="icons-boxicons.html"><i class="material-icons-outlined">arrow_right</i>Boxicons</a>
-            </li>
-            <li><a href="icons-feather-icons.html"><i class="material-icons-outlined">arrow_right</i>Feather
-                Icons</a>
-            </li>
-          </ul>
-        </li>
-        <li class="menu-label">Forms & Tables</li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">toc</i>
-            </div>
-            <div class="menu-title">Forms</div>
-          </a>
-          <ul>
-            <li><a href="form-elements.html"><i class="material-icons-outlined">arrow_right</i>Form Elements</a>
-            </li>
-            <li><a href="form-input-group.html"><i class="material-icons-outlined">arrow_right</i>Input Groups</a>
-            </li>
-            <li><a href="form-radios-and-checkboxes.html"><i class="material-icons-outlined">arrow_right</i>Radios &
-                Checkboxes</a>
-            </li>
-            <li><a href="form-layouts.html"><i class="material-icons-outlined">arrow_right</i>Forms Layouts</a>
-            </li>
-            <li><a href="form-validations.html"><i class="material-icons-outlined">arrow_right</i>Form Validation</a>
-            </li>
-            <li><a href="form-wizard.html"><i class="material-icons-outlined">arrow_right</i>Form Wizard</a>
-            </li>
-            <li><a href="form-file-upload.html"><i class="material-icons-outlined">arrow_right</i>File Upload</a>
-            </li>
-            <li><a href="form-date-time-pickes.html"><i class="material-icons-outlined">arrow_right</i>Date
-                Pickers</a>
-            </li>
-            <li><a href="form-select2.html"><i class="material-icons-outlined">arrow_right</i>Select2</a>
-            </li>
-            <li><a href="form-repeater.html"><i class="material-icons-outlined">arrow_right</i>Form Repeater</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">api</i>
-            </div>
-            <div class="menu-title">Tables</div>
-          </a>
-          <ul>
-            <li><a href="table-basic-table.html"><i class="material-icons-outlined">arrow_right</i>Basic Table</a>
-            </li>
-            <li><a href="table-datatable.html"><i class="material-icons-outlined">arrow_right</i>Data Table</a>
-            </li>
-          </ul>
-        </li>
-        <li class="menu-label">Pages</li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">lock</i>
-            </div>
-            <div class="menu-title">Authentication</div>
-          </a>
-          <ul>
-            <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Basic</a>
-              <ul>
-                <li><a href="auth-basic-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                <li><a href="auth-basic-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                <li><a href="auth-basic-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                <li><a href="auth-basic-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-              </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Cover</a>
-              <ul>
-                <li><a href="auth-cover-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                <li><a href="auth-cover-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                <li><a href="auth-cover-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                <li><a href="auth-cover-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-              </ul>
-            </li>
-            <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Boxed</a>
-                <ul>
-                  <li><a href="auth-boxed-login.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Login</a></li>
-                  <li><a href="auth-boxed-register.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Register</a></li>
-                  <li><a href="auth-boxed-forgot-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Forgot Password</a></li>
-                  <li><a href="auth-boxed-reset-password.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>Reset Password</a></li>
-                </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="user-profile.html">
-            <div class="parent-icon"><i class="material-icons-outlined">person</i>
-            </div>
-            <div class="menu-title">User Profile</div>
-          </a>
-        </li>
-        <li>
-          <a href="timeline.html">
-            <div class="parent-icon"><i class="material-icons-outlined">join_right</i>
-            </div>
-            <div class="menu-title">Timeline</div>
-          </a>
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">report_problem</i>
-            </div>
-            <div class="menu-title">Pages</div>
-          </a>
-          <ul>
-            <li><a href="pages-error-404.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>404
-                Error</a>
-            </li>
-            <li><a href="pages-error-505.html" target="_blank"><i class="material-icons-outlined">arrow_right</i>505
-                Error</a>
-            </li>
-            <li><a href="pages-coming-soon.html" target="_blank"><i
-                  class="material-icons-outlined">arrow_right</i>Coming Soon</a>
-            </li>
-            <li><a href="pages-starter-page.html" target="_blank"><i
-                  class="material-icons-outlined">arrow_right</i>Blank Page</a> 
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="faq.html">
-            <div class="parent-icon"><i class="material-icons-outlined">help_outline</i>
-            </div>
-            <div class="menu-title">FAQ</div>
-          </a>
-        </li>
-        <li>
-          <a href="pricing-table.html">
-            <div class="parent-icon"><i class="material-icons-outlined">sports_football</i>
-            </div>
-            <div class="menu-title">Pricing</div>
-          </a>
-        </li>
-        <li class="menu-label">Charts & Maps</li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">fitbit</i>
-            </div>
-            <div class="menu-title">Charts</div>
-          </a>
-          <ul>
-            <li><a href="charts-apex-chart.html"><i class="material-icons-outlined">arrow_right</i>Apex</a>
-            </li>
-            <li><a href="charts-chartjs.html"><i class="material-icons-outlined">arrow_right</i>Chartjs</a>
-            </li>   
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">sports_football</i>
-            </div>
-            <div class="menu-title">Maps</div>
-          </a>
-          <ul>
-            <li><a href="map-google-maps.html"><i class="material-icons-outlined">arrow_right</i>Google Maps</a>
-            </li>
-            <li><a href="map-vector-maps.html"><i class="material-icons-outlined">arrow_right</i>Vector Maps</a>
-            </li>
-          </ul>
-        </li>
-        <li class="menu-label">Others</li>
-        <li>
-          <a class="has-arrow" href="javascript:;">
-            <div class="parent-icon"><i class="material-icons-outlined">face_5</i>
-            </div>
-            <div class="menu-title">Menu Levels</div>
-          </a>
-          <ul>
-            <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level
-                One</a>
-              <ul>
-                <li><a class="has-arrow" href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level
-                    Two</a>
-                  <ul>
-                    <li><a href="javascript:;"><i class="material-icons-outlined">arrow_right</i>Level Three</a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="javascrpt:;">
-            <div class="parent-icon"><i class="material-icons-outlined">description</i>
-            </div>
-            <div class="menu-title">Documentation</div>
-          </a>
-        </li>
-        <li>
-          <a href="javascrpt:;">
-            <div class="parent-icon"><i class="material-icons-outlined">support</i>
-            </div>
-            <div class="menu-title">Support</div>
-          </a>
-        </li>
-       </ul>
-      <!--end navigation-->
-  </div>
-</aside>
-<!--end sidebar-->
+require 'assets/partials/_navbar.php';
 
+?>
+   
 
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
       <!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Components</div>
+					<div class="breadcrumb-title pe-3">Dashboard</div>
 					<div class="ps-3">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb mb-0 p-0">
 								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Products</li>
+								<li class="breadcrumb-item active" aria-current="page">Analysis</li>
 							</ol>
 						</nav>
 					</div>
 					<div class="ms-auto">
 						<div class="btn-group">
-							<button type="button" class="btn btn-primary">Settings</button>
-							<button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
+							<button type="button" class="btn btn-outline-primary">Settings</button>
+							<button type="button" class="btn btn-outline-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
 							</button>
 							<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
 								<a class="dropdown-item" href="javascript:;">Another action</a>
@@ -1006,258 +658,477 @@
 					</div>
 				</div>
 				<!--end breadcrumb-->
-
-        <div class="product-count d-flex align-items-center gap-3 gap-lg-4 mb-4 fw-medium flex-wrap font-text1">
-          <a href="javascript:;"><span class="me-1">All</span><span class="text-secondary">(85472)</span></a>
-          <a href="javascript:;"><span class="me-1">Pending Payment</span><span class="text-secondary">(86)</span></a>
-          <a href="javascript:;"><span class="me-1">Incomplete</span><span class="text-secondary">(76)</span></a>
-          <a href="javascript:;"><span class="me-1">Completed</span><span class="text-secondary">(8759)</span></a>
-          <a href="javascript:;"><span class="me-1">Refunded</span><span class="text-secondary">(769)</span></a>
-          <a href="javascript:;"><span class="me-1">Failed</span><span class="text-secondary">(42)</span></a>
-        </div>
-
-        <div class="row g-3">
-          <div class="col-auto">
-            <div class="position-relative">
-              <input class="form-control px-5" type="search" placeholder="Search Customers">
-              <span class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50 fs-5">search</span>
+     
+        <div class="row">
+          <div class="col-xxl-8 d-flex align-items-stretch">
+            <div class="card w-100 overflow-hidden rounded-4">
+              <div class="card-body position-relative p-4">
+                <div class="row">
+                  <div class="col-12 col-sm-7">
+                    <div class="d-flex align-items-center gap-3 mb-5">
+                      <img src="assets/images/avatars/01.png" class="rounded-circle bg-grd-info p-1"  width="60" height="60" alt="user">
+                      <div class="">
+                        <p class="mb-0 fw-semibold">Welcome back</p>
+                        <h4 class="fw-semibold mb-0 fs-4 mb-0">Jhon Anderson!</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-5">
+                    <div class="welcome-back-img pt-4">
+                       <img src="assets/images/gallery/welcome-back-3.png" height="180" alt="">
+                    </div>
+                  </div>
+                </div><!--end row-->
+              </div>
             </div>
           </div>
-          <div class="col-auto flex-grow-1 overflow-auto">
-            <div class="btn-group position-static">
-              <div class="btn-group position-static">
-                <button type="button" class="btn border btn-filter dropdown-toggle px-4" data-bs-toggle="dropdown" aria-expanded="false">
-                  Payment Status
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                  <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                </ul>
+          <div class="col-xl-6 col-xxl-4 d-flex align-items-stretch">
+            <div class="card w-100 rounded-4">
+              <div class="card-body">
+                <div class="text-center">
+                  <h6 class="mb-0">Monthly Revenue</h6>
+                </div>
+                <div class="mt-4" id="chart5"></div>
+                <p>Avrage monthly sale for every author</p>
+                <div class="d-flex align-items-center gap-3 mt-4">
+                  <div class="">
+                    <h1 class="mb-0 text-primary">68.9%</h1>
+                  </div>
+                  <div class="d-flex align-items-center align-self-end">
+                    <p class="mb-0 text-success">34.5%</p>
+                    <span class="material-icons-outlined text-success">expand_less</span>
+                  </div>
+                </div>
               </div>
-              <div class="btn-group position-static">
-                <button type="button" class="btn border btn-filter dropdown-toggle px-4" data-bs-toggle="dropdown" aria-expanded="false">
-                  Completed
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                  <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                </ul>
+            </div>
+          </div>    
+         
+          <div class="col-xl-6 col-xxl-4 d-flex align-items-stretch">
+            <div class="card w-100 rounded-4">
+              <div class="card-body">
+                <div id="chart8"></div>
+                <div class="d-flex align-items-center gap-3 mt-4">
+                  <div class="">
+                    <h1 class="mb-0">36.7%</h1>
+                  </div>
+                  <div class="d-flex align-items-center align-self-end gap-2">
+                    <span class="material-icons-outlined text-success">trending_up</span>
+                    <p class="mb-0 text-success">34.5%</p>
+                  </div>
+                </div>
+                <p class="mb-4">Visitors Growth</p>
+                <div class="d-flex flex-column gap-3">
+                  <div class="">
+                    <p class="mb-1">Cliks <span class="float-end">2589</span></p>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar bg-grd-primary" style="width: 65%"></div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <p class="mb-1">Likes <span class="float-end">6748</span></p>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar bg-grd-warning" style="width: 55%"></div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <p class="mb-1">Upvotes <span class="float-end">9842</span></p>
+                    <div class="progress" style="height: 5px;">
+                      <div class="progress-bar bg-grd-info" style="width: 45%"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="btn-group position-static">
-                <button type="button" class="btn border btn-filter dropdown-toggle px-4" data-bs-toggle="dropdown" aria-expanded="false">
-                  More Filters
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                  <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                </ul>
+            </div>
+          </div>
+          <div class="col-xl-6 col-xxl-4 d-flex align-items-stretch">
+            <div class="card w-100 rounded-4">
+              <div class="card-body">
+                <div class="d-flex align-items-start justify-content-between mb-3">
+                  <div class="">
+                    <h5 class="mb-0 fw-bold">Social Leads</h5>
+                  </div>
+                  <div class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
+                      data-bs-toggle="dropdown">
+                      <span class="material-icons-outlined fs-5">more_vert</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="javascript:;">Action</a></li>
+                      <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+                      <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+                    </ul>
+                  </div>
+                 </div>
+                <div class="d-flex flex-column justify-content-between gap-4">
+                  <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex align-items-center gap-3 flex-grow-1">
+                      <img src="assets/images/apps/17.png" width="32" alt="">
+                      <p class="mb-0">Facebook</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 fs-6">55%</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 data-attributes">
+                        <span
+                          data-peity='{ "fill": ["#0d6efd", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex align-items-center gap-3 flex-grow-1">
+                      <img src="assets/images/apps/18.png" width="32" alt="">
+                      <p class="mb-0">LinkedIn</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 fs-6">67%</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 data-attributes">
+                        <span
+                          data-peity='{ "fill": ["#fc185a", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex align-items-center gap-3 flex-grow-1">
+                      <img src="assets/images/apps/19.png" width="32" alt="">
+                      <p class="mb-0">Instagram</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 fs-6">78%</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 data-attributes">
+                        <span
+                          data-peity='{ "fill": ["#02c27a", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex align-items-center gap-3 flex-grow-1">
+                      <img src="assets/images/apps/20.png" width="32" alt="">
+                      <p class="mb-0">Snapchat</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 fs-6">46%</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 data-attributes">
+                        <span
+                          data-peity='{ "fill": ["#fd7e14", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex align-items-center gap-3 flex-grow-1">
+                      <img src="assets/images/apps/05.png" width="32" alt="">
+                      <p class="mb-0">Google</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 fs-6">38%</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 data-attributes">
+                        <span
+                          data-peity='{ "fill": ["#0dcaf0", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex align-items-center gap-3 flex-grow-1">
+                      <img src="assets/images/apps/08.png" width="32" alt="">
+                      <p class="mb-0">Altaba</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 fs-6">15%</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 data-attributes">
+                        <span
+                          data-peity='{ "fill": ["#6f42c1", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-4">
+                    <div class="d-flex align-items-center gap-3 flex-grow-1">
+                      <img src="assets/images/apps/07.png" width="32" alt="">
+                      <p class="mb-0">Spotify</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 fs-6">12%</p>
+                    </div>
+                    <div class="">
+                      <p class="mb-0 data-attributes">
+                        <span
+                          data-peity='{ "fill": ["#ff00b3", "rgb(255 255 255 / 10%)"], "innerRadius": 14, "radius": 18 }'>5/7</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>  
           </div>
-          <div class="col-auto">
-            <div class="d-flex align-items-center gap-2 justify-content-lg-end">
-               <button class="btn btn-filter px-4"><i class="bi bi-box-arrow-right me-2"></i>Export</button>
-               <button class="btn btn-primary px-4"><i class="bi bi-plus-lg me-2"></i>Add Order</button>
+          <div class="col-xl-6 col-xxl-4 d-flex align-items-stretch">
+            <div class="card w-100 rounded-4">
+              <div class="card-header border-0 p-3 border-bottom">
+                <div class="d-flex align-items-start justify-content-between">
+                  <div class="">
+                    <h5 class="mb-0">New Users</h5>
+                  </div>
+                  <div class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle" data-bs-toggle="dropdown">
+                      <span class="material-icons-outlined fs-5">more_vert</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="javascript:;">Action</a></li>
+                      <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+                      <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <div class="user-list p-3">
+                  <div class="d-flex flex-column gap-3">
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="assets/images/avatars/01.png" width="45" height="45" class="rounded-circle" alt="">
+                      <div class="flex-grow-1">
+                        <h6 class="mb-0">Elon Jonado</h6>
+                        <p class="mb-0">elon_deo</p>
+                      </div>
+                      <div class="form-check form-check-inline me-0">
+                        <input class="form-check-input ms-0" type="checkbox">
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="assets/images/avatars/02.png" width="45" height="45" class="rounded-circle" alt="">
+                      <div class="flex-grow-1">
+                        <h6 class="mb-0">Alexzender Clito</h6>
+                        <p class="mb-0">zli_alexzender</p>
+                      </div>
+                      <div class="form-check form-check-inline me-0">
+                        <input class="form-check-input ms-0" type="checkbox">
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="assets/images/avatars/03.png" width="45" height="45" class="rounded-circle" alt="">
+                      <div class="flex-grow-1">
+                        <h6 class="mb-0">Michle Tinko</h6>
+                        <p class="mb-0">tinko_michle</p>
+                      </div>
+                      <div class="form-check form-check-inline me-0">
+                        <input class="form-check-input ms-0" type="checkbox">
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="assets/images/avatars/04.png" width="45" height="45" class="rounded-circle" alt="">
+                      <div class="flex-grow-1">
+                        <h6 class="mb-0">KailWemba</h6>
+                        <p class="mb-0">wemba_kl</p>
+                      </div>
+                      <div class="form-check form-check-inline me-0">
+                        <input class="form-check-input ms-0" type="checkbox">
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="assets/images/avatars/05.png" width="45" height="45" class="rounded-circle" alt="">
+                      <div class="flex-grow-1">
+                        <h6 class="mb-0">Henhco Tino</h6>
+                        <p class="mb-0">Henhco_tino</p>
+                      </div>
+                      <div class="form-check form-check-inline me-0">
+                        <input class="form-check-input ms-0" type="checkbox">
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="assets/images/avatars/06.png" width="45" height="45" class="rounded-circle" alt="">
+                      <div class="flex-grow-1">
+                        <h6 class="mb-0">Gonjiko Fernando</h6>
+                        <p class="mb-0">gonjiko_fernando</p>
+                      </div>
+                      <div class="form-check form-check-inline me-0">
+                        <input class="form-check-input ms-0" type="checkbox">
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                      <img src="assets/images/avatars/08.png" width="45" height="45" class="rounded-circle" alt="">
+                      <div class="flex-grow-1">
+                        <h6 class="mb-0">Specer Kilo</h6>
+                        <p class="mb-0">specer_kilo</p>
+                      </div>
+                      <div class="form-check form-check-inline me-0">
+                        <input class="form-check-input ms-0" type="checkbox">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer bg-transparent p-3">
+                <div class="d-flex align-items-center justify-content-between gap-3">
+                  <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">share</i></a>
+                  <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">textsms</i></a>
+                  <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">email</i></a>
+                  <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">attach_file</i></a>
+                  <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">event</i></a>
+                </div>
+              </div>
             </div>
           </div>
-        </div><!--end row-->
+          <div class="col-lg-12 col-xxl-12 d-flex align-items-stretch">
+            <div class="card w-100 rounded-4">
+              <div class="card-body">
+               <div class="d-flex align-items-start justify-content-between mb-3">
+                  <div class="">
+                    <h5 class="mb-0">Recent Orders</h5>
+                  </div>
+                  <div class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
+                      data-bs-toggle="dropdown">
+                      <span class="material-icons-outlined fs-5">more_vert</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="javascript:;">Action</a></li>
+                      <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+                      <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="order-search position-relative my-3">
+                  <input class="form-control rounded-5 px-5" type="text" placeholder="Search">
+                  <span class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
+                </div>
+                 <div class="table-responsive">
+                     <table class="table align-middle">
+                       <thead>
+                        <tr>
+                          <th>Item Name</th>
+                          <th>Amount</th>
+                          <th>Vendor</th>
+                          <th>Status</th>
+                          <th>Rating</th>
+                        </tr>
+                       </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center gap-3">
+                                 <div class="">
+                                    <img src="assets/images/top-products/01.png" class="rounded-circle" width="50" height="50" alt="">
+                                 </div>
+                                 <p class="mb-0">Sports Shoes</p>
+                              </div>
+                            </td>
+                            <td>$149</td>
+                            <td>Julia Sunota</td>
+                            <td><p class="dash-lable mb-0 bg-success bg-opacity-10 text-success rounded-2">Completed</p></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-1">
+                                <p class="mb-0">5.0</p>
+                                <i class="material-icons-outlined text-warning fs-6">star</i>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center gap-3">
+                                 <div class="">
+                                    <img src="assets/images/top-products/02.png" class="rounded-circle" width="50" height="50" alt="">
+                                 </div>
+                                 <p class="mb-0">Goldan Watch</p>
+                              </div>
+                            </td>
+                            <td>$168</td>
+                            <td>Julia Sunota</td>
+                            <td><p class="dash-lable mb-0 bg-success bg-opacity-10 text-success rounded-2">Completed</p></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-1">
+                                <p class="mb-0">5.0</p>
+                                <i class="material-icons-outlined text-warning fs-6">star</i>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center gap-3">
+                                 <div class="">
+                                    <img src="assets/images/top-products/03.png" class="rounded-circle" width="50" height="50" alt="">
+                                 </div>
+                                 <p class="mb-0">Men Polo Tshirt</p>
+                              </div>
+                            </td>
+                            <td>$124</td>
+                            <td>Julia Sunota</td>
+                            <td><p class="dash-lable mb-0 bg-warning bg-opacity-10 text-warning rounded-2">Pending</p></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-1">
+                                <p class="mb-0">4.0</p>
+                                <i class="material-icons-outlined text-warning fs-6">star</i>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center gap-3">
+                                 <div class="">
+                                    <img src="assets/images/top-products/04.png" class="rounded-circle" width="50" height="50" alt="">
+                                 </div>
+                                 <p class="mb-0">Blue Jeans Casual</p>
+                              </div>
+                            </td>
+                            <td>$289</td>
+                            <td>Julia Sunota</td>
+                            <td><p class="dash-lable mb-0 bg-success bg-opacity-10 text-success rounded-2">Completed</p></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-1">
+                                <p class="mb-0">3.0</p>
+                                <i class="material-icons-outlined text-warning fs-6">star</i>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="d-flex align-items-center gap-3">
+                                 <div class="">
+                                    <img src="assets/images/top-products/06.png" class="rounded-circle" width="50" height="50" alt="">
+                                 </div>
+                                 <p class="mb-0">Fancy Shirts</p>
+                              </div>
+                            </td>
+                            <td>$389</td>
+                            <td>Julia Sunota</td>
+                            <td><p class="dash-lable mb-0 bg-danger bg-opacity-10 text-danger rounded-2">Canceled</p></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-1">
+                                <p class="mb-0">2.0</p>
+                                <i class="material-icons-outlined text-warning fs-6">star</i>
+                              </div>
+                            </td>
+                          </tr>
 
-        <div class="card mt-4">
-          <div class="card-body">
-            <div class="customer-table">
-              <div class="table-responsive white-space-nowrap">
-                 <table class="table align-middle">
-                  <thead class="table-light">
-                    <tr>
-                      <th>
-                        <input class="form-check-input" type="checkbox">
-                      </th>
-                      <th>Order Id</th>
-                      <th>Price</th>
-                      <th>Customer</th>
-                      <th>Payment Status</th>
-                      <th>Completed Payment</th>
-                      <th>Delivery Type</th>
-                      <th>Date</th>
-                    </tr>
-                   </thead>
-                   <tbody>
-                     <tr>
-                       <td>
-                         <input class="form-check-input" type="checkbox">
-                       </td>
-                       <td>
-                        <a href="javascript:;">#2415</a>
-                       </td>
-                       <td>$98</td>
-                       <td>
-                        <a class="d-flex align-items-center gap-3" href="javascript:;">
-                          <div class="customer-pic">
-                            <img src="assets/images/avatars/01.png" class="rounded-circle" width="40" height="40" alt="">
-                          </div>
-                          <p class="mb-0 customer-name fw-bold">Andrew Carry</p>
-                        </a>
-                       </td>
-                       <td><span class="lable-table bg-success-subtle text-success rounded border border-success-subtle font-text2 fw-bold">Completed<i class="bi bi-check2 ms-2"></i></span></td>
-                       <td><span class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i class="bi bi-x-lg ms-2"></i></span></td>
-                       <td>Cash on delivery</td>
-                       <td>Nov 12, 10:45 PM</td>
-                     </tr>
-                     <tr>
-                      <td>
-                        <input class="form-check-input" type="checkbox">
-                      </td>
-                      <td>
-                       <a href="javascript:;">#7845</a>
-                      </td>
-                      <td>$110</td>
-                      <td>
-                       <a class="d-flex align-items-center gap-3" href="javascript:;">
-                         <div class="customer-pic">
-                           <img src="assets/images/avatars/02.png" class="rounded-circle" width="40" height="40" alt="">
-                         </div>
-                         <p class="mb-0 customer-name fw-bold">Andrew Carry</p>
-                       </a>
-                      </td>
-                      <td><span class="lable-table bg-warning-subtle text-warning rounded border border-warning-subtle font-text2 fw-bold">Pending<i class="bi bi-info-circle ms-2"></i></span></td>
-                      <td><span class="lable-table bg-primary-subtle text-primary rounded border border-primary-subtle font-text2 fw-bold">Completed<i class="bi bi-check2-all ms-2"></i></span></td>
-                      <td>Cash on delivery</td>
-                      <td>Nov 12, 10:45 PM</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input class="form-check-input" type="checkbox">
-                      </td>
-                      <td>
-                       <a href="javascript:;">#5674</a>
-                      </td>
-                      <td>$86</td>
-                      <td>
-                       <a class="d-flex align-items-center gap-3" href="javascript:;">
-                         <div class="customer-pic">
-                           <img src="assets/images/avatars/03.png" class="rounded-circle" width="40" height="40" alt="">
-                         </div>
-                         <p class="mb-0 customer-name fw-bold">Andrew Carry</p>
-                       </a>
-                      </td>
-                      <td><span class="lable-table bg-primary-subtle text-primary rounded border border-primary-subtle font-text2 fw-bold">Completed<i class="bi bi-check2-all ms-2"></i></span></td>
-                      <td><span class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i class="bi bi-x-lg ms-2"></i></span></td>
-                      <td>Cash on delivery</td>
-                      <td>Nov 12, 10:45 PM</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input class="form-check-input" type="checkbox">
-                      </td>
-                      <td>
-                       <a href="javascript:;">#6678</a>
-                      </td>
-                      <td>$78</td>
-                      <td>
-                       <a class="d-flex align-items-center gap-3" href="javascript:;">
-                         <div class="customer-pic">
-                           <img src="assets/images/avatars/04.png" class="rounded-circle" width="40" height="40" alt="">
-                         </div>
-                         <p class="mb-0 customer-name fw-bold">Andrew Carry</p>
-                       </a>
-                      </td>
-                      <td><span class="lable-table bg-success-subtle text-success rounded border border-success-subtle font-text2 fw-bold">Paid<i class="bi bi-check2 ms-2"></i></span></td>
-                      <td><span class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i class="bi bi-x-lg ms-2"></i></span></td>
-                      <td>Cash on delivery</td>
-                      <td>Nov 12, 10:45 PM</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input class="form-check-input" type="checkbox">
-                      </td>
-                      <td>
-                       <a href="javascript:;">#2367</a>
-                      </td>
-                      <td>$69</td>
-                      <td>
-                       <a class="d-flex align-items-center gap-3" href="javascript:;">
-                         <div class="customer-pic">
-                           <img src="assets/images/avatars/05.png" class="rounded-circle" width="40" height="40" alt="">
-                         </div>
-                         <p class="mb-0 customer-name fw-bold">Andrew Carry</p>
-                       </a>
-                      </td>
-                      <td><span class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i class="bi bi-x-lg ms-2"></i></span></td>
-                      <td><span class="lable-table bg-warning-subtle text-warning rounded border border-warning-subtle font-text2 fw-bold">Pending<i class="bi bi-info-circle ms-2"></i></span></td>
-                      <td>Cash on delivery</td>
-                      <td>Nov 12, 10:45 PM</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input class="form-check-input" type="checkbox">
-                      </td>
-                      <td>
-                       <a href="javascript:;">#9870</a>
-                      </td>
-                      <td>$49</td>
-                      <td>
-                       <a class="d-flex align-items-center gap-3" href="javascript:;">
-                         <div class="customer-pic">
-                           <img src="assets/images/avatars/06.png" class="rounded-circle" width="40" height="40" alt="">
-                         </div>
-                         <p class="mb-0 customer-name fw-bold">Andrew Carry</p>
-                       </a>
-                      </td>
-                      <td><span class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i class="bi bi-x-lg ms-2"></i></span></td>
-                      <td><span class="lable-table bg-success-subtle text-success rounded border border-success-subtle font-text2 fw-bold">Completed<i class="bi bi-check2 ms-2"></i></span></td>
-                      <td>Cash on delivery</td>
-                      <td>Nov 12, 10:45 PM</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input class="form-check-input" type="checkbox">
-                      </td>
-                      <td>
-                       <a href="javascript:;">#3456</a>
-                      </td>
-                      <td>$65</td>
-                      <td>
-                       <a class="d-flex align-items-center gap-3" href="javascript:;">
-                         <div class="customer-pic">
-                           <img src="assets/images/avatars/07.png" class="rounded-circle" width="40" height="40" alt="">
-                         </div>
-                         <p class="mb-0 customer-name fw-bold">Andrew Carry</p>
-                       </a>
-                      </td>
-                      <td><span class="lable-table bg-success-subtle text-success rounded border border-success-subtle font-text2 fw-bold">Completed<i class="bi bi-check2 ms-2"></i></span></td>
-                      <td><span class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i class="bi bi-x-lg ms-2"></i></span></td>
-                      <td>Cash on delivery</td>
-                      <td>Nov 12, 10:45 PM</td>
-                    </tr>
-
-                    
-                   </tbody>
-                 </table>
+                        </tbody>
+                     </table>
+                 </div>
               </div>
             </div>
           </div>
         </div>
+
+
 
     </div>
   </main>
   <!--end main wrapper-->
 
+  <!--start overlay-->
+     <div class="overlay btn-toggle"></div>
+  <!--end overlay-->
 
-    <!--start overlay-->
-    <div class="overlay btn-toggle"></div>
-    <!--end overlay-->
-
-     <!--start footer-->
-     <footer class="page-footer">
-      <p class="mb-0">Copyright © 2024. All right reserved.</p>
-    </footer>
-    <!--top footer-->
+   <!--start footer-->
+   <footer class="page-footer">
+    <p class="mb-0">Copyright © 2024. All right reserved.</p>
+  </footer>
+  <!--end footer-->
 
   <!--start cart-->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
@@ -1390,7 +1261,7 @@
   </div>
   <!--end cart-->
 
- 
+
 
   <!--start switcher-->
   <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
@@ -1462,9 +1333,17 @@
   <!--plugins-->
   <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
   <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
+  <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+  <script>
+    $(".data-attributes span").peity("donut")
+  </script>
   <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/dashboard1.js"></script>
+  <script>
+	   new PerfectScrollbar(".user-list")
+  </script>
 
 </body>
 

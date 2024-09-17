@@ -1,3 +1,7 @@
+
+
+
+
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
@@ -14,8 +18,9 @@
   <!--plugins-->
   <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
+  <link href="assets/plugins/fancy-file-uploader/fancy_fileupload.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
-  <link  rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
   <!--bootstrap css-->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -34,7 +39,7 @@
 
 <body>
 
- <!--start header-->
+  <!--start header-->
  <header class="top-header">
   <nav class="navbar navbar-expand align-items-center justify-content-between gap-4 border-bottom">
     <div class="logo-header d-none d-xl-flex align-items-center gap-2">
@@ -631,7 +636,12 @@
   </nav>
 </header>
 <!--end top header-->
-
+<!-- sidebar -->
+ <?php
+ 
+ require 'assets/partials/_navbar.php'
+ ?>
+<!-- sidebar -->
 
 <!--navigation-->
 <div class="primary-menu">
@@ -863,7 +873,6 @@
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
-      
       <!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
 					<div class="breadcrumb-title pe-3">Components</div>
@@ -872,7 +881,7 @@
 							<ol class="breadcrumb mb-0 p-0">
 								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Navs & Tabs</li>
+								<li class="breadcrumb-item active" aria-current="page">Starter Page</li>
 							</ol>
 						</nav>
 					</div>
@@ -890,393 +899,87 @@
 					</div>
 				</div>
 				<!--end breadcrumb-->
-				<div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2">
-					<div class="col">
-						<h6 class="mb-0 text-uppercase">Primary Nav Tabs</h6>
-						<hr>
-						<div class="card">
-							<div class="card-body">
-								<ul class="nav nav-tabs nav-primary" role="tablist">
-									<li class="nav-item" role="presentation">
-										<a class="nav-link active" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Home</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Profile</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
-												</div>
-												<div class="tab-title">Contact</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content py-3">
-									<div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
-										<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi.</p>
-									</div>
-									<div class="tab-pane fade" id="primaryprofile" role="tabpanel">
-										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-									</div>
-									<div class="tab-pane fade" id="primarycontact" role="tabpanel">
-										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<h6 class="mb-0 text-uppercase">Danger Nav Tabs</h6>
-						<hr>
-						<div class="card">
-							<div class="card-body">
-								<ul class="nav nav-tabs nav-danger" role="tablist">
-									<li class="nav-item" role="presentation">
-										<a class="nav-link active" data-bs-toggle="tab" href="#dangerhome" role="tab" aria-selected="true">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Home</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="tab" href="#dangerprofile" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Profile</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="tab" href="#dangercontact" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
-												</div>
-												<div class="tab-title">Contact</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content py-3">
-									<div class="tab-pane fade show active" id="dangerhome" role="tabpanel">
-										<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi.</p>
-									</div>
-									<div class="tab-pane fade" id="dangerprofile" role="tabpanel">
-										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-									</div>
-									<div class="tab-pane fade" id="dangercontact" role="tabpanel">
-										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<h6 class="mb-0 text-uppercase">Success Nav Tabs</h6>
-						<hr>
-						<div class="card">
-							<div class="card-body">
-								<ul class="nav nav-tabs nav-success" role="tablist">
-									<li class="nav-item" role="presentation">
-										<a class="nav-link active" data-bs-toggle="tab" href="#successhome" role="tab" aria-selected="true">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Home</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="tab" href="#successprofile" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Profile</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="tab" href="#successcontact" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
-												</div>
-												<div class="tab-title">Contact</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content py-3">
-									<div class="tab-pane fade show active" id="successhome" role="tabpanel">
-										<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi.</p>
-									</div>
-									<div class="tab-pane fade" id="successprofile" role="tabpanel">
-										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-									</div>
-									<div class="tab-pane fade" id="successcontact" role="tabpanel">
-										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<h6 class="mb-0 text-uppercase">Warning Nav Tabs</h6>
-						<hr>
-						<div class="card">
-							<div class="card-body">
-								<ul class="nav nav-tabs nav-warning" role="tablist">
-									<li class="nav-item" role="presentation">
-										<a class="nav-link active" data-bs-toggle="tab" href="#warninghome" role="tab" aria-selected="true">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Home</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="tab" href="#warningprofile" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Profile</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="tab" href="#warningcontact" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
-												</div>
-												<div class="tab-title">Contact</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content py-3">
-									<div class="tab-pane fade show active" id="warninghome" role="tabpanel">
-										<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi.</p>
-									</div>
-									<div class="tab-pane fade" id="warningprofile" role="tabpanel">
-										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-									</div>
-									<div class="tab-pane fade" id="warningcontact" role="tabpanel">
-										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<h6 class="mb-0 text-uppercase">Primary Nav Pills</h6>
-						<hr>
-						<div class="card">
-							<div class="card-body">
-								<ul class="nav nav-pills mb-3" role="tablist">
-									<li class="nav-item" role="presentation">
-										<a class="nav-link active" data-bs-toggle="pill" href="#primary-pills-home" role="tab" aria-selected="true">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Home</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="pill" href="#primary-pills-profile" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Profile</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="pill" href="#primary-pills-contact" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
-												</div>
-												<div class="tab-title">Contact</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content" id="pills-tabContent">
-									<div class="tab-pane fade show active" id="primary-pills-home" role="tabpanel">
-										<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi.</p>
-									</div>
-									<div class="tab-pane fade" id="primary-pills-profile" role="tabpanel">
-										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-									</div>
-									<div class="tab-pane fade" id="primary-pills-contact" role="tabpanel">
-										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<h6 class="mb-0 text-uppercase">Danger Nav Pills</h6>
-						<hr>
-						<div class="card">
-							<div class="card-body">
-								<ul class="nav nav-pills nav-pills-danger mb-3" role="tablist">
-									<li class="nav-item" role="presentation">
-										<a class="nav-link active" data-bs-toggle="pill" href="#danger-pills-home" role="tab" aria-selected="true">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Home</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="pill" href="#danger-pills-profile" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Profile</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="pill" href="#danger-pills-contact" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
-												</div>
-												<div class="tab-title">Contact</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content" id="danger-pills-tabContent">
-									<div class="tab-pane fade show active" id="danger-pills-home" role="tabpanel">
-										<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi.</p>
-									</div>
-									<div class="tab-pane fade" id="danger-pills-profile" role="tabpanel">
-										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-									</div>
-									<div class="tab-pane fade" id="danger-pills-contact" role="tabpanel">
-										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<h6 class="mb-0 text-uppercase">Success Nav Pills</h6>
-						<hr>
-						<div class="card">
-							<div class="card-body">
-								<ul class="nav nav-pills nav-pills-success mb-3" role="tablist">
-									<li class="nav-item" role="presentation">
-										<a class="nav-link active" data-bs-toggle="pill" href="#success-pills-home" role="tab" aria-selected="true">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Home</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="pill" href="#success-pills-profile" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Profile</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="pill" href="#success-pills-contact" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
-												</div>
-												<div class="tab-title">Contact</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content">
-									<div class="tab-pane fade show active" id="pills-home" role="tabpanel">
-										<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi.</p>
-									</div>
-									<div class="tab-pane fade" id="success-pills-profile" role="tabpanel">
-										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-									</div>
-									<div class="tab-pane fade" id="success-pills-contact" role="tabpanel">
-										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<h6 class="mb-0 text-uppercase">Warning Nav Pills</h6>
-						<hr>
-						<div class="card">
-							<div class="card-body">
-								<ul class="nav nav-pills nav-pills-warning mb-3" role="tablist">
-									<li class="nav-item" role="presentation">
-										<a class="nav-link active" data-bs-toggle="pill" href="#warning-pills-home" role="tab" aria-selected="true">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Home</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="pill" href="#warning-pills-profile" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Profile</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="pill" href="#warning-pills-contact" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
-												</div>
-												<div class="tab-title">Contact</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content">
-									<div class="tab-pane fade show active" id="warning-pills-home" role="tabpanel">
-										<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi.</p>
-									</div>
-									<div class="tab-pane fade" id="warning-pills-profile" role="tabpanel">
-										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-									</div>
-									<div class="tab-pane fade" id="warning-pills-contact" role="tabpanel">
-										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--end row-->
+
+        <!-- form start -->
+        <form action= "ecommerce-add-product.php" method="post" enctype="multipart/form-data">  
+
+        <div class="row">
+          <div class="col-12 col-lg-8">
+
+              <div class="card">
+                 <div class="card-body">
+                   <div class="mb-4">
+                      <h5 class="mb-3">Product Title</h5>
+                      <input type="text" name="title" class="form-control" placeholder="write title here....">
+                   </div>
+                   <div class="mb-4">
+                     <h5 class="mb-3">Product Description</h5>
+                     <textarea class="form-control" name="description" cols="4" rows="6" placeholder="write a description here.."></textarea>
+                   </div>
+                   <div class="mb-4">
+                    <h5 class="mb-3">Display images</h5>
+                    <input id="fancy-file-upload" type="file" name="images" accept=".jpg, .png, image/jpeg, image/png" multiple>
+                  </div>
+                 </div>
+              </div>
+          </div> 
+          <div class="col-12 col-lg-4">
+             <div class="card">
+                <div class="card-body">
+                   <div class="d-flex align-items-center gap-3">
+                    <button type="button" class="btn btn-outline-danger flex-fill"><i class="bi bi-x-circle me-2"></i>Discard</button>
+                    <button type="button" class="btn btn-outline-success flex-fill"><i class="bi bi-cloud-download me-2"></i>Save Draft</button>
+                    <button type="button" class="btn btn-outline-primary flex-fill"><i class="bi bi-send me-2"></i>Publish</button>
+                   </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                   <h5 class="mb-3">Organize</h5>
+                      <div class="row g-3">
+                          <div class="col-12">
+                           
+                            <select name="category" class="form-select" id="AddCategory">
+                              <option value="0">Topwear</option>
+                              <option value="1">Bottomwear</option>
+                              <option value="2">Casual Tshirt</option>
+                              <option value="3">Electronic</option>
+                            </select>
+                          </div>
+                         
+                          
+                        
+                         
+                          <div class="col-12">
+                        <label for="Brand" class="form-label">Brand</label>
+                        <input type="text" name="brand" class="form-control" id="Brand" placeholder="Brand">
+                       </div>
+                     
+                       <div class="col-12">
+                        <label for="Color" class="form-label">Color</label>
+                        <input type="text" name="color" class="form-control" id="Color" placeholder="Color">
+                       </div>
+                       <div class="col-12">
+                        <label for="Size" class="form-label">Size</label>
+                        <input type="text" name="size" class="form-control" id="Size" placeholder="Size">
+                       </div>
+                        <div class="col-12">
+                          <div class="d-grid">
+                            <button type="button" class="btn btn-primary">Add Variants</button>
+                          </div>
+                        </div>
+                        </div><!--end row-->
+                     </div>
+                </div>
+
+                
+
+              </div>                
+          
+         </div><!--end row-->
+         </form>
+         <!-- Form end -->
+
 
     </div>
   </main>
@@ -1424,6 +1127,7 @@
   </div>
   <!--end cart-->
 
+
   <!--start switcher-->
   <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>Customize
@@ -1494,6 +1198,18 @@
   <!--plugins-->
   <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
   <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
+  <script src="assets/plugins/fancy-file-uploader/jquery.ui.widget.js"></script>
+	<script src="assets/plugins/fancy-file-uploader/jquery.fileupload.js"></script>
+	<script src="assets/plugins/fancy-file-uploader/jquery.iframe-transport.js"></script>
+	<script src="assets/plugins/fancy-file-uploader/jquery.fancy-fileupload.js"></script>
+  <script>
+		$('#fancy-file-upload').FancyFileUpload({
+			params: {
+				action: 'fileuploader'
+			},
+			maxfilesize: 1000000
+		});
+	</script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
   <script src="assets/js/main.js"></script>
 
