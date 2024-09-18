@@ -127,12 +127,20 @@
                             
                             <div class="col-12">
                               <div class="d-grid">
-                                <button type="submit" class="btn btn-grd-primary"> <a href="auth-basic-login.php"></a>Login</button>
+                                
+                                     <button type="submit" class="btn btn-grd-primary">
+
+                                     <a href="auth-basic-login.php">
+                                     Login
+                                     </a>
+                                       </button>
+                                
+                                
                               </div>
                             </div>
                             <div class="col-12"></div>
                               <div class="d-grid">
-                                <button type="submit" class="btn btn-grd-primary"><a href="auth-basic-register.php"></a>Register</button>
+                                <button type="submit" class="btn btn-grd-primary"><a href="auth-basic-register.php">Register</a></button>
                               </div>
                             </div>
                            
