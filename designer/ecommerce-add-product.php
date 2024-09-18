@@ -1,4 +1,23 @@
+
+<?php
+
+
+
+
+
+
+?>
+
+
+
+
+
 <!doctype html>
+
+
+
+
+
 <html lang="en" data-bs-theme="blue-theme">
 
 <head>
@@ -904,7 +923,7 @@
                    </div>
                    <div class="mb-4">
                     <h5 class="mb-3">Display images</h5>
-                    <input id="fancy-file-upload" type="file" name="files" accept=".jpg, .png, image/jpeg, image/png" multiple>
+                    <input id="fancy-file-upload" type="file" name="img" accept=".jpg, .png, image/jpeg, image/png" multiple>
                   </div>
                   <div class="mb-4">
                     <h5 class="mb-3">Inventory</h5>
