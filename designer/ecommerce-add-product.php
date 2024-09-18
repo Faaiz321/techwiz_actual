@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <?php
 
@@ -12,6 +13,39 @@
 
 
 
+=======
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$databse = "techwiz";
+
+$conn = mysqli_connect($servername,$username,$password,$databse);
+
+if (!$conn) {
+  die("Failed to connect");
+}
+
+if(isset($_POST['add'])){
+  $product_title =$_POST['product_title'];
+  $product_description =$_POST['product_description'];
+  $images=$_POST['files'];
+  $category =$_POST['category'];
+  $color=$_POST['color'];
+  $brand=$_POST['brand'];
+  $size=$_POST['size'];
+
+  
+
+
+
+}
+
+$sql="INSERT INTO `products`(`product_id`, `product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','','')"
+
+?>
+
+>>>>>>> 76fd659e1c2285a5c58bc8a3938216226f3ac248
 <!doctype html>
 
 
@@ -909,19 +943,21 @@
 					</div>
 				</div>
 				<!--end breadcrumb-->
-        <div class="row">
-          <div class="col-12 col-lg-8">
+        <form action="" method="post">
+
+          <div class="row">
+            <div class="col-12 col-lg-8">
               <div class="card">
-                 <div class="card-body">
-                   <div class="mb-4">
-                      <h5 class="mb-3">Product Title</h5>
-                      <input type="text" class="form-control" placeholder="write title here....">
-                   </div>
-                   <div class="mb-4">
-                     <h5 class="mb-3">Product Description</h5>
-                     <textarea class="form-control" cols="4" rows="6" placeholder="write a description here.."></textarea>
-                   </div>
-                   <div class="mb-4">
+                <div class="card-body">
+                  <div class="mb-4">
+                    <h5 class="mb-3">Product Title</h5>
+                    <input type="text" class="form-control" name ="product_title"placeholder="write title here....">
+                  </div>
+                  <div class="mb-4">
+                    <h5 class="mb-3">Product Description</h5>
+                    <textarea class="form-control" cols="4" rows="6" name="product_description" placeholder="write a description here.."></textarea>
+                  </div>
+                  <div class="mb-4">
                     <h5 class="mb-3">Display images</h5>
                     <input id="fancy-file-upload" type="file" name="img" accept=".jpg, .png, image/jpeg, image/png" multiple>
                   </div>
@@ -1110,7 +1146,7 @@
                    <h5 class="mb-3">Organize</h5>
                       <div class="row g-3">
                           <div class="col-12">
-                            <label for="AddCategory" class="form-label">Category</label>
+                            <label for="AddCategory" name="category" class="form-label">Category</label>
                             <select class="form-select" id="AddCategory">
                               <option value="0">Topwear</option>
                               <option value="1">Bottomwear</option>
@@ -1120,23 +1156,8 @@
                           </div>
                           <div class="col-12">
                             <label for="Collection" class="form-label">Collection</label>
-                            <input type="text" class="form-control" id="Collection" placeholder="Collection">
-                          </div>
-                          <div class="col-12">
-                            <label for="Tags" class="form-label">Tags</label>
-                            <input type="text" class="form-control" id="Tags" placeholder="Tags">
-                          </div>
-                          <div class="col-12">
-                            <div class="d-flex align-items-center gap-2">
-                              <a href="javascript:;" class="btn btn-sm btn-light border shadow-sm">Woman <i class="bi bi-x"></i></a>
-                              <a href="javascript:;" class="btn btn-sm btn-light border shadow-sm">Fashion <i class="bi bi-x"></i></a>
-                              <a href="javascript:;" class="btn btn-sm btn-light border shadow-sm">Furniture <i class="bi bi-x"></i></a>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <label for="Vendor" class="form-label">Vendor</label>
-                            <input type="text" class="form-control" id="Vendor" placeholder="Vendor">
-                          </div>
+                            <input type="text" class="form-control" name="collection" id="Collection" placeholder="Collection">
+                          </div>                         
                         </div><!--end row-->
                      </div>
                 </div>
@@ -1147,23 +1168,19 @@
                     <div class="row g-3">
                       <div class="col-12">
                         <label for="Brand" class="form-label">Brand</label>
-                        <input type="text" class="form-control" id="Brand" placeholder="Brand">
-                       </div>
-                      <div class="col-12">
-                        <label for="SKU" class="form-label">SKU</label>
-                        <input type="text" class="form-control" id="SKU" placeholder="SKU">
+                        <input type="text" class="form-control" name="brand" id="Brand" placeholder="Brand">
                        </div>
                        <div class="col-12">
                         <label for="Color" class="form-label">Color</label>
-                        <input type="text" class="form-control" id="Color" placeholder="Color">
+                        <input type="text" class="form-control" name="color" id="Color" placeholder="Color">
                        </div>
                        <div class="col-12">
                         <label for="Size" class="form-label">Size</label>
-                        <input type="text" class="form-control" id="Size" placeholder="Size">
+                        <input type="text" class="form-control" name="size" id="Size" placeholder="Size">
                        </div>
                         <div class="col-12">
                           <div class="d-grid">
-                            <button type="button" class="btn btn-primary">Add Variants</button>
+                            <button type="button" name="add" class="btn btn-primary">Add Variants</button>
                           </div>
                         </div>
                       </div>
