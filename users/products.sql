@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 18, 2024 at 12:50 PM
+-- Generation Time: Sep 18, 2024 at 12:58 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -31,7 +31,12 @@ CREATE TABLE `products` (
   `product_id` int(11) NOT NULL,
   `product_name` varchar(50) NOT NULL,
   `price` varchar(50) NOT NULL,
-  `product_image` varchar(50) NOT NULL
+  `product_image` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
+  `category` varchar(50) NOT NULL,
+  `color` varchar(50) NOT NULL,
+  `brand` varchar(50) NOT NULL,
+  `size` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
