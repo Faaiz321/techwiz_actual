@@ -28,6 +28,31 @@
 
   </head>
 
+  <?php
+
+     include("conn.php");
+     if(isset($_POST['submit'])){
+      $username = $_POST['username'];
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      $country = $_POST['country'];
+
+      $insertQuery = "INSERT INTO register (username,email,password,country) VALUES ('$username','$email','$password','$country')";
+
+      $isInsert = mysqli_query($conn, $insertQuery);
+
+      if ($isInsert) {
+        echo '<script>alert("Data inserted successfully");
+            window.location.href = "auth-basic-login.php";
+        </script>';
+    } else {
+        echo '<script>alert("Something went wrong")</script>';
+    }
+
+     }
+
+  ?>
+
   <body class="bg-register">
 
 

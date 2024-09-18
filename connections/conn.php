@@ -1,17 +1,12 @@
 <?php
 
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "techwiz";
-
-$conn = mysqli_connect($server , $username , $password , $database );
+$conn = mysqli_connect("localhost","root","","techwiz");
 
 if( ! $conn){
-//  echo "success";
-// }
+ echo "success";
+}
 
-// else{
+else{
 
 die ("error" ) ;
 
