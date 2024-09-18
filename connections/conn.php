@@ -2,7 +2,7 @@
 
 $conn = mysqli_connect("localhost","root","","techwiz");
 
-if( ! $conn){
+if($conn){
  echo "success";
 }
 

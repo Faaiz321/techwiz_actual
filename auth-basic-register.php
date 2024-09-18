@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
@@ -28,12 +27,38 @@
   <link href="sass/responsive.css" rel="stylesheet">
 
   </head>
+  
+  <?php
+
+     include("connections/conn.php");
+     if(isset($_POST['submit'])){
+      $username = $_POST['username'];
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+
+      $insertQuery = "INSERT INTO register (username,email,password) VALUES ('$username','$email','$password')";
+
+      $isInsert = mysqli_query($conn, $insertQuery);
+
+      if ($isInsert) {
+        echo '<script>alert("Data inserted successfully");
+            window.location.href = "auth-basic-login.php";
+        </script>';
+    } else {
+        echo '<script>alert("Something went wrong")</script>';
+    }
+
+     }
+
+  ?>
+
+  
 
   <body class="bg-register">
 
 
     <!--authentication-->
-
+     <form action="auth-basic-register.php" method="post" enctype="multipart/form-data" class="form-horizontal">
      <div class="container-fluid my-5">
         <div class="row">
            <div class="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-5 mx-auto">
@@ -43,38 +68,40 @@
                   <h4 class="fw-bold">Get Started Now</h4>
                   <p class="mb-0">Enter your credentials to create your account</p>
 
-                  <div class="form-body my-4">
-										<form class="row g-3">
-											<div class="col-12">
+                  <div class="col-12">
 												<label for="inputUsername" class="form-label">Username</label>
-												<input type="email" class="form-control" id="inputUsername" name="useername" placeholder="Jhon">
+												<input type="text" name="username" class="form-control" id="inputUsername" placeholder="hammad">
 											</div>
+
 											<div class="col-12">
 												<label for="inputEmailAddress" class="form-label">Email Address</label>
-												<input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="example@user.com">
+												<input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="example@user.com">
 											</div>
+
 											<div class="col-12">
-												<label for="inputChoosePassword" class="form-label">Password</label>
+												<label for="inputChoosePassword"  class="form-label">Password</label>
 												<div class="input-group" id="show_hide_password">
-													<input type="password" class="form-control border-end-0" id="inputChoosePassword" name="password" value="12345678" placeholder="Enter Password">
+													<input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password">
                            <a href="javascript:;" class="input-group-text bg-transparent"><i class="bi bi-eye-slash-fill"></i></a>
 												</div>
 											</div>
-									
-											<div class="col-12">
+
+											
+											<!-- <div class="col-12">
 												<div class="form-check form-switch">
 													<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
 													<label class="form-check-label" for="flexSwitchCheckChecked">I read and agree to Terms &amp; Conditions</label>
 												</div>
-											</div>
+											</div> -->
 											<div class="col-12">
 												<div class="d-grid">
-													<button type="submit" class="btn btn-grd-danger">Register</button>
+													<button type="submit" name="submit" class="btn btn-grd-danger">Register</button>
 												</div>
 											</div>
+                      </form>
 											<div class="col-12">
 												<div class="text-start">
-													<p class="mb-0">Already have an account? <a href="auth-basic-login.php">Sign in here</a></p>
+													<p class="mb-0">Already have an account? <a href="auth-basic-login.html">Sign in here</a></p>
 												</div>
 											</div>
 										</form>
@@ -133,3 +160,4 @@
     </script>
   
   </body>
+</html>
