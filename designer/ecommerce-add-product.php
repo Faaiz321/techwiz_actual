@@ -12,6 +12,7 @@ if (!$conn) {
 
 if(isset($_POST['add'])){
   $product_title =$_POST['product_title'];
+  $price=$_POST['price'];
   $product_description =$_POST['product_description'];
   $images=$_POST['files'];
   $category =$_POST['category'];
@@ -21,7 +22,9 @@ if(isset($_POST['add'])){
 
 }
 
-$sql="INSERT INTO `products`(`product_id`, `product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','','')"
+$sql="INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('$product_title','$price',''$images','$product_description','$category','$color','$brand','$size')"
+
+$result=mysqli_query($conn,$sql);
 
 ?>
 
@@ -931,6 +934,7 @@ $sql="INSERT INTO `products`(`product_id`, `product_name`, `price`, `product_ima
                     <h5 class="mb-3">Product Description</h5>
                     <textarea class="form-control" cols="4" rows="6" name="product_description" placeholder="write a description here.."></textarea>
                   </div>
+                  
                   <div class="mb-4">
                     <h5 class="mb-3">Display images</h5>
                     <input id="fancy-file-upload" type="file" name="files" accept=".jpg, .png, image/jpeg, image/png" multiple>
@@ -1151,6 +1155,10 @@ $sql="INSERT INTO `products`(`product_id`, `product_name`, `price`, `product_ima
                        <div class="col-12">
                         <label for="Size" class="form-label">Size</label>
                         <input type="text" class="form-control" name="size" id="Size" placeholder="Size">
+                       </div>
+                       <div class="col-12">
+                        <label for="Size" class="form-label">Price</label>
+                        <input type="text" class="form-control" name="price" id="price" placeholder="price">
                        </div>
                         <div class="col-12">
                           <div class="d-grid">
