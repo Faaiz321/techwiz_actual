@@ -1,3 +1,11 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$databse = "project";
+
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
@@ -1102,22 +1110,7 @@
                           <div class="col-12">
                             <label for="Collection" class="form-label">Collection</label>
                             <input type="text" class="form-control" id="Collection" placeholder="Collection">
-                          </div>
-                          <div class="col-12">
-                            <label for="Tags" class="form-label">Tags</label>
-                            <input type="text" class="form-control" id="Tags" placeholder="Tags">
-                          </div>
-                          <div class="col-12">
-                            <div class="d-flex align-items-center gap-2">
-                              <a href="javascript:;" class="btn btn-sm btn-light border shadow-sm">Woman <i class="bi bi-x"></i></a>
-                              <a href="javascript:;" class="btn btn-sm btn-light border shadow-sm">Fashion <i class="bi bi-x"></i></a>
-                              <a href="javascript:;" class="btn btn-sm btn-light border shadow-sm">Furniture <i class="bi bi-x"></i></a>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <label for="Vendor" class="form-label">Vendor</label>
-                            <input type="text" class="form-control" id="Vendor" placeholder="Vendor">
-                          </div>
+                          </div>                         
                         </div><!--end row-->
                      </div>
                 </div>
@@ -1129,10 +1122,6 @@
                       <div class="col-12">
                         <label for="Brand" class="form-label">Brand</label>
                         <input type="text" class="form-control" id="Brand" placeholder="Brand">
-                       </div>
-                      <div class="col-12">
-                        <label for="SKU" class="form-label">SKU</label>
-                        <input type="text" class="form-control" id="SKU" placeholder="SKU">
                        </div>
                        <div class="col-12">
                         <label for="Color" class="form-label">Color</label>
