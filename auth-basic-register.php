@@ -30,33 +30,43 @@
   
   <?php
 
-     include("connections/conn.php");
-     if(isset($_POST['submit'])){
-      $username = $_POST['username'];
-      $email = $_POST['email'];
-      $password = $_POST['password'];
-      $role = $_POST['role'];
+include("connections/conn.php");
+
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $role = $_POST['role'];
+
     if ($role == 'designer') {
-      $insertQuery = "INSERT INTO designers (username,email,password) VALUES ('$username','$email','$password')";
-    } else {
-      $insertQuery = "INSERT INTO users (username,email,password) VALUES ('$username','$email','$password')";
+        $designerQuery = "INSERT INTO designers (username, email, password) VALUES ('$username', '$email', '$password')";
+        $isInsertdesigner = mysqli_query($conn, $designerQuery);
+
+        if ($isInsertdesigner) {
+            echo '<script>alert("Data inserted successfully");
+                window.location.href = "auth-login-designers.php";
+            </script>';
+        } else {
+            echo '<script>alert("Something went wrong with designer registration")</script>';
+        }
     }
-      $isInsert = mysqli_query($conn, $insertQuery);
+     elseif ($role == 'customer') {
+        $customerQuery = "INSERT INTO customers (username, email, password) VALUES ('$username', '$email', '$password')";
+        $isInsertcustomer = mysqli_query($conn, $customerQuery);
 
-      
-      $isInsert = mysqli_query($conn, $insertQuery);
-
-      if ($isInsert) {
-        echo '<script>alert("Data inserted successfully");
-            window.location.href = "auth-basic-login.php";
-        </script>';
+        if ($isInsertcustomer) {
+            echo '<script>alert("Data inserted successfully");
+                window.location.href = "auth-login-customers.php";
+            </script>';
+        } else {
+            echo '<script>alert("Something went wrong with customer registration")</script>';
+        }
     } else {
-        echo '<script>alert("Something went wrong")</script>';
+        echo '<script>alert("Please select a valid role.")</script>';
     }
+}
 
-     }
-
-  ?>
+?>
 
   
 
@@ -71,81 +81,73 @@
                 <div class="card rounded-4 mb-0 border-top border-4 border-primary border-gradient-1">
                     <div class="card-body p-5">
                         <img src="assets/images/logo1.png" class="mb-4" width="145" alt="">
-                        <h4 class="fw-bold">Get Started Now</h4>
-                        <p class="mb-0">Enter your credentials to create your account</p>
+                        <h4 class="fw-bold text-center">Get Started Now</h4>
+                        <p class="mb-4 text-center">Enter your credentials to create your account</p>
 
-                        <div class="col-12 mb-3"> <!-- Added mb-3 for margin-bottom -->
+                        <div class="mb-3">
                             <label for="inputUsername" class="form-label">Username</label>
-                            <input type="text" name="username" class="form-control" id="inputUsername" placeholder="hammad">
+                            <input type="text" name="username" class="form-control" id="inputUsername" placeholder="e.g., hammad" required>
                         </div>
 
-                        <div class="col-12 mb-3"> <!-- Added mb-3 for margin-bottom -->
+                        <div class="mb-3">
                             <label for="inputEmailAddress" class="form-label">Email Address</label>
-                            <input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="example@user.com">
+                            <input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="e.g., example@user.com" required>
                         </div>
 
-                        <!-- Dropdown for role selection -->
-                        <div class="col-12 mb-3"> <!-- Added mb-3 for margin-bottom -->
+                        <div class="mb-3">
                             <label for="inputRole" class="form-label">Select Role</label>
-                            <select name="role" class="form-select" id="inputRole">
-                                <option value="user">User</option>
+                            <select name="role" class="form-select" id="inputRole" required>
+                                <option value="" disabled selected>Select your role</option>
+                                <option value="customer">Customer</option>
                                 <option value="designer">Designer</option>
                             </select>
                         </div>
 
-                        <div class="col-12 mb-3"> <!-- Added mb-3 for margin-bottom -->
+                        <div class="mb-4">
                             <label for="inputChoosePassword" class="form-label">Password</label>
                             <div class="input-group" id="show_hide_password">
-                                <input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password">
+                                <input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" placeholder="Enter Password" required>
                                 <a href="javascript:;" class="input-group-text bg-transparent"><i class="bi bi-eye-slash-fill"></i></a>
                             </div>
                         </div>
 
-                        <div class="col-12 mb-3"> <!-- Added mb-3 for margin-bottom -->
+                        <div class="mb-3">
                             <div class="d-grid">
                                 <button type="submit" name="submit" class="btn btn-grd-danger">Register</button>
                             </div>
                         </div>
 
-                        <div class="col-12">
-                            <div class="text-start">
-                                <p class="mb-0">Already have an account? <a href="auth-basic-login.html">Sign in here</a></p>
-                            </div>
+                        <div class="col-12 text-center">
+                            <p class="mb-0">Already have an account? <a href="auth-basic-login.html">Sign in here</a></p>
                         </div>
                     </div> <!-- End of card body -->
                 </div> <!-- End of card -->
             </div> <!-- End of column -->
         </div> <!-- End of row -->
+
+        <div class="separator section-padding">
+            <div class="line"></div>
+            <p class="mb-0 fw-bold text-center">OR</p>
+            <div class="line"></div>
+        </div>
+
+        <div class="d-flex gap-3 justify-content-center mt-4">
+            <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-danger" title="Sign in with Google">
+                <i class="bi bi-google fs-5 text-white"></i>
+            </a>
+            <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-deep-blue" title="Sign in with Facebook">
+                <i class="bi bi-facebook fs-5 text-white"></i>
+            </a>
+            <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-info" title="Sign in with LinkedIn">
+                <i class="bi bi-linkedin fs-5 text-white"></i>
+            </a>
+            <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-royal" title="Sign in with GitHub">
+                <i class="bi bi-github fs-5 text-white"></i>
+            </a>
+        </div>
     </div> <!-- End of container -->
 </form>
-              <div class="separator section-padding">
-                    <div class="line"></div>
-                    <p class="mb-0 fw-bold">OR</p>
-                    <div class="line"></div>
-                  </div>
 
-                  <div class="d-flex gap-3 justify-content-center mt-4">
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-danger">
-                      <i class="bi bi-google fs-5 text-white"></i>
-                    </a>
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-deep-blue">
-                      <i class="bi bi-facebook fs-5 text-white"></i>
-                    </a>
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-info">
-                      <i class="bi bi-linkedin fs-5 text-white"></i>
-                    </a>
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-royal">
-                      <i class="bi bi-github fs-5 text-white"></i>
-                    </a>
-                  </div>
-
-              </div>
-            </div>
-           </div>
-        </div><!--end row-->
-     </div>
-      
-    <!--authentication-->
 
 
 
