@@ -22,8 +22,7 @@ if(isset($_POST['add'])){
 
 }
 
-$sql="INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('$product_title','$price',''$images','$product_description','$category','$color','$brand','$size')"
-
+$sql="INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('$product_title','$price',''$images','$product_description','$category','$color','$brand','$size')";
 $result=mysqli_query($conn,$sql);
 
 ?>
