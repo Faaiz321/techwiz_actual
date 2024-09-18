@@ -1,30 +1,41 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$databse = "project";
+// // TO BE UNCOMMENTED LATER
+// include('connections/addproductconn.php');
 
-$conn = mysqli_connect($servername,$username,$password,$databse);
+// if (isset($_POST['submit'])) {
+//     // Gather form data
+//     $product_title = $_POST['product_title'];
+//     $price = $_POST['price'];
+//     $product_description = $_POST['product_description'];
+//     $category = $_POST['category'];
+//     $color = $_POST['color'];
+//     $brand = $_POST['brand'];
+//     $size = $_POST['size'];
 
-if (!$conn) {
-  die(echo"Failed to connect");
-}
+//     $file_name = $_FILES['product_image']['name'];
+//     $tempname = $_FILES['product_image']['tmp_name'];
+//     $folder = "assets/images/" . $file_name;
 
-if(isset($_POST['add'])){
-  $product_title =$_POST['product_title'];
-  $price=$_POST['price'];
-  $product_description =$_POST['product_description'];
-  $images=$_POST['files'];
-  $category =$_POST['category'];
-  $color=$_POST['color'];
-  $brand=$_POST['brand'];
-  $size=$_POST['size'];
+//     // Move uploaded file
+//     if (move_uploaded_file($tempname, $folder)) {
+//         $msg = "Image uploaded successfully.";
+//     } else {
+//         $msg = "Failed to upload image.";
+//         echo $msg; // Display error message
+//         exit; // Stop execution if image upload fails
+//     }
 
-}
-
-$sql="INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('$product_title','$price',''$images','$product_description','$category','$color','$brand','$size')";
-$result=mysqli_query($conn,$sql);
-
+//     // Prepare SQL statement to insert product data
+//     $sql = "INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) 
+//             VALUES ('$product_title', '$price', '$file_name', '$product_description', '$category', '$color', '$brand', '$size')";
+    
+//     // Execute the query
+//     if (mysqli_query($conn, $sql)) {
+//         echo "Product added successfully.";
+//     } else {
+//         echo "Error adding product: " . mysqli_error($conn);
+//     }
+// }
 ?>
 
 <!doctype html>
@@ -919,259 +930,116 @@ $result=mysqli_query($conn,$sql);
 					</div>
 				</div>
 				<!--end breadcrumb-->
-        <form action="" method="post">
 
-          <div class="row">
-            <div class="col-12 col-lg-8">
-              <div class="card">
-                <div class="card-body">
-                  <div class="mb-4">
-                    <h5 class="mb-3">Product Title</h5>
-                    <input type="text" class="form-control" name ="product_title"placeholder="write title here....">
-                  </div>
-                  <div class="mb-4">
-                    <h5 class="mb-3">Product Description</h5>
-                    <textarea class="form-control" cols="4" rows="6" name="product_description" placeholder="write a description here.."></textarea>
-                  </div>
-                  
-                  <div class="mb-4">
-                    <h5 class="mb-3">Display images</h5>
-                    <input id="fancy-file-upload" type="file" name="files" accept=".jpg, .png, image/jpeg, image/png" multiple>
-                  </div>
-                  <div class="mb-4">
-                    <h5 class="mb-3">Inventory</h5>
-                    
-                    <div class="row g-3">
-                      <div class="col-12 col-lg-3">
-                        <div class="nav flex-column nav-pills border rounded vertical-pills overflow-hidden">
-                          <button class="nav-link px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#Pricing" type="button"><i class="bi bi-tag-fill me-2"></i>Pricing</button>
-                          <button class="nav-link px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#Restock" type="button"><i class="bi bi-box-seam-fill me-2"></i>Restock</button>
-                          <button class="nav-link active px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#Shipping" type="button"><i class="bi bi-truck-front-fill me-2"></i>Shipping</button>
-                          <button class="nav-link px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#GlobalDelivery" type="button"><i class="bi bi-globe me-2"></i>Global Delivery</button>
-                          <button class="nav-link px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#Attributes" type="button"><i class="bi bi-hdd-rack-fill me-2"></i>Attributes</button>
-                          <button class="nav-link px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#Advanced" type="button"><i class="bi bi-handbag-fill me-2"></i>Advanced</button>
-                        </div>
-                      </div>
-                      <div class="col-12 col-lg-9">
-                        <div class="tab-content">
-                          <div class="tab-pane fade" id="Pricing">
-                            <div class="row g-3">
-                              <div class="col-12 col-lg-6">
-                                <h6 class="mb-2">Regular price</h6>
-                                <input class="form-control" type="text" placeholder="$$$">
-                              </div>
-                              <div class="col-12 col-lg-6">
-                                <h6 class="mb-2">Sale price</h6>
-                                <input class="form-control" type="text" placeholder="$$$">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="tab-pane fade" id="Restock">
-                            <h6 class="mb-3">Add to Stock</h6>
-                            <div class="row g-3">
-                              <div class="col-sm-7">
-                                <input class="form-control" type="number" placeholder="Quantity">
-                              </div>
-                              <div class="col-sm">
-                                <button class="btn btn-outline-primary"><i class="bi bi-check2 me-2"></i>Confirm</button>
-                              </div>
-                            </div>
-                            <table class="mt-3">
-                              <thead>
-                                <tr>
-                                  <th style="width: 200px;"></th>
-                                  <th></th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td class="text-1000 py-1">Product in stock now:</td>
-                                  <td class="text-700 fw-semi-bold py-1">$2,059<button class="btn p-0 ms-2" type="button"><i class="bi bi-arrow-clockwise"></i></button></td>
-                                </tr>
-                                <tr>
-                                  <td class="text-1000 py-1">Product in transit:</td>
-                                  <td class="text-700 fw-semi-bold py-1">3000</td>
-                                </tr>
-                                <tr>
-                                  <td class="text-1000 py-1">Last time restocked:</td>
-                                  <td class="text-700 fw-semi-bold py-1">25th March, 2020</td>
-                                </tr>
-                                <tr>
-                                  <td class="text-1000 py-1">Total stock over lifetime:</td>
-                                  <td class="text-700 fw-semi-bold py-1">50,000</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                          <div class="tab-pane fade show active" id="Shipping">
-                            <div class="d-flex flex-column h-100">
-                              <h6 class="mb-3">Shipping Type</h6>
-                              <div class="flex-1">
-                                <div class="mb-4">
-                                  <div class="form-check mb-1">
-                                    <input class="form-check-input" type="radio" name="shippingRadio" id="fullfilledBySeller">
-                                    <label class="form-check-label fw-bold" for="fullfilledBySeller">Fullfilled by Seller</label></div>
-                                  <div class="ps-4">
-                                    <p class="mb-0">You’ll be responsible for product delivery. <br>Any damage or delay during shipping may cost you a Damage fee.</p>
-                                  </div>
-                                </div>
-                                <div class="mb-4">
-                                  <div class="form-check mb-1">
-                                    <input class="form-check-input" type="radio" name="shippingRadio" id="fullfilledByPhoenix" checked="checked">
-                                    <label class="form-check-label fw-bold d-flex align-items-center" for="fullfilledByPhoenix">Fullfilled by Admin <span class="badge bg-warning text-dark ms-2">Recommended</span></label></div>
-                                  <div class="ps-4">
-                                    <p class="mb-0">Your product, Our responsibility.<br>For a measly fee, we will handle the delivery process for you.</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <p class="fs--1 fw-semi-bold mb-0">See our <a class="fw-bold" href="#!">Delivery terms and conditions </a>for details.</p>
-                            </div>
-                          </div>
-                          <div class="tab-pane fade" id="GlobalDelivery">
-                            <div class="d-flex flex-column h-100">
-                              <h6 class="mb-3">Global Delivery</h6>
-                              <div class="flex-1">
-                                <div class="mb-4">
-                                  <div class="form-check mb-1">
-                                    <input class="form-check-input" type="radio" name="shippingRadio" id="Worldwidedelivery">
-                                    <label class="form-check-label fw-bold" for="Worldwidedelivery">Worldwide delivery</label>
-                                  </div>
-                                  <div class="ps-4">
-                                    <p class="mb-0">Only available with Shipping method: <a href="#!">Fullfilled by Admin</a></p>
-                                  </div>
-                                </div>
-                                <div class="mb-4">
-                                  <div class="form-check mb-1">
-                                    <input class="form-check-input" type="radio" name="shippingRadio" id="SelectedCountries" checked="checked">
-                                    <label class="form-check-label fw-bold d-flex align-items-center" for="SelectedCountries">Selected Countries</label>
-                                  </div>
-                                  <div class="ps-4">
-                                    <input class="form-control" type="text" placeholder="Type Country name">
-                                  </div>
-                                </div>
-                                <div class="mb-0">
-                                  <div class="form-check mb-1">
-                                    <input class="form-check-input" type="radio" name="shippingRadio" id="Localdelivery">
-                                    <label class="form-check-label fw-bold" for="Localdelivery">Local delivery</label>
-                                  </div>
-                                  <div class="ps-4">
-                                    <p class="mb-0">Only available with Shipping method: <a href="#!">Fullfilled by Admin</a></p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="tab-pane fade" id="Attributes">
-                            <h6 class="mb-3">Attributes</h6>
-                            <div class="form-check">
-                              <input class="form-check-input" id="fragileCheck" type="checkbox">
-                              <label class="form-check-label text-900 fs-0" for="fragileCheck">Fragile Product</label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" id="biodegradableCheck" type="checkbox">
-                              <label class="form-check-label text-900 fs-0" for="biodegradableCheck">Biodegradable</label>
-                            </div>
-                            <div class="mb-3">
-                              <div class="form-check"><input class="form-check-input" id="frozenCheck" type="checkbox" checked="checked">
-                                <label class="form-check-label text-900 fs-0" for="frozenCheck">Frozen Product</label>
-                                <input class="form-control" type="text" placeholder="Max. allowed Temperature" style="max-width: 350px;">
-                              </div>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" id="productCheck" type="checkbox" checked="checked">
-                              <label class="form-check-label text-900 fs-0" for="productCheck">Expiry Date of Product</label>
-                              <input class="form-control" id="inventory" type="date">
-                            </div>
-                          </div>
-                          <div class="tab-pane fade" id="Advanced">
-                            <h6 class="mb-3">Advanced</h6>
-                            <div class="row g-3">
-                              <div class="col-12 col-lg-6">
-                                <label class="mb-2">Product ID Type</label>
-                                <select class="form-select">
-                                  <option selected="selected">ISBN</option>
-                                  <option value="1">UPC</option>
-                                  <option value="2">EAN</option>
-                                  <option value="3">JAN</option>
-                                </select>
-                              </div>
-                              <div class="col-12 col-lg-6">
-                                <label class="mb-2">Product ID</label>
-                                <input class="form-control" type="text" placeholder="ISBN Number">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                     </div>
-                   </div> 
-                 </div>
-              </div>
-          </div> 
-          <div class="col-12 col-lg-4">
-             <div class="card">
-                <div class="card-body">
-                   <div class="d-flex align-items-center gap-3">
-                    <button type="button" class="btn btn-outline-danger flex-fill"><i class="bi bi-x-circle me-2"></i>Discard</button>
-                    <button type="button" class="btn btn-outline-success flex-fill"><i class="bi bi-cloud-download me-2"></i>Save Draft</button>
-                    <button type="button" class="btn btn-outline-primary flex-fill"><i class="bi bi-send me-2"></i>Publish</button>
-                   </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                   <h5 class="mb-3">Organize</h5>
-                      <div class="row g-3">
-                          <div class="col-12">
-                            <label for="AddCategory" name="category" class="form-label">Category</label>
-                            <select class="form-select" id="AddCategory">
-                              <option value="0">Topwear</option>
-                              <option value="1">Bottomwear</option>
-                              <option value="2">Casual Tshirt</option>
-                              <option value="3">Electronic</option>
-                            </select>
-                          </div>
-                          <div class="col-12">
-                            <label for="Collection" class="form-label">Collection</label>
-                            <input type="text" class="form-control" name="collection" id="Collection" placeholder="Collection">
-                          </div>                         
-                        </div><!--end row-->
-                     </div>
-                </div>
+<!-- form start -->
+<form action="#" id="addProductForm" class="needs-validation" novalidate method="post" enctype="multipart/form-data">
 
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="mb-3">Variants</h5>
-                    <div class="row g-3">
-                      <div class="col-12">
-                        <label for="Brand" class="form-label">Brand</label>
-                        <input type="text" class="form-control" name="brand" id="Brand" placeholder="Brand">
-                       </div>
-                       <div class="col-12">
-                        <label for="Color" class="form-label">Color</label>
-                        <input type="text" class="form-control" name="color" id="Color" placeholder="Color">
-                       </div>
-                       <div class="col-12">
-                        <label for="Size" class="form-label">Size</label>
-                        <input type="text" class="form-control" name="size" id="Size" placeholder="Size">
-                       </div>
-                       <div class="col-12">
-                        <label for="Size" class="form-label">Price</label>
-                        <input type="text" class="form-control" name="price" id="price" placeholder="price">
-                       </div>
-                        <div class="col-12">
-                          <div class="d-grid">
-                            <button type="button" name="add" class="btn btn-primary">Add Variants</button>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                 </div>
-
-              </div>                
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="mb-4">
+            <h5 class="mb-3">Product Title</h5>
+            <input type="text" class="form-control" name="product_title" placeholder="write title here...." required>
+          </div>
+          <div class="mb-4">
+            <h5 class="mb-3">Product Description</h5>
+            <textarea class="form-control" cols="4" rows="6" name="product_description" placeholder="write a description here.." required></textarea>
+          </div>
           
-         </div><!--end row-->
-    </div>
+          <!-- IMAGE UPLOAD -->
+          <div class="mb-4">
+            <h5 class="mb-3">Display Images</h5>
+            <input id="fancy-file-upload" type="file" name="product_image" accept=".jpg, .png, image/jpeg, image/png" multiple required>
+          </div>
+          <!-- IMAGE UPLOAD -->
+
+          <div class="mb-4">
+            <div class="row g-3">
+              
+              <div class="col-12 col-lg-9">
+                <div class="tab-content">
+                  <div class="tab-pane fade" id="Pricing">
+                    <div class="row g-3">
+                      <div class="col-12 col-lg-6">
+                        <h6 class="mb-2">Regular Price</h6>
+                        <input class="form-control" type="text" name="price" placeholder="$$$" required>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                        <h6 class="mb-2">Sale Price</h6>
+                        <input class="form-control" type="text" placeholder="$$$">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Additional tab contents go here -->
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div> 
+
+    <div class="col-12 col-lg-4">
+      <div class="card">
+       
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="mb-3">Organize</h5>
+          <div class="row g-3">
+            <div class="col-12">
+              <label for="AddCategory" class="form-label">Category</label>
+              <select class="form-select" id="AddCategory" name="category">
+                <option value="0">Topwear</option>
+                <option value="1">Bottomwear</option>
+                <option value="2">Casual T-shirt</option>
+                <option value="3">Electronic</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="Collection" class="form-label">Collection</label>
+              <input type="text" class="form-control" name="collection" id="Collection" placeholder="Collection">
+            </div>                         
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="mb-3">Variants</h5>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="Brand" class="form-label">Brand</label>
+                <input type="text" class="form-control" name="brand" id="Brand" placeholder="Brand">
+              </div>
+              <div class="col-12">
+                <label for="Color" class="form-label">Color</label>
+                <input type="text" class="form-control" name="color" id="Color" placeholder="Color">
+              </div>
+              <div class="col-12">
+                <label for="Size" class="form-label">Size</label>
+                <input type="text" class="form-control" name="size" id="Size" placeholder="Size">
+              </div>
+              <div class="col-12">
+                <label for="price" class="form-label">Price</label>
+                <input type="text" class="form-control" name="price" id="price" placeholder="Price">
+              </div>
+              <div class="col-12">
+              <div class="col-12">
+  <div class="d-grid">
+    <button type="submit" name="add_variant" class="btn btn-primary">Add Variants</button>
+  </div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>                
+    </div><!--end row-->
+</form>
+<!-- form end  -->
+
   </main>
   <!--end main wrapper-->
 
