@@ -88,11 +88,7 @@
           </ul>
         </div>
       </div>
-      <div class="">
-        <button class="btn btn-grd btn-grd-primary raised d-flex align-items-center rounded-5 gap-2 px-4" type="button">
-          <i class="material-icons-outlined">account_circle</i><a href="auth-basic-login.html"></a>
-        </button>
-      </div>
+     
     </nav>
   </header>
   <!--end top header-->
