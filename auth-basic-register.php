@@ -30,27 +30,43 @@
   
   <?php
 
-     include("connections/conn.php");
-     if(isset($_POST['submit'])){
-      $username = $_POST['username'];
-      $email = $_POST['email'];
-      $password = $_POST['password'];
+include("connections/conn.php");
 
-      $insertQuery = "INSERT INTO register (username,email,password) VALUES ('$username','$email','$password')";
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $role = $_POST['role'];
 
-      $isInsert = mysqli_query($conn, $insertQuery);
+    if ($role == 'designer') {
+        $designerQuery = "INSERT INTO designer (username, email, password) VALUES ('$username', '$email', '$password')";
+        $isInsertdesigner = mysqli_query($conn, $designerQuery);
 
-      if ($isInsert) {
-        echo '<script>alert("Data inserted successfully");
-            window.location.href = "auth-basic-login.php";
-        </script>';
-    } else {
-        echo '<script>alert("Something went wrong")</script>';
+        if ($isInsertdesigner) {
+            echo '<script>alert("Data inserted successfully");
+                window.location.href = "auth-login-designer.php";
+            </script>';
+        } else {
+            echo '<script>alert("Something went wrong with designer registration")</script>';
+        }
     }
+     elseif ($role == 'customer') {
+        $customerQuery = "INSERT INTO customers (username, email, password) VALUES ('$username', '$email', '$password')";
+        $isInsertcustomer = mysqli_query($conn, $customerQuery);
 
-     }
+        if ($isInsertcustomer) {
+            echo '<script>alert("Data inserted successfully");
+                window.location.href = "auth-login-customers.php";
+            </script>';
+        } else {
+            echo '<script>alert("Something went wrong with customer registration")</script>';
+        }
+    } else {
+        echo '<script>alert("Please select a valid role.")</script>';
+    }
+}
 
-  ?>
+?>
 
   
 
@@ -58,83 +74,80 @@
 
 
     <!--authentication-->
-     <form action="auth-basic-register.php" method="post" enctype="multipart/form-data" class="form-horizontal">
-     <div class="container-fluid my-5">
+    <form action="auth-basic-register.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+    <div class="container-fluid my-5">
         <div class="row">
-           <div class="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-5 mx-auto">
-            <div class="card rounded-4 mb-0 border-top border-4 border-primary border-gradient-1">
-              <div class="card-body p-5">
-                  <img src="assets/images/logo1.png" class="mb-4" width="145" alt="">
-                  <h4 class="fw-bold">Get Started Now</h4>
-                  <p class="mb-0">Enter your credentials to create your account</p>
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-5 mx-auto">
+                <div class="card rounded-4 mb-0 border-top border-4 border-primary border-gradient-1">
+                    <div class="card-body p-5">
+                        <img src="assets/images/logo1.png" class="mb-4" width="145" alt="">
+                        <h4 class="fw-bold text-center">Get Started Now</h4>
+                        <p class="mb-4 text-center">Enter your credentials to create your account</p>
 
-                  <div class="col-12">
-												<label for="inputUsername" class="form-label">Username</label>
-												<input type="text" name="username" class="form-control" id="inputUsername" placeholder="hammad">
-											</div>
+                        <div class="mb-3">
+                            <label for="inputUsername" class="form-label">Username</label>
+                            <input type="text" name="username" class="form-control" id="inputUsername" placeholder="e.g., hammad" required>
+                        </div>
 
-											<div class="col-12">
-												<label for="inputEmailAddress" class="form-label">Email Address</label>
-												<input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="example@user.com">
-											</div>
+                        <div class="mb-3">
+                            <label for="inputEmailAddress" class="form-label">Email Address</label>
+                            <input type="email" name="email" class="form-control" id="inputEmailAddress" placeholder="e.g., example@user.com" required>
+                        </div>
 
-											<div class="col-12">
-												<label for="inputChoosePassword"  class="form-label">Password</label>
-												<div class="input-group" id="show_hide_password">
-													<input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" value="12345678" placeholder="Enter Password">
-                           <a href="javascript:;" class="input-group-text bg-transparent"><i class="bi bi-eye-slash-fill"></i></a>
-												</div>
-											</div>
+                        <div class="mb-3">
+                            <label for="inputRole" class="form-label">Select Role</label>
+                            <select name="role" class="form-select" id="inputRole" required>
+                                <option value="" disabled selected>Select your role</option>
+                                <option value="customer">Customer</option>
+                                <option value="designer">Designer</option>
+                            </select>
+                        </div>
 
-											
-											<!-- <div class="col-12">
-												<div class="form-check form-switch">
-													<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-													<label class="form-check-label" for="flexSwitchCheckChecked">I read and agree to Terms &amp; Conditions</label>
-												</div>
-											</div> -->
-											<div class="col-12">
-												<div class="d-grid">
-													<button type="submit" name="submit" class="btn btn-grd-danger">Register</button>
-												</div>
-											</div>
-                      </form>
-											<div class="col-12">
-												<div class="text-start">
-													<p class="mb-0">Already have an account? <a href="auth-basic-login.html">Sign in here</a></p>
-												</div>
-											</div>
-										</form>
-									</div>
+                        <div class="mb-4">
+                            <label for="inputChoosePassword" class="form-label">Password</label>
+                            <div class="input-group" id="show_hide_password">
+                                <input type="password" name="password" class="form-control border-end-0" id="inputChoosePassword" placeholder="Enter Password" required>
+                                <a href="javascript:;" class="input-group-text bg-transparent"><i class="bi bi-eye-slash-fill"></i></a>
+                            </div>
+                        </div>
 
-                  <div class="separator section-padding">
-                    <div class="line"></div>
-                    <p class="mb-0 fw-bold">OR</p>
-                    <div class="line"></div>
-                  </div>
+                        <div class="mb-3">
+                            <div class="d-grid">
+                                <button type="submit" name="submit" class="btn btn-grd-danger">Register</button>
+                            </div>
+                        </div>
 
-                  <div class="d-flex gap-3 justify-content-center mt-4">
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-danger">
-                      <i class="bi bi-google fs-5 text-white"></i>
-                    </a>
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-deep-blue">
-                      <i class="bi bi-facebook fs-5 text-white"></i>
-                    </a>
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-info">
-                      <i class="bi bi-linkedin fs-5 text-white"></i>
-                    </a>
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-royal">
-                      <i class="bi bi-github fs-5 text-white"></i>
-                    </a>
-                  </div>
+                        <div class="col-12 text-center">
+                            <p class="mb-0">Already have an account? <a href="auth-basic-login.html">Sign in here</a></p>
+                        </div>
+                    </div> <!-- End of card body -->
+                </div> <!-- End of card -->
+            </div> <!-- End of column -->
+        </div> <!-- End of row -->
 
-              </div>
-            </div>
-           </div>
-        </div><!--end row-->
-     </div>
-      
-    <!--authentication-->
+        <div class="separator section-padding">
+            <div class="line"></div>
+            <p class="mb-0 fw-bold text-center">OR</p>
+            <div class="line"></div>
+        </div>
+
+        <div class="d-flex gap-3 justify-content-center mt-4">
+            <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-danger" title="Sign in with Google">
+                <i class="bi bi-google fs-5 text-white"></i>
+            </a>
+            <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-deep-blue" title="Sign in with Facebook">
+                <i class="bi bi-facebook fs-5 text-white"></i>
+            </a>
+            <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-info" title="Sign in with LinkedIn">
+                <i class="bi bi-linkedin fs-5 text-white"></i>
+            </a>
+            <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-royal" title="Sign in with GitHub">
+                <i class="bi bi-github fs-5 text-white"></i>
+            </a>
+        </div>
+    </div> <!-- End of container -->
+</form>
+
 
 
 

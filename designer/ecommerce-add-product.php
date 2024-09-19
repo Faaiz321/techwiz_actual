@@ -1,4 +1,96 @@
+
+
+<?php
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+<?php
+<<<<<<< HEAD
+$servername = "localhost";
+$username = "root";
+$password = "";
+$databse = "techwiz";
+=======
+// // TO BE UNCOMMENTED LATER
+// include('connections/addproductconn.php');
+>>>>>>> 7c9d2afe17434b899771fb30f35d08bc29ea6311
+
+// if (isset($_POST['submit'])) {
+//     // Gather form data
+//     $product_title = $_POST['product_title'];
+//     $price = $_POST['price'];
+//     $product_description = $_POST['product_description'];
+//     $category = $_POST['category'];
+//     $color = $_POST['color'];
+//     $brand = $_POST['brand'];
+//     $size = $_POST['size'];
+
+<<<<<<< HEAD
+if (!$conn) {
+  die("Failed to connect");
+}
+
+if(isset($_POST['add'])){
+  $product_title =$_POST['product_title'];
+  $product_description =$_POST['product_description'];
+  $images=$_POST['files'];
+  $category =$_POST['category'];
+  $color=$_POST['color'];
+  $brand=$_POST['brand'];
+  $size=$_POST['size'];
+
+  
+
+
+
+}
+
+$sql="INSERT INTO `products`(`product_id`, `product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','','')"
+=======
+//     $file_name = $_FILES['product_image']['name'];
+//     $tempname = $_FILES['product_image']['tmp_name'];
+//     $folder = "assets/images/" . $file_name;
+
+//     // Move uploaded file
+//     if (move_uploaded_file($tempname, $folder)) {
+//         $msg = "Image uploaded successfully.";
+//     } else {
+//         $msg = "Failed to upload image.";
+//         echo $msg; // Display error message
+//         exit; // Stop execution if image upload fails
+//     }
+>>>>>>> 7c9d2afe17434b899771fb30f35d08bc29ea6311
+
+//     // Prepare SQL statement to insert product data
+//     $sql = "INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) 
+//             VALUES ('$product_title', '$price', '$file_name', '$product_description', '$category', '$color', '$brand', '$size')";
+    
+//     // Execute the query
+//     if (mysqli_query($conn, $sql)) {
+//         echo "Product added successfully.";
+//     } else {
+//         echo "Error adding product: " . mysqli_error($conn);
+//     }
+// }
+?>
+
+>>>>>>> 76fd659e1c2285a5c58bc8a3938216226f3ac248
 <!doctype html>
+
+
+
+
+
 <html lang="en" data-bs-theme="blue-theme">
 
 <head>
@@ -890,21 +982,23 @@
 					</div>
 				</div>
 				<!--end breadcrumb-->
-        <div class="row">
-          <div class="col-12 col-lg-8">
+
+<<<<<<< HEAD
+          <div class="row">
+            <div class="col-12 col-lg-8">
               <div class="card">
-                 <div class="card-body">
-                   <div class="mb-4">
-                      <h5 class="mb-3">Product Title</h5>
-                      <input type="text" class="form-control" placeholder="write title here....">
-                   </div>
-                   <div class="mb-4">
-                     <h5 class="mb-3">Product Description</h5>
-                     <textarea class="form-control" cols="4" rows="6" placeholder="write a description here.."></textarea>
-                   </div>
-                   <div class="mb-4">
+                <div class="card-body">
+                  <div class="mb-4">
+                    <h5 class="mb-3">Product Title</h5>
+                    <input type="text" class="form-control" name ="product_title"placeholder="write title here....">
+                  </div>
+                  <div class="mb-4">
+                    <h5 class="mb-3">Product Description</h5>
+                    <textarea class="form-control" cols="4" rows="6" name="product_description" placeholder="write a description here.."></textarea>
+                  </div>
+                  <div class="mb-4">
                     <h5 class="mb-3">Display images</h5>
-                    <input id="fancy-file-upload" type="file" name="files" accept=".jpg, .png, image/jpeg, image/png" multiple>
+                    <input id="fancy-file-upload" type="file" name="img" accept=".jpg, .png, image/jpeg, image/png" multiple>
                   </div>
                   <div class="mb-4">
                     <h5 class="mb-3">Inventory</h5>
@@ -1091,7 +1185,7 @@
                    <h5 class="mb-3">Organize</h5>
                       <div class="row g-3">
                           <div class="col-12">
-                            <label for="AddCategory" class="form-label">Category</label>
+                            <label for="AddCategory" name="category" class="form-label">Category</label>
                             <select class="form-select" id="AddCategory">
                               <option value="0">Topwear</option>
                               <option value="1">Bottomwear</option>
@@ -1101,60 +1195,122 @@
                           </div>
                           <div class="col-12">
                             <label for="Collection" class="form-label">Collection</label>
-                            <input type="text" class="form-control" id="Collection" placeholder="Collection">
-                          </div>
-                          <div class="col-12">
-                            <label for="Tags" class="form-label">Tags</label>
-                            <input type="text" class="form-control" id="Tags" placeholder="Tags">
-                          </div>
-                          <div class="col-12">
-                            <div class="d-flex align-items-center gap-2">
-                              <a href="javascript:;" class="btn btn-sm btn-light border shadow-sm">Woman <i class="bi bi-x"></i></a>
-                              <a href="javascript:;" class="btn btn-sm btn-light border shadow-sm">Fashion <i class="bi bi-x"></i></a>
-                              <a href="javascript:;" class="btn btn-sm btn-light border shadow-sm">Furniture <i class="bi bi-x"></i></a>
-                            </div>
-                          </div>
-                          <div class="col-12">
-                            <label for="Vendor" class="form-label">Vendor</label>
-                            <input type="text" class="form-control" id="Vendor" placeholder="Vendor">
-                          </div>
+                            <input type="text" class="form-control" name="collection" id="Collection" placeholder="Collection">
+                          </div>                         
                         </div><!--end row-->
                      </div>
                 </div>
+=======
+<!-- form start -->
+<form action="#" id="addProductForm" class="needs-validation" novalidate method="post" enctype="multipart/form-data">
+>>>>>>> 7c9d2afe17434b899771fb30f35d08bc29ea6311
 
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="mb-3">Variants</h5>
-                    <div class="row g-3">
-                      <div class="col-12">
-                        <label for="Brand" class="form-label">Brand</label>
-                        <input type="text" class="form-control" id="Brand" placeholder="Brand">
-                       </div>
-                      <div class="col-12">
-                        <label for="SKU" class="form-label">SKU</label>
-                        <input type="text" class="form-control" id="SKU" placeholder="SKU">
-                       </div>
-                       <div class="col-12">
-                        <label for="Color" class="form-label">Color</label>
-                        <input type="text" class="form-control" id="Color" placeholder="Color">
-                       </div>
-                       <div class="col-12">
-                        <label for="Size" class="form-label">Size</label>
-                        <input type="text" class="form-control" id="Size" placeholder="Size">
-                       </div>
-                        <div class="col-12">
-                          <div class="d-grid">
-                            <button type="button" class="btn btn-primary">Add Variants</button>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                 </div>
-
-              </div>                
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="mb-4">
+            <h5 class="mb-3">Product Title</h5>
+            <input type="text" class="form-control" name="product_title" placeholder="write title here...." required>
+          </div>
+          <div class="mb-4">
+            <h5 class="mb-3">Product Description</h5>
+            <textarea class="form-control" cols="4" rows="6" name="product_description" placeholder="write a description here.." required></textarea>
+          </div>
           
-         </div><!--end row-->
-    </div>
+          <!-- IMAGE UPLOAD -->
+          <div class="mb-4">
+            <h5 class="mb-3">Display Images</h5>
+            <input id="fancy-file-upload" type="file" name="product_image" accept=".jpg, .png, image/jpeg, image/png" multiple required>
+          </div>
+          <!-- IMAGE UPLOAD -->
+
+          <div class="mb-4">
+            <div class="row g-3">
+              
+              <div class="col-12 col-lg-9">
+                <div class="tab-content">
+                  <div class="tab-pane fade" id="Pricing">
+                    <div class="row g-3">
+                      <div class="col-12 col-lg-6">
+                        <h6 class="mb-2">Regular Price</h6>
+                        <input class="form-control" type="text" name="price" placeholder="$$$" required>
+                      </div>
+                      <div class="col-12 col-lg-6">
+                        <h6 class="mb-2">Sale Price</h6>
+                        <input class="form-control" type="text" placeholder="$$$">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Additional tab contents go here -->
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div> 
+
+    <div class="col-12 col-lg-4">
+      <div class="card">
+       
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="mb-3">Organize</h5>
+          <div class="row g-3">
+            <div class="col-12">
+              <label for="AddCategory" class="form-label">Category</label>
+              <select class="form-select" id="AddCategory" name="category">
+                <option value="0">Topwear</option>
+                <option value="1">Bottomwear</option>
+                <option value="2">Casual T-shirt</option>
+                <option value="3">Electronic</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="Collection" class="form-label">Collection</label>
+              <input type="text" class="form-control" name="collection" id="Collection" placeholder="Collection">
+            </div>                         
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="mb-3">Variants</h5>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="Brand" class="form-label">Brand</label>
+                <input type="text" class="form-control" name="brand" id="Brand" placeholder="Brand">
+              </div>
+              <div class="col-12">
+                <label for="Color" class="form-label">Color</label>
+                <input type="text" class="form-control" name="color" id="Color" placeholder="Color">
+              </div>
+              <div class="col-12">
+                <label for="Size" class="form-label">Size</label>
+                <input type="text" class="form-control" name="size" id="Size" placeholder="Size">
+              </div>
+              <div class="col-12">
+                <label for="price" class="form-label">Price</label>
+                <input type="text" class="form-control" name="price" id="price" placeholder="Price">
+              </div>
+              <div class="col-12">
+              <div class="col-12">
+  <div class="d-grid">
+    <button type="submit" name="add_variant" class="btn btn-primary">Add Variants</button>
+  </div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>                
+    </div><!--end row-->
+</form>
+<!-- form end  -->
+
   </main>
   <!--end main wrapper-->
 
