@@ -1077,56 +1077,45 @@ include '../connections/conn.php';
 
 
 <!-- form start  -->
- 
 <?php
 include '../connections/conn.php';
-$sql = "SELECT  * FROM customers"; // Adjust your SQL query as needed
+$sql = "SELECT username, email FROM customers"; // Select only username and email
 $result = $conn->query($sql);
-
-
 ?>
+
 <div class="card mt-4">
     <div class="card-body">
         <div class="customer-table">
-            <div class="table-responsive white-space-nowrap">
-                <table class="table align-middle">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
                     <thead class="table-light">     
                         <tr>
-                            <th><input class="form-check-input" type="checkbox"></th>
-                            <th>Customers</th>
-                            <th>Email</th>
-                            <th>Orders</th>
-                            <th>Total Spent</th>
-                            <th>Location</th>
-                            <th>Last Seen</th>
-                            <th>Last Order</th>
+                            <th style="width: 5%;"><input class="form-check-input" type="checkbox"></th>
+                            <th style="width: 15%;">User ID</th>
+                            <th style="width: 50%;">Customers</th>
+                            <th style="width: 30%;">Email</th>  
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $output = '';
                         if ($result->num_rows > 0) {
+                            $userId = 1; // Initialize User ID
                             while ($row = $result->fetch_assoc()) {
                                 $output .= '<tr>
                                     <td><input class="form-check-input" type="checkbox"></td>
+                                    <td>' . $userId . '</td> <!-- Numeric User ID -->
                                     <td>
                                         <a class="d-flex align-items-center gap-3" href="javascript:;">
-                                            <div class="customer-pic">
-                                                <img src="assets/images/avatars/' . str_pad($row['id'], 2, '0', STR_PAD_LEFT) . '.png" class="rounded-circle" width="40" height="40" alt="">
-                                            </div>
-                                            <p class="mb-0 customer-name fw-bold">' . $row['name'] . '</p>
+                                            <p class="mb-0 customer-name fw-bold">' . $row['username'] . '</p>
                                         </a>
                                     </td>
                                     <td><a href="javascript:;" class="font-text1">' . $row['email'] . '</a></td>
-                                    <td>' . $row['orders'] . '</td>
-                                    <td>$' . $row['total_spent'] . '</td>
-                                    <td>' . $row['location'] . '</td>
-                                    <td>' . $row['last_seen'] . '</td>
-                                    <td>' . $row['last_order'] . '</td>
                                 </tr>';
+                                $userId++; // Increment User ID
                             }
                         } else {
-                            $output .= '<tr><td colspan="8">No results found</td></tr>';
+                            $output .= '<tr><td colspan="4" class="text-center">No results found</td></tr>';
                         }
                         echo $output; // Single echo to display all rows
                         ?>
@@ -1136,7 +1125,6 @@ $result = $conn->query($sql);
         </div>
     </div>
 </div>
-
  <!-- <form action="/admin/customer.php" method="get">
     
         <div class="card mt-4">
