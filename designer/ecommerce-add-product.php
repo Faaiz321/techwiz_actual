@@ -4,18 +4,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include '../connections/'
+
+include '../connections/addproductconn.php';
 if (isset($_POST['submit'])){
   $product_name = $_POST ['product_name'];
+  $category = $_POST ['category'];
   $price = $_POST ['price'];
   $description = $_POST ['description'];
-  $category = $_POST ['category'];
-  $color = $_POST ['color'];
   $brand = $_POST ['brand'];
-  $size = $_POST ['size'];
 
-sql = "INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('$product_name','$price','$description','$category','$color','$brand','$size')";
-result = mysql_query($conn , $sql); 
+$sql = "INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('$product_name','$price','$description','$category','$color','$brand','$size')";
+$result = mysqli_query($conn,$sql); 
 
   $img = $_POST [''];
 
