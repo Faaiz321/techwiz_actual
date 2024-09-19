@@ -16,7 +16,7 @@ if (isset($_POST['submit'])){
 $sql = "INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('$product_name','$price','$description','$category','$color','$brand','$size')";
 $result = mysqli_query($conn,$sql); 
 
-  $img = $_POST [''];
+
 
 
 
@@ -951,10 +951,13 @@ $result = mysqli_query($conn,$sql);
             <div class="col-12">
               <label for="AddCategory" class="form-label">Category</label>
               <select class="form-select" id="AddCategory" name="category">
-                <option value="0">Topwear</option>
-                <option value="1">Bottomwear</option>
-                <option value="2">Casual T-shirt</option>
-                <option value="3">Electronic</option>
+                <option value="0">Furniture</option>
+                <option value="1">Lighting</option>
+                <option value="2">Decor</option>
+                <option value="3">Rugs and Carpets</option>
+                <option value="4">Wall Art</option>
+                <option value="5">Curtains and Blinds</option>
+                <option value="6">Home Decore</option>
               </select>
             </div>
             <div class="col-12">
