@@ -12,5 +12,23 @@ if($conn){
 else{
     die("Connection Failed");
 }
+  
+if (isset($_POST['add_variant'])){
+
+$products = $_FILES['product_image']['name'];
+$tempname = $_FILES['product_image']['tmp_name'];
+$folder = 'assets/images' .$products;
+
+$query = mysqli_query($conn, "Insert into products (file) values ('$products') ") ;
+
+if(move_uploaded_file($tempname, $folder)) {
+
+    echo "file uploaded successfully";
+}  else{
+
+    echo "file not uploaded successfully";
+}
+ 
+}
 
 ?>

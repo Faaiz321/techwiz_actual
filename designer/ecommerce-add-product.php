@@ -1,90 +1,4 @@
 
-
-<?php
-
-
-
-
-
-
-?>
-
-
-
-
-
-
-<?php
-<<<<<<< HEAD
-$servername = "localhost";
-$username = "root";
-$password = "";
-$databse = "techwiz";
-=======
-// // TO BE UNCOMMENTED LATER
-// include('connections/addproductconn.php');
->>>>>>> 7c9d2afe17434b899771fb30f35d08bc29ea6311
-
-// if (isset($_POST['submit'])) {
-//     // Gather form data
-//     $product_title = $_POST['product_title'];
-//     $price = $_POST['price'];
-//     $product_description = $_POST['product_description'];
-//     $category = $_POST['category'];
-//     $color = $_POST['color'];
-//     $brand = $_POST['brand'];
-//     $size = $_POST['size'];
-
-<<<<<<< HEAD
-if (!$conn) {
-  die("Failed to connect");
-}
-
-if(isset($_POST['add'])){
-  $product_title =$_POST['product_title'];
-  $product_description =$_POST['product_description'];
-  $images=$_POST['files'];
-  $category =$_POST['category'];
-  $color=$_POST['color'];
-  $brand=$_POST['brand'];
-  $size=$_POST['size'];
-
-  
-
-
-
-}
-
-$sql="INSERT INTO `products`(`product_id`, `product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','','')"
-=======
-//     $file_name = $_FILES['product_image']['name'];
-//     $tempname = $_FILES['product_image']['tmp_name'];
-//     $folder = "assets/images/" . $file_name;
-
-//     // Move uploaded file
-//     if (move_uploaded_file($tempname, $folder)) {
-//         $msg = "Image uploaded successfully.";
-//     } else {
-//         $msg = "Failed to upload image.";
-//         echo $msg; // Display error message
-//         exit; // Stop execution if image upload fails
-//     }
->>>>>>> 7c9d2afe17434b899771fb30f35d08bc29ea6311
-
-//     // Prepare SQL statement to insert product data
-//     $sql = "INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) 
-//             VALUES ('$product_title', '$price', '$file_name', '$product_description', '$category', '$color', '$brand', '$size')";
-    
-//     // Execute the query
-//     if (mysqli_query($conn, $sql)) {
-//         echo "Product added successfully.";
-//     } else {
-//         echo "Error adding product: " . mysqli_error($conn);
-//     }
-// }
-?>
-
->>>>>>> 76fd659e1c2285a5c58bc8a3938216226f3ac248
 <!doctype html>
 
 
@@ -97,6 +11,7 @@ $sql="INSERT INTO `products`(`product_id`, `product_name`, `price`, `product_ima
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
+  
   <!--favicon-->
 	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
@@ -983,7 +898,6 @@ $sql="INSERT INTO `products`(`product_id`, `product_name`, `price`, `product_ima
 				</div>
 				<!--end breadcrumb-->
 
-<<<<<<< HEAD
           <div class="row">
             <div class="col-12 col-lg-8">
               <div class="card">
@@ -1200,10 +1114,8 @@ $sql="INSERT INTO `products`(`product_id`, `product_name`, `price`, `product_ima
                         </div><!--end row-->
                      </div>
                 </div>
-=======
 <!-- form start -->
 <form action="#" id="addProductForm" class="needs-validation" novalidate method="post" enctype="multipart/form-data">
->>>>>>> 7c9d2afe17434b899771fb30f35d08bc29ea6311
 
   <div class="row">
     <div class="col-12 col-lg-8">
@@ -1310,6 +1222,28 @@ $sql="INSERT INTO `products`(`product_id`, `product_name`, `price`, `product_ima
     </div><!--end row-->
 </form>
 <!-- form end  -->
+  
+
+<!-- image work -->
+
+
+
+
+<?php
+
+include '../connections/addproductconn.php';
+$res = mysqli_query ($conn, "select * from products ");
+while($row = mysqli_fetch_assoc($res)) {
+?>
+<img src= "assests/image <?php echo $row['file'] ?>" />
+<?php } ?>
+
+
+
+
+
+
+
 
   </main>
   <!--end main wrapper-->
