@@ -1,29 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$databse = "project";
+ 
 
-$conn = mysqli_connect($servername,$username,$password,$databse);
-
-if (!$conn) {
-  die(echo"Failed to connect");
-}
-
-if(isset($_POST['add'])){
-  $product_title =$_POST['product_title'];
-  $price=$_POST['price'];
-  $product_description =$_POST['product_description'];
-  $images=$_POST['files'];
-  $category =$_POST['category'];
-  $color=$_POST['color'];
-  $brand=$_POST['brand'];
-  $size=$_POST['size'];
-
-}
-
-$sql="INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('$product_title','$price',''$images','$product_description','$category','$color','$brand','$size')";
-$result=mysqli_query($conn,$sql);
 
 ?>
 
