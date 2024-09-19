@@ -1,11 +1,15 @@
+
+
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
-  <!--favicon-->
+ 
+  
+  
+
   <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
   <link href="assets/css/pace.min.css" rel="stylesheet">
