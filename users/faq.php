@@ -1,10 +1,21 @@
+
+<?php
+session_start();
+
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+    header("location:faq.php");
+    exit;
+}
+
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
+  <title>Welcome - <?php $_SESSION['username']?></title>
   <!--favicon-->
 	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
@@ -903,6 +914,9 @@
 										<h2 class="accordion-header" id="headingOne">
 						  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 							Just once I'd like to eat dinner with a celebrity?
+              <h4 class="alert-heading">Welcome - <?php echo $_SESSION['username']?></h4>
+      <p>Hey how are you doing? Welcome to iSecure. You are logged in as <?php echo $_SESSION['username']?>. Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+      <hr>
 						  </button>
 						</h2>
 										<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">

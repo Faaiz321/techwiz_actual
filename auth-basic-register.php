@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
         }
     }
      elseif ($role == 'customer') {
-        $customerQuery = "INSERT INTO customers (username, email, password) VALUES ('$username', '$email', '$password')";
+        $customerQuery = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
         $isInsertcustomer = mysqli_query($conn, $customerQuery);
 
         if ($isInsertcustomer) {

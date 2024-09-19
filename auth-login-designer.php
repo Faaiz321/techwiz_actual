@@ -48,7 +48,7 @@
 <html lang="en" data-bs-theme="blue-theme">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
   <!--favicon-->
@@ -76,7 +76,94 @@
 
   <body>
 
+  <?php
+
+  include("connections/conn.php");
+  
+/////////login work
+
+/////session work
+// if (isset($_POST['login'])) {
+//   $email = $_POST['loginEmail'];
+//   $password = $_POST['loginPass'];
+//   $loginQuery = "SELECT * FROM register WHERE email = '$email' AND password = '$password'";
+//   $res = mysqli_query($conn, $loginQuery);
+//   if ($row = mysqli_fetch_array($res)) {
+//       $_SESSION['sessionEmail'] = $email;
+//       if(isset($_POST['remember']))
+//       {
+//           setcookie("cookieEmail",$row['email'],time()+120);
+//           setcookie("cookiePass",$row['pass'],time()+120);
+//       }
+//       else{
+//           setcookie("cookieEmail","",time());
+//           setcookie("cookiePass","",time());
+//       }
+//       header("Location: welcome.php");
+//   } else {
+//       $msg = "Email or Password is incorrect";
+//   }
+// }
+// /////session work
+// /////cookie work
+// if(isset($_COOKIE['cookieEmail']) && isset($_COOKIE['cookiePass']))
+// {
+//   $cemail = $_COOKIE['cookieEmail'];
+//   $cpass = $_COOKIE['cookiePass'];
+//   $query = mysqli_query($conn,"SELECT * FROM register WHERE email = '$cemail' AND pass = '$cpass'");
+
+//  if($row=mysqli_fetch_array($query))
+//  {
+//   $_SESSION['sessionEmail'] = $cemail;
+
+//   setcookie("cookieEmail",$row['email'],time()+120);
+//   setcookie("cookiePass",$row['pass'],time()+120);
+
+//   header("Location: welcome.php");
+//  }
+//  else{
+//   $msg = "Email or Password is incorrect";
+//  }
+  
+// }
+// /////cookie work
+// /////////login work
+
+
+session_start();
+	include ("connections/conn.php");
+	if(isset($_POST['submit'])){
+
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+
+    $stmt = $conn->prepare("SELECT * FROM register WHERE email = ? AND password = ?");
+		$stmt->bind_param($email, $password);
+		$result = $stmt->execute();
+		if($stmt->errno){
+			echo "<script>alert('Contact Site Administrator');</script>";
+		}
+		else{
+			$result = $stmt->get_result();
+			if(mysqli_num_rows($result) != 0){
+				$retreivedData = mysqli_fetch_assoc($result);
+				$_SESSION['id'] = $retreivedData['id'];
+				$_SESSION['username'] = $retreivedData['username'];
+				$_SESSION['email'] = $retreivedData['email'];
+				$_SESSION['password'] = $retreivedData['password'];
+				echo "
+					<script>
+						window.location.href = 'welcome.php'; 
+					</script>";
+			}else{
+        echo "<script>alert('Incorrect Credentials');</script>";      }
+    }
+  }
+
+  ?>
+
     <!--authentication-->
+    
     <div class="auth-basic-wrapper d-flex align-items-center justify-content-center">
       <div class="container-fluid my-5 my-lg-0">
         <div class="row">
@@ -87,18 +174,28 @@
                   <h4 class="fw-bold">Login as Designer</h4>
                   <p class="mb-0">Enter your credentials to login your account</p>
 
+                  <form action="auth-basic-login.php" method="post">
+                                <center>
+                                    <p class="text-danger">
+                                        <?php echo @$msg?>
+                                    </p>
+                                </center>
+
                   <div class="form-body my-5">
 										<form class="row g-3">
+
 											<div class="col-12">
 												<label for="inputEmailAddress" class="form-label">Email</label>
-												<input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="jhon@example.com">
+												<input type="email" class="form-control" id="inputEmailAddress" name="loginEmail" placeholder="jhon@example.com">
 											</div>
+
 											<div class="col-12">
 												<label for="inputChoosePassword" class="form-label">Password</label>
 												<div class="input-group" id="show_hide_password">
-													<input type="password" class="form-control border-end-0" id="inputChoosePassword" name="password" value="12345678" placeholder="Enter Password"> 
+													<input type="password" class="form-control border-end-0" id="inputChoosePassword" name="loginPass" value="12345678" placeholder="Enter Password"> 
                           <a href="javascript:;" class="input-group-text bg-transparent"><i class="bi bi-eye-slash-fill"></i></a>
 												</div>
+
 											</div>
 											<div class="col-md-6">
 												<div class="form-check form-switch">
@@ -113,6 +210,7 @@
 													<button type="submit" class="btn btn-grd-primary">Login</button>
 												</div>
 											</div>
+                      </form>
 											<div class="col-12">
 												<div class="text-start">
 													<p class="mb-0">Don't have an account yet? <a href="auth-basic-register.html">Sign up here</a>
