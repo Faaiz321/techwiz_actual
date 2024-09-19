@@ -1,3 +1,49 @@
+<?php
+
+     include("connections/conn.php");
+     if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $username = $_POST['username'];
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      $role = $_POST['role'];
+    
+    // checking if the user is a designer
+      if ($role == 'designer') {
+
+
+      $insertQuery = "SELECT * FROM  designer WHERE username = '$username' AND email = '$email' , password = '$password'";
+      $result = mysqli_query($conn, $insertQuery);
+      $num = mysqli_num_rows($result);
+
+      if ($num == 1) {
+        echo "<script>alert ('success')</script>";
+        exit();}
+
+    // checking if the user is a customer
+       else {
+      
+    }
+// storing query
+      $isInsert = mysqli_query($conn, $insertQuery);
+
+    
+
+      
+
+      if ($isInsert) {
+        echo '<script>alert("Data inserted successfully");
+            window.location.href = "auth-basic-login.php";
+        </script>';
+    } else {
+        echo '<script>alert("Something went wrong")</script>';
+    }
+
+     }
+    }
+  ?>
+
+
+
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
@@ -38,7 +84,7 @@
             <div class="card rounded-4 mb-0 border-top border-4 border-primary border-gradient-1">
               <div class="card-body p-5">
                   <img src="assets/images/logo1.png" class="mb-4" width="145" alt="">
-                  <h4 class="fw-bold">Get Started Now</h4>
+                  <h4 class="fw-bold">Login as Designer</h4>
                   <p class="mb-0">Enter your credentials to login your account</p>
 
                   <div class="form-body my-5">

@@ -1,40 +1,9 @@
-NOTE 
-
-EVERY ONE CHANGE THE NAME OF REGISTER TABLE TO DESIGNERS . ( incase anyone does not have register table then import 
-THE designers table directly .  SQL query IS IN desinger folder named as 
-designers.sql if anyone needs )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-to convert file from html to php run this command 
-
-Get-ChildItem -Filter *.html | ForEach-Object {
-    $newName = $_.Name -replace '\.html$', '.php'
-    Rename-Item -Path $_.FullName -NewName $newName
-}
-
-DATABASE
-
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2024 at 11:35 AM
+-- Generation Time: Sep 18, 2024 at 09:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `register`
+-- Table structure for table `designers`
 --
 
-CREATE TABLE `register` (
+CREATE TABLE `designers` (
   `id` int(255) NOT NULL,
   `username` varchar(55) NOT NULL,
   `email` varchar(55) NOT NULL,
@@ -66,24 +35,27 @@ CREATE TABLE `register` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `register`
+-- Dumping data for table `designers`
 --
 
-INSERT INTO `register` (`id`, `username`, `email`, `password`) VALUES
+INSERT INTO `designers` (`id`, `username`, `email`, `password`) VALUES
 (1, 'Osama Alam', '0', '12345678'),
 (2, 'Osama Alam', '0', '1234567'),
 (3, 'hammad12', '0', '2147483647'),
 (4, 'hammad12', 'hammad@gmail.com', 'canyouseemee'),
-(5, 'hammad12', 'hammad@gmail.com', '12345678');
+(5, 'hammad12', 'hammad@gmail.com', '12345678'),
+(6, 'hammad', 'hammad@1234', '12345678'),
+(7, 'designer1', 'designer@gmail.com', 'anything'),
+(8, 'designer1', 'designer@gmail.com', 'anything');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `register`
+-- Indexes for table `designers`
 --
-ALTER TABLE `register`
+ALTER TABLE `designers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -91,18 +63,12 @@ ALTER TABLE `register`
 --
 
 --
--- AUTO_INCREMENT for table `register`
+-- AUTO_INCREMENT for table `designers`
 --
-ALTER TABLE `register`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `designers`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-
-
-
-
