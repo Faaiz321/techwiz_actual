@@ -1,46 +1,27 @@
 <?php
+session_start();
+$showError = false;
+include '../techwiz_actual/connections/conn.php';
+if (isset($_POST["login"])) {
 
-     include("connections/conn.php");
-     if($_SERVER["REQUEST_METHOD"] == "POST"){
-      $username = $_POST['username'];
-      $email = $_POST['email'];
-      $password = $_POST['password'];
-      $role = $_POST['role'];
-    
-    // checking if the user is a designer
-      if ($role == 'designer') {
+  $email = $_POST["email"];
+  $password = $_POST["pass"];
 
 
-      $insertQuery = "SELECT * FROM  designer WHERE username = '$username' AND email = '$email' , password = '$password'";
-      $result = mysqli_query($conn, $insertQuery);
-      $num = mysqli_num_rows($result);
+  // $sql = "Select * from users where username='$username' AND password='$password'";
+  $sql = "SELECT * FROM designers WHERE email='$email' AND  pass ='$password'";
+  $result = mysqli_query($conn, $sql);
+  if ($row = mysqli_fetch_array($result)) {
 
-      if ($num == 1) {
-        echo "<script>alert ('success')</script>";
-        exit();}
+    $_SESSION['userEmail'] = $email;
+    $_SESSION['username'] = $row["username"];
+    header("location:users/index.php");
+  } else {
+    $showError = "Invalid Credentials";
+  }
+}
 
-    // checking if the user is a customer
-       else {
-      
-    }
-// storing query
-      $isInsert = mysqli_query($conn, $insertQuery);
-
-    
-
-      
-
-      if ($isInsert) {
-        echo '<script>alert("Data inserted successfully");
-            window.location.href = "auth-basic-login.php";
-        </script>';
-    } else {
-        echo '<script>alert("Something went wrong")</script>';
-    }
-
-     }
-    }
-  ?>
+?>
 
 
 
@@ -75,179 +56,72 @@
   </head>
 
   <body>
-
-  <?php
-
-  include("connections/conn.php");
-  
-/////////login work
-
-/////session work
-// if (isset($_POST['login'])) {
-//   $email = $_POST['loginEmail'];
-//   $password = $_POST['loginPass'];
-//   $loginQuery = "SELECT * FROM register WHERE email = '$email' AND password = '$password'";
-//   $res = mysqli_query($conn, $loginQuery);
-//   if ($row = mysqli_fetch_array($res)) {
-//       $_SESSION['sessionEmail'] = $email;
-//       if(isset($_POST['remember']))
-//       {
-//           setcookie("cookieEmail",$row['email'],time()+120);
-//           setcookie("cookiePass",$row['pass'],time()+120);
-//       }
-//       else{
-//           setcookie("cookieEmail","",time());
-//           setcookie("cookiePass","",time());
-//       }
-//       header("Location: welcome.php");
-//   } else {
-//       $msg = "Email or Password is incorrect";
-//   }
-// }
-// /////session work
-// /////cookie work
-// if(isset($_COOKIE['cookieEmail']) && isset($_COOKIE['cookiePass']))
-// {
-//   $cemail = $_COOKIE['cookieEmail'];
-//   $cpass = $_COOKIE['cookiePass'];
-//   $query = mysqli_query($conn,"SELECT * FROM register WHERE email = '$cemail' AND pass = '$cpass'");
-
-//  if($row=mysqli_fetch_array($query))
-//  {
-//   $_SESSION['sessionEmail'] = $cemail;
-
-//   setcookie("cookieEmail",$row['email'],time()+120);
-//   setcookie("cookiePass",$row['pass'],time()+120);
-
-//   header("Location: welcome.php");
-//  }
-//  else{
-//   $msg = "Email or Password is incorrect";
-//  }
-  
-// }
-// /////cookie work
-// /////////login work
+ <!--authentication-->
 
 
-session_start();
-	include ("connections/conn.php");
-	if(isset($_POST['submit'])){
 
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+ <div class="auth-basic-wrapper d-flex align-items-center justify-content-center">
+    <div class="container-fluid my-5 my-lg-0">
+      <div class="row">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4 mx-auto">
+          <div class="card rounded-4 mb-0 border-top border-4 border-primary border-gradient-1">
+            <div class="card-body p-5">
+              <img src="assets/images/logo1.png" class="mb-4" width="145" alt="">
+              <h4 class="fw-bold">Login as designer</h4>
+              <p class="mb-0">Enter your credentials to login your account</p>
+              <p class="mb-0 text-danger">
+                <?php echo $showError ?>
+              </p>
 
-    $stmt = $conn->prepare("SELECT * FROM register WHERE email = ? AND password = ?");
-		$stmt->bind_param($email, $password);
-		$result = $stmt->execute();
-		if($stmt->errno){
-			echo "<script>alert('Contact Site Administrator');</script>";
-		}
-		else{
-			$result = $stmt->get_result();
-			if(mysqli_num_rows($result) != 0){
-				$retreivedData = mysqli_fetch_assoc($result);
-				$_SESSION['id'] = $retreivedData['id'];
-				$_SESSION['username'] = $retreivedData['username'];
-				$_SESSION['email'] = $retreivedData['email'];
-				$_SESSION['password'] = $retreivedData['password'];
-				echo "
-					<script>
-						window.location.href = 'welcome.php'; 
-					</script>";
-			}else{
-        echo "<script>alert('Incorrect Credentials');</script>";      }
-    }
-  }
-
-  ?>
-
-    <!--authentication-->
-    
-    <div class="auth-basic-wrapper d-flex align-items-center justify-content-center">
-      <div class="container-fluid my-5 my-lg-0">
-        <div class="row">
-           <div class="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4 mx-auto">
-            <div class="card rounded-4 mb-0 border-top border-4 border-primary border-gradient-1">
-              <div class="card-body p-5">
-                  <img src="assets/images/logo1.png" class="mb-4" width="145" alt="">
-                  <h4 class="fw-bold">Login as Designer</h4>
-                  <p class="mb-0">Enter your credentials to login your account</p>
-
-                  <form action="auth-basic-login.php" method="post">
-                                <center>
-                                    <p class="text-danger">
-                                        <?php echo @$msg?>
-                                    </p>
-                                </center>
-
-                  <div class="form-body my-5">
-										<form class="row g-3">
-
-											<div class="col-12">
-												<label for="inputEmailAddress" class="form-label">Email</label>
-												<input type="email" class="form-control" id="inputEmailAddress" name="loginEmail" placeholder="jhon@example.com">
-											</div>
-
-											<div class="col-12">
-												<label for="inputChoosePassword" class="form-label">Password</label>
-												<div class="input-group" id="show_hide_password">
-													<input type="password" class="form-control border-end-0" id="inputChoosePassword" name="loginPass" value="12345678" placeholder="Enter Password"> 
-                          <a href="javascript:;" class="input-group-text bg-transparent"><i class="bi bi-eye-slash-fill"></i></a>
-												</div>
-
-											</div>
-											<div class="col-md-6">
-												<div class="form-check form-switch">
-													<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-													<label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
-												</div>
-											</div>
-											<div class="col-md-6 text-end">	<a href="auth-basic-forgot-password.html">Forgot Password ?</a>
-											</div>
-											<div class="col-12">
-												<div class="d-grid">
-													<button type="submit" class="btn btn-grd-primary">Login</button>
-												</div>
-											</div>
-                      </form>
-											<div class="col-12">
-												<div class="text-start">
-													<p class="mb-0">Don't have an account yet? <a href="auth-basic-register.html">Sign up here</a>
-													</p>
-												</div>
-											</div>
-										</form>
-									</div>
-
-                  <div class="separator section-padding">
-                    <div class="line"></div>
-                    <p class="mb-0 fw-bold">OR SIGN IN WITH</p>
-                    <div class="line"></div>
+              <div class="form-body my-5">
+                <!-- form start -->
+                <form class="row g-3 form-control" method="POST" action="auth-login-designer.php">
+                  <div class="col-12">
+                    <label for="inputEmailAddress" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmailAddress" name="email" placeholder="jhon@example.com">
                   </div>
-
-                  <div class="d-flex gap-3 justify-content-center mt-4">
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-danger">
-                      <i class="bi bi-google fs-5 text-white"></i>
-                    </a>
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-deep-blue">
-                      <i class="bi bi-facebook fs-5 text-white"></i>
-                    </a>
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-info">
-                      <i class="bi bi-linkedin fs-5 text-white"></i>
-                    </a>
-                    <a href="javascript:;" class="wh-42 d-flex align-items-center justify-content-center rounded-circle bg-grd-royal">
-                      <i class="bi bi-github fs-5 text-white"></i>
-                    </a>
+                  <div class="col-12">
+                    <label for="inputChoosePassword" class="form-label">Password</label>
+                    <div class="input-group" id="show_hide_password">
+                      <input type="password" class="form-control border-end-0"  id="inputChoosePassword" name="pass" value="12345678" placeholder="Enter Password">
+                      <a href="javascript:;" class="input-group-text bg-transparent"><i class="bi bi-eye-slash-fill"></i></a>
+                    </div>
                   </div>
-
+                  <div class="col-md-6">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 text-end"> <a href="auth-basic-forgot-password.html">Forgot Password ?</a>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-grd-primary" name="login">Login</button>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="text-start">
+                      <p class="mb-0">Don't have an account yet? <a href="auth-basic-register.html">Sign up here</a>
+                      </p>
+                    </div>
+                  </div>
+                </form>
               </div>
+
+              <div class="separator section-padding">
+                <div class="line"></div>
+                <p class="mb-0 fw-bold">OR SIGN IN WITH</p>
+                <div class="line"></div>
+              </div>
+
             </div>
-           </div>
-        </div><!--end row-->
-     </div>
+          </div>
+        </div>
+      </div><!--end row-->
     </div>
-    <!--authentication-->
+  </div>
+  <!--authentication-->
 
 
     <!--plugins-->
