@@ -1,31 +1,6 @@
 
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 
-include '../connections/addproductconn.php';
-if (isset($_POST['submit'])){
-  $product_name = $_POST ['product_name'];
-  $category = $_POST ['category'];
-  $price = $_POST ['price'];
-  $description = $_POST ['description'];
-  $brand = $_POST ['brand'];
-
-$sql = "INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('$product_name','$price','$description','$category','$color','$brand','$size')";
-$result = mysqli_query($conn,$sql); 
-
-
-
-
-
-
-}
-
-
-
-?>
 
 <!doctype html>
 
@@ -940,8 +915,8 @@ $result = mysqli_query($conn,$sql);
                     <textarea class="form-control" cols="4" rows="6" name="product_description" placeholder="write a description here.."></textarea>
                   </div>
                   <div class="mb-4">
-                    <h5 class="mb-3">Display images</h5>
-                    <input id="fancy-file-upload" type="file" name="img" accept=".jpg, .png, image/jpeg, image/png" multiple value="upload">
+                    <h5 class="mb-3">Product images</h5>
+                    <input id="fancy-file-upload" type="file" name="product_image" accept=".jpg, .png, image/jpeg, image/png" multiple value="upload">
                   </div>
               
                       <div class="card">
@@ -976,33 +951,13 @@ $result = mysqli_query($conn,$sql);
                 <input type="text" class="form-control" name="brand" id="Brand" placeholder="Brand">
               </div>
               <div class="col-12">
-                <label for="Color" class="form-label">Color</label>
-                <input type="text" class="form-control" name="color" id="Color" placeholder="Color">
-              </div>
-              <div class="col-12">
-                <label for="Size" class="form-label">Size</label>
-                <input type="text" class="form-control" name="size" id="Size" placeholder="Size">
-              </div>
-              <div class="col-12">
                 <label for="price" class="form-label">Price</label>
                 <input type="text" class="form-control" name="price" id="price" placeholder="Price">
                 <div class="row g-3">
-                  <div class="col-12">
-                            <label for="AddCategory" name="category" class="form-label">Category</label>
-                            <select class="form-select" id="AddCategory">
-                              <option value="0">Topwear</option>
-                              <option value="1">Bottomwear</option>
-                              <option value="2">Casual Tshirt</option>
-                              <option value="3">Electronic</option>
-                            </select>
-                          </div>
-                          <div class="col-12">
-                            <label for="Collection" class="form-label">Collection</label>
-                            <input type="text" class="form-control" name="collection" id="Collection" placeholder="Collection">
-                          </div>
+                          
                           <div class="col-12">
               <div class="col-12">
-  <div class="d-grid">
+  <div class="d-grid py-3">
     <button type="submit" name="add_variant" class="btn btn-primary">Submit</button>
   </div>
 </div>
