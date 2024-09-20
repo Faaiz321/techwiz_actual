@@ -9,7 +9,7 @@ if (isset($_POST["login"])) {
 
 
   // $sql = "Select * from users where username='$username' AND password='$password'";
-  $sql = "SELECT * FROM designers WHERE email='$email' AND  pass ='$password'";
+  $sql = "SELECT * FROM designers  WHERE email='$email' AND  pass ='$password'";
   $result = mysqli_query($conn, $sql);
   if ($row = mysqli_fetch_array($result)) {
 
@@ -21,18 +21,7 @@ if (isset($_POST["login"])) {
   }
 }
 
-?>
-  $sql = "SELECT * FROM designers WHERE email='$email' AND  password ='$password'";
-  $result = mysqli_query($conn, $sql);
-  if ($row = mysqli_fetch_array($result)) {
 
-    $_SESSION['userEmail'] = $email;
-    $_SESSION['username'] = $row["username"];
-    header("location:designer/index.php");
-  } else {
-    $showError = "Invalid Credentials";
-  }
-}
 
 ?>
 
@@ -66,12 +55,12 @@ if (isset($_POST["login"])) {
 
 </head>
 
-  <body>
+ 
  <!--authentication-->
 
 
 
- <div class="auth-basic-wrapper d-flex align-items-center justify-content-center">
+ <!-- <div class="auth-basic-wrapper d-flex align-items-center justify-content-center"> -->
 <body>
 
   <!--authentication-->
