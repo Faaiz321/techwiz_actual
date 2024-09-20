@@ -16,7 +16,7 @@ if (isset($_POST["login"])) {
 
     $_SESSION['userEmail'] = $email;
     $_SESSION['username'] = $row["username"];
-    header("location:users/index.php");
+    header("location:customers/index.php");
   } else {
     $showError = "Invalid Credentials";
   }
