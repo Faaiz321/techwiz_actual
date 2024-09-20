@@ -1,174 +1,23 @@
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-  
-  
-
-  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+  <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
+  <!--favicon-->
+	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
-  <link href="assets/css/pace.min.css" rel="stylesheet">
-  <script src="assets/js/pace.min.js"></script>
+	<link href="assets/css/pace.min.css" rel="stylesheet">
+	<script src="assets/js/pace.min.js"></script>
 
   <!--plugins-->
   <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
   <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
-  <!--bootstrap css-->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
-  <!--main css-->
-  <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
-  <link href="sass/main.css" rel="stylesheet">
-  <link href="assets/css/horizontal-menu.css" rel="stylesheet">
-  <link href="sass/dark-theme.css" rel="stylesheet">
-  <link href="sass/blue-theme.css" rel="stylesheet">
-  <link href="sass/semi-dark.css" rel="stylesheet">
-  <link href="sass/bordered-theme.css" rel="stylesheet">
-  <link href="sass/responsive.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-
-
-
-
-<?php
-include '../connections/addproductconn.php'; // Ensure this path is correct
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// SQL query
-$sql = "SELECT product_name, price, product_image, description, category FROM products";
-$result = $conn->query($sql);
-?>
-
-<div class="card">
-    
-    <div class="card-body p-4">
-
-       
-
-        <div class="mt-5">
-            <div class="text-center">
-                <h5 class="mb-3">Explore Wide Varieties Of BedRoom Sets</h5>
-            </div>
-            <div class="row row-cols-1 row-cols-lg-2 g-4">
-                <?php
-                // Check if there are results
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $imageFilename = htmlspecialchars($row['product_image']);
-                        $imagePath = '../designer/' . $imageFilename; // Adjust path as necessary
-                        // Use a default image if the actual image doesn't exist
-                        if (!file_exists($imagePath)) {
-                            $imagePath = '../designer/uploads/default.jpg';
-                        }
-                ?>
-                    <div class="col">
-                        <div class="card h-100 shadow-sm"> <!-- Card structure -->
-                            <img src="<?php echo $imagePath; ?>" class="img-fluid card-img-top w-50" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
-                                <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
-                                <h5>Price: $<?php echo htmlspecialchars($row['price']); ?></h5>
-                                <div class="mt-4 d-flex align-items-center justify-content-between">
-                                    <button class="btn btn-light d-flex gap-2 px-3">
-                                        <i class="material-icons-outlined">shopping_basket</i>Add to Cart
-                                    </button>
-                                    <div class="d-flex gap-1">
-                                        <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">favorite_border</i></a>
-                                        <div class="dropdown position-relative">
-                                            <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
-                                               data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
-                                                class="material-icons-outlined">share</i></a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control ps-5" value="https://www.codervent.com"
-                                                           placeholder="Enter Url">
-                                                    <span
-                                                        class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
-                                                    <span class="input-group-text gap-1"><i
-                                                        class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2 mt-3">
-                                                    <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-pinterest"></i>Pinterest
-                                                    </button>
-                                                    <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-facebook"></i>Facebook
-                                                    </button>
-                                                    <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-linkedin"></i>Linkedin
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                    }
-                } else {
-                    echo "<p>No products found.</p>";
-                }
-                $conn->close();
-                ?>
-            </div><!--end row-->
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<!doctype html>
-<html lang="en" data-bs-theme="blue-theme">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- 
-  
-  
-
-  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
-  <!-- loader-->
-  <link href="assets/css/pace.min.css" rel="stylesheet">
-  <script src="assets/js/pace.min.js"></script>
-
-  <!--plugins-->
   <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
-  <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+  <link href="assets/plugins/bs-stepper/css/bs-stepper.css" rel="stylesheet">
   <!--bootstrap css-->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -775,9 +624,8 @@ $result = $conn->query($sql);
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
               class="material-icons-outlined">cloud_download</i>Downloads</a>
           <hr class="dropdown-divider">
-          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="../auth-logout.php">
-             <i class="material-icons-outlined">power_settings_new</i>Logout
-            </a>
+          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+          class="material-icons-outlined">power_settings_new</i>Logout</a>
         </div>
       </li>
     </ul>
@@ -810,19 +658,12 @@ $result = $conn->query($sql);
        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
          <div class="parent-icon"><i class="material-icons-outlined">home</i>
          </div>
-         <div class="menu-title d-flex align-items-center">Catalog</div>
+         <div class="menu-title d-flex align-items-center">Dashboard</div>
          <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
        </a>
        <ul class="dropdown-menu">
-         <li><a class="dropdown-item" href="bedroom.php"><i class='material-icons-outlined'>insights</i>Bedroom</a></li>
-         <li><a class="dropdown-item" href="kitchen.php"><i class='material-icons-outlined'>insights</i>Kitchen</a></li>
-         
-         <li><a class="dropdown-item" href="outdoorservices.php"><i class='material-icons-outlined'>insights</i>OutDoor Spaces</a></li>
-         
-         <li><a class="dropdown-item" href="livingroom.php"><i class='material-icons-outlined'>insights</i>Living-Room</a></li>
-         
-
-        
+         <li><a class="dropdown-item" href="index.html"><i class='material-icons-outlined'>insights</i>Analysis</a></li>
+         <li><a class="dropdown-item" href="index2.html"><i class='material-icons-outlined'>shopping_cart</i>eCommerce</a></li>
        </ul>
        </li>
        <li class="nav-item dropdown">
@@ -1020,150 +861,693 @@ $result = $conn->query($sql);
 </div>
 <!--end navigation-->
 
+
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
       <!--breadcrumb-->
-      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Dashboard</div>
-        <div class="ps-3">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0 p-0">
-              <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">eCommerce</li>
-            </ol>
-          </nav>
-        </div>
-        <div class="ms-auto">
-          <div class="btn-group">
-            <button type="button" class="btn btn-success"><a href="form-layouts.php">Make Appointment</a></button>
-          </div>
-        </div>
-      </div>
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+					<div class="breadcrumb-title pe-3">Components</div>
+					<div class="ps-3">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0">
+								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Wizard</li>
+							</ol>
+						</nav>
+					</div>
+					<div class="ms-auto">
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary">Settings</button>
+							<button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
+							</button>
+							<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
+								<a class="dropdown-item" href="javascript:;">Another action</a>
+								<a class="dropdown-item" href="javascript:;">Something else here</a>
+								<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end breadcrumb-->
       
 
-      <!-- cards start -->
-      <?php
-include '../connections/addproductconn.php'; // Ensure this path is correct
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+        <!--start stepper one--> 
+			   
+        <h6 class="text-uppercase">Non Linear</h6>
+        <hr>
+				<div id="stepper1" class="bs-stepper">
+				  <div class="card">
+					
+					<div class="card-header">
+						<div class="d-lg-flex flex-lg-row align-items-lg-center justify-content-lg-between" role="tablist">
+							<div class="step" data-target="#test-l-1">
+							  <div class="step-trigger" role="tab" id="stepper1trigger1" aria-controls="test-l-1">
+								<div class="bs-stepper-circle">1</div>
+								<div class="">
+									<h5 class="mb-0 steper-title">Personal Info</h5>
+									<p class="mb-0 steper-sub-title">Enter Your Details</p>
+								</div>
+							  </div>
+							</div>
+							<div class="bs-stepper-line"></div>
+							<div class="step" data-target="#test-l-2">
+								<div class="step-trigger" role="tab" id="stepper1trigger2" aria-controls="test-l-2">
+								  <div class="bs-stepper-circle">2</div>
+								  <div class="">
+									  <h5 class="mb-0 steper-title">Account Details</h5>
+									  <p class="mb-0 steper-sub-title">Setup Account Details</p>
+								  </div>
+								</div>
+							  </div>
+							<div class="bs-stepper-line"></div>
+							<div class="step" data-target="#test-l-3">
+								<div class="step-trigger" role="tab" id="stepper1trigger3" aria-controls="test-l-3">
+								  <div class="bs-stepper-circle">3</div>
+								  <div class="">
+									  <h5 class="mb-0 steper-title">Education</h5>
+									  <p class="mb-0 steper-sub-title">Education Details</p>
+								  </div>
+								</div>
+							  </div>
+							  <div class="bs-stepper-line"></div>
+								<div class="step" data-target="#test-l-4">
+									<div class="step-trigger" role="tab" id="stepper1trigger4" aria-controls="test-l-4">
+									<div class="bs-stepper-circle">4</div>
+									<div class="">
+										<h5 class="mb-0 steper-title">Work Experience</h5>
+										<p class="mb-0 steper-sub-title">Experience Details</p>
+									</div>
+									</div>
+								</div>
+						  </div>
+					 </div>
+				    <div class="card-body">
+					  <div class="bs-stepper-content">
+						<form onSubmit="return false">
+						  <div id="test-l-1" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger1">
+							<h5 class="mb-1">Your Personal Information</h5>
+							<p class="mb-4">Enter your personal information to get closer to copanies</p>
 
-// SQL query
-$sql = "SELECT product_name, price, product_image, description, category FROM products";
-$result = $conn->query($sql);
-?>
+							<div class="row g-3">
+								<div class="col-12 col-lg-6">
+									<label class="form-label">First Name</label>
+									<input type="text" class="form-control" placeholder="First Name">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Last Name</label>
+									<input type="text" class="form-control" placeholder="Last Name">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Phone Number</label>
+									<input type="text" class="form-control" placeholder="Phone Number">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">E-mail Address</label>
+									<input type="text" class="form-control" placeholder="Enter Email Address">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Country</label>
+									<select class="form-select">
+										<option selected>---</option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									  </select>
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Language</label>
+									<select class="form-select">
+										<option selected>---</option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									  </select>
+								</div>
+								<div class="col-12 col-lg-6">
+									<button class="btn btn-grd-primary px-4" onclick="stepper1.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+								</div>
+							</div><!---end row-->
+							
+						  </div>
 
-<div class="card">
-    
-    <div class="card-body p-4">
+						  <div id="test-l-2" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger2">
 
-       
+							<h5 class="mb-1">Account Details</h5>
+							<p class="mb-4">Enter Your Account Details.</p>
 
-        <div class="mt-5">
-            <div class="text-center">
-                <h5 class="mb-3">Explore top services</h5>
-            </div>
-            <div class="row row-cols-1 row-cols-lg-2 g-4">
-                <?php
-                // Check if there are results
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $imageFilename = htmlspecialchars($row['product_image']);
-                        $imagePath = '../designer/' . $imageFilename; // Adjust path as necessary
-                        // Use a default image if the actual image doesn't exist
-                        if (!file_exists($imagePath)) {
-                            $imagePath = '../designer/uploads/default.jpg';
-                        }
-                ?>
-                    <div class="col">
-                        <div class="card h-100 shadow-sm"> <!-- Card structure -->
-                            <img src="<?php echo $imagePath; ?>" class="img-fluid card-img-top w-50" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
-                                <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
-                                <h5>Price: $<?php echo htmlspecialchars($row['price']); ?></h5>
-                                <div class="mt-4 d-flex align-items-center justify-content-between">
-                                    <button class="btn btn-light d-flex gap-2 px-3">
-                                        <i class="material-icons-outlined">shopping_basket</i>Add to Cart
-                                    </button>
-                                    <div class="d-flex gap-1">
-                                        <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">favorite_border</i></a>
-                                        <div class="dropdown position-relative">
-                                            <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
-                                               data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
-                                                class="material-icons-outlined">share</i></a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control ps-5" value="https://www.codervent.com"
-                                                           placeholder="Enter Url">
-                                                    <span
-                                                        class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
-                                                    <span class="input-group-text gap-1"><i
-                                                        class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2 mt-3">
-                                                    <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-pinterest"></i>Pinterest
-                                                    </button>
-                                                    <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-facebook"></i>Facebook
-                                                    </button>
-                                                    <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-linkedin"></i>Linkedin
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            
+							<div class="row g-3">
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Username</label>
+									<input type="text" class="form-control" placeholder="jhon@123">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">E-mail Address</label>
+									<input type="text" class="form-control" placeholder="example@xyz.com">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Password</label>
+									<input type="password" class="form-control" value="12345678">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Confirm Password</label>
+									<input type="password" class="form-control" value="12345678">
+								</div>
+								<div class="col-12">
+									<div class="d-flex align-items-center gap-3">
+									  <button class="btn btn-grd-info px-4" onclick="stepper1.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
+										<button class="btn btn-grd-primary px-4" onclick="stepper1.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+									</div>
+								</div>
+							</div><!---end row-->
+							
+						  </div>
 
-            </div><!--end row-->
-        </div>
+						  <div id="test-l-3" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger3">
+							<h5 class="mb-1">Your Education Information</h5>
+							<p class="mb-4">Inform companies about your education life</p>
+
+							<div class="row g-3">
+								<div class="col-12 col-lg-6">
+									<label class="form-label">School Name</label>
+									<input type="text" class="form-control" placeholder="School Name">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Board Name</label>
+									<input type="text" class="form-control" placeholder="Board Name">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">University Name</label>
+									<input type="text" class="form-control" placeholder="University Name">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Course Name</label>
+									<select class="form-select">
+										<option selected>---</option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+									  </select>
+								</div>
+								<div class="col-12">
+									<div class="d-flex align-items-center gap-3">
+									  <button class="btn btn-grd-info px-4" onclick="stepper1.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
+										<button class="btn btn-grd-primary px-4" onclick="stepper1.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+									</div>
+								</div>
+							</div><!---end row-->
+							
+						  </div>
+
+						  <div id="test-l-4" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper1trigger4">
+							<h5 class="mb-1">Work Experiences</h5>
+							<p class="mb-4">Can you talk about your past work experience?</p>
+
+							<div class="row g-3">
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Experience 1</label>
+									<input type="text" class="form-control" placeholder="Experience 1">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Position</label>
+									<input type="text" class="form-control" placeholder="Position">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Experience 2</label>
+									<input type="text" class="form-control" placeholder="Experience 2">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Position</label>
+									<input type="text" class="form-control" placeholder="Position">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Experience 3</label>
+									<input type="text" class="form-control" placeholder="Experience 3">
+								</div>
+								<div class="col-12 col-lg-6">
+									<label class="form-label">Position</label>
+									<input type="text" class="form-control" placeholder="Position">
+								</div>
+								<div class="col-12">
+									<div class="d-flex align-items-center gap-3">
+									  <button class="btn btn-grd-info px-4" onclick="stepper1.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
+										<button class="btn btn-grd-primary px-4" onclick="stepper1.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+									</div>
+								</div>
+							</div><!---end row-->
+							
+						  </div>
+						</form>
+					  </div>
+					   
+					</div>
+				   </div>
+				 </div>
+				<!--end stepper one--> 
+
+                
+				<!--start stepper two--> 
+				<h6 class="text-uppercase">Linear Stepper</h6>
+			    <hr>
+				<div id="stepper2" class="bs-stepper">
+					<div class="card">
+					  
+					  <div class="card-header">
+						  <div class="d-lg-flex flex-lg-row align-items-lg-center justify-content-lg-between" role="tablist">
+							  <div class="step" data-target="#test-nl-1">
+								<div class="step-trigger" role="tab" id="stepper2trigger1" aria-controls="test-nl-1">
+								  <div class="bs-stepper-circle"><i class='material-icons-outlined'>account_circle</i></div>
+								  <div class="">
+									  <h5 class="mb-0 steper-title">Personal Info</h5>
+									  <p class="mb-0 steper-sub-title">Enter Your Details</p>
+								  </div>
+								</div>
+							  </div>
+							  <div class="bs-stepper-line"></div>
+							  <div class="step" data-target="#test-nl-2">
+								  <div class="step-trigger" role="tab" id="stepper2trigger2" aria-controls="test-nl-2">
+									<div class="bs-stepper-circle"><i class='material-icons-outlined'>contact_page</i></div>
+									<div class="">
+										<h5 class="mb-0 steper-title">Account Details</h5>
+										<p class="mb-0 steper-sub-title">Setup Account Details</p>
+									</div>
+								  </div>
+								</div>
+							  <div class="bs-stepper-line"></div>
+							  <div class="step" data-target="#test-nl-3">
+								  <div class="step-trigger" role="tab" id="stepper2trigger3" aria-controls="test-nl-3">
+									<div class="bs-stepper-circle"><i class='material-icons-outlined'>school</i></div>
+									<div class="">
+										<h5 class="mb-0 steper-title">Education</h5>
+										<p class="mb-0 steper-sub-title">Education Details</p>
+									</div>
+								  </div>
+								</div>
+								<div class="bs-stepper-line"></div>
+								  <div class="step" data-target="#test-nl-4">
+									  <div class="step-trigger" role="tab" id="stepper2trigger4" aria-controls="test-nl-4">
+									  <div class="bs-stepper-circle"><i class='material-icons-outlined'>sentiment_satisfied</i></div>
+									  <div class="">
+										  <h5 class="mb-0 steper-title">Work Experience</h5>
+										  <p class="mb-0 steper-sub-title">Experience Details</p>
+									  </div>
+									  </div>
+								  </div>
+							</div>
+					  </div>
+					  <div class="card-body">
+					  
+						<div class="bs-stepper-content">
+						  <form onSubmit="return false">
+							<div id="test-nl-1" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper2trigger1">
+							  <h5 class="mb-1">Your Personal Information</h5>
+							  <p class="mb-4">Enter your personal information to get closer to copanies</p>
+  
+							  <div class="row g-3">
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">First Name</label>
+									  <input type="text" class="form-control" placeholder="First Name">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Last Name</label>
+									  <input type="text" class="form-control" placeholder="Last Name">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Phone Number</label>
+									  <input type="text" class="form-control" placeholder="Phone Number">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">E-mail Address</label>
+									  <input type="text" class="form-control" placeholder="Enter Email Address">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Country</label>
+									  <select class="form-select">
+										  <option selected>---</option>
+										  <option value="1">One</option>
+										  <option value="2">Two</option>
+										  <option value="3">Three</option>
+										</select>
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Language</label>
+									  <select class="form-select">
+										  <option selected>---</option>
+										  <option value="1">One</option>
+										  <option value="2">Two</option>
+										  <option value="3">Three</option>
+										</select>
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <button class="btn btn-grd-primary px-4" onclick="stepper2.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+								  </div>
+							  </div><!---end row-->
+							  
+							</div>
+  
+							<div id="test-nl-2" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper2trigger2">
+  
+							  <h5 class="mb-1">Account Details</h5>
+							  <p class="mb-4">Enter Your Account Details.</p>
+  
+							  <div class="row g-3">
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Username</label>
+									  <input type="text" class="form-control" placeholder="jhon@123">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">E-mail Address</label>
+									  <input type="text" class="form-control" placeholder="example@xyz.com">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Password</label>
+									  <input type="password" class="form-control" value="12345678">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Confirm Password</label>
+									  <input type="password" class="form-control" value="12345678">
+								  </div>
+								  <div class="col-12">
+									  <div class="d-flex align-items-center gap-3">
+										  <button class="btn btn-grd-danger px-4" onclick="stepper2.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
+										  <button class="btn btn-grd-success px-4" onclick="stepper2.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+									  </div>
+								  </div>
+							  </div><!---end row-->
+							  
+							</div>
+  
+							<div id="test-nl-3" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper2trigger3">
+							  <h5 class="mb-1">Your Education Information</h5>
+							  <p class="mb-4">Inform companies about your education life</p>
+  
+							  <div class="row g-3">
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">School Name</label>
+									  <input type="text" class="form-control" placeholder="School Name">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Board Name</label>
+									  <input type="text" class="form-control" placeholder="Board Name">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">University Name</label>
+									  <input type="text" class="form-control" placeholder="University Name">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Course Name</label>
+									  <select class="form-select">
+										  <option selected>---</option>
+										  <option value="1">One</option>
+										  <option value="2">Two</option>
+										  <option value="3">Three</option>
+										</select>
+								  </div>
+								  <div class="col-12">
+									  <div class="d-flex align-items-center gap-3">
+										  <button class="btn btn-grd-danger px-4" onclick="stepper2.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
+										  <button class="btn btn-grd-success px-4" onclick="stepper2.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+									  </div>
+								  </div>
+							  </div><!---end row-->
+							  
+							</div>
+  
+							<div id="test-nl-4" role="tabpanel" class="bs-stepper-pane" aria-labelledby="stepper2trigger4">
+							  <h5 class="mb-1">Work Experiences</h5>
+							  <p class="mb-4">Can you talk about your past work experience?</p>
+  
+							  <div class="row g-3">
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Experience 1</label>
+									  <input type="text" class="form-control" placeholder="Experience 1">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Position</label>
+									  <input type="text" class="form-control" placeholder="Position">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Experience 2</label>
+									  <input type="text" class="form-control" placeholder="Experience 2">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Position</label>
+									  <input type="text" class="form-control" placeholder="Position">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Experience 3</label>
+									  <input type="text" class="form-control" placeholder="Experience 3">
+								  </div>
+								  <div class="col-12 col-lg-6">
+									  <label class="form-label">Position</label>
+									  <input type="text" class="form-control" placeholder="Position">
+								  </div>
+								  <div class="col-12">
+									  <div class="d-flex align-items-center gap-3">
+										  <button class="btn btn-grd-primary px-4" onclick="stepper2.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
+										  <button class="btn btn-grd-success px-4" onclick="stepper2.next()">Submit</button>
+									  </div>
+								  </div>
+							  </div><!---end row-->
+							  
+							</div>
+						  </form>
+						</div>
+						 
+					  </div>
+					 </div>
+				   </div>
+				  <!--end stepper two--> 
+
+
+				<!--start stepper three--> 
+					<h6 class="text-uppercase">Non Linear Vertical</h6>
+					<hr>
+					<div class="card">
+						<div class="card-body">
+							<div id="stepper3" class="bs-stepper gap-4 vertical">
+								<div class="bs-stepper-header" role="tablist">
+									<div class="step" data-target="#test-vl-1">
+									  <div class="step-trigger" role="tab" id="stepper3trigger1" aria-controls="test-vl-1">
+										<div class="bs-stepper-circle"><i class='material-icons-outlined'>perm_identity</i></div>
+										<div class="">
+											<h5 class="mb-0 steper-title">Personal Info</h5>
+											<p class="mb-0 steper-sub-title">Enter Your Details</p>
+										</div>
+									  </div>
+									</div>
+								
+									<div class="step" data-target="#test-vl-2">
+										<div class="step-trigger" role="tab" id="stepper3trigger2" aria-controls="test-vl-2">
+										  <div class="bs-stepper-circle"><i class='material-icons-outlined'>account_box</i></div>
+										  <div class="">
+											  <h5 class="mb-0 steper-title">Account Details</h5>
+											  <p class="mb-0 steper-sub-title">Setup Account Details</p>
+										  </div>
+										</div>
+									</div>
+								
+									<div class="step" data-target="#test-vl-3">
+										<div class="step-trigger" role="tab" id="stepper3trigger3" aria-controls="test-vl-3">
+										  <div class="bs-stepper-circle"><i class='material-icons-outlined'>auto_stories</i></div>
+										  <div class="">
+											  <h5 class="mb-0 steper-title">Education</h5>
+											  <p class="mb-0 steper-sub-title">Education Details</p>
+										  </div>
+										</div>
+									  </div>
+									
+										<div class="step" data-target="#test-vl-4">
+											<div class="step-trigger" role="tab" id="stepper3trigger4" aria-controls="test-vl-4">
+											<div class="bs-stepper-circle"><i class='material-icons-outlined'>more</i></div>
+											<div class="">
+												<h5 class="mb-0 steper-title">Work Experience</h5>
+												<p class="mb-0 steper-sub-title">Experience Details</p>
+											</div>
+											</div>
+										</div>
+								   </div>
+			
+								   <div class="bs-stepper-content">
+									<form onSubmit="return false">
+									  <div id="test-vl-1" class="bs-stepper-pane content fade" aria-labelledby="stepper3trigger1">
+										<h5 class="mb-1">Your Personal Information</h5>
+										<p class="mb-4">Enter your personal information to get closer to copanies</p>
+			
+										<div class="row g-3">
+											<div class="col-12 col-lg-6">
+												<label class="form-label">First Name</label>
+												<input type="text" class="form-control" placeholder="First Name">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Last Name</label>
+												<input type="text" class="form-control" placeholder="Last Name">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Phone Number</label>
+												<input type="text" class="form-control" placeholder="Phone Number">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">E-mail Address</label>
+												<input type="text" class="form-control" placeholder="Enter Email Address">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Country</label>
+												<select class="form-select">
+													<option selected>---</option>
+													<option value="1">One</option>
+													<option value="2">Two</option>
+													<option value="3">Three</option>
+												  </select>
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Language</label>
+												<select class="form-select">
+													<option selected>---</option>
+													<option value="1">One</option>
+													<option value="2">Two</option>
+													<option value="3">Three</option>
+												  </select>
+											</div>
+											<div class="col-12 col-lg-6">
+												<button class="btn btn-grd-primary px-4" onclick="stepper3.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+											</div>
+										</div><!---end row-->
+										
+									  </div>
+			
+									  <div id="test-vl-2" class="bs-stepper-pane content fade" aria-labelledby="stepper3trigger2">
+			
+										<h5 class="mb-1">Account Details</h5>
+										<p class="mb-4">Enter Your Account Details.</p>
+			
+										<div class="row g-3">
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Username</label>
+												<input type="text" class="form-control" placeholder="jhon@123">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">E-mail Address</label>
+												<input type="text" class="form-control" placeholder="example@xyz.com">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Password</label>
+												<input type="password" class="form-control" value="12345678">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Confirm Password</label>
+												<input type="password" class="form-control" value="12345678">
+											</div>
+											<div class="col-12">
+												<div class="d-flex align-items-center gap-3">
+													<button class="btn btn-outline-secondary px-4" onclick="stepper3.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
+													<button class="btn btn-grd-primary px-4" onclick="stepper3.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+												</div>
+											</div>
+										</div><!---end row-->
+										
+									  </div>
+			
+									  <div id="test-vl-3" class="bs-stepper-pane content fade" aria-labelledby="stepper3trigger3">
+										<h5 class="mb-1">Your Education Information</h5>
+										<p class="mb-4">Inform companies about your education life</p>
+			
+										<div class="row g-3">
+											<div class="col-12 col-lg-6">
+												<label class="form-label">School Name</label>
+												<input type="text" class="form-control" placeholder="School Name">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Board Name</label>
+												<input type="text" class="form-control" placeholder="Board Name">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">University Name</label>
+												<input type="text" class="form-control" placeholder="University Name">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Course Name</label>
+												<select class="form-select">
+													<option selected>---</option>
+													<option value="1">One</option>
+													<option value="2">Two</option>
+													<option value="3">Three</option>
+												  </select>
+											</div>
+											<div class="col-12">
+												<div class="d-flex align-items-center gap-3">
+													<button class="btn btn-outline-secondary px-4" onclick="stepper3.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
+													<button class="btn btn-grd-primary px-4" onclick="stepper3.next()">Next<i class='bx bx-right-arrow-alt ms-2'></i></button>
+												</div>
+											</div>
+										</div><!---end row-->
+										
+									  </div>
+			
+									  <div id="test-vl-4" class="bs-stepper-pane content fade" aria-labelledby="stepper3trigger4">
+										<h5 class="mb-1">Work Experiences</h5>
+										<p class="mb-4">Can you talk about your past work experience?</p>
+			
+										<div class="row g-3">
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Experience 1</label>
+												<input type="text" class="form-control" placeholder="Experience 1">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Position</label>
+												<input type="text" class="form-control" placeholder="Position">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Experience 2</label>
+												<input type="text" class="form-control" placeholder="Experience 2">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Position</label>
+												<input type="text" class="form-control" placeholder="Position">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Experience 3</label>
+												<input type="text" class="form-control" placeholder="Experience 3">
+											</div>
+											<div class="col-12 col-lg-6">
+												<label class="form-label">Position</label>
+												<input type="text" class="form-control" placeholder="Position">
+											</div>
+											<div class="col-12">
+												<div class="d-flex align-items-center gap-3">
+													<button class="btn btn-grd-primary px-4" onclick="stepper3.previous()"><i class='bx bx-left-arrow-alt me-2'></i>Previous</button>
+													<button class="btn btn-grd-success px-4" onclick="stepper3.next()">Submit</button>
+												</div>
+											</div>
+										</div><!---end row-->
+										
+									  </div>
+									</form>
+								  </div>
+							   </div>
+						</div>
+					</div>
+				  <!--end stepper three--> 
+
     </div>
-</div>
-
-
-
-            <!-- cards start -->
-
-
-
-
-      <!--end breadcrumb-->
   </main>
   <!--end main wrapper-->
 
 
+    <!--start overlay-->
+    <div class="overlay btn-toggle"></div>
+    <!--end overlay-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!--start footer-->
-  <footer class="page-footer">
-    <p class="mb-0">Copyright © 2024. All right reserved.</p>
-  </footer>
-  <!--end footer-->
+     <!--start footer-->
+     <footer class="page-footer">
+      <p class="mb-0">Copyright © 2024. All right reserved.</p>
+    </footer>
+    <!--top footer-->
 
   <!--start cart-->
-  <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasCart">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
     <div class="offcanvas-header border-bottom h-70">
       <h5 class="mb-0" id="offcanvasRightLabel">8 New Orders</h5>
       <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
@@ -1293,14 +1677,13 @@ $result = $conn->query($sql);
   </div>
   <!--end cart-->
 
-
+ 
 
   <!--start switcher-->
-  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button"
-    data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
+  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>Customize
   </button>
-
+  
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
     <div class="offcanvas-header border-bottom h-70">
       <div class="">
@@ -1325,36 +1708,28 @@ $result = $conn->query($sql);
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="LightTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="LightTheme">
+            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="LightTheme">
               <span class="material-icons-outlined">light_mode</span>
               <span>Light</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="DarkTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="DarkTheme">
+            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="DarkTheme">
               <span class="material-icons-outlined">dark_mode</span>
               <span>Dark</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="SemiDarkTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="SemiDarkTheme">
+            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="SemiDarkTheme">
               <span class="material-icons-outlined">contrast</span>
               <span>Semi Dark</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="BoderedTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="BoderedTheme">
+            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="BoderedTheme">
               <span class="material-icons-outlined">border_style</span>
               <span>Bordered</span>
             </label>
@@ -1374,13 +1749,9 @@ $result = $conn->query($sql);
   <!--plugins-->
   <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
   <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
-  <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+  <script src="assets/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+	<script src="assets/plugins/bs-stepper/js/main.js"></script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
-  <script src="assets/plugins/peity/jquery.peity.min.js"></script>
-  <script>
-    $(".data-attributes span").peity("donut")
-  </script>
-  <script src="assets/js/dashboard2.js"></script>
   <script src="assets/js/main.js"></script>
 
 

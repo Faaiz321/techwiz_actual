@@ -915,13 +915,19 @@
 								<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
 									<div class="carousel-inner">
 										<div class="carousel-item active">
-											<img src="assets/images/carousels/13.png" class="d-block w-100" alt="...">
+											<img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_6b525e69.jpg" class="d-block w-100" alt="...">
 										</div>
 										<div class="carousel-item">
-											<img src="assets/images/carousels/14.png" class="d-block w-100" alt="...">
+											<img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_7b316976.jpg" class="d-block w-100" alt="...">
 										</div>
 										<div class="carousel-item">
-											<img src="assets/images/carousels/15.png" class="d-block w-100" alt="...">
+											<img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_9d32a121.jpg" class="d-block w-100" alt="...">
+										</div>
+										<div class="carousel-item">
+											<img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.38_62148e8a.jpg" class="d-block w-100" alt="...">
+										</div>
+										<div class="carousel-item">
+											<img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.39_859a1f8d.jpg" class="d-block w-100" alt="...">
 										</div>
 									</div>
 									<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
