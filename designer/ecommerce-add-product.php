@@ -948,6 +948,61 @@ $conn->close();
         <div class="col-12 col-lg-8">
             <div class="card">
                 <div class="card-body">
+<<<<<<< HEAD
+                  <div class="mb-4">
+                    <h5 class="mb-3">Product Title</h5>
+                    <input type="text" class="form-control" name ="product_name"placeholder="write title here....">
+                  </div>
+                  <div class="mb-4">
+                    <h5 class="mb-3">Product Description</h5>
+                    <textarea class="form-control" cols="4" rows="6" name="product_description" placeholder="write a description here.."></textarea>
+                  </div>
+                  <div class="mb-4">
+                    <h5 class="mb-3">Product images</h5>
+                    <input id="fancy-file-upload" type="file" name="product_image" accept=".jpg, .png, image/jpeg, image/png" multiple value="upload">
+                  </div>
+              
+                      <div class="card">
+        <div class="card-body">
+          <h5 class="mb-3">Organize</h5>
+          <div class="row g-3">
+            <div class="col-12">
+              <label for="AddCategory" class="form-label">Category</label>
+              <select class="form-select" id="AddCategory" name="category">
+                <option value="0">Furniture</option>
+                <option value="1">Lighting</option>
+                <option value="2">Decor</option>
+                <option value="3">Rugs and Carpets</option>
+                <option value="4">Wall Art</option>
+                <option value="5">Curtains and Blinds</option>
+                <option value="6">Home Decore</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="Collection" class="form-label">Collection</label>
+              <input type="text" class="form-control" name="collection" id="Collection" placeholder="Collection">
+            </div>                         
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="mb-3">Variants</h5>
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="Brand" class="form-label">Brand</label>
+                <input type="text" class="form-control" name="brand" id="Brand" placeholder="Brand">
+              </div>
+              <div class="col-12">
+                <label for="price" class="form-label">Price</label>
+                <input type="text" class="form-control" name="price" id="price" placeholder="Price">
+                <div class="row g-3">
+                          
+                          <div class="col-12">
+              <div class="col-12">
+  <div class="d-grid py-3">
+    <button type="submit" name="add_variant" class="btn btn-primary">Submit</button>
+=======
                     <div class="mb-4">
                         <h5 class="mb-3">Product Name</h5>
                         <input type="text" class="form-control" name="product_name" placeholder="Write product name here..." required>
@@ -988,6 +1043,7 @@ $conn->close();
               <div class="col-12">
   <div class="d-grid">
     <button type="submit" name="add_variant" value = "Add Product" class="btn btn-primary">Submit</button>
+>>>>>>> 4c86cb9bccbda8d7136f721879f307fc400804a7
   </div>
 </div>
 </form>
