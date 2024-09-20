@@ -1,3 +1,13 @@
+<?php
+$servername ="localhost";
+$username ="root";
+$password ="";
+$database ="project";
+
+$sql = INSERT INTO `products`( `product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('')
+
+?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
@@ -890,6 +900,7 @@
 					</div>
 				</div>
 				<!--end breadcrumb-->
+        <form action="" method="post">
         <div class="row">
           <div class="col-12 col-lg-8">
               <div class="card">
