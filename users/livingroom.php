@@ -26,7 +26,7 @@ $result = $conn->query($sql);
 
         <div class="mt-5">
             <div class="text-center">
-                <h5 class="mb-3">Explore top services</h5>
+                <h5 class="mb-3">Explore Our Living Room Ideas </h5>
             </div>
             <div class="row row-cols-1 row-cols-lg-2 g-4">
                 <?php
