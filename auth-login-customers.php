@@ -9,7 +9,8 @@ if (isset($_POST["login"])) {
 
 
   // $sql = "Select * from users where username='$username' AND password='$password'";
-  $sql = "SELECT * FROM customers WHERE email='$email' AND  pass ='$password'";
+
+  $sql = "SELECT * FROM users WHERE email='$email' AND  password ='$password'";
   $result = mysqli_query($conn, $sql);
   if ($row = mysqli_fetch_array($result)) {
 
@@ -66,7 +67,7 @@ if (isset($_POST["login"])) {
           <div class="card rounded-4 mb-0 border-top border-4 border-primary border-gradient-1">
             <div class="card-body p-5">
               <img src="assets/images/logo1.png" class="mb-4" width="145" alt="">
-              <h4 class="fw-bold">Login as customer</h4>
+              <h4 class="fw-bold">Login</h4>
               <p class="mb-0">Enter your credentials to login your account</p>
               <p class="mb-0 text-danger">
                 <?php echo $showError ?>

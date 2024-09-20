@@ -1092,8 +1092,9 @@ $result = $conn->query($sql);
                         <tr>
                             <th style="width: 5%;"><input class="form-check-input" type="checkbox"></th>
                             <th style="width: 15%;">User ID</th>
-                            <th style="width: 50%;">Customers</th>
-                            <th style="width: 30%;">Email</th>  
+                            <th style="width: 40%;">Customers</th>
+                            <th style="width: 30%;">Email</th>
+                            <th style="width: 10%;">Actions</th> <!-- New column for actions -->
                         </tr>
                     </thead>
                     <tbody>
@@ -1111,13 +1112,40 @@ $result = $conn->query($sql);
                                         </a>
                                     </td>
                                     <td><a href="javascript:;" class="font-text1">' . $row['email'] . '</a></td>
+                                    <td>
+                                        <form method="POST" action="delete_customer.php">
+                                            <input type="hidden" name="username" value="' . $row['username'] . '">
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>';
                                 $userId++; // Increment User ID
                             }
                         } else {
-                            $output .= '<tr><td colspan="4" class="text-center">No results found</td></tr>';
+                            $output .= '<tr><td colspan="5" class="text-center">No results found</td></tr>'; // Adjust colspan to 5
                         }
                         echo $output; // Single echo to display all rows
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                            // Get the username from the form input
+                            $username = htmlspecialchars($_POST['username']);
+                            
+                            // Prepare the SQL DELETE statement
+                            $stmt = $conn->prepare("DELETE FROM customers WHERE username = ?");
+                            $stmt->bind_param("s", $username); // "s" specifies the variable type => "string"
+                        
+                            if ($stmt->execute()) {
+                                // Redirect to the previous page with a success message
+                                header("Location: your_previous_page.php?message=Customer+deleted+successfully");
+                                exit();
+                            } else {
+                                // Handle error
+                                echo "Error deleting record: " . $conn->error;
+                            }
+                        
+                            $stmt->close();
+                        }
+                        
+                        $conn->close();
                         ?>
                     </tbody>
                 </table>
@@ -1125,6 +1153,8 @@ $result = $conn->query($sql);
         </div>
     </div>
 </div>
+
+
  <!-- <form action="/admin/customer.php" method="get">
     
         <div class="card mt-4">

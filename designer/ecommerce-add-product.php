@@ -1,3 +1,45 @@
+<?php
+// Database connection
+$conn = new mysqli('localhost', 'root', '', 'techwiz');
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if (isset($_POST['add_variant'])) {
+    // Get the form inputs
+    $product_name = $_POST['product_name'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];  // Corrected to match the form name
+    $category = $_POST['category'];
+
+    // Directory where image will be uploaded
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["product_img"]["name"]);  // Corrected to match the form name
+
+    // Move the uploaded file to the target directory
+    if (move_uploaded_file($_FILES["product_img"]["tmp_name"], $target_file)) {
+        // Insert product information and image path into database
+        $sql = "INSERT INTO products (product_name, price, product_image, description, category) 
+                VALUES ('$product_name', '$price', '$target_file', '$description', '$category')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Product added successfully with the image.";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+
+$conn->close();
+?>
+
+
+
+
 
 
 
@@ -901,11 +943,12 @@
 				<!--end breadcrumb-->
 
       <!-- form start -->
-         <form action="ecommerce-add-product.php" method="post" enctype="multipart/form-data">
-          <div class="row d-flex justify-content-center">
-            <div class="col-12 col-lg-8">
-              <div class="card">
+      <form action="ecommerce-add-product.php" method="post" enctype="multipart/form-data">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-lg-8">
+            <div class="card">
                 <div class="card-body">
+<<<<<<< HEAD
                   <div class="mb-4">
                     <h5 class="mb-3">Product Title</h5>
                     <input type="text" class="form-control" name ="product_name"placeholder="write title here....">
@@ -959,18 +1002,68 @@
               <div class="col-12">
   <div class="d-grid py-3">
     <button type="submit" name="add_variant" class="btn btn-primary">Submit</button>
+=======
+                    <div class="mb-4">
+                        <h5 class="mb-3">Product Name</h5>
+                        <input type="text" class="form-control" name="product_name" placeholder="Write product name here..." required>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="mb-3">Product Price</h5>
+                        <input type="number" class="form-control" name="price" placeholder="Enter price here..." required>
+                    </div>
+                    
+                    <h5 class="mb-3">Upload Image</h5>
+                    <input type="file" name="product_img" accept=".jpg, .png, image/jpeg, image/png" required>
+
+                    <div class="mb-4">
+                        <h5 class="mb-3">Product Description</h5>
+                        <textarea class="form-control" cols="4" rows="6" name="description" placeholder="Write a description here..." required></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-3">Category</h5>
+                        <input type="text" class="form-control" name="category" placeholder="Enter category here..." required>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-3">Brand</h5>
+                        <input type="text" class="form-control" name="brand" placeholder="Enter brand here...">
+                    </div>
+                    
+                    
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="col-12">
+              <div class="col-12">
+  <div class="d-grid">
+    <button type="submit" name="add_variant" value = "Add Product" class="btn btn-primary">Submit</button>
+>>>>>>> 4c86cb9bccbda8d7136f721879f307fc400804a7
   </div>
 </div>
-              </div>
-              
-              
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>                
-    </div><!--end row-->
 </form>
+
+         
+                    
+                 
+
+                  
+              
+
+       
+              
+              
+             
+                  
+                         
+     
+              
+              
 <!-- form end  -->
   
 
@@ -978,11 +1071,9 @@
 
 
                  
-                                                 
-                        </div><!--end row-->
-                     </div>
-                </div>
+                      
 
+>>>>>>> da0ce8029501a91a94c9a5c86c7adde0d39be09f
                       <div class="col-12 col-lg-9">
                         <div class="tab-content">
                           <div class="tab-pane fade" id="Pricing">

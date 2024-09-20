@@ -1078,7 +1078,7 @@ include '../connections/conn.php';
 <!-- form start  -->
 <?php
 include '../connections/conn.php';
-$sql = "SELECT username, email FROM designer"; // Select only username and email
+$sql = "SELECT username, email FROM designers"; // Select only username and email
 $result = $conn->query($sql);
 ?>
 

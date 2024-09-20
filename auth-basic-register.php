@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
     $role = $_POST['role'];
 
     if ($role == 'designer') {
-        $designerQuery = "INSERT INTO designer (username, email, password) VALUES ('$username', '$email', '$password')";
+        $designerQuery = "INSERT INTO designers (username, email, password) VALUES ('$username', '$email', '$password')";
         $isInsertdesigner = mysqli_query($conn, $designerQuery);
 
         if ($isInsertdesigner) {
@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
         }
     }
      elseif ($role == 'customer') {
-        $customerQuery = "INSERT INTO customers (username, email, password) VALUES ('$username', '$email', '$password')";
+        $customerQuery = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
         $isInsertcustomer = mysqli_query($conn, $customerQuery);
 
         if ($isInsertcustomer) {
