@@ -4,7 +4,7 @@
 
 
 
-
+<h1 style="color: white; width: 100%; text-align: center; font-size: 50px; margin-top: 100px;">faiiz is a noob</h1>
 
 <?php
 include '../connections/addproductconn.php'; // Ensure this path is correct
