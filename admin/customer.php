@@ -1079,7 +1079,7 @@ include '../connections/conn.php';
 <!-- form start  -->
 <?php
 include '../connections/conn.php';
-$sql = "SELECT username, email FROM customers"; // Select only username and email
+$sql = "SELECT username, email FROM users"; // Select only username and email
 $result = $conn->query($sql);
 ?>
 

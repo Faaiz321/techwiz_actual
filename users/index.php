@@ -1,4 +1,21 @@
 
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "techwiz";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+// SQL query
+$sql = "SELECT product_name, price, product_image, description, category FROM products";
+$result = $conn->query($sql);
+?>
 
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
@@ -885,9 +902,113 @@
           </div>
         </div>
       </div>
+      
+
+      <!-- cards start -->
+      <div class="cards">
+      <div class="col">
+						<h6 class="mb-0 text-uppercase">Primary Nav Tabs</h6>
+						<hr>
+						<div class="card">
+							<div class="card-body">
+								<ul class="nav nav-tabs nav-primary " role="tablist">
+									<li class="nav-item" role="presentation">
+										<a class="nav-link active" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
+											<div class="d-flex align-items-center">
+												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
+												</div>
+												<div class="tab-title">Home</div>
+											</div>
+										</a>
+									</li>
+									<li class="nav-item" role="presentation">
+										<a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
+											<div class="d-flex align-items-center">
+												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
+												</div>
+												<div class="tab-title">Profile</div>
+											</div>
+										</a>
+									</li>
+									<li class="nav-item" role="presentation">
+										<a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab" aria-selected="false">
+											<div class="d-flex align-items-center">
+												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
+												</div>
+												<div class="tab-title">Contact</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<div class="tab-content py-3">
+
+
+									<div class="tab-pane fade show active" id="primaryhome" role="tabpanel">
+                  <div class="container mt-4">
+        <div class="row">
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="<?php echo $row['product_image']; ?>" class="card-img-top" alt="<?php echo $row['product_name']; ?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $row['product_name']; ?></h5>
+                                <p class="card-text"><?php echo $row['description']; ?></p>
+                                <p class="card-text"><strong>Price: </strong>$<?php echo $row['price']; ?></p>
+                                <p class="card-text"><small class="text-muted">Category: <?php echo $row['category']; ?></small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
+            } else {
+                echo "<p>No products found.</p>";
+            }
+            $conn->close();
+            ?>
+        </div>
+    </div>
+									</div>
+
+
+
+
+									<div class="tab-pane fade" id="primaryprofile" role="tabpanel">
+										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+									</div>
+									<div class="tab-pane fade" id="primarycontact" role="tabpanel">
+										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+        </div>
+        <!-- cards start -->
+
+
+
+
       <!--end breadcrumb-->
   </main>
   <!--end main wrapper-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!--start footer-->
   <footer class="page-footer">
@@ -896,7 +1017,7 @@
   <!--end footer-->
 
   <!--start cart-->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
+  <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasCart">
     <div class="offcanvas-header border-bottom h-70">
       <h5 class="mb-0" id="offcanvasRightLabel">8 New Orders</h5>
       <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">

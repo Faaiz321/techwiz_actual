@@ -984,7 +984,7 @@ $conn->close();
 
 
 
-    <div class="col-12">
+    <div class="col-8">
               <div class="col-12">
   <div class="d-grid">
     <button type="submit" name="add_variant" value = "Add Product" class="btn btn-primary">Submit</button>
