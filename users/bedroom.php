@@ -146,6 +146,49 @@ $result = $conn->query($sql);
 </div>
 
 
+// Close the connection
+$conn->close();
+?>
+
+
+<!doctype html>
+<html lang="en" data-bs-theme="blue-theme">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  
+  
+
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+  <!-- loader-->
+  <link href="assets/css/pace.min.css" rel="stylesheet">
+  <script src="assets/js/pace.min.js"></script>
+
+  <!--plugins-->
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+  <!--bootstrap css-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <!--main css-->
+  <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+  <link href="sass/main.css" rel="stylesheet">
+  <link href="assets/css/horizontal-menu.css" rel="stylesheet">
+  <link href="sass/dark-theme.css" rel="stylesheet">
+  <link href="sass/blue-theme.css" rel="stylesheet">
+  <link href="sass/semi-dark.css" rel="stylesheet">
+  <link href="sass/bordered-theme.css" rel="stylesheet">
+  <link href="sass/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+
   <!--start header-->
  <header class="top-header">
   <nav class="navbar navbar-expand align-items-center justify-content-between gap-4 border-bottom">
@@ -1003,50 +1046,47 @@ $result = $conn->query($sql);
       
 
       <!-- cards start -->
-      <div class="cards">
-      <div class="col">
-						<h6 class="mb-0 text-uppercase">Primary Nav Tabs</h6>
-						<hr>
-						<div class="card">
-							<div class="card-body">
-								<ul class="nav nav-tabs nav-primary justify-content-center" id="myTab" role="tablist">
-									<li class="nav-item" role="presentation">
-										<a class="nav-link active" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
-												</div>
-												<div class="tab-title">Furniture</div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
-												</div>
-												<div class="tab-title"></div>
-											</div>
-										</a>
-									</li>
-									<li class="nav-item" role="presentation">
-										<a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab" aria-selected="false">
-											<div class="d-flex align-items-center">
-												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
-												</div>
-												<div class="tab-title">Contact</div>
-											</div>
-										</a>
-									</li>
-								</ul>
-								<div class="tab-content py-3">
-
-
-                <div class="container mt-4">
-
-    <div class="row">
-   
+      <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
+                                               data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
+                                                class="material-icons-outlined">share</i></a>
+                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control ps-5" value="https://www.codervent.com"
+                                                           placeholder="Enter Url">
+                                                    <span
+                                                        class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
+                                                    <span class="input-group-text gap-1"><i
+                                                        class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2 mt-3">
+                                                    <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-pinterest"></i>Pinterest
+                                                    </button>
+                                                    <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-facebook"></i>Facebook
+                                                    </button>
+                                                    <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-linkedin"></i>Linkedin
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    }
+                } else {
+                    echo "<p>No products found.</p>";
+                }
+                $conn->close();
+                ?>
+            </div><!--end row-->
+        </div>
     </div>
-</div> 
+</div>
 
                   <div class="card-body">
                   <h5 class="card-title">Apple Watch Gray</h5>
