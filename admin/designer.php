@@ -629,7 +629,9 @@ include '../connections/conn.php';
 </header>
 <!--end top header-->
 
+
 <!--start sidebar-->
+
 <aside class="sidebar-wrapper" data-simplebar="true">
   <div class="sidebar-header">
     <div class="logo-icon">
@@ -651,12 +653,7 @@ include '../connections/conn.php';
             </div>
             <div class="menu-title">Dashboard</div>
           </a>
-          <ul>
-            <li><a href="index.html"><i class="material-icons-outlined">arrow_right</i>Analysis</a>
-            </li>
-            <li><a href="index2.html"><i class="material-icons-outlined">arrow_right</i>eCommerce</a>
-            </li>
-          </ul>
+          
         </li>
         <li>
           <a href="javascript:;" class="has-arrow">
@@ -980,6 +977,7 @@ include '../connections/conn.php';
       <!--end navigation-->
   </div>
 </aside>
+
 <!--end sidebar-->
 
 
@@ -1078,7 +1076,7 @@ include '../connections/conn.php';
 <!-- form start  -->
 <?php
 include '../connections/conn.php';
-$sql = "SELECT username, email FROM designers"; // Select only username and email
+$sql = "SELECT username, email FROM users"; // Select only username and email
 $result = $conn->query($sql);
 ?>
 

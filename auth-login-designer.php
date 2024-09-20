@@ -9,6 +9,19 @@ if (isset($_POST["login"])) {
 
 
   // $sql = "Select * from users where username='$username' AND password='$password'";
+  $sql = "SELECT * FROM designers WHERE email='$email' AND  pass ='$password'";
+  $result = mysqli_query($conn, $sql);
+  if ($row = mysqli_fetch_array($result)) {
+
+    $_SESSION['userEmail'] = $email;
+    $_SESSION['username'] = $row["username"];
+    header("location:users/index.php");
+  } else {
+    $showError = "Invalid Credentials";
+  }
+}
+
+?>
   $sql = "SELECT * FROM designers WHERE email='$email' AND  password ='$password'";
   $result = mysqli_query($conn, $sql);
   if ($row = mysqli_fetch_array($result)) {
@@ -53,6 +66,12 @@ if (isset($_POST["login"])) {
 
 </head>
 
+  <body>
+ <!--authentication-->
+
+
+
+ <div class="auth-basic-wrapper d-flex align-items-center justify-content-center">
 <body>
 
   <!--authentication-->
@@ -66,6 +85,7 @@ if (isset($_POST["login"])) {
           <div class="card rounded-4 mb-0 border-top border-4 border-primary border-gradient-1">
             <div class="card-body p-5">
               <img src="assets/images/logo1.png" class="mb-4" width="145" alt="">
+              <h4 class="fw-bold">Login as designer</h4>
               <h4 class="fw-bold">Login</h4>
               <p class="mb-0">Enter your credentials to login your account</p>
               <p class="mb-0 text-danger">
@@ -82,6 +102,7 @@ if (isset($_POST["login"])) {
                   <div class="col-12">
                     <label for="inputChoosePassword" class="form-label">Password</label>
                     <div class="input-group" id="show_hide_password">
+                      <input type="password" class="form-control border-end-0"  id="inputChoosePassword" name="pass" value="12345678" placeholder="Enter Password">
                       <input type="password" class="form-control border-end-0" id="inputChoosePassword" name="pass" value="12345678" placeholder="Enter Password">
                       <a href="javascript:;" class="input-group-text bg-transparent"><i class="bi bi-eye-slash-fill"></i></a>
                     </div>
