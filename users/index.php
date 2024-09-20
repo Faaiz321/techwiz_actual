@@ -901,7 +901,36 @@
           </div>
         </div>
       </div>
-      
+
+      <!--carousel  -->
+      <div class="col">
+						<h6 class="mb-0 text-uppercase">With Crossfade</h6>
+						<hr>
+						<div class="card">
+							<div class="card-body">
+								<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+									<div class="carousel-inner">
+										<div class="carousel-item active">
+											<img src="assets/images/carousels/13.png" class="d-block w-100" alt="...">
+										</div>
+										<div class="carousel-item">
+											<img src="assets/images/carousels/14.png" class="d-block w-100" alt="...">
+										</div>
+										<div class="carousel-item">
+											<img src="assets/images/carousels/15.png" class="d-block w-100" alt="...">
+										</div>
+									</div>
+									<a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+										<span class="visually-hidden">Previous</span>
+									</a>
+									<a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next">	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+										<span class="visually-hidden">Next</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+      <!--carousel  -->
 
       <!-- cards start -->
       <?php
