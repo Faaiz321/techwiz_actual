@@ -1,8 +1,6 @@
 <?php
 include '../connections/conn.php';
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 ?>
 
@@ -1080,7 +1078,7 @@ error_reporting(E_ALL);
 <!-- form start  -->
 <?php
 include '../connections/conn.php';
-$sql = "SELECT username, email FROM designer"; // Select only username and email
+$sql = "SELECT username, email FROM designers"; // Select only username and email
 $result = $conn->query($sql);
 ?>
 
@@ -1093,8 +1091,9 @@ $result = $conn->query($sql);
                         <tr>
                             <th style="width: 5%;"><input class="form-check-input" type="checkbox"></th>
                             <th style="width: 15%;">User ID</th>
-                            <th style="width: 50%;">Customers</th>
-                            <th style="width: 30%;">Email</th>  
+                            <th style="width: 40%;">Customers</th>
+                            <th style="width: 30%;">Email</th>
+                            <th style="width: 10%;">Actions</th> <!-- New column for actions -->
                         </tr>
                     </thead>
                     <tbody>
@@ -1112,13 +1111,40 @@ $result = $conn->query($sql);
                                         </a>
                                     </td>
                                     <td><a href="javascript:;" class="font-text1">' . $row['email'] . '</a></td>
+                                    <td>
+                                        <form method="POST" action="delete_customer.php">
+                                            <input type="hidden" name="username" value="' . $row['username'] . '">
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>';
                                 $userId++; // Increment User ID
                             }
                         } else {
-                            $output .= '<tr><td colspan="4" class="text-center">No results found</td></tr>';
+                            $output .= '<tr><td colspan="5" class="text-center">No results found</td></tr>'; // Adjust colspan to 5
                         }
                         echo $output; // Single echo to display all rows
+                        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                            // Get the username from the form input
+                            $username = htmlspecialchars($_POST['username']);
+                            
+                            // Prepare the SQL DELETE statement
+                            $stmt = $conn->prepare("DELETE FROM customers WHERE username = ?");
+                            $stmt->bind_param("s", $username); // "s" specifies the variable type => "string"
+                        
+                            if ($stmt->execute()) {
+                                // Redirect to the previous page with a success message
+                                header("Location: your_previous_page.php?message=Customer+deleted+successfully");
+                                exit();
+                            } else {
+                                // Handle error
+                                echo "Error deleting record: " . $conn->error;
+                            }
+                        
+                            $stmt->close();
+                        }
+                        
+                        $conn->close();
                         ?>
                     </tbody>
                 </table>
@@ -1126,6 +1152,8 @@ $result = $conn->query($sql);
         </div>
     </div>
 </div>
+
+
  <!-- <form action="/admin/customer.php" method="get">
     
         <div class="card mt-4">
@@ -1281,41 +1309,4 @@ $result = $conn->query($sql);
                       <td>
                         <a class="d-flex align-items-center gap-3" href="javascript:;">
                           <div class="customer-pic">
-                            <img src="assets/images/avatars/07.png" class="rounded-circle" width="40" height="40" alt="">
-                          </div>
-                          <p class="mb-0 customer-name fw-bold">Andrew Carry</p>
-                        </a>
-                       </td>
-                      <td>
-                         <a href="javascript:;" class="font-text1">abcexample.com</a>
-                      </td>
-                      <td>142</td>
-                      <td>$2485</td>
-                      <td>England</td>
-                      <td>24 min ago</td>
-                      <td>Nov 12, 10:45 PM</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input class="form-check-input" type="checkbox">
-                      </td>
-                      <td>
-                        <a class="d-flex align-items-center gap-3" href="javascript:;">
-                          <div class="customer-pic">
-                            <img src="assets/images/avatars/08.png" class="rounded-circle" width="40" height="40" alt="">
-                          </div>
-                          <p class="mb-0 customer-name fw-bold">Andrew Carry</p>
-                        </a>
-                       </td>
-                      <td>
-                         <a href="javascript:;" class="font-text1">abcexample.com</a>
-                      </td>
-                      <td>142</td>
-                      <td>$2485</td>
-                      <td>England</td>
-                      <td>24 min ago</td>
-                      <td>Nov 12, 10:45 PM</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <input class="form-check-input" type="checkbox">
+                            <img src=

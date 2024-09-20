@@ -1,31 +1,48 @@
-
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// Database connection
+$conn = new mysqli('localhost', 'root', '', 'techwiz');
 
-
-include '../connections/addproductconn.php';
-if (isset($_POST['submit'])){
-  $product_name = $_POST ['product_name'];
-  $category = $_POST ['category'];
-  $price = $_POST ['price'];
-  $description = $_POST ['description'];
-  $brand = $_POST ['brand'];
-
-$sql = "INSERT INTO `products`(`product_name`, `price`, `product_image`, `description`, `category`, `color`, `brand`, `size`) VALUES ('$product_name','$price','$description','$category','$color','$brand','$size')";
-$result = mysqli_query($conn,$sql); 
-
-  $img = $_POST [''];
-
-
-
-
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
+if (isset($_POST['add_variant'])) {
+    // Get the form inputs
+    $product_name = $_POST['product_name'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];  // Corrected to match the form name
+    $category = $_POST['category'];
 
+    // Directory where image will be uploaded
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["product_img"]["name"]);  // Corrected to match the form name
 
+    // Move the uploaded file to the target directory
+    if (move_uploaded_file($_FILES["product_img"]["tmp_name"], $target_file)) {
+        // Insert product information and image path into database
+        $sql = "INSERT INTO products (product_name, price, product_image, description, category) 
+                VALUES ('$product_name', '$price', '$target_file', '$description', '$category')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Product added successfully with the image.";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+    }
+}
+
+$conn->close();
 ?>
+
+
+
+
+
+
+
 
 <!doctype html>
 
@@ -926,111 +943,71 @@ $result = mysqli_query($conn,$sql);
 				<!--end breadcrumb-->
 
       <!-- form start -->
-         <form action="ecommerce-add-product.php" method="post" enctype="multipart/form-data">
-          <div class="row d-flex justify-content-center">
-            <div class="col-12 col-lg-8">
-              <div class="card">
+      <form action="ecommerce-add-product.php" method="post" enctype="multipart/form-data">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-lg-8">
+            <div class="card">
                 <div class="card-body">
-                  <div class="mb-4">
-                    <h5 class="mb-3">Product Title</h5>
-                    <input type="text" class="form-control" name ="product_name"placeholder="write title here....">
-                  </div>
-                  <div class="mb-4">
-                    <h5 class="mb-3">Product Description</h5>
-                    <textarea class="form-control" cols="4" rows="6" name="product_description" placeholder="write a description here.."></textarea>
-                  </div>
-                  <div class="mb-4">
-                    <h5 class="mb-3">Display images</h5>
-                    <input id="fancy-file-upload" type="file" name="img" accept=".jpg, .png, image/jpeg, image/png" multiple value="upload">
-                  </div>
-<<<<<<< HEAD
-                  <div class="mb-4">
-                    <h5 class="mb-3">Inventory</h5>
+                    <div class="mb-4">
+                        <h5 class="mb-3">Product Name</h5>
+                        <input type="text" class="form-control" name="product_name" placeholder="Write product name here..." required>
+                    </div>
                     
-                    <div class="row g-3">
-                      <div class="col-12 col-lg-3">
-                        <div class="nav flex-column nav-pills border rounded vertical-pills overflow-hidden">
-                          <button class="nav-link px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#Pricing" type="button"><i class="bi bi-tag-fill me-2"></i>Pricing</button>
-                          <button class="nav-link px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#Restock" type="button"><i class="bi bi-box-seam-fill me-2"></i>Restock</button>
-                          <button class="nav-link active px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#Shipping" type="button"><i class="bi bi-truck-front-fill me-2"></i>Shipping</button>
-                          <button class="nav-link px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#GlobalDelivery" type="button"><i class="bi bi-globe me-2"></i>Global Delivery</button>
-                          <button class="nav-link px-4 rounded-0" data-bs-toggle="pill" d
-                          
-                          ata-bs-target="#Attributes" type="button"><i class="bi bi-hdd-rack-fill me-2"></i>Attributes</button>
-                          <button class="nav-link px-4 rounded-0" data-bs-toggle="pill" data-bs-target="#Advanced" type="button"><i class="bi bi-handbag-fill me-2"></i>Advanced</button>
-                        </div>
-                      </div>
-=======
-              
-                      <div class="card">
-        <div class="card-body">
-          <h5 class="mb-3">Organize</h5>
-          <div class="row g-3">
-            <div class="col-12">
-              <label for="AddCategory" class="form-label">Category</label>
-              <select class="form-select" id="AddCategory" name="category">
-                <option value="0">Topwear</option>
-                <option value="1">Bottomwear</option>
-                <option value="2">Casual T-shirt</option>
-                <option value="3">Electronic</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label for="Collection" class="form-label">Collection</label>
-              <input type="text" class="form-control" name="collection" id="Collection" placeholder="Collection">
-            </div>                         
-          </div>
-        </div>
+                    <div class="mb-4">
+                        <h5 class="mb-3">Product Price</h5>
+                        <input type="number" class="form-control" name="price" placeholder="Enter price here..." required>
+                    </div>
+                    
+                    <h5 class="mb-3">Upload Image</h5>
+                    <input type="file" name="product_img" accept=".jpg, .png, image/jpeg, image/png" required>
 
-        <div class="card">
-          <div class="card-body">
-            <h5 class="mb-3">Variants</h5>
-            <div class="row g-3">
-              <div class="col-12">
-                <label for="Brand" class="form-label">Brand</label>
-                <input type="text" class="form-control" name="brand" id="Brand" placeholder="Brand">
-              </div>
-              <div class="col-12">
-                <label for="Color" class="form-label">Color</label>
-                <input type="text" class="form-control" name="color" id="Color" placeholder="Color">
-              </div>
-              <div class="col-12">
-                <label for="Size" class="form-label">Size</label>
-                <input type="text" class="form-control" name="size" id="Size" placeholder="Size">
-              </div>
-              <div class="col-12">
-                <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" name="price" id="price" placeholder="Price">
-                <div class="row g-3">
-                  <div class="col-12">
-                            <label for="AddCategory" name="category" class="form-label">Category</label>
-                            <select class="form-select" id="AddCategory">
-                              <option value="0">Topwear</option>
-                              <option value="1">Bottomwear</option>
-                              <option value="2">Casual Tshirt</option>
-                              <option value="3">Electronic</option>
-                            </select>
-                          </div>
-                          <div class="col-12">
-                            <label for="Collection" class="form-label">Collection</label>
-                            <input type="text" class="form-control" name="collection" id="Collection" placeholder="Collection">
-                          </div>
-                          <div class="col-12">
+                    <div class="mb-4">
+                        <h5 class="mb-3">Product Description</h5>
+                        <textarea class="form-control" cols="4" rows="6" name="description" placeholder="Write a description here..." required></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-3">Category</h5>
+                        <input type="text" class="form-control" name="category" placeholder="Enter category here..." required>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-3">Brand</h5>
+                        <input type="text" class="form-control" name="brand" placeholder="Enter brand here...">
+                    </div>
+                    
+                    
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="col-12">
               <div class="col-12">
   <div class="d-grid">
-    <button type="submit" name="add_variant" class="btn btn-primary">Submit</button>
+    <button type="submit" name="add_variant" value = "Add Product" class="btn btn-primary">Submit</button>
   </div>
 </div>
-              </div>
-              
-              
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>                
-    </div><!--end row-->
 </form>
+
+         
+                    
+                 
+
+                  
+              
+
+       
+              
+              
+             
+                  
+                         
+     
+              
+              
 <!-- form end  -->
   
 
@@ -1038,10 +1015,7 @@ $result = mysqli_query($conn,$sql);
 
 
                  
-                                                 
-                        </div><!--end row-->
-                     </div>
-                </div>
+                      
 
 >>>>>>> da0ce8029501a91a94c9a5c86c7adde0d39be09f
                       <div class="col-12 col-lg-9">
