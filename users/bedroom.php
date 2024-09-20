@@ -146,9 +146,7 @@ $result = $conn->query($sql);
 </div>
 
 
-// Close the connection
-$conn->close();
-?>
+
 
 
 <!doctype html>
@@ -1076,14 +1074,8 @@ $conn->close();
                             </div>
                         </div>
                     </div>
-                <?php
-                    }
-                } else {
-                    echo "<p>No products found.</p>";
-                }
-                $conn->close();
-                ?>
-                
+            
+
             </div><!--end row-->
         </div>
     </div>
