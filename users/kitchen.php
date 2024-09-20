@@ -1,22 +1,127 @@
+
+
+
+
+
+
+
+<?php
+include '../connections/addproductconn.php'; // Ensure this path is correct
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL query
+$sql = "SELECT product_name, price, product_image, description, category FROM products";
+$result = $conn->query($sql);
+?>
+
+<div class="card">
+    
+    <div class="card-body p-4">
+
+       
+
+        <div class="mt-5">
+            <div class="text-center">
+                <h5 class="mb-3">Explore Great Kitchen Ideas</h5>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-2 g-4">
+                <?php
+                // Check if there are results
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $imageFilename = htmlspecialchars($row['product_image']);
+                        $imagePath = '../designer/' . $imageFilename; // Adjust path as necessary
+                        // Use a default image if the actual image doesn't exist
+                        if (!file_exists($imagePath)) {
+                            $imagePath = '../designer/uploads/default.jpg';
+                        }
+                ?>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm"> <!-- Card structure -->
+                            <img src="<?php echo $imagePath; ?>" class="img-fluid card-img-top w-50" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
+                                <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                                <h5>Price: $<?php echo htmlspecialchars($row['price']); ?></h5>
+                                <div class="mt-4 d-flex align-items-center justify-content-between">
+                                    <button class="btn btn-light d-flex gap-2 px-3">
+                                        <i class="material-icons-outlined">shopping_basket</i>Add to Cart
+                                    </button>
+                                    <div class="d-flex gap-1">
+                                        <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">favorite_border</i></a>
+                                        <div class="dropdown position-relative">
+                                            <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
+                                               data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
+                                                class="material-icons-outlined">share</i></a>
+                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control ps-5" value="https://www.codervent.com"
+                                                           placeholder="Enter Url">
+                                                    <span
+                                                        class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
+                                                    <span class="input-group-text gap-1"><i
+                                                        class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2 mt-3">
+                                                    <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-pinterest"></i>Pinterest
+                                                    </button>
+                                                    <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-facebook"></i>Facebook
+                                                    </button>
+                                                    <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-linkedin"></i>Linkedin
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    }
+                } else {
+                    echo "<p>No products found.</p>";
+                }
+                $conn->close();
+                ?>
+            </div><!--end row-->
+        </div>
+    </div>
+</div>
+
+
+// Close the connection
+$conn->close();
+?>
+
+
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
-  <!--favicon-->
-	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+ 
+  
+  
+
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
-	<link href="assets/css/pace.min.css" rel="stylesheet">
-	<script src="assets/js/pace.min.js"></script>
+  <link href="assets/css/pace.min.css" rel="stylesheet">
+  <script src="assets/js/pace.min.js"></script>
 
   <!--plugins-->
   <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
   <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
-
   <!--bootstrap css-->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -623,8 +728,9 @@
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
               class="material-icons-outlined">cloud_download</i>Downloads</a>
           <hr class="dropdown-divider">
-          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-          class="material-icons-outlined">power_settings_new</i>Logout</a>
+          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="../auth-logout.php">
+             <i class="material-icons-outlined">power_settings_new</i>Logout
+            </a>
         </div>
       </li>
     </ul>
@@ -657,12 +763,19 @@
        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
          <div class="parent-icon"><i class="material-icons-outlined">home</i>
          </div>
-         <div class="menu-title d-flex align-items-center">Dashboard</div>
+         <div class="menu-title d-flex align-items-center">Catalog</div>
          <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
        </a>
        <ul class="dropdown-menu">
-         <li><a class="dropdown-item" href="index.html"><i class='material-icons-outlined'>insights</i>Analysis</a></li>
-         <li><a class="dropdown-item" href="index2.html"><i class='material-icons-outlined'>shopping_cart</i>eCommerce</a></li>
+         <li><a class="dropdown-item" href="bedroom.php"><i class='material-icons-outlined'>insights</i>Bedroom</a></li>
+         <li><a class="dropdown-item" href="kitchen.php"><i class='material-icons-outlined'>insights</i>Kitchen</a></li>
+         
+         <li><a class="dropdown-item" href="outdoorservices.php"><i class='material-icons-outlined'>insights</i>OutDoor Spaces</a></li>
+         
+         <li><a class="dropdown-item" href="livingroom.php"><i class='material-icons-outlined'>insights</i>Living-Room</a></li>
+         
+
+        
        </ul>
        </li>
        <li class="nav-item dropdown">
@@ -860,694 +973,158 @@
 </div>
 <!--end navigation-->
 
-
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
       <!--breadcrumb-->
       <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Components</div>
+        <div class="breadcrumb-title pe-3">Dashboard</div>
         <div class="ps-3">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0 p-0">
               <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">Customer Details</li>
+              <li class="breadcrumb-item active" aria-current="page">eCommerce</li>
             </ol>
           </nav>
         </div>
         <div class="ms-auto">
           <div class="btn-group">
-            <button type="button" class="btn btn-primary">Settings</button>
-            <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split"
-              data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
-            </button>
-            <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"> <a class="dropdown-item"
-                href="javascript:;">Action</a>
-              <a class="dropdown-item" href="javascript:;">Another action</a>
-              <a class="dropdown-item" href="javascript:;">Something else here</a>
-              <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Separated link</a>
-            </div>
+            <button type="button" class="btn btn-success"><a href="form-layouts.php">Make Appointment</a></button>
           </div>
         </div>
       </div>
-      <!--end breadcrumb-->
+      
+
+      <!-- cards start -->
+      <div class="cards">
+      <div class="col">
+						<h6 class="mb-0 text-uppercase">Primary Nav Tabs</h6>
+						<hr>
+						<div class="card">
+							<div class="card-body">
+								<ul class="nav nav-tabs nav-primary justify-content-center" id="myTab" role="tablist">
+									<li class="nav-item" role="presentation">
+										<a class="nav-link active" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
+											<div class="d-flex align-items-center">
+												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
+												</div>
+												<div class="tab-title">Furniture</div>
+											</div>
+										</a>
+									</li>
+									<li class="nav-item" role="presentation">
+										<a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
+											<div class="d-flex align-items-center">
+												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
+												</div>
+												<div class="tab-title"></div>
+											</div>
+										</a>
+									</li>
+									<li class="nav-item" role="presentation">
+										<a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab" aria-selected="false">
+											<div class="d-flex align-items-center">
+												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
+												</div>
+												<div class="tab-title">Contact</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<div class="tab-content py-3">
 
 
-      <div class="row">
-        <div class="col-12 col-lg-4 d-flex">
-          <div class="card w-100">
-            <div class="card-body">
-              <div class="position-relative">
-                <img src="assets/images/gallery/18.png" class="img-fluid rounded" alt="">
-                <div class="position-absolute top-100 start-50 translate-middle">
-                  <img src="assets/images/avatars/02.png" width="100" height="100"
-                    class="rounded-circle raised p-1 bg-white" alt="">
-                </div>
-              </div>
-              <div class="text-center mt-5 pt-4">
-                <h4 class="mb-1">Julinee Moree</h4>
-                <p class="mb-0">Marketing Excutive</p>
-              </div>
-              <div class="d-flex align-items-center justify-content-center gap-3 my-5">
-                <a href="javascript:;"
-                  class="wh-48 bg-linkedin text-white rounded-circle d-flex align-items-center justify-content-center"><i
-                    class="bi bi-linkedin fs-5"></i></a>
-                <a href="javascript:;"
-                  class="wh-48 bg-dark text-white rounded-circle d-flex align-items-center justify-content-center"><i
-                    class="bi bi-twitter-x fs-5"></i></a>
-                <a href="javascript:;"
-                  class="wh-48 bg-facebook text-white rounded-circle d-flex align-items-center justify-content-center"><i
-                    class="bi bi-facebook fs-5"></i></a>
-                <a href="javascript:;"
-                  class="wh-48 bg-pinterest text-white rounded-circle d-flex align-items-center justify-content-center"><i
-                    class="bi bi-youtube fs-5"></i></a>
-              </div>
-              <div class="d-flex align-items-center justify-content-around">
-                <div class="d-flex flex-column gap-2">
-                  <h4 class="mb-0">798</h4>
-                  <p class="mb-0">Posts</p>
-                </div>
-                <div class="d-flex flex-column gap-2">
-                  <h4 class="mb-0">48K</h4>
-                  <p class="mb-0">Following</p>
-                </div>
-                <div class="d-flex flex-column gap-2">
-                  <h4 class="mb-0">24.3M</h4>
-                  <p class="mb-0">Followers</p>
-                </div>
-              </div>
+                <div class="container mt-4">
 
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item border-top">
-                <b>Address</b>
-                <br>
-                123 Street Name, City, Australia
-              </li>
-              <li class="list-group-item">
-                <b>Email</b>
-                <br>
-                mail.com
-              </li>
-              <li class="list-group-item">
-                <b>Phone</b>
-                <br>
-                Toll Free (123) 472-796
-                <br>
-                Mobile : +91-9910XXXX
-              </li>
-            </ul>
-
-
-          </div>
-        </div>
-
-        <div class="col-12 col-lg-8 d-flex">
-          <div class="card w-100">
-            <div class="card-body">
-              <h5 class="mb-3">Send Notes to Customer</h5>
-              <textarea class="form-control" placeholder="write somthing" rows="6" cols="6"></textarea>
-              <button class="btn btn-filter w-100 mt-3">Add Meesage</button>
-            </div>
-            <div class="customer-notes mb-3">
-              <div class="bg-light mx-3 my-0 rounded-3 p-3">
-                <div class="notes-item">
-                  <p class="mb-2">It is a long established fact that a reader will be distracted by the readable content
-                    of a page when looking at its layout.
-                    of letters, as opposed to using 'Content here, content here.</p>
-                  <p class="mb-0 text-end fst-italic text-secondary">10 Apr, 2022</p>
-                </div>
-                <hr class="border-dotted">
-                <div class="notes-item">
-                  <p class="mb-2">Various versions have evolved over the years, sometimes</p>
-                  <p class="mb-0 text-end fst-italic text-secondary">15 Apr, 2022</p>
-                </div>
-                <hr>
-                <div class="notes-item">
-                  <p class="mb-2">There are many variations of passages of Lorem Ipsum available, but the majority have
-                    suffered
-                    alteration in some</p>
-                  <p class="mb-0 text-end fst-italic text-secondary">15 Apr, 2022</p>
-                </div>
-                <hr>
-                <div class="notes-item">
-                  <p class="mb-2">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to
-                    demonstrate. quae ab illo inventore veritatis et quasi architecto</p>
-                  <p class="mb-0 text-end fst-italic text-secondary">18 Apr, 2022</p>
-                </div>
-                <hr>
-                <div class="notes-item">
-                  <p class="mb-2">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                    piece of classical Latin literature</p>
-                  <p class="mb-0 text-end fst-italic text-secondary">22 Apr, 2022</p>
-                </div>
-                <hr>
-                <div class="notes-item">
-                  <p class="mb-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                    beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
-                    aut fugit, sed quia consequuntur magni dolores</p>
-                  <p class="mb-0 text-end fst-italic text-secondary">22 Apr, 2022</p>
-                </div>
-                <hr>
-                <div class="notes-item">
-                  <p class="mb-2">On the other hand, we denounce with righteous indignation and dislike pleasure of the
-                    moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue;
-                    and equal blame belongs to those</p>
-                  <p class="mb-0 text-end fst-italic text-secondary">22 Apr, 2022</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!--end row-->
-
-
-      <div class="card">
-        <div class="card-body">
-          <h5 class="mb-3">Orders<span class="fw-light ms-2">(98)</span></h5>
-          <div class="product-table">
-            <div class="table-responsive white-space-nowrap">
-              <table class="table align-middle">
-                <thead class="table-light">
-                  <tr>
-                    <th>Order</th>
-                    <th>Expense</th>
-                    <th>Payment Status</th>
-                    <th>Order Status</th>
-                    <th>Delivery Status</th>
-                    <th>Date</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>#2453</td>
-                    <td>$865</td>
-                    <td><span
-                        class="lable-table bg-success-subtle text-success rounded border border-success-subtle font-text2 fw-bold">Paid<i
-                          class="bi bi-check2 ms-2"></i></span></td>
-                    <td><span
-                        class="lable-table bg-success-subtle text-success rounded border border-success-subtle font-text2 fw-bold">Completed<i
-                          class="bi bi-check2 ms-2"></i></span></td>
-                    <td>Cash on delivery</td>
-                    <td>Jun 12, 12:56 PM</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-sm dropdown-toggle dropdown-toggle-nocaret" type="button"
-                          data-bs-toggle="dropdown">
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="javascript:;"><i class="bi bi-eye-fill me-2"></i>View</a>
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:;"><i
-                                class="bi bi-box-arrow-right me-2"></i>Export</a></li>
-                          <li class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="javascript:;"><i
-                                class="bi bi-trash-fill me-2"></i>Delete</a></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#7845</td>
-                    <td>$427</td>
-                    <td><span
-                        class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i
-                          class="bi bi-x-lg ms-2"></i></span></td>
-                    <td><span
-                        class="lable-table bg-primary-subtle text-primary rounded border border-primary-subtle font-text2 fw-bold">Completed<i
-                          class="bi bi-check2 ms-2"></i></span></td>
-                    <td>Cash on delivery</td>
-                    <td>Jun 12, 12:56 PM</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-sm dropdown-toggle dropdown-toggle-nocaret" type="button"
-                          data-bs-toggle="dropdown">
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="javascript:;"><i class="bi bi-eye-fill me-2"></i>View</a>
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:;"><i
-                                class="bi bi-box-arrow-right me-2"></i>Export</a></li>
-                          <li class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="javascript:;"><i
-                                class="bi bi-trash-fill me-2"></i>Delete</a></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#9635</td>
-                    <td>$123</td>
-                    <td><span
-                        class="lable-table bg-warning-subtle text-warning rounded border border-warning-subtle font-text2 fw-bold">Pending<i
-                          class="bi bi-info-circle ms-2"></i></span></td>
-                    <td><span
-                        class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i
-                          class="bi bi-x-lg ms-2"></i></span></td>
-                    <td>Cash on delivery</td>
-                    <td>Jun 12, 12:56 PM</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-sm dropdown-toggle dropdown-toggle-nocaret" type="button"
-                          data-bs-toggle="dropdown">
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="javascript:;"><i class="bi bi-eye-fill me-2"></i>View</a>
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:;"><i
-                                class="bi bi-box-arrow-right me-2"></i>Export</a></li>
-                          <li class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="javascript:;"><i
-                                class="bi bi-trash-fill me-2"></i>Delete</a></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#2415</td>
-                    <td>$986</td>
-                    <td><span
-                        class="lable-table bg-primary-subtle text-primary rounded border border-primary-subtle font-text2 fw-bold">Completed<i
-                          class="bi bi-check2-all ms-2"></i></span></td>
-                    <td><span
-                        class="lable-table bg-warning-subtle text-warning rounded border border-warning-subtle font-text2 fw-bold">Pending<i
-                          class="bi bi-info-circle ms-2"></i></span></td>
-                    <td>Cash on delivery</td>
-                    <td>Jun 12, 12:56 PM</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-sm dropdown-toggle dropdown-toggle-nocaret" type="button"
-                          data-bs-toggle="dropdown">
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="javascript:;"><i class="bi bi-eye-fill me-2"></i>View</a>
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:;"><i
-                                class="bi bi-box-arrow-right me-2"></i>Export</a></li>
-                          <li class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="javascript:;"><i
-                                class="bi bi-trash-fill me-2"></i>Delete</a></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#3526</td>
-                    <td>$104</td>
-                    <td><span
-                        class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i
-                          class="bi bi-x-lg ms-2"></i></span></td>
-                    <td><span
-                        class="lable-table bg-success-subtle text-success rounded border border-success-subtle font-text2 fw-bold">Completed<i
-                          class="bi bi-check2 ms-2"></i></span></td>
-                    <td>Cash on delivery</td>
-                    <td>Jun 12, 12:56 PM</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-sm dropdown-toggle dropdown-toggle-nocaret" type="button"
-                          data-bs-toggle="dropdown">
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="javascript:;"><i class="bi bi-eye-fill me-2"></i>View</a>
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:;"><i
-                                class="bi bi-box-arrow-right me-2"></i>Export</a></li>
-                          <li class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="javascript:;"><i
-                                class="bi bi-trash-fill me-2"></i>Delete</a></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#7845</td>
-                    <td>$368</td>
-                    <td><span
-                        class="lable-table bg-success-subtle text-success rounded border border-success-subtle font-text2 fw-bold">Paid<i
-                          class="bi bi-check2 ms-2"></i></span></td>
-                    <td><span
-                        class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i
-                          class="bi bi-x-lg ms-2"></i></span></td>
-                    <td>Cash on delivery</td>
-                    <td>Jun 12, 12:56 PM</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-sm dropdown-toggle dropdown-toggle-nocaret" type="button"
-                          data-bs-toggle="dropdown">
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="javascript:;"><i class="bi bi-eye-fill me-2"></i>View</a>
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:;"><i
-                                class="bi bi-box-arrow-right me-2"></i>Export</a></li>
-                          <li class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="javascript:;"><i
-                                class="bi bi-trash-fill me-2"></i>Delete</a></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>#256</td>
-                    <td>$865</td>
-                    <td><span
-                        class="lable-table bg-warning-subtle text-warning rounded border border-warning-subtle font-text2 fw-bold">Pending<i
-                          class="bi bi-info-circle ms-2"></i></span></td>
-                    <td><span
-                        class="lable-table bg-primary-subtle text-primary rounded border border-primary-subtle font-text2 fw-bold">Completed<i
-                          class="bi bi-check2-all ms-2"></i></span></td>
-                    <td>Cash on delivery</td>
-                    <td>Jun 12, 12:56 PM</td>
-                    <td>
-                      <div class="dropdown">
-                        <button class="btn btn-sm dropdown-toggle dropdown-toggle-nocaret" type="button"
-                          data-bs-toggle="dropdown">
-                          <i class="bi bi-three-dots"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="javascript:;"><i class="bi bi-eye-fill me-2"></i>View</a>
-                          </li>
-                          <li><a class="dropdown-item" href="javascript:;"><i
-                                class="bi bi-box-arrow-right me-2"></i>Export</a></li>
-                          <li class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="javascript:;"><i
-                                class="bi bi-trash-fill me-2"></i>Delete</a></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="mb-3 fw-bold">Wishlist<span class="fw-light ms-2">(46)</span></h5>
-          <div class="product-table">
-            <div class="table-responsive white-space-nowrap">
-              <table class="table align-middle">
-                <thead class="table-light">
-                  <tr>
-
-                    <th>Product Name</th>
-                    <th>Color</th>
-                    <th>Size</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box">
-                          <img src="assets/images/top-products/06.png" width="55" class="rounded-3" alt="">
-                        </div>
-                        <div class="product-info">
-                          <a href="javascript:;" class="product-title">Women Pink Floral Printed</a>
-                          <p class="mb-0 product-category">Category : Fashion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Blue</td>
-                    <td>Large</td>
-                    <td>2</td>
-                    <td>$59</td>
-                    <td>189</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box">
-                          <img src="assets/images/top-products/05.png" width="55" class="rounded-3" alt="">
-                        </div>
-                        <div class="product-info">
-                          <a href="javascript:;" class="product-title">Women Pink Floral Printed</a>
-                          <p class="mb-0 product-category">Category : Fashion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Blue</td>
-                    <td>Large</td>
-                    <td>2</td>
-                    <td>$59</td>
-                    <td>189</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box">
-                          <img src="assets/images/top-products/04.png" width="55" class="rounded-3" alt="">
-                        </div>
-                        <div class="product-info">
-                          <a href="javascript:;" class="product-title">Women Pink Floral Printed</a>
-                          <p class="mb-0 product-category">Category : Fashion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Blue</td>
-                    <td>Large</td>
-                    <td>2</td>
-                    <td>$59</td>
-                    <td>189</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box">
-                          <img src="assets/images/top-products/03.png" width="55" class="rounded-3" alt="">
-                        </div>
-                        <div class="product-info">
-                          <a href="javascript:;" class="product-title">Women Pink Floral Printed</a>
-                          <p class="mb-0 product-category">Category : Fashion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Blue</td>
-                    <td>Large</td>
-                    <td>2</td>
-                    <td>$59</td>
-                    <td>189</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box">
-                          <img src="assets/images/top-products/02.png" width="55" class="rounded-3" alt="">
-                        </div>
-                        <div class="product-info">
-                          <a href="javascript:;" class="product-title">Women Pink Floral Printed</a>
-                          <p class="mb-0 product-category">Category : Fashion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Blue</td>
-                    <td>Large</td>
-                    <td>2</td>
-                    <td>$59</td>
-                    <td>189</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="d-flex align-items-center gap-3">
-                        <div class="product-box">
-                          <img src="assets/images/top-products/01.png" width="55" class="rounded-3" alt="">
-                        </div>
-                        <div class="product-info">
-                          <a href="javascript:;" class="product-title">Women Pink Floral Printed</a>
-                          <p class="mb-0 product-category">Category : Fashion</p>
-                        </div>
-                      </div>
-                    </td>
-                    <td>Blue</td>
-                    <td>Large</td>
-                    <td>2</td>
-                    <td>$59</td>
-                    <td>189</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card mt-4">
-        <div class="card-body">
-          <h5 class="mb-3 fw-bold">Ratings & Reviews<span class="fw-light ms-2">(86)</span></h5>
-          <div class="product-table">
-            <div class="table-responsive white-space-nowrap">
-              <table class="table align-middle">
-                <thead class="table-light">
-                  <tr>
-                    <th>Product Name</th>
-                    <th>Rating</th>
-                    <th>Review</th>
-                    <th>Status</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <a href="javascript:;" class="product-title">Women Pink Floral Printed Panelled Pure Cotton</a>
-                    </td>
-                    <td>
-                      <div class="product-rating text-warning">
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                      </div>
-                    </td>
-                    <td class="review-desc">This is very awesome product. It has good quality. I suggest everyone to use this
-                      product. It is available at very low amount.</td>
-                    <td><span
-                        class="lable-table bg-success-subtle text-success rounded border border-success-subtle font-text2 fw-bold">Completed<i
-                          class="bi bi-check2 ms-2"></i></span></td>
-                    <td>Jun 12, 12:56 PM</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="javascript:;" class="product-title">Women Pink Floral Printed Panelled Pure Cotton</a>
-                    </td>
-                    <td>
-                      <div class="product-rating text-warning">
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                      </div>
-                    </td>
-                    <td class="review-desc">This is very awesome product. It has good quality. I suggest everyone to use this
-                      product. It is available at very low amount.</td>
-                    <td><span
-                        class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i
-                          class="bi bi-x-lg ms-2"></i></span></td>
-                    <td>Jun 12, 12:56 PM</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="javascript:;" class="product-title">Women Pink Floral Printed Panelled Pure Cotton</a>
-                    </td>
-                    <td>
-                      <div class="product-rating text-warning">
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                      </div>
-                    </td>
-                    <td class="review-desc">This is very awesome product. It has good quality. I suggest everyone to use this
-                      product. It is available at very low amount.</td>
-                    <td><span
-                        class="lable-table bg-primary-subtle text-primary rounded border border-primary-subtle font-text2 fw-bold">Completed<i
-                          class="bi bi-check2-all ms-2"></i></span></td>
-                    <td>Jun 12, 12:56 PM</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="javascript:;" class="product-title">Women Pink Floral Printed Panelled Pure Cotton</a>
-                    </td>
-                    <td>
-                      <div class="product-rating text-warning">
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                      </div>
-                    </td>
-                    <td class="review-desc">This is very awesome product. It has good quality. I suggest everyone to use this
-                      product. It is available at very low amount.</td>
-                    <td><span
-                        class="lable-table bg-success-subtle text-success rounded border border-success-subtle font-text2 fw-bold">Completed<i
-                          class="bi bi-check2 ms-2"></i></span></td>
-                    <td>Jun 12, 12:56 PM</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="javascript:;" class="product-title">Women Pink Floral Printed Panelled Pure Cotton</a>
-                    </td>
-                    <td>
-                      <div class="product-rating text-warning">
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                      </div>
-                    </td>
-                    <td class="review-desc">This is very awesome product. It has good quality. I suggest everyone to use this
-                      product. It is available at very low amount.</td>
-                    <td><span
-                        class="lable-table bg-danger-subtle text-danger rounded border border-danger-subtle font-text2 fw-bold">Failed<i
-                          class="bi bi-x-lg ms-2"></i></span></td>
-                    <td>Jun 12, 12:56 PM</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="javascript:;" class="product-title">Women Pink Floral Printed Panelled Pure Cotton</a>
-                    </td>
-                    <td>
-                      <div class="product-rating text-warning">
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-half"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                      </div>
-                    </td>
-                    <td class="review-desc">This is very awesome product. It has good quality. I suggest everyone to use this
-                      product. It is available at very low amount.</td>
-                    <td><span
-                        class="lable-table bg-warning-subtle text-warning rounded border border-warning-subtle font-text2 fw-bold">Pending<i
-                          class="bi bi-info-circle ms-2"></i></span></td>
-                    <td>Jun 12, 12:56 PM</td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
+    <div class="row">
+   
     </div>
+</div> 
+
+                  <div class="card-body">
+                  <h5 class="card-title">Apple Watch Gray</h5>
+                  <p class="card-text">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia All
+                    the Lorem Ipsum generators.</p>
+                  <h5>Price : $1025</h5>
+                  <div class="mt-4 d-flex align-items-center justify-content-between">
+                    <button class="btn btn-light d-flex gap-2 px-3"><i
+                        class="material-icons-outlined">shopping_basket</i>Add to Cart</button>
+                    <div class="d-flex gap-1">
+                      <a href="javascript:;" class="sharelink"><i
+                          class="material-icons-outlined">favorite_border</i></a>
+                      <div class="dropdown position-relative">
+                        <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
+                          data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
+                            class="material-icons-outlined">share</i></a>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
+                          <div class="input-group">
+                            <input type="text" class="form-control ps-5" value="https://www.codervent.com"
+                              placeholder="Enter Url">
+                            <span
+                              class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
+                            <span class="input-group-text gap-1"><i
+                                class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
+                          </div>
+                          <div class="d-flex align-items-center gap-2 mt-3">
+                            <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1"><i
+                                class="bi bi-pinterest"></i>Pinterest</button>
+                            <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1"><i
+                                class="bi bi-facebook"></i>Facebook</button>
+                            <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1"><i
+                                class="bi bi-linkedin"></i>Linkedin</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+									<div class="tab-pane fade" id="primaryprofile" role="tabpanel">
+										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+									</div>
+									<div class="tab-pane fade" id="primarycontact" role="tabpanel">
+										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+        </div>
+        <!-- cards start -->
+
+
+
+
+      <!--end breadcrumb-->
   </main>
   <!--end main wrapper-->
 
 
-    <!--start overlay-->
-    <div class="overlay btn-toggle"></div>
-    <!--end overlay-->
 
-     <!--start footer-->
-     <footer class="page-footer">
-      <p class="mb-0">Copyright © 2024. All right reserved.</p>
-    </footer>
-    <!--top footer-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--start footer-->
+  <footer class="page-footer">
+    <p class="mb-0">Copyright © 2024. All right reserved.</p>
+  </footer>
+  <!--end footer-->
 
   <!--start cart-->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
+  <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasCart">
     <div class="offcanvas-header border-bottom h-70">
       <h5 class="mb-0" id="offcanvasRightLabel">8 New Orders</h5>
       <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
@@ -1677,13 +1254,14 @@
   </div>
   <!--end cart-->
 
-  
+
 
   <!--start switcher-->
-  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
+  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button"
+    data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>Customize
   </button>
-  
+
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
     <div class="offcanvas-header border-bottom h-70">
       <div class="">
@@ -1708,28 +1286,36 @@
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="LightTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="LightTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="LightTheme">
               <span class="material-icons-outlined">light_mode</span>
               <span>Light</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="DarkTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="DarkTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="DarkTheme">
               <span class="material-icons-outlined">dark_mode</span>
               <span>Dark</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="SemiDarkTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="SemiDarkTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="SemiDarkTheme">
               <span class="material-icons-outlined">contrast</span>
               <span>Semi Dark</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="BoderedTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="BoderedTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="BoderedTheme">
               <span class="material-icons-outlined">border_style</span>
               <span>Bordered</span>
             </label>
@@ -1749,11 +1335,14 @@
   <!--plugins-->
   <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
   <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
+  <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/plugins/peity/jquery.peity.min.js"></script>
   <script>
-    new PerfectScrollbar(".customer-notes")
+    $(".data-attributes span").peity("donut")
   </script>
+  <script src="assets/js/dashboard2.js"></script>
+  <script src="assets/js/main.js"></script>
 
 
 </body>

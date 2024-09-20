@@ -1,21 +1,37 @@
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
-  <!--favicon-->
-	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+ 
+  
+  
+
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
-	<link href="assets/css/pace.min.css" rel="stylesheet">
-	<script src="assets/js/pace.min.js"></script>
+  <link href="assets/css/pace.min.css" rel="stylesheet">
+  <script src="assets/js/pace.min.js"></script>
 
   <!--plugins-->
   <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
-  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
   <!--bootstrap css-->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -34,7 +50,144 @@
 
 <body>
 
- <!--start header-->
+
+
+
+
+<?php
+include '../connections/addproductconn.php'; // Ensure this path is correct
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL query
+$sql = "SELECT product_name, price, product_image, description, category FROM products";
+$result = $conn->query($sql);
+?>
+
+<div class="card">
+    
+    <div class="card-body p-4">
+
+       
+
+        <div class="mt-5">
+            <div class="text-center">
+                <h5 class="mb-3">Explore Wide Varieties Of BedRoom Sets</h5>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-2 g-4">
+                <?php
+                // Check if there are results
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $imageFilename = htmlspecialchars($row['product_image']);
+                        $imagePath = '../designer/' . $imageFilename; // Adjust path as necessary
+                        // Use a default image if the actual image doesn't exist
+                        if (!file_exists($imagePath)) {
+                            $imagePath = '../designer/uploads/default.jpg';
+                        }
+                ?>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm"> <!-- Card structure -->
+                            <img src="<?php echo $imagePath; ?>" class="img-fluid card-img-top w-50" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
+                                <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                                <h5>Price: $<?php echo htmlspecialchars($row['price']); ?></h5>
+                                <div class="mt-4 d-flex align-items-center justify-content-between">
+                                    <button class="btn btn-light d-flex gap-2 px-3">
+                                        <i class="material-icons-outlined">shopping_basket</i>Add to Cart
+                                    </button>
+                                    <div class="d-flex gap-1">
+                                        <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">favorite_border</i></a>
+                                        <div class="dropdown position-relative">
+                                            <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
+                                               data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
+                                                class="material-icons-outlined">share</i></a>
+                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control ps-5" value="https://www.codervent.com"
+                                                           placeholder="Enter Url">
+                                                    <span
+                                                        class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
+                                                    <span class="input-group-text gap-1"><i
+                                                        class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2 mt-3">
+                                                    <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-pinterest"></i>Pinterest
+                                                    </button>
+                                                    <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-facebook"></i>Facebook
+                                                    </button>
+                                                    <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-linkedin"></i>Linkedin
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    }
+                } else {
+                    echo "<p>No products found.</p>";
+                }
+                $conn->close();
+                ?>
+            </div><!--end row-->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!doctype html>
+<html lang="en" data-bs-theme="blue-theme">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  
+  
+
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+  <!-- loader-->
+  <link href="assets/css/pace.min.css" rel="stylesheet">
+  <script src="assets/js/pace.min.js"></script>
+
+  <!--plugins-->
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+  <!--bootstrap css-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <!--main css-->
+  <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+  <link href="sass/main.css" rel="stylesheet">
+  <link href="assets/css/horizontal-menu.css" rel="stylesheet">
+  <link href="sass/dark-theme.css" rel="stylesheet">
+  <link href="sass/blue-theme.css" rel="stylesheet">
+  <link href="sass/semi-dark.css" rel="stylesheet">
+  <link href="sass/bordered-theme.css" rel="stylesheet">
+  <link href="sass/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!--start header-->
  <header class="top-header">
   <nav class="navbar navbar-expand align-items-center justify-content-between gap-4 border-bottom">
     <div class="logo-header d-none d-xl-flex align-items-center gap-2">
@@ -622,8 +775,9 @@
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
               class="material-icons-outlined">cloud_download</i>Downloads</a>
           <hr class="dropdown-divider">
-          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-          class="material-icons-outlined">power_settings_new</i>Logout</a>
+          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="../auth-logout.php">
+             <i class="material-icons-outlined">power_settings_new</i>Logout
+            </a>
         </div>
       </li>
     </ul>
@@ -656,12 +810,19 @@
        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
          <div class="parent-icon"><i class="material-icons-outlined">home</i>
          </div>
-         <div class="menu-title d-flex align-items-center">Dashboard</div>
+         <div class="menu-title d-flex align-items-center">Catalog</div>
          <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
        </a>
        <ul class="dropdown-menu">
-         <li><a class="dropdown-item" href="index.html"><i class='material-icons-outlined'>insights</i>Analysis</a></li>
-         <li><a class="dropdown-item" href="index2.html"><i class='material-icons-outlined'>shopping_cart</i>eCommerce</a></li>
+         <li><a class="dropdown-item" href="bedroom.php"><i class='material-icons-outlined'>insights</i>Bedroom</a></li>
+         <li><a class="dropdown-item" href="kitchen.php"><i class='material-icons-outlined'>insights</i>Kitchen</a></li>
+         
+         <li><a class="dropdown-item" href="outdoorservices.php"><i class='material-icons-outlined'>insights</i>OutDoor Spaces</a></li>
+         
+         <li><a class="dropdown-item" href="livingroom.php"><i class='material-icons-outlined'>insights</i>Living-Room</a></li>
+         
+
+        
        </ul>
        </li>
        <li class="nav-item dropdown">
@@ -859,342 +1020,287 @@
 </div>
 <!--end navigation-->
 
-
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
       <!--breadcrumb-->
-				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Components</div>
-					<div class="ps-3">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb mb-0 p-0">
-								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-								</li>
-								<li class="breadcrumb-item active" aria-current="page">Badges</li>
-							</ol>
-						</nav>
-					</div>
-					<div class="ms-auto">
-						<div class="btn-group">
-							<button type="button" class="btn btn-primary">Settings</button>
-							<button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-							</button>
-							<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-								<a class="dropdown-item" href="javascript:;">Another action</a>
-								<a class="dropdown-item" href="javascript:;">Something else here</a>
-								<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+        <div class="breadcrumb-title pe-3">Dashboard</div>
+        <div class="ps-3">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+              <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">eCommerce</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="ms-auto">
+          <div class="btn-group">
+            <button type="button" class="btn btn-success"><a href="form-layouts.php">Make Appointment</a></button>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- cards start -->
+      <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
+                                               data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
+                                                class="material-icons-outlined">share</i></a>
+                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control ps-5" value="https://www.codervent.com"
+                                                           placeholder="Enter Url">
+                                                    <span
+                                                        class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
+                                                    <span class="input-group-text gap-1"><i
+                                                        class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2 mt-3">
+                                                    <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-pinterest"></i>Pinterest
+                                                    </button>
+                                                    <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-facebook"></i>Facebook
+                                                    </button>
+                                                    <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-linkedin"></i>Linkedin
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+
+            </div><!--end row-->
+        </div>
+    </div>
+</div>
+
+                  <div class="card-body">
+                  <h5 class="card-title">Apple Watch Gray</h5>
+                  <p class="card-text">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia All
+                    the Lorem Ipsum generators.</p>
+                  <h5>Price : $1025</h5>
+                  <div class="mt-4 d-flex align-items-center justify-content-between">
+                    <button class="btn btn-light d-flex gap-2 px-3"><i
+                        class="material-icons-outlined">shopping_basket</i>Add to Cart</button>
+                    <div class="d-flex gap-1">
+                      <a href="javascript:;" class="sharelink"><i
+                          class="material-icons-outlined">favorite_border</i></a>
+                      <div class="dropdown position-relative">
+                        <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
+                          data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
+                            class="material-icons-outlined">share</i></a>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
+                          <div class="input-group">
+                            <input type="text" class="form-control ps-5" value="https://www.codervent.com"
+                              placeholder="Enter Url">
+                            <span
+                              class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
+                            <span class="input-group-text gap-1"><i
+                                class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
+                          </div>
+                          <div class="d-flex align-items-center gap-2 mt-3">
+                            <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1"><i
+                                class="bi bi-pinterest"></i>Pinterest</button>
+                            <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1"><i
+                                class="bi bi-facebook"></i>Facebook</button>
+                            <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1"><i
+                                class="bi bi-linkedin"></i>Linkedin</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+									<div class="tab-pane fade" id="primaryprofile" role="tabpanel">
+										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+									</div>
+									<div class="tab-pane fade" id="primarycontact" role="tabpanel">
+										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<!--end breadcrumb-->
-
-         <div class="card">
-          <div class="card-header">
-            <h6 class="card-title mb-0 py-1">Basic Badge</h6>
-          </div>
-          <div class="card-body">
-            <span class="badge bg-grd-primary">Primary</span>
-            <span class="badge bg-grd-voilet">Secondary</span>
-            <span class="badge bg-grd-success">Success</span>
-            <span class="badge bg-grd-danger">Danger</span>
-            <span class="badge bg-grd-warning text-dark">Warning</span>
-            <span class="badge bg-grd-info text-dark">Info</span>
-            <span class="badge bg-light text-white">Light</span>
-            <span class="badge bg-grd-royal">Dark</span>
-            <hr>	<span class="badge rounded-pill bg-grd-primary">Primary</span>
-            <span class="badge rounded-pill bg-grd-voilet">Secondary</span>
-            <span class="badge rounded-pill bg-grd-success">Success</span>
-            <span class="badge rounded-pill bg-grd-danger">Danger</span>
-            <span class="badge rounded-pill bg-grd-warning text-dark">Warning</span>
-            <span class="badge rounded-pill bg-grd-info text-dark">Info</span>
-            <span class="badge rounded-pill bg-light text-white">Light</span>
-            <span class="badge rounded-pill bg-grd-royal">Dark</span>
-          </div>
-         </div>
-
-         <div class="card">
-          <div class="card-header">
-            <h6 class="card-title mb-0 py-1">Buttons Badge</h6>
-          </div>
-          <div class="card-body">
-            <div class="row row-cols-auto g-3">
-              <div class="col">
-                <button type="button" class="btn btn-grd-primary">Notifications <span class="badge bg-dark">8</span>
-                </button>
-              </div> 
-              <div class="col">
-                <button type="button" class="btn btn-grd-danger">Notifications <span class="badge bg-dark">5</span>
-                </button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-grd-success">Notifications <span class="badge bg-dark">10</span>
-                </button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-grd-warning">Notifications <span class="badge bg-dark">6</span>
-                </button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-grd-info">Notifications <span class="badge bg-dark">7</span>
-                </button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-grd-royal">Notifications <span class="badge bg-secondary">6</span>
-                </button>
-              </div>
-            </div>
-          </div>
-         </div>
-
-         <div class="card">
-          <div class="card-header">
-            <h6 class="card-title mb-0 py-1">Badge Usage</h6>
-          </div>
-          <div class="card-body">
-            <div class="row row-cols-auto gy-4">
-              <div class="col">
-                <button type="button" class="btn btn-dark position-relative d-flex gap-2"><i class="material-icons-outlined">chat_bubble_outline</i>Comments<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">+18 <span class="visually-hidden">unread messages</span></span>
-                </button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-danger position-relative d-flex gap-2"><i class="material-icons-outlined">chat_bubble_outline</i>Bookmark<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">+18 <span class="visually-hidden">unread messages</span></span>
-                </button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-primary position-relative d-flex gap-2"><i class="material-icons-outlined">favorite_border</i>Wishlist<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">10<span class="visually-hidden">unread messages</span></span>
-                </button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-success position-relative d-flex gap-2"><i class="material-icons-outlined">event</i>Event<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">10<span class="visually-hidden">unread messages</span></span>
-                </button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-warning position-relative d-flex gap-2"><i class="material-icons-outlined">assignment</i>Projects<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">8k <span class="visually-hidden">unread messages</span></span>
-                </button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-info position-relative d-flex gap-2"><i class="material-icons-outlined">account_circle</i>Teams<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">24 <span class="visually-hidden">unread messages</span></span>
-                </button>
-              </div>
-              <div class="col">
-                <button type="button" class="btn btn-secondary position-relative d-flex gap-2"><i class="material-icons-outlined">alarm_on</i>Alerts <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span class="visually-hidden">unread messages</span></span>
-                </button>
-              </div>
-            </div>
-          </div>
-         </div>
-
-         <div class="card">
-          <div class="card-header">
-            <h6 class="card-title mb-0 py-1">Icon Badge</h6>
-          </div>
-          <div class="card-body">
-            <div class="row row-cols-auto g-4">
-               <div class="col">
-                <a class="badge-icon position-relative p-3 rounded-circle text-white bg-grd-branding" href="javascript:;">
-                  <span class="badge-number position-absolute top-0 end-0">7</span>
-                  <i class="material-icons-outlined">notifications</i>
-                </a>
-               </div>
-               <div class="col">
-                <a class="badge-icon position-relative p-3 rounded-circle text-white bg-grd-primary" href="javascript:;">
-                  <span class="badge-number position-absolute top-0 end-0">9</span>
-                  <i class="material-icons-outlined">favorite_border</i>
-                </a>
-               </div>
-               <div class="col">
-                <a class="badge-icon position-relative p-3 rounded-circle text-white bg-grd-success" href="javascript:;">
-                  <span class="badge-number position-absolute top-0 end-0">4</span>
-                  <i class="material-icons-outlined">verified_user</i>
-                </a>
-               </div>
-               <div class="col">
-                <a class="badge-icon position-relative p-3 rounded-circle text-dark bg-grd-warning" href="javascript:;">
-                  <span class="badge-number position-absolute top-0 end-0">8</span>
-                  <i class="material-icons-outlined">home</i>
-                </a>
-               </div>
-               <div class="col">
-                <a class="badge-icon position-relative p-3 rounded-circle text-white bg-grd-royal" href="javascript:;">
-                  <span class="badge-number position-absolute top-0 end-0">6</span>
-                  <i class="material-icons-outlined">date_range</i>
-                </a>
-               </div>
-               <div class="col">
-                <a class="badge-icon position-relative p-3 rounded-circle text-white bg-grd-info" href="javascript:;">
-                  <span class="badge-number position-absolute top-0 end-0">5</span>
-                  <i class="material-icons-outlined">notification_important</i>
-                </a>
-               </div>
-               <div class="col">
-                <a class="badge-icon position-relative p-3 rounded-circle text-white bg-secondary" href="javascript:;">
-                  <span class="badge-number position-absolute top-0 end-0">8</span>
-                  <i class="material-icons-outlined">chat_bubble_outline</i>
-                </a>
-               </div>
+        </div>
+        <!-- cards start -->
 
 
-            </div><!--end row-->
-              
-           </div>
-         </div>
 
 
-    </div>
+      <!--end breadcrumb-->
   </main>
   <!--end main wrapper-->
 
 
-    <!--start overlay-->
-    <div class="overlay btn-toggle"></div>
-    <!--end overlay-->
 
- <!--start footer-->
- <footer class="page-footer">
-  <p class="mb-0">Copyright © 2024. All right reserved.</p>
-</footer>
-<!--top footer-->
-  
-<!--start cart-->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
-  <div class="offcanvas-header border-bottom h-70">
-    <h5 class="mb-0" id="offcanvasRightLabel">8 New Orders</h5>
-    <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
-      <i class="material-icons-outlined">close</i>
-    </a>
-  </div>
-  <div class="offcanvas-body p-0">
-    <div class="order-list">
-      <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-        <div class="order-img">
-          <img src="assets/images/orders/01.png" class="img-fluid rounded-3" width="75" alt="">
-        </div>
-        <div class="order-info flex-grow-1">
-          <h5 class="mb-1 order-title">White Men Shoes</h5>
-          <p class="mb-0 order-price">$289</p>
-        </div>
-        <div class="d-flex">
-          <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-          <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-        </div>
-      </div>
 
-      <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-        <div class="order-img">
-          <img src="assets/images/orders/02.png" class="img-fluid rounded-3" width="75" alt="">
-        </div>
-        <div class="order-info flex-grow-1">
-          <h5 class="mb-1 order-title">Red Airpods</h5>
-          <p class="mb-0 order-price">$149</p>
-        </div>
-        <div class="d-flex">
-          <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-          <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-        </div>
-      </div>
 
-      <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-        <div class="order-img">
-          <img src="assets/images/orders/03.png" class="img-fluid rounded-3" width="75" alt="">
-        </div>
-        <div class="order-info flex-grow-1">
-          <h5 class="mb-1 order-title">Men Polo Tshirt</h5>
-          <p class="mb-0 order-price">$139</p>
-        </div>
-        <div class="d-flex">
-          <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-          <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-        </div>
-      </div>
 
-      <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-        <div class="order-img">
-          <img src="assets/images/orders/04.png" class="img-fluid rounded-3" width="75" alt="">
-        </div>
-        <div class="order-info flex-grow-1">
-          <h5 class="mb-1 order-title">Blue Jeans Casual</h5>
-          <p class="mb-0 order-price">$485</p>
-        </div>
-        <div class="d-flex">
-          <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-          <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-        </div>
-      </div>
 
-      <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-        <div class="order-img">
-          <img src="assets/images/orders/05.png" class="img-fluid rounded-3" width="75" alt="">
-        </div>
-        <div class="order-info flex-grow-1">
-          <h5 class="mb-1 order-title">Fancy Shirts</h5>
-          <p class="mb-0 order-price">$758</p>
-        </div>
-        <div class="d-flex">
-          <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-          <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-        </div>
-      </div>
 
-      <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-        <div class="order-img">
-          <img src="assets/images/orders/06.png" class="img-fluid rounded-3" width="75" alt="">
-        </div>
-        <div class="order-info flex-grow-1">
-          <h5 class="mb-1 order-title">Home Sofa Set </h5>
-          <p class="mb-0 order-price">$546</p>
-        </div>
-        <div class="d-flex">
-          <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-          <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-        </div>
-      </div>
 
-      <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-        <div class="order-img">
-          <img src="assets/images/orders/07.png" class="img-fluid rounded-3" width="75" alt="">
-        </div>
-        <div class="order-info flex-grow-1">
-          <h5 class="mb-1 order-title">Black iPhone</h5>
-          <p class="mb-0 order-price">$1049</p>
-        </div>
-        <div class="d-flex">
-          <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-          <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
-        </div>
-      </div>
 
-      <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
-        <div class="order-img">
-          <img src="assets/images/orders/08.png" class="img-fluid rounded-3" width="75" alt="">
+
+
+
+
+
+
+  <!--start footer-->
+  <footer class="page-footer">
+    <p class="mb-0">Copyright © 2024. All right reserved.</p>
+  </footer>
+  <!--end footer-->
+
+  <!--start cart-->
+  <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasCart">
+    <div class="offcanvas-header border-bottom h-70">
+      <h5 class="mb-0" id="offcanvasRightLabel">8 New Orders</h5>
+      <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
+        <i class="material-icons-outlined">close</i>
+      </a>
+    </div>
+    <div class="offcanvas-body p-0">
+      <div class="order-list">
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/01.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">White Men Shoes</h5>
+            <p class="mb-0 order-price">$289</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
         </div>
-        <div class="order-info flex-grow-1">
-          <h5 class="mb-1 order-title">Goldan Watch</h5>
-          <p class="mb-0 order-price">$689</p>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/02.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Red Airpods</h5>
+            <p class="mb-0 order-price">$149</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
         </div>
-        <div class="d-flex">
-          <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
-          <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/03.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Men Polo Tshirt</h5>
+            <p class="mb-0 order-price">$139</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/04.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Blue Jeans Casual</h5>
+            <p class="mb-0 order-price">$485</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/05.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Fancy Shirts</h5>
+            <p class="mb-0 order-price">$758</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/06.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Home Sofa Set </h5>
+            <p class="mb-0 order-price">$546</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/07.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Black iPhone</h5>
+            <p class="mb-0 order-price">$1049</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
+        </div>
+
+        <div class="order-item d-flex align-items-center gap-3 p-3 border-bottom">
+          <div class="order-img">
+            <img src="assets/images/orders/08.png" class="img-fluid rounded-3" width="75" alt="">
+          </div>
+          <div class="order-info flex-grow-1">
+            <h5 class="mb-1 order-title">Goldan Watch</h5>
+            <p class="mb-0 order-price">$689</p>
+          </div>
+          <div class="d-flex">
+            <a class="order-delete"><span class="material-icons-outlined">delete</span></a>
+            <a class="order-delete"><span class="material-icons-outlined">visibility</span></a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="offcanvas-footer h-70 p-3 border-top">
-    <div class="d-grid">
-      <button type="button" class="btn btn-grd btn-grd-primary" data-bs-dismiss="offcanvas">View Products</button>
+    <div class="offcanvas-footer h-70 p-3 border-top">
+      <div class="d-grid">
+        <button type="button" class="btn btn-grd btn-grd-primary" data-bs-dismiss="offcanvas">View Products</button>
+      </div>
     </div>
   </div>
-</div>
-<!--end cart-->
+  <!--end cart-->
 
- 
+
 
   <!--start switcher-->
-  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
+  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button"
+    data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>Customize
   </button>
-  
+
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
     <div class="offcanvas-header border-bottom h-70">
       <div class="">
@@ -1219,28 +1325,36 @@
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="LightTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="LightTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="LightTheme">
               <span class="material-icons-outlined">light_mode</span>
               <span>Light</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="DarkTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="DarkTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="DarkTheme">
               <span class="material-icons-outlined">dark_mode</span>
               <span>Dark</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="SemiDarkTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="SemiDarkTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="SemiDarkTheme">
               <span class="material-icons-outlined">contrast</span>
               <span>Semi Dark</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="BoderedTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="BoderedTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="BoderedTheme">
               <span class="material-icons-outlined">border_style</span>
               <span>Bordered</span>
             </label>
@@ -1260,7 +1374,13 @@
   <!--plugins-->
   <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
   <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
+  <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+  <script>
+    $(".data-attributes span").peity("donut")
+  </script>
+  <script src="assets/js/dashboard2.js"></script>
   <script src="assets/js/main.js"></script>
 
 

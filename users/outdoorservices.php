@@ -1,21 +1,127 @@
+
+
+
+
+
+
+
+<?php
+include '../connections/addproductconn.php'; // Ensure this path is correct
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL query
+$sql = "SELECT product_name, price, product_image, description, category FROM products";
+$result = $conn->query($sql);
+?>
+
+<div class="card">
+    
+    <div class="card-body p-4">
+
+       
+
+        <div class="mt-5">
+            <div class="text-center">
+                <h5 class="mb-3">Explore Our Ideas For Yard And Lawns </h5>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-2 g-4">
+                <?php
+                // Check if there are results
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $imageFilename = htmlspecialchars($row['product_image']);
+                        $imagePath = '../designer/' . $imageFilename; // Adjust path as necessary
+                        // Use a default image if the actual image doesn't exist
+                        if (!file_exists($imagePath)) {
+                            $imagePath = '../designer/uploads/default.jpg';
+                        }
+                ?>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm"> <!-- Card structure -->
+                            <img src="<?php echo $imagePath; ?>" class="img-fluid card-img-top w-50" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
+                                <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
+                                <h5>Price: $<?php echo htmlspecialchars($row['price']); ?></h5>
+                                <div class="mt-4 d-flex align-items-center justify-content-between">
+                                    <button class="btn btn-light d-flex gap-2 px-3">
+                                        <i class="material-icons-outlined">shopping_basket</i>Add to Cart
+                                    </button>
+                                    <div class="d-flex gap-1">
+                                        <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">favorite_border</i></a>
+                                        <div class="dropdown position-relative">
+                                            <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
+                                               data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
+                                                class="material-icons-outlined">share</i></a>
+                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control ps-5" value="https://www.codervent.com"
+                                                           placeholder="Enter Url">
+                                                    <span
+                                                        class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
+                                                    <span class="input-group-text gap-1"><i
+                                                        class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2 mt-3">
+                                                    <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-pinterest"></i>Pinterest
+                                                    </button>
+                                                    <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-facebook"></i>Facebook
+                                                    </button>
+                                                    <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1">
+                                                        <i class="bi bi-linkedin"></i>Linkedin
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                    }
+                } else {
+                    echo "<p>No products found.</p>";
+                }
+                $conn->close();
+                ?>
+            </div><!--end row-->
+        </div>
+    </div>
+</div>
+
+
+// Close the connection
+$conn->close();
+?>
+
+
 <!doctype html>
 <html lang="en" data-bs-theme="blue-theme">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
-  <!--favicon-->
-	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+ 
+  
+  
+
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
-	<link href="assets/css/pace.min.css" rel="stylesheet">
-	<script src="assets/js/pace.min.js"></script>
+  <link href="assets/css/pace.min.css" rel="stylesheet">
+  <script src="assets/js/pace.min.js"></script>
 
   <!--plugins-->
   <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
-  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
   <!--bootstrap css-->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -34,8 +140,8 @@
 
 <body>
 
-<!--start header-->
-<header class="top-header">
+  <!--start header-->
+ <header class="top-header">
   <nav class="navbar navbar-expand align-items-center justify-content-between gap-4 border-bottom">
     <div class="logo-header d-none d-xl-flex align-items-center gap-2">
       <div class="logo-icon">
@@ -622,8 +728,9 @@
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
               class="material-icons-outlined">cloud_download</i>Downloads</a>
           <hr class="dropdown-divider">
-          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
-          class="material-icons-outlined">power_settings_new</i>Logout</a>
+          <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="../auth-logout.php">
+             <i class="material-icons-outlined">power_settings_new</i>Logout
+            </a>
         </div>
       </li>
     </ul>
@@ -656,12 +763,19 @@
        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
          <div class="parent-icon"><i class="material-icons-outlined">home</i>
          </div>
-         <div class="menu-title d-flex align-items-center">Dashboard</div>
+         <div class="menu-title d-flex align-items-center">Catalog</div>
          <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
        </a>
        <ul class="dropdown-menu">
-         <li><a class="dropdown-item" href="index.html"><i class='material-icons-outlined'>insights</i>Analysis</a></li>
-         <li><a class="dropdown-item" href="index2.html"><i class='material-icons-outlined'>shopping_cart</i>eCommerce</a></li>
+         <li><a class="dropdown-item" href="bedroom.php"><i class='material-icons-outlined'>insights</i>Bedroom</a></li>
+         <li><a class="dropdown-item" href="kitchen.php"><i class='material-icons-outlined'>insights</i>Kitchen</a></li>
+         
+         <li><a class="dropdown-item" href="outdoorservices.php"><i class='material-icons-outlined'>insights</i>OutDoor Spaces</a></li>
+         
+         <li><a class="dropdown-item" href="livingroom.php"><i class='material-icons-outlined'>insights</i>Living-Room</a></li>
+         
+
+        
        </ul>
        </li>
        <li class="nav-item dropdown">
@@ -859,98 +973,76 @@
 </div>
 <!--end navigation-->
 
-
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
       <!--breadcrumb-->
-				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Components</div>
-					<div class="ps-3">
-						<nav aria-label="breadcrumb">
-							<ol class="breadcrumb mb-0 p-0">
-								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-								</li>
-								<li class="breadcrumb-item active" aria-current="page">Advance</li>
-							</ol>
-						</nav>
-					</div>
-					<div class="ms-auto">
-						<div class="btn-group">
-							<button type="button" class="btn btn-primary">Settings</button>
-							<button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-							</button>
-							<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-								<a class="dropdown-item" href="javascript:;">Another action</a>
-								<a class="dropdown-item" href="javascript:;">Something else here</a>
-								<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--end breadcrumb-->
-
-      <div class="row row-cols-1 row-cols-xl-2">
-        <div class="col">
-          <div class="card">
-            <div class="row g-0">
-              <div class="col-md-4 border-end">
-                <div class="p-3">
-                  <img src="assets/images/gallery/09.png" class="w-100 rounded-start" alt="...">
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">New iPhone Pro Max</h5>
-                  <p class="card-text">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia All
-                    the Lorem Ipsum generators.</p>
-                  <h5>Price : $599</h5>
-                  <div class="mt-4 d-flex align-items-center justify-content-between">
-                    <button class="btn btn-light d-flex gap-2 px-3"><i
-                        class="material-icons-outlined">shopping_basket</i>Add to Cart</button>
-                    <div class="d-flex gap-1">
-                      <a href="javascript:;" class="sharelink"><i
-                          class="material-icons-outlined">favorite_border</i></a>
-                      <div class="dropdown position-relative">
-                        <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
-                          data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
-                            class="material-icons-outlined">share</i></a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
-                          <div class="input-group">
-                            <input type="text" class="form-control ps-5" value="https://www.codervent.com"
-                              placeholder="Enter Url">
-                            <span
-                              class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
-                            <span class="input-group-text gap-1"><i
-                                class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
-                          </div>
-                          <div class="d-flex align-items-center gap-2 mt-3">
-                            <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1"><i
-                                class="bi bi-pinterest"></i>Pinterest</button>
-                            <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1"><i
-                                class="bi bi-facebook"></i>Facebook</button>
-                            <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1"><i
-                                class="bi bi-linkedin"></i>Linkedin</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+        <div class="breadcrumb-title pe-3">Dashboard</div>
+        <div class="ps-3">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+              <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">eCommerce</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="ms-auto">
+          <div class="btn-group">
+            <button type="button" class="btn btn-success"><a href="form-layouts.php">Make Appointment</a></button>
           </div>
         </div>
-        <div class="col">
-          <div class="card">
-            <div class="row g-0">
-              <div class="col-md-4 border-end">
-                <div class="p-3">
-                  <img src="assets/images/gallery/11.png" class="w-100 rounded-start" alt="...">
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
+      </div>
+      
+
+      <!-- cards start -->
+      <div class="cards">
+      <div class="col">
+						<h6 class="mb-0 text-uppercase">Primary Nav Tabs</h6>
+						<hr>
+						<div class="card">
+							<div class="card-body">
+								<ul class="nav nav-tabs nav-primary justify-content-center" id="myTab" role="tablist">
+									<li class="nav-item" role="presentation">
+										<a class="nav-link active" data-bs-toggle="tab" href="#primaryhome" role="tab" aria-selected="true">
+											<div class="d-flex align-items-center">
+												<div class="tab-icon"><i class="bi bi-house-door me-1 fs-6"></i>
+												</div>
+												<div class="tab-title">Furniture</div>
+											</div>
+										</a>
+									</li>
+									<li class="nav-item" role="presentation">
+										<a class="nav-link" data-bs-toggle="tab" href="#primaryprofile" role="tab" aria-selected="false">
+											<div class="d-flex align-items-center">
+												<div class="tab-icon"><i class="bi bi-person me-1 fs-6"></i>
+												</div>
+												<div class="tab-title"></div>
+											</div>
+										</a>
+									</li>
+									<li class="nav-item" role="presentation">
+										<a class="nav-link" data-bs-toggle="tab" href="#primarycontact" role="tab" aria-selected="false">
+											<div class="d-flex align-items-center">
+												<div class="tab-icon"><i class='bi bi-headset me-1 fs-6'></i>
+												</div>
+												<div class="tab-title">Contact</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+								<div class="tab-content py-3">
+
+
+                <div class="container mt-4">
+
+    <div class="row">
+   
+    </div>
+</div> 
+
+                  <div class="card-body">
                   <h5 class="card-title">Apple Watch Gray</h5>
                   <p class="card-text">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia All
                     the Lorem Ipsum generators.</p>
@@ -987,330 +1079,52 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+
+
+
+									<div class="tab-pane fade" id="primaryprofile" role="tabpanel">
+										<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+									</div>
+									<div class="tab-pane fade" id="primarycontact" role="tabpanel">
+										<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
         </div>
-        <div class="col">
-          <div class="card">
-            <div class="row g-0">
-              <div class="col-md-4 border-end">
-                <div class="p-3">
-                  <img src="assets/images/gallery/12.png" class="w-100 rounded h-100" alt="...">
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title mb-3">Lunch Box Prime</h5>
-                  <p class="card-text">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks
-                    as necessary,
-                    making this the first true generator on the Internet.
-                    It uses a dictionary of over 200 Latin words, combined with a handful of model.</p>
-                  <h5>Price : $149</h5>
-                  <div class="ratings text-warning mt-3">
-                    <i class="material-icons-outlined">star</i>
-                    <i class="material-icons-outlined">star</i>
-                    <i class="material-icons-outlined">star</i>
-                    <i class="material-icons-outlined">star</i>
-                    <i class="material-icons-outlined">star</i>
-                  </div>
-                  <div class="mt-3 d-flex align-items-center justify-content-between">
-                    <button class="btn btn-primary raised d-flex gap-2 px-3"><i
-                        class="material-icons-outlined">shopping_cart</i>Add to Cart</button>
-                    <div class="d-flex gap-1">
-                      <a href="javascript:;" class="sharelink border"><i
-                          class="material-icons-outlined">favorite_border</i></a>
-                      <a href="javascript:;" class="sharelink border" data-bs-toggle="modal"
-                        data-bs-target="#linkShareModal"><i class="material-icons-outlined">share</i></a>
-                    </div>
-
-                    <!--start share modal-->
-                    <div class="modal" id="linkShareModal">
-                      <div class="modal-dialog modal-dialog-centered modal-lg">
-                        <div class="modal-content">
-                          <div class="modal-body">
-                            <div class="position-relative">
-                              <a href="javascript:;" class="sharelink ms-auto" data-bs-dismiss="modal">
-                                <span class="material-icons-outlined">close</span>
-                              </a>
-                            </div>
-                            <div class="text-center">
-                              <h4>Share This Product</h4>
-                              <p>Bootstrap only supports one modal window at a time.</p>
-                              <div class="d-flex align-items-center justify-content-center flex-wrap gap-4 py-5">
-                                <div class="d-flex flex-column align-items-center justify-content-center gap-2">
-                                  <a href="javascript:;"
-                                    class="wh-64 bg-facebook text-white rounded-circle d-flex align-items-center justify-content-center"><i
-                                      class="bi bi-facebook fs-3"></i></a>
-                                  <p class="mb-0">Facebook</p>
-                                </div>
-                                <div class="d-flex flex-column align-items-center justify-content-center gap-2">
-                                  <a href="javascript:;"
-                                    class="wh-64 bg-linkedin text-white rounded-circle d-flex align-items-center justify-content-center"><i
-                                      class="bi bi-linkedin fs-3"></i></a>
-                                  <p class="mb-0">Linkedin</p>
-                                </div>
-                                <div class="d-flex flex-column align-items-center justify-content-center gap-2">
-                                  <a href="javascript:;"
-                                    class="wh-64 bg-dark text-white rounded-circle d-flex align-items-center justify-content-center"><i
-                                      class="bi bi-twitter-x fs-3"></i></a>
-                                  <p class="mb-0">Twitter</p>
-                                </div>
-                                <div class="d-flex flex-column align-items-center justify-content-center gap-2">
-                                  <a href="javascript:;"
-                                    class="wh-64 bg-pinterest text-white rounded-circle d-flex align-items-center justify-content-center"><i
-                                      class="bi bi-pinterest fs-3"></i></a>
-                                  <p class="mb-0">Pinterest</p>
-                                </div>
-                                <div class="d-flex flex-column align-items-center justify-content-center gap-2">
-                                  <a href="javascript:;"
-                                    class="wh-64 bg-whatsapp text-white rounded-circle d-flex align-items-center justify-content-center"><i
-                                      class="bi bi-whatsapp fs-3"></i></a>
-                                  <p class="mb-0">WhatsApp</p>
-                                </div>
-                                <div class="d-flex flex-column align-items-center justify-content-center gap-2">
-                                  <a href="javascript:;"
-                                    class="wh-64 border text-dark rounded-circle d-flex align-items-center justify-content-center"><i
-                                      class="bi bi-link fs-3"></i></a>
-                                  <p class="mb-0">Copy Link</p>
-                                </div>
-
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!--end share modal-->
+        <!-- cards start -->
 
 
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <div class="row g-0">
-              <div class="col-md-4 border-end">
-                <div class="p-3">
-                  <img src="assets/images/gallery/10.png" class="w-100 rounded h-100" alt="...">
-                </div>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title mb-3">Water Bottle Brown</h5>
-                  <p class="card-text">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks
-                    as necessary,
-                    making this the first true generator on the Internet.
-                    It uses a dictionary of over 200 Latin words, combined with a handful of model.</p>
-                  <h5>Price : $258</h5>
-                  <div class="ratings text-warning mt-3">
-                    <i class="material-icons-outlined">star</i>
-                    <i class="material-icons-outlined">star</i>
-                    <i class="material-icons-outlined">star</i>
-                    <i class="material-icons-outlined">star</i>
-                    <i class="material-icons-outlined">star</i>
-                  </div>
-                  <div class="mt-3 d-flex align-items-center justify-content-between">
-                    <button class="btn btn-primary raised d-flex gap-2 px-3"><i
-                        class="material-icons-outlined">shopping_cart</i>Add to Cart</button>
-                    <div class="d-flex gap-1">
-                      <a href="javascript:;" class="sharelink border"><i
-                          class="material-icons-outlined">favorite_border</i></a>
-                      <a href="javascript:;" class="sharelink border" data-bs-toggle="modal"
-                        data-bs-target="#linkShareModal"><i class="material-icons-outlined">share</i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card">
-            <img src="assets/images/gallery/13.png" class="img-fluid card-img-top" alt="">
-            <div class="card-body p-4">
-              <h3 class="">Welcome to Company</h3>
-              <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
-                It has roots in a piece of classical Latin literature from 45 BC,
-                making it over 2000 years old.</p>
-              <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
-                for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by
-                Cicero are also reproduced in their exact original form, accompanied
-                by English versions from the 1914 translation by H. Rackham.</p>
-
-              <div class="my-4 text-center">
-                <p class="fs-5">Welcome to the future of work.</p>
-                <a href="javascript:;" class="btn btn-success btn-lg px-5">Start Exploring</a>
-              </div>
-
-              <div class="mt-5">
-                <div class="text-center">
-                  <h5 class="mb-3">Explore top services</h5>
-                </div>
-                <div class="row row-cols-1 row-cols-lg-2 g-4">
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/01.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Logo Design</h5>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/02.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Whiteboard & Animated</h5>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/03.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Voice Over</h5>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/04.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Wordpress</h5>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/05.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Articles & Blog Posts</h5>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/06.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Website Design</h5>
-                    </div>
-                  </div>
-                </div><!--end row-->
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <div class="row row-cols-1 row-cols-lg-2 g-3">
-                <div class="col">
-                  <div class="card shadow-none bg-voilet mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Women Clothes</h5>
-                      <img src="assets/images/cat/01.png" class="position-absolute end-0 bottom-0" width="140" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-none bg-success mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Men Clothes</h5>
-                      <img src="assets/images/cat/02.png" class="position-absolute end-0 bottom-0" width="90" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-none bg-dark-blue mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Airpods</h5>
-                      <img src="assets/images/cat/03.png" class="position-absolute end-0 bottom-0" width="120" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-none bg-danger mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Furniture</h5>
-                      <img src="assets/images/cat/04.png" class="position-absolute end-0 bottom-0 m-2" width="160"
-                        alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-none bg-orange mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Hand Watch</h5>
-                      <img src="assets/images/cat/05.png" class="position-absolute end-0 bottom-0" width="130" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-none bg-indigo mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Shoes  Pair</h5>
-                      <img src="assets/images/cat/06.png" class="position-absolute end-0 bottom-0 m-2" width="200"
-                        alt="">
-                    </div>
-                  </div>
-                </div>
-
-              </div><!--end row-->
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="assets/images/gallery/15.png" class="card-img" alt="...">
-            <div class="card-img-overlay">
-              <p class="mb-4 text-white text-uppercase">Travel</p>
-              <h3 class="card-title text-white">Various versions evolved</h3>
-              <p class="mb-0 text-white">It was popularised in the 1960s with the release of Letraset sheets containing. <br>
-                Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
-              </p>
-            </div>
-            <div class="bottom-0 position-absolute m-3">
-              <a href="javascript:;" class="btn text-dark px-3 bg-white d-flex gap-2">Read More<span class="material-icons-outlined">east</span></a>
-            </div>
-          </div>
 
 
-          <div class="d-flex align-items-center gap-3">
-            <div class="card rounded-4">
-              <img src="assets/images/gallery/16.png" class="card-img rounded-4" alt="...">
-              <div class="card-img-overlay">
-                <p class="mb-4 text-white text-uppercase">Corporate</p>
-                <h3 class="card-title text-white">Various versions evolved</h3>
-                <p class="mb-0 text-white">It was popularised in the 1960s with the release of Letraset sheets containing.
-                </p>
-              </div>
-              <div class="bottom-0 position-absolute m-3">
-                <a href="javascript:;" class="btn text-dark px-3 bg-white d-flex gap-2">Read More<span class="material-icons-outlined">east</span></a>
-              </div>
-            </div>
-            <div class="card rounded-4">
-              <img src="assets/images/gallery/17.png" class="card-img rounded-4" alt="...">
-              <div class="card-img-overlay">
-                <p class="mb-4 text-white text-uppercase">Fitness</p>
-                <h3 class="card-title text-white">Various versions evolved</h3>
-              </div>
-              <div class="bottom-0 position-absolute m-3">
-                <a href="javascript:;" class="btn text-dark px-3 bg-white d-flex gap-2">Read More<span class="material-icons-outlined">east</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!--end row-->
-
-
-    </div>
+      <!--end breadcrumb-->
   </main>
   <!--end main wrapper-->
 
 
-    <!--start overlay-->
-    <div class="overlay btn-toggle"></div>
-    <!--end overlay-->
- <!--start footer-->
- <footer class="page-footer">
-  <p class="mb-0">Copyright © 2024. All right reserved.</p>
-</footer>
-<!--top footer-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--start footer-->
+  <footer class="page-footer">
+    <p class="mb-0">Copyright © 2024. All right reserved.</p>
+  </footer>
+  <!--end footer-->
+
   <!--start cart-->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart">
+  <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasCart">
     <div class="offcanvas-header border-bottom h-70">
       <h5 class="mb-0" id="offcanvasRightLabel">8 New Orders</h5>
       <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
@@ -1441,11 +1255,13 @@
   <!--end cart-->
 
 
+
   <!--start switcher-->
-  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
+  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button"
+    data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>Customize
   </button>
-  
+
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
     <div class="offcanvas-header border-bottom h-70">
       <div class="">
@@ -1470,28 +1286,36 @@
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="LightTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="LightTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="LightTheme">
               <span class="material-icons-outlined">light_mode</span>
               <span>Light</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="DarkTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="DarkTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="DarkTheme">
               <span class="material-icons-outlined">dark_mode</span>
               <span>Dark</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="SemiDarkTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="SemiDarkTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="SemiDarkTheme">
               <span class="material-icons-outlined">contrast</span>
               <span>Semi Dark</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="BoderedTheme">
-            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="BoderedTheme">
+            <label
+              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
+              for="BoderedTheme">
               <span class="material-icons-outlined">border_style</span>
               <span>Bordered</span>
             </label>
@@ -1511,7 +1335,13 @@
   <!--plugins-->
   <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
   <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
+  <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
   <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+  <script>
+    $(".data-attributes span").peity("donut")
+  </script>
+  <script src="assets/js/dashboard2.js"></script>
   <script src="assets/js/main.js"></script>
 
 
