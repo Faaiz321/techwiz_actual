@@ -874,6 +874,7 @@ body {
      
 <!-- component2 -->
           <!--carousel  -->
+          
           <div class="col ">
     <h6 class="mb-0 text-uppercase">With Crossfade</h6>
     <hr>

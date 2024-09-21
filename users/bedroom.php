@@ -61,12 +61,72 @@
 </div>
 <!-- cards start -->
        
-<div class="card ">
+<div class=" ">
 
-  <div style="width: 1100px;" class="card py-5 container">
-   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus laudantium asperiores porro culpa maiores ipsum praesentium, quidem eligendi suscipit reiciendis? Nam consequuntur corporis, est dolor impedit, delectus exercitationem tempore eaque, numquam amet ipsum!
-  </div>
+<div class="container ">
+    <h6 class="mb-0 text-uppercase">With Crossfade</h6>
+    <hr>
+    
+        <div style="border-radius: 50px;" class="card-body position-relative border border-primary">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_6b525e69.jpg" class="d-block w-100" alt="...">
+                        <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
+                            <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                              <h2 style="color: black;">Classical Smart Beds</h2>
+                              <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
+                                <button class="btn btn-dark col-md-6">Action 1</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_7b316976.jpg" class="d-block w-100" alt="...">
+                        <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                              <h2 style="color: black;">Classical Smart Beds</h2>
+                              <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
+                                <button class="btn btn-dark col-md-6">Action 1</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_9d32a121.jpg" class="d-block w-100" alt="...">
+                        <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                              <h2 style="color: black;">Classical Smart Beds</h2>
+                              <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
+                                <button class="btn btn-dark col-md-6">Action 1</button>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="carousel-item">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.39_859a1f8d.jpg" class="d-block w-100" alt="...">
+                        <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                              <h2 style="color: black;">Classical Smart Beds</h2>
+                              <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
+                                <button class="btn btn-dark col-md-6">Action 1</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box">
 
+</div>
   <div class="d-flex row">
            
   <div class="fade-in-component">
@@ -794,23 +854,6 @@
   <main class="main-wrapper">
     <div class="main-content">
       <!--breadcrumb-->
-      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Dashboard</div>
-        <div class="ps-3">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0 p-0">
-              <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">eCommerce</li>
-            </ol>
-          </nav>
-        </div>
-        <div class="ms-auto">
-          <div class="btn-group">
-            <button type="button" class="btn btn-success"><a href="form-layouts.php">Make Appointment</a></button>
-          </div>
-        </div>
-      </div>
       
 
       <!-- cards start -->

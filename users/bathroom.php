@@ -7,6 +7,208 @@
 
 
 
+ 
+
+
+
+
+<!doctype html>
+<html lang="en" data-bs-theme="blue-theme">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  
+  
+
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
+  <!-- loader-->
+  <link href="assets/css/pace.min.css" rel="stylesheet">
+  <script src="assets/js/pace.min.js"></script>
+
+  <!--plugins-->
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
+  <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+  <!--bootstrap css-->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <!--main css-->
+  <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
+  <link href="sass/main.css" rel="stylesheet">
+  <link href="assets/css/horizontal-menu.css" rel="stylesheet">
+  <link href="sass/dark-theme.css" rel="stylesheet">
+  <link href="sass/blue-theme.css" rel="stylesheet">
+  <link href="sass/semi-dark.css" rel="stylesheet">
+  <link href="sass/bordered-theme.css" rel="stylesheet">
+  <link href="sass/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+<div  class="card">
+
+</div>
+<!-- cards start -->
+       
+<div class=" ">
+
+<div class="container ">
+    <h6 class="mb-0 text-uppercase">With Crossfade</h6>
+    <hr>
+    
+        <div style="border-radius: 50px;" class="card-body position-relative border border-primary">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_6b525e69.jpg" class="d-block w-100" alt="...">
+                        <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
+                            <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                              <h2 style="color: black;">Classical Smart Beds</h2>
+                              <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
+                                <button class="btn btn-dark col-md-6">Action 1</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_7b316976.jpg" class="d-block w-100" alt="...">
+                        <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                              <h2 style="color: black;">Classical Smart Beds</h2>
+                              <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
+                                <button class="btn btn-dark col-md-6">Action 1</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_9d32a121.jpg" class="d-block w-100" alt="...">
+                        <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                              <h2 style="color: black;">Classical Smart Beds</h2>
+                              <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
+                                <button class="btn btn-dark col-md-6">Action 1</button>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="carousel-item">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.39_859a1f8d.jpg" class="d-block w-100" alt="...">
+                        <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                              <h2 style="color: black;">Classical Smart Beds</h2>
+                              <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
+                                <button class="btn btn-dark col-md-6">Action 1</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box">
+
+</div>
+  <div class="d-flex row">
+           
+  <div class="fade-in-component">
+<!-- component 4 -->
+<div class="col">
+    <div class="card container">
+      <div class="card-body p-4">
+        <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-shadow: 2px 2px 2px blue;" class="text-center " >COLLECTION</h2>
+        <div class="d-flex">
+          
+        </div>
+
+          <!-- <div class="my-4 text-center">
+            <p class="fs-5">Welcome to the future of work.</p>
+            <a href="javascript:;" class="btn btn-success btn-lg px-5">Start Exploring</a>
+          </div> -->
+
+          <div class="card-group px-6">
+<div class="card container">
+<img class="card-img-top container" style="width: 403.38px; height: 239.5px;" src="assets/images/bathroom/bathrooms1.jpg" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+</div>
+</div>
+<div class="card container">
+<img class="card-img-top" style="width: 403.38px; height: 239.5px;" src="assets/images/bathroom/bathrooms2.jpeg" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+</div>
+</div>
+<div class="card container">
+<img class="card-img-top" style="width: 353.38px; height: 239.5px;" src="assets/images/bathroom/bathrooms3.jpg" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+</div>
+</div>
+</div>
+
+          <div class="card-group">
+<div class="card container">
+<img style="width: 403.38px; height: 239.5px;" class="card-img-top" src="assets/images/bathroom/bathrooms4.jpg" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+</div>
+</div>
+<div class="card container">
+<img class="card-img-top" style="width: 403.38px; height: 239.5px;" src="assets/images/bathroom/bathrooms5.jpg" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+</div>
+</div>
+<div class="card container">
+<img class="card-img-top" style="width: 350.38px; height: 239.5px;" src="assets/images/bathroom/bathrooms6.jpg" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">Card title</h5>
+<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+</div>
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- component 4 -->
+  </div>
+.
+  </div>
+</div>
+
+
 
 
 <!doctype html>
@@ -647,260 +849,11 @@
 <!--end top header-->
 
 
-<!--navigation-->
-<div class="primary-menu">
-  <nav class="navbar navbar-expand-xl align-items-center">
-   <div class="offcanvas offcanvas-start w-260" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-   <div class="offcanvas-header border-bottom h-70">
-     <div class="d-flex align-items-center gap-2">
-       <div class="">
-         <img src="assets/images/logo-icon.png" class="logo-icon" width="45" alt="logo icon">
-       </div>
-       <div class="">
-         <h4 class="logo-text">Maxton</h4>
-       </div>
-     </div>
-     <a href="javascript:;" class="primaery-menu-close" data-bs-dismiss="offcanvas">
-      <i class="material-icons-outlined">close</i>
-     </a>
-   </div>
-   <div class="offcanvas-body p-0">
-     <ul class="navbar-nav align-items-center flex-grow-1">
-     <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-         <div class="parent-icon"><i class="material-icons-outlined">home</i>
-         </div>
-         <div class="menu-title d-flex align-items-center">Catalog</div>
-         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
-       </a>
-       <ul class="dropdown-menu">
-         <li><a class="dropdown-item" href="bedroom.php"><i class='material-icons-outlined'>insights</i>Bedroom</a></li>
-         <li><a class="dropdown-item" href="kitchen.php"><i class='material-icons-outlined'>insights</i>Kitchen</a></li>
-         
-         <li><a class="dropdown-item" href="outdoorservices.php"><i class='material-icons-outlined'>insights</i>OutDoor Spaces</a></li>
-         
-         <li><a class="dropdown-item" href="livingroom.php"><i class='material-icons-outlined'>insights</i>Living-Room</a></li>
-         
-
-        
-       </ul>
-       </li>
-       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-         <div class="parent-icon"><i class='material-icons-outlined'>apps</i>
-         </div>
-         <div class="menu-title d-flex align-items-center">Apps & Pages</div>
-         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
-       </a>
-       <ul class="dropdown-menu">
-         <li><a class="dropdown-item" href="app-emailbox.html"><i class='material-icons-outlined'>email</i>Email</a></li>
-         <li><a class="dropdown-item" href="app-chat-box.html"><i class='material-icons-outlined'>chat</i>Chat Box</a></li>
-         <li><a class="dropdown-item" href="app-file-manager.html"><i class='material-icons-outlined'>folder</i>File Manager</a></li>
-         <li><a class="dropdown-item" href="app-to-do.html"><i class='material-icons-outlined'>task</i>Todo</a></li>
-         <li><a class="dropdown-item" href="app-invoice.html"><i class='material-icons-outlined'>description</i>Invoice</a></li>
-         <li class="nav-item dropend">
-         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>layers</i>Pages</a>
-         <ul class="dropdown-menu submenu">
-           <li class="nav-item dropend"><a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>navigate_next</i>Error</a>
-             <ul class="dropdown-menu">
-               <li><a class="dropdown-item" href="pages-error-403.html"><i class='material-icons-outlined'>navigate_next</i>403 Error</a></li>
-               <li><a class="dropdown-item" href="pages-error-404.html"><i class='material-icons-outlined'>navigate_next</i>404 rror</a></li>
-               <li><a class="dropdown-item" href="pages-error-505.html"><i class='material-icons-outlined'>navigate_next</i>505 rror</a></li>
-               <li><a class="dropdown-item" href="pages-coming-soon.html"><i class='material-icons-outlined'>navigate_next</i>Coming Soon</a></li>
-               <li><a class="dropdown-item" href="pages-starter-page.html"><i class='material-icons-outlined'>navigate_next</i>Blank Page</a></li>
-               </ul>
-           </li>
-           <li><a class="dropdown-item" href="user-profile.html"><i class='material-icons-outlined'>navigate_next</i>User Profile</a></li>
-           <li><a class="dropdown-item" href="timeline.html"><i class='material-icons-outlined'>navigate_next</i>Timeline</a></li>
-           <li><a class="dropdown-item" href="faq.html"><i class='material-icons-outlined'>navigate_next</i>FAQ</a></li>
-           <li><a class="dropdown-item" href="pricing-table.html"><i class='material-icons-outlined'>navigate_next</i>Pricing</a></li>
-           </ul>
-         </li>
-       </ul>
-       </li>
-       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-         <div class="parent-icon"><i class='material-icons-outlined'>note_alt</i>
-         </div>
-         <div class="menu-title d-flex align-items-center">Forms</div>
-         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
-       </a>
-       <ul class="dropdown-menu">
-         <li> <a class="dropdown-item" href="form-elements.html"><i class='material-icons-outlined'>source</i>Form Elements</a>
-         </li>
-         <li> <a class="dropdown-item" href="form-input-group.html"><i class='material-icons-outlined'>work_outline</i>Input Groups</a>
-         </li>
-         <li> <a class="dropdown-item" href="form-radios-and-checkboxes.html"><i class='material-icons-outlined'>timeline</i>Radios & Checkboxes</a>
-         </li>
-         <li> <a class="dropdown-item" href="form-layouts.html"><i class='material-icons-outlined'>label</i>Forms Layouts</a>
-         </li>
-         <li> <a class="dropdown-item" href="form-validations.html"><i class='material-icons-outlined'>tips_and_updates</i>Form Validation</a>
-         </li>
-         <li> <a class="dropdown-item" href="form-wizard.html"><i class='material-icons-outlined'>dns</i>Form Wizard</a>
-         </li>
-         <li> <a class="dropdown-item" href="form-file-upload.html"><i class='material-icons-outlined'>hourglass_empty</i>File Upload</a>
-         </li>
-         <li> <a class="dropdown-item" href="form-date-time-pickes.html"><i class='material-icons-outlined'>backup</i>Date Pickers</a>
-         </li>
-         <li> <a class="dropdown-item" href="form-select2.html"><i class='material-icons-outlined'>integration_instructions</i>Select2</a>
-         </li>
-         <li> <a class="dropdown-item" href="form-repeater.html"><i class='material-icons-outlined'>mark_as_unread</i>Form Repeater</a>
-         </li>
-       </ul>
-       </li>
-       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-         <div class="parent-icon"><i class='material-icons-outlined'>account_circle</i>
-         </div>
-         <div class="menu-title d-flex align-items-center">Authentication</div>
-         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
-       </a>
-       <ul class="dropdown-menu">
-         <li class="nav-item dropend">
-         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>event</i>Basic</a>
-         <ul class="dropdown-menu submenu">
-           <li><a class="dropdown-item" href="auth-basic-login.html"><i class='material-icons-outlined'>navigate_next</i>Sign In</a></li>
-           <li><a class="dropdown-item" href="auth-basic-register.html"><i class='material-icons-outlined'>navigate_next</i>Sign Up</a></li>
-           <li><a class="dropdown-item" href="auth-basic-forgot-password.html"><i class='material-icons-outlined'>navigate_next</i>Forgot Password</a></li>
-           <li><a class="dropdown-item" href="auth-basic-reset-password.html"><i class='material-icons-outlined'>navigate_next</i>Reset Password</a></li>
-           </ul>
-         </li>
-         <li class="nav-item dropend">
-         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>perm_identity</i>Cover</a>
-         <ul class="dropdown-menu submenu">
-           <li><a class="dropdown-item" href="auth-cover-login.html"><i class='material-icons-outlined'>navigate_next</i>Sign In</a></li>
-           <li><a class="dropdown-item" href="auth-cover-register.html"><i class='material-icons-outlined'>navigate_next</i>Sign Up</a></li>
-           <li><a class="dropdown-item" href="auth-cover-forgot-password.html"><i class='material-icons-outlined'>navigate_next</i>Forgot Password</a></li>
-           <li><a class="dropdown-item" href="auth-cover-reset-password.html"><i class='material-icons-outlined'>navigate_next</i>Reset Password</a></li>
-           </ul>
-         </li>
-         <li class="nav-item dropend">
-         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>assignment</i>Boxed</a>
-         <ul class="dropdown-menu submenu">
-           <li><a class="dropdown-item" href="auth-boxed-login.html"><i class='material-icons-outlined'>navigate_next</i>Sign In</a></li>
-           <li><a class="dropdown-item" href="auth-boxed-register.html"><i class='material-icons-outlined'>navigate_next</i>Sign Up</a></li>
-           <li><a class="dropdown-item" href="auth-boxed-forgot-password.html"><i class='material-icons-outlined'>navigate_next</i>Forgot Password</a></li>
-           <li><a class="dropdown-item" href="auth-boxed-reset-password.html"><i class='material-icons-outlined'>navigate_next</i>Reset Password</a></li>
-           </ul>
-         </li>
-       </ul>
-       </li>
-       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-         <div class="parent-icon"><i class='material-icons-outlined'>medical_services</i>
-         </div>
-         <div class="menu-title d-flex align-items-center">UI Elements</div>
-         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
-       </a>
-       <ul class="dropdown-menu">
-         <li class="nav-item dropend">
-          <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>widgets</i>Widgets</a>
-          <ul class="dropdown-menu submenu">
-            <li><a class="dropdown-item" href="widgets-data.html"><i class='material-icons-outlined'>navigate_next</i>Data</a></li>
-            <li><a class="dropdown-item" href="widgets-static.html"><i class='material-icons-outlined'>navigate_next</i>Static</a></li>
-            </ul>
-          </li>
-         <li class="nav-item dropend">
-         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>shopping_bag</i>eCommerce</a>
-         <ul class="dropdown-menu submenu">
-           <li><a class="dropdown-item" href="ecommerce-products.html"><i class='material-icons-outlined'>navigate_next</i>Products</a></li>
-           <li><a class="dropdown-item" href="ecommerce-add-product.html"><i class='material-icons-outlined'>navigate_next</i>Add Product</a></li>
-           <li><a class="dropdown-item" href="ecommerce-customers.html"><i class='material-icons-outlined'>navigate_next</i>Customer</a></li>
-           <li><a class="dropdown-item" href="ecommerce-customer-details.html"><i class='material-icons-outlined'>navigate_next</i>Customer Details</a></li>
-           <li><a class="dropdown-item" href="ecommerce-orders.html"><i class='material-icons-outlined'>navigate_next</i>Orders</a></li>
-           <li><a class="dropdown-item" href="ecommerce-order-details.html"><i class='material-icons-outlined'>navigate_next</i>Order Details</a></li>
-           </ul>
-         </li>
-         <li class="nav-item dropend">
-         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>free_breakfast</i>Components</a>
-         <ul class="dropdown-menu scroll-menu">
-           <li><a class="dropdown-item" href="component-alerts.html"><i class='material-icons-outlined'>navigate_next</i>Alerts</a></li>
-           <li><a class="dropdown-item" href="component-accordions.html"><i class='material-icons-outlined'>navigate_next</i>Accordions</a></li>
-           <li><a class="dropdown-item" href="component-badges.html"><i class='material-icons-outlined'>navigate_next</i>Badges</a></li>
-           <li><a class="dropdown-item" href="component-buttons.html"><i class='material-icons-outlined'>navigate_next</i>Buttons</a></li>
-           <li><a class="dropdown-item" href="cards.html"><i class='material-icons-outlined'>navigate_next</i>Cards</a></li>
-           <li><a class="dropdown-item" href="component-carousels.html"><i class='material-icons-outlined'>navigate_next</i>Carousels</a></li>
-           <li><a class="dropdown-item" href="component-media-object.html"><i class='material-icons-outlined'>navigate_next</i>Media Objects</a></li>
-           <li><a class="dropdown-item" href="component-modals.html"><i class='material-icons-outlined'>navigate_next</i>Modals</a></li>
-           <li><a class="dropdown-item" href="component-navs-tabs.html"><i class='material-icons-outlined'>navigate_next</i>Navs & Tabs</a></li>
-           <li><a class="dropdown-item" href="component-navbar.html"><i class='material-icons-outlined'>navigate_next</i>Navbar</a></li>
-           <li><a class="dropdown-item" href="component-paginations.html"><i class='material-icons-outlined'>navigate_next</i>Pagination</a></li>
-           <li><a class="dropdown-item" href="component-popovers-tooltips.html"><i class='material-icons-outlined'>navigate_next</i>Popovers & Tooltips</a></li>
-           <li><a class="dropdown-item" href="component-progress-bars.html"><i class='material-icons-outlined'>navigate_next</i>Progress</a></li>
-           <li><a class="dropdown-item" href="component-spinners.html"><i class='material-icons-outlined'>navigate_next</i>Spinners</a></li>
-           <li><a class="dropdown-item" href="component-notifications.html"><i class='material-icons-outlined'>navigate_next</i>Notifications</a></li>
-           <li><a class="dropdown-item" href="component-avtars-chips.html"><i class='material-icons-outlined'>navigate_next</i>Avatrs & Chips</a></li>
-           </ul>
-         </li>
-         <li class="nav-item dropend">
-         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>cases</i>Icons</a>
-         <ul class="dropdown-menu submenu">
-           <li><a class="dropdown-item" href="icons-line-icons.html"><i class='material-icons-outlined'>navigate_next</i>Line Icons</a></li>
-           <li><a class="dropdown-item" href="icons-boxicons.html"><i class='material-icons-outlined'>navigate_next</i>Boxicons</a></li>
-           <li><a class="dropdown-item" href="icons-feather-icons.html"><i class='material-icons-outlined'>navigate_next</i>Feather Icons</a></li>
-           </ul>
-         </li>
-       </ul>
-       </li>
-       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-         <div class="parent-icon"><i class='material-icons-outlined'>pie_chart</i>
-         </div>
-         <div class="menu-title d-flex align-items-center">Charts</div>
-         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
-       </a>
-       <ul class="dropdown-menu">
-         <li><a class="dropdown-item" href="charts-apex-chart.html"><i class='material-icons-outlined'>leaderboard</i></i>Apex</a></li>
-         <li><a class="dropdown-item" href="charts-chartjs.html"><i class='material-icons-outlined'>analytics</i>Chartjs</a></li>
-         <li class="nav-item dropend">
-         <a class="dropdown-item dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"><i class='material-icons-outlined'>pie_chart</i>Maps</a>
-         <ul class="dropdown-menu submenu">
-           <li><a class="dropdown-item" href="map-google-maps.html"><i class='material-icons-outlined'>navigate_next</i>Google Maps</a></li>
-           <li><a class="dropdown-item" href="map-vector-maps.html"><i class='material-icons-outlined'>navigate_next</i>Vector Maps</a></li>
-          </ul>
-         </li>
-       </ul>
-       </li>
-       <li class="nav-item dropdown">
-       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-bs-toggle="dropdown">
-         <div class="parent-icon"><i class='material-icons-outlined'>table_chart</i>
-         </div>
-         <div class="menu-title d-flex align-items-center">Tables</div>
-         <div class="ms-auto dropy-icon"><i class='material-icons-outlined'>expand_more</i></div>
-       </a>
-       <ul class="dropdown-menu">
-         <li><a class="dropdown-item" href="table-basic-table.html"><i class='material-icons-outlined'>navigate_next</i>Basic Table</a></li>
-         <li><a class="dropdown-item" href="table-datatable.html"><i class='material-icons-outlined'>navigate_next</i>Data Table</a></li>
-       </ul>
-       </li>
-     </ul>
-   </div>
-   </div>
- </nav>
-</div>
-<!--end navigation-->
 
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
       <!--breadcrumb-->
-      <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-        <div class="breadcrumb-title pe-3">Dashboard</div>
-        <div class="ps-3">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb mb-0 p-0">
-              <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">eCommerce</li>
-            </ol>
-          </nav>
-        </div>
-        <div class="ms-auto">
-          <div class="btn-group">
-            <button type="button" class="btn btn-success"><a href="form-layouts.php">Make Appointment</a></button>
-          </div>
-        </div>
-      </div>
       
 
       <!-- cards start -->
@@ -917,85 +870,15 @@ $sql = "SELECT product_name, price, product_image, description, category FROM pr
 $result = $conn->query($sql);
 ?>
 
-<div class="card">
+  
     
     <div class="card-body p-4">
 
        
 
-        <div class="mt-5">
-            <div class="text-center">
-                <h5 class="mb-3">Explore top services</h5>
-            </div>
-            <div class="row row-cols-1 row-cols-lg-2 g-4">
-                <?php
-                // Check if there are results
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $imageFilename = htmlspecialchars($row['product_image']);
-                        $imagePath = '../designer/' . $imageFilename; // Adjust path as necessary
-                        // Use a default image if the actual image doesn't exist
-                        if (!file_exists($imagePath)) {
-                            $imagePath = '../designer/uploads/default.jpg';
-                        }
-                ?>
-                    <div class="col">
-                        <div class="card h-100 shadow-sm"> <!-- Card structure -->
-                            <img src="<?php echo $imagePath; ?>" class="img-fluid card-img-top w-50" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
-                                <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
-                                <h5>Price: $<?php echo htmlspecialchars($row['price']); ?></h5>
-                                <div class="mt-4 d-flex align-items-center justify-content-between">
-                                    <button class="btn btn-light d-flex gap-2 px-3">
-                                        <i class="material-icons-outlined">shopping_basket</i>Add to Cart
-                                    </button>
-                                    <div class="d-flex gap-1">
-                                        <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">favorite_border</i></a>
-                                        <div class="dropdown position-relative">
-                                            <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
-                                               data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
-                                                class="material-icons-outlined">share</i></a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control ps-5" value="https://www.codervent.com"
-                                                           placeholder="Enter Url">
-                                                    <span
-                                                        class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
-                                                    <span class="input-group-text gap-1"><i
-                                                        class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2 mt-3">
-                                                    <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-pinterest"></i>Pinterest
-                                                    </button>
-                                                    <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-facebook"></i>Facebook
-                                                    </button>
-                                                    <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-linkedin"></i>Linkedin
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                    }
-                } else {
-                    echo "<p>No products found.</p>";
-                }
-                $conn->close();
-                ?>
-            </div><!--end row-->
-        </div>
-    </div>
-</div>
+        
 
-
+                                                    
 
             <!-- cards start -->
 
@@ -1205,6 +1088,7 @@ $result = $conn->query($sql);
               <span class="material-icons-outlined">dark_mode</span>
               <span>Dark</span>
             </label>
+
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="SemiDarkTheme">
