@@ -30,7 +30,18 @@
     background-color: rgba(255, 255, 255, 0.8); /* Light background */
      /* Padding around the button */
     border-radius: 5px; /* Rounded corners */
+
 }
+.fade-in-component {
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Transition effect */
+    display: block; /* Ensure it takes up space */
+}
+
+.fade-in-component.fade-in {
+    opacity: 1; /* Fully visible */
+}
+
 .custom-box {
     width: 563.25px; /* Set a fixed width */
     height: 296.75px; /* Set a fixed height */
@@ -52,6 +63,9 @@
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
   <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
   <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+  <!-- Add jQuery CDN in your HTML -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <!--bootstrap css-->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -69,6 +83,10 @@
 </head>
 
 <body>
+
+    <!-- Your page content here -->
+
+    <div class="fade-in-component">
 
 
 
@@ -669,12 +687,15 @@
 
   </nav>
 </header>
+
 <!--end top header-->
+</div>
+<!-- component1 -->
 
 
 
 
-
+  
   <!--start main wrapper-->
   <main class="main-wrapper">
     <div class="main-content">
@@ -685,7 +706,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0 p-0">
               <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-              </li>
+            </li>
               <li class="breadcrumb-item active" aria-current="page">eCommerce</li>
             </ol>
           </nav>
@@ -696,8 +717,8 @@
           </div>
         </div>
       </div>
-
-
+      
+      
 <!-- get started -->
 <!-- <div class="">
             <img src="assets/images/gallery/15.png" class="card-img w-50" alt="...">
@@ -712,33 +733,36 @@
               <a href="javascript:;" class="btn text-dark px-3 bg-white d-flex gap-2">Read More<span class="material-icons-outlined">east</span></a>
             </div>
           </div> -->
-<!-- get started -->
+          <!-- get started -->
+          
+          <!-- component2 -->
+       
+          
 
+          
+          
+          
+          
+          
+          
 
+          
+          
+          
 
+          
+          
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!--carousel  -->
-      <div class="col">
+        <div class="fade-in-component">
+     
+<!-- component2 -->
+          <!--carousel  -->
+          <div class="col">
     <h6 class="mb-0 text-uppercase">With Crossfade</h6>
     <hr>
     <div class="card">
         <div class="card-body position-relative">
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_6b525e69.jpg" class="d-block w-100" alt="...">
@@ -805,76 +829,160 @@
 </div>
 
 
+<!-- component 2 -->
+</div>
 
+<div class="fade-in-component">
+<!-- component 3 -->
 
 
 <!-- links  -->
 <div class="col">
-          <div class="card">
-            <div class="card-body">
-              <div class="row row-cols-1 row-cols-lg-2 g-3">
+  <h1 class="text-center  mt-5">CATERGORIES</h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="row row-cols-1 row-cols-lg-2 g-3">
                 <div class="col">
-                  <div class="card shadow-none bg-voilet mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Women Clothes</h5>
-                      <img src="assets/images/cat/01.png" class="position-absolute end-0 bottom-0" width="140" alt="">
+                    <div class="card shadow-none bg-voilet mb-0" style="height: 160px;">
+                        <div class="card-body">
+                            <h5 class="mb-0 text-white">Women Clothes</h5>
+                            <img src="assets/images/cat/01.png" class="position-absolute end-0 bottom-0" width="140" alt="">
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="col">
-                  <div class="card shadow-none bg-success mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Men Clothes</h5>
-                      <img src="assets/images/cat/02.png" class="position-absolute end-0 bottom-0" width="90" alt="">
+                    <div class="card shadow-none bg-success mb-0" style="height: 160px;">
+                        <div class="card-body">
+                            <h5 class="mb-0 text-white">Men Clothes</h5>
+                            <img src="assets/images/cat/02.png" class="position-absolute end-0 bottom-0" width="90" alt="">
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="col">
-                  <div class="card shadow-none bg-dark-blue mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Airpods</h5>
-                      <img src="assets/images/cat/03.png" class="position-absolute end-0 bottom-0" width="120" alt="">
+                    <div class="card shadow-none bg-dark-blue mb-0" style="height: 160px;">
+                        <div class="card-body">
+                            <h5 class="mb-0 text-white">Airpods</h5>
+                            <img src="assets/images/cat/03.png" class="position-absolute end-0 bottom-0" width="120" alt="">
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="col">
-                  <div class="card shadow-none bg-danger mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Furniture</h5>
-                      <img src="assets/images/cat/04.png" class="position-absolute end-0 bottom-0 m-2" width="160"
-                        alt="">
+                    <div class="card shadow-none bg-danger mb-0" style="height: 160px;">
+                        <div class="card-body">
+                            <h5 class="mb-0 text-white">Furniture</h5>
+                            <img src="assets/images/cat/04.png" class="position-absolute end-0 bottom-0 m-2" width="160" alt="">
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="col">
-                  <div class="card shadow-none bg-orange mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Hand Watch</h5>
-                      <img src="assets/images/cat/05.png" class="position-absolute end-0 bottom-0" width="130" alt="">
+                    <div class="card shadow-none bg-orange mb-0" style="height: 160px;">
+                        <div class="card-body">
+                            <h5 class="mb-0 text-white">Hand Watch</h5>
+                            <img src="assets/images/cat/05.png" class="position-absolute end-0 bottom-0" width="130" alt="">
+                        </div>
                     </div>
-                  </div>
                 </div>
                 <div class="col">
-                  <div class="card shadow-none bg-indigo mb-0" style="height: 160px;">
-                    <div class="card-body">
-                      <h5 class="mb-0 text-white">Shoes  Pair</h5>
-                      <img src="assets/images/cat/06.png" class="position-absolute end-0 bottom-0 m-2" width="200"
-                        alt="">
+                    <div class="card shadow-none bg-indigo mb-0" style="height: 160px;">
+                        <div class="card-body">
+                            <h5 class="mb-0 text-white">Shoes Pair</h5>
+                            <img src="assets/images/cat/06.png" class="position-absolute end-0 bottom-0 m-2" width="200" alt="">
+                        </div>
                     </div>
-                  </div>
                 </div>
+            </div><!--end row-->
+        </div>
+    </div>
+</div>
 
-              </div><!--end row-->
+<!-- component 3 -->
+</div>
+
+
+<!-- jQuery Fade Function -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Initially hide the cards
+    $('.card').hide();
+
+    // Fade in the cards
+    $('.card').fadeIn(900); // Adjust the duration as needed (1000ms = 1 second)
+});
+</script>
+
+
+
+
+<div class="fade-in-component">
+<!-- component 4 -->
+<div class="col">
+          <div class="card">
+            <img src="assets/images/gallery/13.png" class="img-fluid card-img-top" alt="">
+            <div class="card-body p-4">
+              <h3 class="">Welcome to Company</h3>
+              <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
+                It has roots in a piece of classical Latin literature from 45 BC,
+                making it over 2000 years old.</p>
+              <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
+                for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by
+                Cicero are also reproduced in their exact original form, accompanied
+                by English versions from the 1914 translation by H. Rackham.</p>
+
+              <div class="my-4 text-center">
+                <p class="fs-5">Welcome to the future of work.</p>
+                <a href="javascript:;" class="btn btn-success btn-lg px-5">Start Exploring</a>
+              </div>
+
+              <div class="mt-5">
+                <div class="text-center">
+                  <h5 class="mb-3">Explore top services</h5>
+                </div>
+                <div class="row row-cols-1 row-cols-lg-2 g-4">
+                  <div class="col">
+                    <div class="text-center">
+                      <img src="assets/images/orders/01.png" class="img-fluid rounded" alt="">
+                      <h5 class="mb-0 mt-3">Logo Design</h5>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="text-center">
+                      <img src="assets/images/orders/02.png" class="img-fluid rounded" alt="">
+                      <h5 class="mb-0 mt-3">Whiteboard & Animated</h5>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="text-center">
+                      <img src="assets/images/orders/03.png" class="img-fluid rounded" alt="">
+                      <h5 class="mb-0 mt-3">Voice Over</h5>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="text-center">
+                      <img src="assets/images/orders/04.png" class="img-fluid rounded" alt="">
+                      <h5 class="mb-0 mt-3">Wordpress</h5>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="text-center">
+                      <img src="assets/images/orders/05.png" class="img-fluid rounded" alt="">
+                      <h5 class="mb-0 mt-3">Articles & Blog Posts</h5>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="text-center">
+                      <img src="assets/images/orders/06.png" class="img-fluid rounded" alt="">
+                      <h5 class="mb-0 mt-3">Website Design</h5>
+                    </div>
+                  </div>
+                </div><!--end row-->
+              </div>
             </div>
           </div>
-<!-- links-->
+        </div>
 
-
-
-
-
-
-
+<!-- component 4 -->
+        </div>
 
 
 
@@ -1124,6 +1232,26 @@
   </script>
   <script src="assets/js/dashboard2.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <!-- <script>
+$(document).ready(function() {
+    // Initially hide the cards
+    $('.card').hide();
+
+    // Fade in the cards
+    $('.card').fadeIn(1000); // Adjust the duration as needed (1000ms = 1 second)
+});
+
+
+</script> -->
+<script>
+    window.addEventListener('load', function() {
+        const components = document.querySelectorAll('.fade-in-component');
+        components.forEach(component => {
+            component.classList.add('fade-in'); // Add fade-in class to each component
+        });
+    });
+</script>
 
 
 </body>
