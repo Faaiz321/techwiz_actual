@@ -164,6 +164,16 @@ body {
   }
 }
 
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+
 </style>
   <!--plugins-->
   <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
@@ -864,15 +874,15 @@ body {
      
 <!-- component2 -->
           <!--carousel  -->
-          <div class="col">
+          <div class="col ">
     <h6 class="mb-0 text-uppercase">With Crossfade</h6>
     <hr>
-    <div class="card">
-        <div class="card-body position-relative">
+    
+        <div style="border-radius: 50px;" class="card-body position-relative border border-primary">
           <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_6b525e69.jpg" class="d-block w-100" alt="...">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_6b525e69.jpg" class="d-block w-100" alt="...">
                         <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
                             <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
                               <h2 style="color: black;">Classical Smart Beds</h2>
@@ -882,9 +892,9 @@ body {
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_7b316976.jpg" class="d-block w-100" alt="...">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_7b316976.jpg" class="d-block w-100" alt="...">
                         <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
-                        <div class="custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                        <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
                               <h2 style="color: black;">Classical Smart Beds</h2>
                               <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
                                 <button class="btn btn-dark col-md-6">Action 1</button>
@@ -892,29 +902,20 @@ body {
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_9d32a121.jpg" class="d-block w-100" alt="...">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_9d32a121.jpg" class="d-block w-100" alt="...">
                         <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
-                        <div class="custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
-                              <h2 style="color: black;">Classical Smart Beds</h2>
-                              <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
-                                <button class="btn btn-dark col-md-6"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.38_62148e8a.jpg" class="d-block w-100" alt="...">
-                        <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
-                        <div class="custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                        <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
                               <h2 style="color: black;">Classical Smart Beds</h2>
                               <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
                                 <button class="btn btn-dark col-md-6">Action 1</button>
                             </div>
                         </div>
                     </div>
+                   
                     <div class="carousel-item">
-                        <img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.39_859a1f8d.jpg" class="d-block w-100" alt="...">
+                        <img style="border-radius: 50px;" src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.39_859a1f8d.jpg" class="d-block w-100" alt="...">
                         <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
-                        <div class="custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                        <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
                               <h2 style="color: black;">Classical Smart Beds</h2>
                               <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
                                 <button class="btn btn-dark col-md-6">Action 1</button>
@@ -946,63 +947,6 @@ body {
 
 
 <!-- links  -->
-<div class="col">
-  <h1 class="text-center  mt-5">CATERGORIES</h1>
-    <div class="card">
-        <div class="card-body">
-            <div class="row row-cols-1 row-cols-lg-2 g-3">
-                <div class="col">
-                    <div class="card shadow-none bg-voilet mb-0" style="height: 160px;">
-                        <div class="card-body">
-                            <h5 class="mb-0 text-white">Women Clothes</h5>
-                            <img src="assets/images/cat/01.png" class="position-absolute end-0 bottom-0" width="140" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-none bg-success mb-0" style="height: 160px;">
-                        <div class="card-body">
-                            <h5 class="mb-0 text-white">Men Clothes</h5>
-                            <img src="assets/images/cat/02.png" class="position-absolute end-0 bottom-0" width="90" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-none bg-dark-blue mb-0" style="height: 160px;">
-                        <div class="card-body">
-                            <h5 class="mb-0 text-white">Airpods</h5>
-                            <img src="assets/images/cat/03.png" class="position-absolute end-0 bottom-0" width="120" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-none bg-danger mb-0" style="height: 160px;">
-                        <div class="card-body">
-                            <h5 class="mb-0 text-white">Furniture</h5>
-                            <img src="assets/images/cat/04.png" class="position-absolute end-0 bottom-0 m-2" width="160" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-none bg-orange mb-0" style="height: 160px;">
-                        <div class="card-body">
-                            <h5 class="mb-0 text-white">Hand Watch</h5>
-                            <img src="assets/images/cat/05.png" class="position-absolute end-0 bottom-0" width="130" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-none bg-indigo mb-0" style="height: 160px;">
-                        <div class="card-body">
-                            <h5 class="mb-0 text-white">Shoes Pair</h5>
-                            <img src="assets/images/cat/06.png" class="position-absolute end-0 bottom-0 m-2" width="200" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div><!--end row-->
-        </div>
-    </div>
-</div>
 
 <!-- component 3 -->
 </div>
@@ -1027,62 +971,64 @@ $(document).ready(function() {
 <!-- component 4 -->
 <div class="col">
           <div class="card">
-            <img src="assets/images/gallery/13.png" class="img-fluid card-img-top" alt="">
             <div class="card-body p-4">
-              <h3 class="">Welcome to Company</h3>
-              <p>Contrary to popular belief, Lorem Ipsum is not simply random text.
-                It has roots in a piece of classical Latin literature from 45 BC,
-                making it over 2000 years old.</p>
-              <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
-                for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by
-                Cicero are also reproduced in their exact original form, accompanied
-                by English versions from the 1914 translation by H. Rackham.</p>
-
-              <div class="my-4 text-center">
-                <p class="fs-5">Welcome to the future of work.</p>
-                <a href="javascript:;" class="btn btn-success btn-lg px-5">Start Exploring</a>
+              <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-shadow: 2px 2px 2px blue;" class="text-center " >COLLECTION</h2>
+              <div class="d-flex">
+                
               </div>
+
+                <!-- <div class="my-4 text-center">
+                  <p class="fs-5">Welcome to the future of work.</p>
+                  <a href="javascript:;" class="btn btn-success btn-lg px-5">Start Exploring</a>
+                </div> -->
 
               <div class="mt-5">
                 <div class="text-center">
                   <h5 class="mb-3">Explore top services</h5>
                 </div>
                 <div class="row row-cols-1 row-cols-lg-2 g-4">
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/01.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Logo Design</h5>
+
+                <div class="col">
+                  <div class="text-center card-hover">
+                    <a href="livingroom.php">
+
+                      <img src="assets/images/bedroom1.png" class="img-fluid rounded w-100" alt="">
+                      <h5 class="mb-0 mt-3">Italian Living Room</h5>
                     </div>
+                  </a>
+                </div>
+
+                  <div class="col">
+                    <div class="text-center card-hover">
+                      <a href="kitchen.php">
+
+                        <img style="width:593px ; height: 400.80px;" src="assets/images/kitchen.png" class="img-fluid rounded w-100" alt="">
+                        <h5 class="mb-0 mt-3">Kitchen</h5>
+                      </div>
+                    </a>
                   </div>
                   <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/02.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Whiteboard & Animated</h5>
+                    <div class="text-center card-hover">
+                      <a href="bathroom.php">
+
+                        <img style="height: 444.80px;" src="assets/images/bath.png"  class="img-fluid rounded w-100" alt="">
+                        <h5 class="mb-0 mt-3">Bathroom</h5>
+                      </div>
+                    </a>
+                  </div>
+
+                  
+                  <div class="col">
+                    <div class="text-center card-hover">
+                      <a href="bedroom.php">
+
+                      <img style="height: 400.80px;" src="assets/images/bed2BED.png" class="img-fluid rounded" alt="">
+                      </a>
+
+                      <h5 class="mb-0 mt-3">Bedroom</h5>
                     </div>
                   </div>
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/03.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Voice Over</h5>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/04.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Wordpress</h5>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/05.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Articles & Blog Posts</h5>
-                    </div>
-                  </div>
-                  <div class="col">
-                    <div class="text-center">
-                      <img src="assets/images/orders/06.png" class="img-fluid rounded" alt="">
-                      <h5 class="mb-0 mt-3">Website Design</h5>
-                    </div>
+                
                   </div>
                 </div><!--end row-->
               </div>
@@ -1252,14 +1198,10 @@ $(document).ready(function() {
   </div>
   <!--end cart-->
 
-
-
-  <!--start switcher-->
-  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button"
-    data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
+  <button class="btn btn-grd btn-grd-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop">
     <i class="material-icons-outlined">tune</i>Customize
   </button>
-
+  
   <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop">
     <div class="offcanvas-header border-bottom h-70">
       <div class="">
@@ -1284,36 +1226,28 @@ $(document).ready(function() {
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="LightTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="LightTheme">
+            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="LightTheme">
               <span class="material-icons-outlined">light_mode</span>
               <span>Light</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="DarkTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="DarkTheme">
+            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="DarkTheme">
               <span class="material-icons-outlined">dark_mode</span>
               <span>Dark</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="SemiDarkTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="SemiDarkTheme">
+            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="SemiDarkTheme">
               <span class="material-icons-outlined">contrast</span>
               <span>Semi Dark</span>
             </label>
           </div>
           <div class="col-12 col-xl-6">
             <input type="radio" class="btn-check" name="theme-options" id="BoderedTheme">
-            <label
-              class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4"
-              for="BoderedTheme">
+            <label class="btn btn-outline-secondary d-flex flex-column gap-1 align-items-center justify-content-center p-4" for="BoderedTheme">
               <span class="material-icons-outlined">border_style</span>
               <span>Bordered</span>
             </label>
@@ -1323,7 +1257,9 @@ $(document).ready(function() {
       </div>
     </div>
   </div>
-  <!--start switcher-->
+  
+
+  
 
   <!--bootstrap js-->
   <script src="assets/js/bootstrap.bundle.min.js"></script>

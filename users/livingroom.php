@@ -904,98 +904,61 @@
       
 
       <!-- cards start -->
-      <?php
-include '../connections/addproductconn.php'; // Ensure this path is correct
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// SQL query
-$sql = "SELECT product_name, price, product_image, description, category FROM products";
-$result = $conn->query($sql);
-?>
-
-<div class="card">
-    
-    <div class="card-body p-4">
-
        
+      <div class="card">
+        <div class="d-flex row">
+                 
+        <div class="fade-in-component">
+<!-- component 4 -->
+<div class="col">
+          <div class="card">
+            <div class="card-body p-4">
+              <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-shadow: 2px 2px 2px blue;" class="text-center " >COLLECTION</h2>
+              <div class="d-flex">
+                
+              </div>
 
-        <div class="mt-5">
-            <div class="text-center">
-                <h5 class="mb-3">Explore top services</h5>
-            </div>
-            <div class="row row-cols-1 row-cols-lg-2 g-4">
-                <?php
-                // Check if there are results
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $imageFilename = htmlspecialchars($row['product_image']);
-                        $imagePath = '../designer/' . $imageFilename; // Adjust path as necessary
-                        // Use a default image if the actual image doesn't exist
-                        if (!file_exists($imagePath)) {
-                            $imagePath = '../designer/uploads/default.jpg';
-                        }
-                ?>
-                    <div class="col">
-                        <div class="card h-100 shadow-sm"> <!-- Card structure -->
-                            <img src="<?php echo $imagePath; ?>" class="img-fluid card-img-top w-50" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
-                                <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
-                                <h5>Price: $<?php echo htmlspecialchars($row['price']); ?></h5>
-                                <div class="mt-4 d-flex align-items-center justify-content-between">
-                                    <button class="btn btn-light d-flex gap-2 px-3">
-                                        <i class="material-icons-outlined">shopping_basket</i>Add to Cart
-                                    </button>
-                                    <div class="d-flex gap-1">
-                                        <a href="javascript:;" class="sharelink"><i class="material-icons-outlined">favorite_border</i></a>
-                                        <div class="dropdown position-relative">
-                                            <a href="javascript:;" class="sharelink dropdown-toggle dropdown-toggle-nocaret"
-                                               data-bs-auto-close="outside" data-bs-toggle="dropdown"><i
-                                                class="material-icons-outlined">share</i></a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-share shadow-lg border-0 p-3">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control ps-5" value="https://www.codervent.com"
-                                                           placeholder="Enter Url">
-                                                    <span
-                                                        class="material-icons-outlined position-absolute ms-3 translate-middle-y start-0 top-50">link</span>
-                                                    <span class="input-group-text gap-1"><i
-                                                        class="material-icons-outlined fs-6">content_copy</i>Copy link</span>
-                                                </div>
-                                                <div class="d-flex align-items-center gap-2 mt-3">
-                                                    <button class="py-1 px-3 border-0 rounded bg-pinterest text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-pinterest"></i>Pinterest
-                                                    </button>
-                                                    <button class="py-1 px-3 border-0 rounded bg-facebook text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-facebook"></i>Facebook
-                                                    </button>
-                                                    <button class="py-1 px-3 border-0 rounded bg-linkedin text-white flex-fill d-flex gap-1">
-                                                        <i class="bi bi-linkedin"></i>Linkedin
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                    }
-                } else {
-                    echo "<p>No products found.</p>";
-                }
-                $conn->close();
-                ?>
-            </div><!--end row-->
-        </div>
+                <!-- <div class="my-4 text-center">
+                  <p class="fs-5">Welcome to the future of work.</p>
+                  <a href="javascript:;" class="btn btn-success btn-lg px-5">Start Exploring</a>
+                </div> -->
+
+                <div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="assets/images/" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
 </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
+<!-- component 4 -->
+        </div>
+.
+        </div>
+      </div>
 
             <!-- cards start -->
 
