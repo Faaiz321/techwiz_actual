@@ -1078,10 +1078,12 @@ $result = $conn->query($sql);
                         if (!file_exists($imagePath)) {
                             $imagePath = '../designer/uploads/default.jpg';
                         }
+                      }
+                    }
                 ?>
                     <div class="col">
                         <div class="card h-100 shadow-sm"> <!-- Card structure -->
-                            <img src="<?php echo $imagePath; ?>" class="img-fluid card-img-top w-50" alt="<?php echo htmlspecialchars($row['product_name']); ?>">
+                            <img src="<?php echo $imagePath; ?>" class="img-fluid card-img-top w-100" vh-100 alt="<?php echo htmlspecialchars($row['product_name']); ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo htmlspecialchars($row['product_name']); ?></h5>
                                 <p class="card-text"><?php echo htmlspecialchars($row['description']); ?></p>
@@ -1121,7 +1123,7 @@ $result = $conn->query($sql);
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
             
 
@@ -1130,7 +1132,7 @@ $result = $conn->query($sql);
     </div>
 </div>
 
-
+                                                    
 
             <!-- cards start -->
 
