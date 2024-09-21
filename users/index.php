@@ -25,6 +25,9 @@
   <!-- loader-->
   <link href="assets/css/pace.min.css" rel="stylesheet">
   <script src="assets/js/pace.min.js"></script>
+  <style type="scss">
+
+  </style>
 <style>
   .overlay-box {
     background-color: rgba(255, 255, 255, 0.8); /* Light background */
@@ -55,6 +58,110 @@
     border: 2px 2px 2px solid ;
     font-weight: 400;
     filter: drop-shadow(0 0 0.85rem black);
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #b71540;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.box {
+  background-color: transparent;
+  border-radius: 3px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 300px;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  transition: .4s;
+  text-align: center;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border-top: 20px solid #fff;
+    border-left: 20px solid #fff;
+    box-sizing: border-box;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 20px solid #fff;
+    border-right: 20px solid #fff;
+    box-sizing: border-box;
+  }
+  .fas {
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    line-height: 50px !important;
+    background-color: #fff;
+    color: #2C3A47;
+  }
+  .fa2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+  }
+  .text {
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    width: calc(100% + 60px);
+    height: calc(100% - 60px);
+    background-color: #2C3A47;
+    border-radius: 3px;
+    transition: .4s;
+    .fa1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    div {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      text-align: center;
+      width: 100%;
+      padding: 30px 60px;
+      line-height: 1.5;
+      box-sizing: border-box;
+      h3 {
+        font-size: 30px;
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+  &:hover {
+    .text {
+      transform: rotateY(20deg) skewY(-3deg)
+    }
+    transform: translate(-50%, -50%) rotateY(-20deg) skewY(3deg)
+  }
 }
 
 </style>
@@ -767,7 +874,7 @@
                     <div class="carousel-item active">
                         <img src="assets/images/carousels/WhatsApp Image 2024-09-21 at 03.30.37_6b525e69.jpg" class="d-block w-100" alt="...">
                         <div class="overlay-box position-absolute top-50 start-50 translate-middle text-center">
-                            <div class="custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
+                            <div class="box  custom-box bg-white shadow d-flex flex-column justify-content-center align-items-center text-dark p-3 gap-">
                               <h2 style="color: black;">Classical Smart Beds</h2>
                               <h6 class="text-dark">Pakistan's leading and only smart beds manufacturer</h6>
                                 <button class="btn btn-dark col-md-6">Action 1</button>
@@ -827,7 +934,9 @@
         </div>
     </div>
 </div>
+<div class="box">
 
+</div>
 
 <!-- component 2 -->
 </div>
